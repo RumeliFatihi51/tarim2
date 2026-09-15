@@ -1,0 +1,6 @@
+{
+  "name": "TerraSat Tarım AI",
+  "description": "Sentinel-2 multispektral uydu verileri ve Gemini 3.8 Flash tabanlı tarımsal analiz, bitki sağlığı, su stresi ve akıllı ziraat danışmanı platformu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
