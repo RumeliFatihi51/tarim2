@@ -251,6 +251,7 @@ export interface PipelineStage {
 
 export interface AnalysisJob {
   id: string;
+  companyId: string;
   mode: 'LIVE' | 'DEMO';
   status: 'queued' | 'running' | 'completed' | 'failed';
   currentStageNumber: number;

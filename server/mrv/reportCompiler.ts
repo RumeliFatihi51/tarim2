@@ -308,7 +308,7 @@ export class ReportCompiler {
         id: 'audit-trail',
         title: 'Veri Bütünlüğü ve Denetim İzi (Chain of Custody)',
         category: 'Verification',
-        content: `Veri kaynağı, STAC sorgu imzası ve piksel hash doğrulaması kaydedilmiştir.`,
+        content: `Sahne kimliği, sağlayıcı, işlem zamanı, algoritma sürümü ve piksel istatistiklerinden üretilen bütünlük özeti kaydedilmiştir. Bu özet ham raster piksel dosyasının kriptografik imzası değildir.`,
         keyMetrics: [
           { label: 'Rapor Kimliği', value: reportId },
           { label: 'Sahne ID', value: scene.id },

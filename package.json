@@ -1,5 +1,6 @@
 {
-  "name": "react-example",
+  "name": "terrasat-ai",
+  "description": "Sentinel-2 parcel analysis, agricultural decision support, and informational MRV reporting.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +9,9 @@
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
     "preview": "vite preview",
-    "clean": "rm -rf dist server.cjs",
-    "lint": "tsc --noEmit"
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "lint": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

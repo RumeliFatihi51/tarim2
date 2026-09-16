@@ -16,10 +16,11 @@ import { defaultJobManager } from './server/jobs/jobManager';
 import { defaultAssistantService } from './server/ai/assistantService';
 import { defaultWeatherService } from './server/weather/weatherService';
 import { defaultPracticeEngine } from './server/practices/practiceEngine';
-import { WINDOWS_APP_INFO, generateWindowsExeBuffer, generatePortableWindowsZipBuffer } from './server/desktop/exeService';
+import { WINDOWS_APP_INFO } from './server/desktop/exeService';
 import { INITIAL_PARCELS } from './src/data/parcels';
 import { config } from './server/config';
-import { authenticate, errorHandler, requestContext, type AuthenticatedRequest } from './server/middleware';
+import { authenticate, errorHandler, requestContext, requireRole, type AuthenticatedRequest } from './server/middleware';
+import { AppError } from './server/errors';
 import { rankScenes, validateSceneAssets } from './server/providers/sceneSelection';
 import { validateAnalysisRequest } from './server/validation';
 import { analysisStore } from './server/persistence/analysisStore';
@@ -29,14 +30,20 @@ import { renderMrvPdf } from './server/mrv/pdfReport';
 import { artifactStore } from './server/persistence/artifactStore';
 
 const app = express();
-const PORT = 3000;
+const PORT = config.PORT;
 
 // Enable trust proxy for reverse proxy (Cloud Run, nginx)
 app.set('trust proxy', 1);
 
 app.use(requestContext);
 app.use(helmet({ contentSecurityPolicy: false }));
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || config.corsOrigins.includes(origin)) return callback(null, true);
+    callback(new AppError('FORBIDDEN', 'Origin is not allowed by CORS policy.', 403));
+  },
+  credentials: true,
+}));
 app.use(express.json({ limit: '1mb' }));
 app.use(
   '/api',
@@ -55,19 +62,20 @@ app.get('/api/health', (req, res) => {
     status: 'ok',
     service: 'TerraSat AI Multispectral Remote Sensing & MRV Engine',
     timestamp: new Date().toISOString(),
-    provider: defaultSatelliteProvider.name,
-    geminiConfigured: Boolean(process.env.GEMINI_API_KEY),
-    cache: 'persistent-versioned',
+    version: '3.0.0',
   });
 });
 
 app.use('/api', authenticate);
 
 // Scene metadata query for coordinates
-app.get('/api/satellite/query-scene', async (req, res) => {
+app.get('/api/satellite/query-scene', async (req, res, next) => {
   try {
-    const lat = parseFloat(req.query.lat as string) || 38.642;
-    const lng = parseFloat(req.query.lng as string) || 27.118;
+    const lat = Number(req.query.lat);
+    const lng = Number(req.query.lng);
+    if (!Number.isFinite(lat) || lat < -90 || lat > 90 || !Number.isFinite(lng) || lng < -180 || lng > 180) {
+      throw new AppError('VALIDATION_ERROR', 'lat and lng must be valid WGS84 coordinates.', 400);
+    }
     const bbox: [number, number, number, number] = [
       lng - 0.05,
       lat - 0.05,
@@ -96,7 +104,7 @@ app.get('/api/satellite/query-scene', async (req, res) => {
     });
   } catch (err: any) {
     console.error('[API] Query scene error:', err);
-    res.status(500).json({ error: err.message || 'Sahne sorgusu başarısız oldu.' });
+    next(err);
   }
 });
 
@@ -489,47 +497,31 @@ app.get('/api/export/csv/:parcelId', (req, res) => {
 // Windows Desktop App Info & EXE Packaging Endpoints
 app.get('/api/desktop/info', (req, res) => {
   res.json({
-    status: 'ok',
+    status: 'unavailable',
     appInfo: WINDOWS_APP_INFO,
+    message: 'Windows desktop paketleme bu sürüme dahil değildir.',
     timestamp: new Date().toISOString(),
   });
 });
 
-app.get('/api/desktop/download-exe', (req, res) => {
-  try {
-    const exeBuffer = generateWindowsExeBuffer();
-    res.setHeader('Content-Type', 'application/x-msdownload');
-    res.setHeader('Content-Disposition', 'attachment; filename="TerraSat_AI_Workstation_Setup_v3.0.0.exe"');
-    res.setHeader('Content-Length', exeBuffer.length);
-    res.send(exeBuffer);
-  } catch (err: any) {
-    console.error('[API] Windows EXE generation error:', err);
-    res.status(500).json({ error: 'Windows yükleyici (.exe) dosyası oluşturulurken hata meydana geldi.' });
-  }
+app.get('/api/desktop/download-exe', (_req, _res, next) => {
+  next(new AppError('NOT_IMPLEMENTED', 'Windows installer is not available in this web release.', 501));
 });
 
-app.get('/api/desktop/download-portable', (req, res) => {
-  try {
-    const zipBuffer = generatePortableWindowsZipBuffer();
-    res.setHeader('Content-Type', 'application/zip');
-    res.setHeader('Content-Disposition', 'attachment; filename="TerraSat_Windows_Portable_v3.0.0.zip"');
-    res.setHeader('Content-Length', zipBuffer.length);
-    res.send(zipBuffer);
-  } catch (err: any) {
-    res.status(500).json({ error: 'Taşınabilir Windows paketi oluşturulamadı.' });
-  }
+app.get('/api/desktop/download-portable', (_req, _res, next) => {
+  next(new AppError('NOT_IMPLEMENTED', 'Windows portable package is not available in this web release.', 501));
 });
 
 // Start async analysis job endpoint
-app.post('/api/satellite/start-job', async (req, res) => {
+app.post('/api/satellite/start-job', requireRole('admin', 'analyst'), async (req: AuthenticatedRequest, res, next) => {
   try {
     const { polygon, coordinates, parcelId, name, crop, location, isDemo = false } = req.body;
     const polyInput = polygon || coordinates;
-    const normalized = normalizePolygon(polyInput);
-    const request = validateAnalysisRequest({ parcelId, name, crop, location, mode: isDemo ? 'DEMO' : 'LIVE', polygon: normalized });
+    const request = validateAnalysisRequest({ parcelId, name, crop, location, mode: isDemo ? 'DEMO' : 'LIVE', polygon: polyInput });
     const jobId = crypto.randomUUID();
-    
-    defaultJobManager.createJob(jobId, isDemo ? 'DEMO' : 'LIVE');
+    const companyId = req.auth!.companyId;
+
+    defaultJobManager.createJob(jobId, companyId, isDemo ? 'DEMO' : 'LIVE');
 
     // Run pipeline asynchronously in background
     (async () => {
@@ -542,7 +534,7 @@ app.post('/api/satellite/start-job', async (req, res) => {
           location,
           isDemo,
           jobId,
-          companyId: (req as AuthenticatedRequest).auth?.companyId,
+          companyId,
         });
         defaultJobManager.completeJob(jobId, result);
       } catch (err: any) {
@@ -556,15 +548,15 @@ app.post('/api/satellite/start-job', async (req, res) => {
       status: 'queued',
       message: 'Canlı Sentinel-2 multispektral analiz işi başlatıldı.',
     });
-  } catch (err: any) {
-    res.status(500).json({ error: err.message || 'Analiz işi başlatılamadı.' });
+  } catch (err) {
+    next(err);
   }
 });
 
 // Query job status endpoint
-app.get('/api/satellite/job/:jobId', (req, res) => {
+app.get('/api/satellite/job/:jobId', (req: AuthenticatedRequest, res) => {
   const { jobId } = req.params;
-  const job = defaultJobManager.getJob(jobId);
+  const job = defaultJobManager.getJob(jobId, req.auth!.companyId);
   if (!job) {
     return res.status(404).json({ error: 'İş kimliği bulunamadı.' });
   }
@@ -572,9 +564,10 @@ app.get('/api/satellite/job/:jobId', (req, res) => {
 });
 
 // SSE endpoint for streaming job updates
-app.get('/api/satellite/stream/:jobId', (req, res) => {
+app.get('/api/satellite/stream/:jobId', (req: AuthenticatedRequest, res) => {
   const { jobId } = req.params;
-  const job = defaultJobManager.getJob(jobId);
+  const companyId = req.auth!.companyId;
+  const job = defaultJobManager.getJob(jobId, companyId);
   if (!job) {
     return res.status(404).json({ error: 'İş bulunamadı.' });
   }
@@ -584,7 +577,7 @@ app.get('/api/satellite/stream/:jobId', (req, res) => {
   res.setHeader('Connection', 'keep-alive');
 
   const interval = setInterval(() => {
-    const current = defaultJobManager.getJob(jobId);
+    const current = defaultJobManager.getJob(jobId, companyId);
     if (!current) {
       clearInterval(interval);
       return res.end();
@@ -602,7 +595,7 @@ app.get('/api/satellite/stream/:jobId', (req, res) => {
 });
 
 // Main synchronous analysis route
-app.post('/api/satellite/analyze', async (req, res) => {
+app.post('/api/satellite/analyze', requireRole('admin', 'analyst'), async (req: AuthenticatedRequest, res, next) => {
   try {
     const { 
       parcelId, 
@@ -616,7 +609,7 @@ app.post('/api/satellite/analyze', async (req, res) => {
     } = req.body;
 
     const polyInput = polygon || coordinates;
-    const request = validateAnalysisRequest({ parcelId, name, crop, location, mode: isDemo ? 'DEMO' : 'LIVE', polygon: normalizePolygon(polyInput), forceFresh });
+    const request = validateAnalysisRequest({ parcelId, name, crop, location, mode: isDemo ? 'DEMO' : 'LIVE', polygon: polyInput, forceFresh });
     const payload = await executeFullPipeline({
       polygonInput: request.polygon,
       parcelId,
@@ -624,13 +617,13 @@ app.post('/api/satellite/analyze', async (req, res) => {
       crop,
       location,
       isDemo,
-      companyId: (req as AuthenticatedRequest).auth?.companyId,
+      companyId: req.auth!.companyId,
     });
 
     res.json(payload);
   } catch (err: any) {
     console.error('[API] Analysis error:', err);
-    res.status(500).json({ error: err.message || 'Uydu analizi sırasında beklenmedik hata oluştu.' });
+    next(err);
   }
 });
 
@@ -664,11 +657,11 @@ async function startServer() {
   }
 }
 
+app.use(errorHandler);
+
 if (!process.env.VERCEL && config.NODE_ENV !== 'test') {
   startServer();
 }
-
-app.use(errorHandler);
 
 export default app;
 export { app };

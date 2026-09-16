@@ -13,10 +13,12 @@ import {
 } from 'lucide-react';
 import { Parcel, FullAnalysisPayload, PipelineStage } from '../../types';
 import { getDemoAnalysisPayload } from '../../demo/sampleData';
+import { toClosedGeoJsonRing } from '../../utils/geoJson';
 
 interface LiveAnalysisPipelineProps {
   parcel: Parcel;
   onComplete: (payload?: FullAnalysisPayload) => void;
+  onFailure: (message: string) => void;
   isDemoMode: boolean;
 }
 
@@ -40,6 +42,7 @@ const STAGES_CONFIG: { number: number; name: string; description: string }[] = [
 export const LiveAnalysisPipeline: React.FC<LiveAnalysisPipelineProps> = ({
   parcel,
   onComplete,
+  onFailure,
   isDemoMode,
 }) => {
   const [currentStage, setCurrentStage] = useState(1);
@@ -84,7 +87,7 @@ export const LiveAnalysisPipeline: React.FC<LiveAnalysisPipelineProps> = ({
             polygon: {
               type: 'Polygon',
               coordinates: [
-                (parcel.polygon || []).map(([lat, lng]) => [lng, lat]),
+                toClosedGeoJsonRing(parcel.polygon || []),
               ],
             },
             isDemo: false,
@@ -127,7 +130,9 @@ export const LiveAnalysisPipeline: React.FC<LiveAnalysisPipelineProps> = ({
               onComplete(jobData.result);
             } else if (jobData.status === 'failed') {
               clearInterval(pollInterval);
-              setErrorMessage(jobData.error || 'Spektral analiz tamamlanamadı.');
+              const message = jobData.error || 'Spektral analiz tamamlanamadı.';
+              setErrorMessage(message);
+              onFailure(message);
             }
           } catch {
             // keep polling
@@ -136,21 +141,10 @@ export const LiveAnalysisPipeline: React.FC<LiveAnalysisPipelineProps> = ({
 
         return () => clearInterval(pollInterval);
       } catch (err: any) {
-        console.warn('Backend live job failed, falling back to instant payload:', err.message);
-        // Fallback to sample data gracefully
-        for (let s = 1; s <= 14; s++) {
-          if (isCancelled) return;
-          setCurrentStage(s);
-          setStatusMap((prev) => ({
-            ...prev,
-            [s]: 'running',
-            ...(s > 1 ? { [s - 1]: 'completed' } : {}),
-          }));
-          await new Promise((r) => setTimeout(r, 250));
-        }
-        if (isCancelled) return;
-        setStatusMap((prev) => ({ ...prev, 14: 'completed' }));
-        onComplete(getDemoAnalysisPayload(parcel.id));
+        const message = err instanceof Error ? err.message : 'Canlı analiz başlatılamadı.';
+        console.warn('Backend live job failed:', message);
+        setErrorMessage(message);
+        onFailure(message);
       }
     }
 
@@ -159,7 +153,7 @@ export const LiveAnalysisPipeline: React.FC<LiveAnalysisPipelineProps> = ({
     return () => {
       isCancelled = true;
     };
-  }, [parcel, isDemoMode, onComplete]);
+  }, [parcel, isDemoMode, onComplete, onFailure]);
 
   const progressPercent = Math.round((currentStage / 14) * 100);
 

@@ -105,7 +105,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Observation Date */}
         <div className="hidden xl:flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-900/60 border border-slate-800/80 rounded-xl text-xs font-mono text-slate-300">
           <Calendar className="w-3.5 h-3.5 text-cyan-400" />
-          <span>08 Eyl 2026</span>
+            <span>{selectedParcel?.lastObservation || 'Henüz gözlem yok'}</span>
         </div>
 
         {/* Data Source Badge */}

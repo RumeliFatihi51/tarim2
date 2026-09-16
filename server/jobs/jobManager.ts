@@ -40,7 +40,7 @@ export class JobManager {
     fs.renameSync(temporary, this.storePath);
   }
 
-  createJob(jobId: string, mode: 'LIVE' | 'DEMO' = 'LIVE'): AnalysisJob {
+  createJob(jobId: string, companyId: string, mode: 'LIVE' | 'DEMO' = 'LIVE'): AnalysisJob {
     const stages: PipelineStage[] = PIPELINE_STAGES.map((s, idx) => ({
       id: s.id,
       number: idx + 1,
@@ -51,6 +51,7 @@ export class JobManager {
 
     const job: AnalysisJob = {
       id: jobId,
+      companyId,
       mode,
       status: 'running',
       currentStageNumber: 1,
@@ -65,8 +66,11 @@ export class JobManager {
     return job;
   }
 
-  getJob(jobId: string): AnalysisJob | undefined {
-    return this.jobs.get(jobId);
+  getJob(jobId: string, companyId: string): AnalysisJob | undefined {
+    const job = this.jobs.get(jobId);
+    if (!job) return undefined;
+    // Job records written before tenant ownership was introduced belong only to the local development tenant.
+    return (job.companyId || 'local-dev') === companyId ? job : undefined;
   }
 
   updateStage(

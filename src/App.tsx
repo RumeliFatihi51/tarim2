@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
 import { ParcelMap } from './components/map/ParcelMap';
@@ -21,6 +21,7 @@ export default function App() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [pipelineFinished, setPipelineFinished] = useState(false);
   const [analysisPayload, setAnalysisPayload] = useState<FullAnalysisPayload | null>(null);
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
 
   // Custom polygon drawing on map
   const [isDrawingMode, setIsDrawingMode] = useState(false);
@@ -35,15 +36,16 @@ export default function App() {
   const [mrvModalOpen, setMrvModalOpen] = useState(false);
 
   // Start analysis pipeline
-  const handleStartAnalysis = () => {
+  const handleStartAnalysis = useCallback(() => {
     const parcelToAnalyze = selectedParcel || INITIAL_PARCELS[0];
     setSelectedParcel(parcelToAnalyze);
     setIsAnalyzing(true);
     setPipelineFinished(false);
+    setAnalysisError(null);
     setActiveTab('analysis');
-  };
+  }, [selectedParcel]);
 
-  const handlePipelineCompleted = (payload?: FullAnalysisPayload) => {
+  const handlePipelineCompleted = useCallback((payload?: FullAnalysisPayload) => {
     if (payload) {
       setAnalysisPayload(payload);
     } else if (isDemoMode) {
@@ -51,7 +53,13 @@ export default function App() {
     }
     setIsAnalyzing(false);
     setPipelineFinished(true);
-  };
+  }, [isDemoMode, selectedParcel?.id]);
+
+  const handlePipelineFailure = useCallback((message: string) => {
+    setIsAnalyzing(false);
+    setPipelineFinished(false);
+    setAnalysisError(message);
+  }, []);
 
   const handleOpenReportModal = () => {
     setMrvModalOpen(true);
@@ -184,6 +192,7 @@ export default function App() {
                 <LiveAnalysisPipeline
                   parcel={selectedParcel || INITIAL_PARCELS[0]}
                   onComplete={handlePipelineCompleted}
+                  onFailure={handlePipelineFailure}
                   isDemoMode={isDemoMode}
                 />
               ) : analysisPayload ? (
@@ -195,6 +204,11 @@ export default function App() {
               ) : (
                 /* Clean Empty State prompting user to launch analysis */
                 <div className="max-w-3xl mx-auto my-8 p-8 sm:p-12 rounded-3xl bg-slate-900/60 border border-slate-800/80 shadow-2xl backdrop-blur-md text-center">
+                  {analysisError && (
+                    <div role="alert" className="mb-6 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4 text-left text-sm text-rose-200">
+                      Canlı analiz başlatılamadı: {analysisError}. Örnek veri gösterilmedi; bağlantı ve parsel sınırını kontrol edip yeniden deneyin.
+                    </div>
+                  )}
                   <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mx-auto mb-5 shadow-lg shadow-emerald-500/15">
                     <Activity className="w-8 h-8 animate-pulse" />
                   </div>

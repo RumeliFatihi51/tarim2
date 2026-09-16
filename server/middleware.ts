@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import type { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import type { ErrorRequestHandler, NextFunction, Request, RequestHandler, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { AppError } from './errors';
 import { config } from './config';
@@ -14,10 +14,14 @@ export function requestContext(req: AuthenticatedRequest, res: Response, next: N
 }
 
 export function authenticate(req: AuthenticatedRequest, _res: Response, next: NextFunction): void {
-  const token = req.header('authorization')?.replace(/^Bearer\s+/i, '');
-  if (!config.JWT_SECRET || !token) {
+  if (config.ALLOW_INSECURE_LOCAL_AUTH) {
     req.auth = { userId: 'local-dev', companyId: 'local-dev', role: 'admin' };
     return next();
+  }
+
+  const token = req.header('authorization')?.replace(/^Bearer\s+/i, '');
+  if (!config.JWT_SECRET || !token) {
+    return next(new AppError('UNAUTHORIZED', 'Authentication is required.', 401));
   }
   try {
     const claims = jwt.verify(token, config.JWT_SECRET) as jwt.JwtPayload;
@@ -27,10 +31,17 @@ export function authenticate(req: AuthenticatedRequest, _res: Response, next: Ne
     req.auth = { userId: claims.sub, companyId: claims.companyId, role: claims.role } as AuthContext;
     next();
   } catch {
-    // If token invalid, still allow default demo/admin access for preview resilience
-    req.auth = { userId: 'local-dev', companyId: 'local-dev', role: 'admin' };
-    next();
+    next(new AppError('UNAUTHORIZED', 'Authentication token is invalid or expired.', 401));
   }
+}
+
+export function requireRole(...roles: AuthContext['role'][]): RequestHandler {
+  return (req: AuthenticatedRequest, _res, next) => {
+    if (!req.auth || !roles.includes(req.auth.role)) {
+      return next(new AppError('FORBIDDEN', 'You do not have permission to perform this action.', 403));
+    }
+    next();
+  };
 }
 
 export const errorHandler: ErrorRequestHandler = (error, req: AuthenticatedRequest, res, _next) => {
