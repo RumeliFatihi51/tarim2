@@ -336,8 +336,7 @@ async function executeFullPipeline(
     mrvReport: fullMRVReport,
   };
 
-  analysisStore.save(companyId, fullPayload);
-  return fullPayload;
+  return analysisStore.save(companyId, fullPayload);
 }
 
 // AI Assistant Chat endpoint
@@ -380,6 +379,32 @@ app.get('/api/parcels', (req, res) => {
 app.get('/api/reports', (req: AuthenticatedRequest, res) => {
   const companyId = req.auth?.companyId || 'local-dev';
   res.json(analysisStore.list(companyId).filter((analysis) => analysis.mrvReport).map((analysis) => analysis.mrvReport));
+});
+
+app.get('/api/analyses', (req: AuthenticatedRequest, res) => {
+  const companyId = req.auth?.companyId || 'local-dev';
+  res.json(analysisStore.list(companyId));
+});
+
+app.get('/api/analyses/:analysisId', (req: AuthenticatedRequest, res) => {
+  const companyId = req.auth?.companyId || 'local-dev';
+  const analysis = analysisStore.getById(companyId, req.params.analysisId);
+  if (!analysis) return res.status(404).json({ error: { code: 'NOT_FOUND', message: 'Analysis not found' } });
+  res.json(analysis);
+});
+
+app.get('/api/reports/analysis/:analysisId/pdf', async (req: AuthenticatedRequest, res, next) => {
+  try {
+    const companyId = req.auth?.companyId || 'local-dev';
+    const analysis = analysisStore.getById(companyId, req.params.analysisId);
+    if (!analysis?.mrvReport) return res.status(404).json({ error: { code: 'NOT_FOUND', message: 'MRV report not found' } });
+    const { buffer, sha256 } = await renderMrvPdf(analysis.mrvReport as Record<string, unknown>);
+    await artifactStore.put(`${companyId}/${analysis.parcel.id}/${crypto.randomUUID()}.pdf`, buffer);
+    res.setHeader('content-type', 'application/pdf');
+    res.setHeader('content-disposition', `attachment; filename="${analysis.parcel.id}-${analysis.analysisId}-mrv.pdf"`);
+    res.setHeader('x-content-sha256', sha256);
+    res.send(buffer);
+  } catch (error) { next(error); }
 });
 
 app.get('/api/reports/:parcelId/pdf', async (req: AuthenticatedRequest, res, next) => {
@@ -436,7 +461,8 @@ app.get('/api/practices/:parcelId', (req, res) => {
 // GeoJSON export endpoint
 app.get('/api/export/geojson/:parcelId', (req, res) => {
   const { parcelId } = req.params;
-  const parcel = INITIAL_PARCELS.find((p) => p.id === parcelId) || INITIAL_PARCELS[0];
+  const companyId = (req as AuthenticatedRequest).auth?.companyId || 'local-dev';
+  const parcel = analysisStore.get(companyId, parcelId)?.parcel || INITIAL_PARCELS.find((p) => p.id === parcelId) || INITIAL_PARCELS[0];
 
   const geojson = {
     type: 'FeatureCollection',
@@ -482,7 +508,8 @@ app.get('/api/export/geojson/:parcelId', (req, res) => {
 // CSV export endpoint
 app.get('/api/export/csv/:parcelId', (req, res) => {
   const { parcelId } = req.params;
-  const parcel = INITIAL_PARCELS.find((p) => p.id === parcelId) || INITIAL_PARCELS[0];
+  const companyId = (req as AuthenticatedRequest).auth?.companyId || 'local-dev';
+  const parcel = analysisStore.get(companyId, parcelId)?.parcel || INITIAL_PARCELS.find((p) => p.id === parcelId) || INITIAL_PARCELS[0];
 
   let csvContent = 'Date,SceneId,CloudCoverPercent,ValidPixelRatio,NDVI,NDWI,NDMI,SoilMoistureProxy,SustainabilityScore\n';
   (parcel.historicalData || []).forEach((row) => {

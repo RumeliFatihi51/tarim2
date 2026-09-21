@@ -14,6 +14,7 @@ export class AIToolRouter {
   getParcel(companyId: string, parcelId: string) { return result(analysisStore.get(companyId, parcelId)?.parcel ?? null, 'TerraSat persistent analysis store'); }
   searchParcels(companyId: string, query = '') { return result(analysisStore.list(companyId).map((p) => p.parcel).filter((p) => p.name.toLowerCase().includes(query.toLowerCase())), 'TerraSat persistent analysis store'); }
   getLatestAnalysis(companyId: string, parcelId: string) { return result(analysisStore.get(companyId, parcelId) ?? null, 'TerraSat measured analysis', ['Satellite inference is not field verification.']); }
+  getAnalysisHistory(companyId: string, parcelId: string) { return result(analysisStore.listForParcel(companyId, parcelId), 'TerraSat append-only analysis archive'); }
   getHistoricalObservations(companyId: string, parcelId: string) { return result(analysisStore.get(companyId, parcelId)?.historicalObservations ?? null, 'Processed Sentinel-2 observations'); }
   getMRVReport(companyId: string, parcelId: string) { return result(analysisStore.get(companyId, parcelId)?.mrvReport ?? null, 'TerraSat MRV compiler', ['A generated report is not third-party certification.']); }
   getWeatherData(companyId: string, parcelId: string) { return result(analysisStore.get(companyId, parcelId)?.weatherData ?? null, 'Weather provider response'); }

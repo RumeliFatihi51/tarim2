@@ -12,26 +12,27 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { Parcel } from '../../types';
-import { INITIAL_PARCELS } from '../../data/parcels';
 
 interface SelectedParcelCardProps {
   parcel: Parcel | null;
+  parcels: Parcel[];
   onStartAnalysis: () => void;
   isAnalyzing: boolean;
   isDrawing: boolean;
   onToggleDrawing: () => void;
   isDemoMode: boolean;
-  onSelectQuickPreset: (id: string) => void;
+  onSelectParcel: (parcel: Parcel) => void;
 }
 
 export const SelectedParcelCard: React.FC<SelectedParcelCardProps> = ({
   parcel,
+  parcels,
   onStartAnalysis,
   isAnalyzing,
   isDrawing,
   onToggleDrawing,
   isDemoMode,
-  onSelectQuickPreset,
+  onSelectParcel,
 }) => {
   if (!parcel) return null;
 
@@ -99,10 +100,13 @@ export const SelectedParcelCard: React.FC<SelectedParcelCardProps> = ({
           <select
             id="parcel-preset-select"
             value={parcel.id}
-            onChange={(e) => onSelectQuickPreset(e.target.value)}
+            onChange={(e) => {
+              const selected = parcels.find((candidate) => candidate.id === e.target.value);
+              if (selected) onSelectParcel(selected);
+            }}
             className="bg-slate-800 text-slate-200 text-xs py-1 px-2.5 pr-6 rounded-lg border border-slate-700 appearance-none focus:outline-none focus:border-emerald-500 cursor-pointer"
           >
-            {INITIAL_PARCELS.map((p) => (
+            {parcels.map((p) => (
               <option key={p.id} value={p.id}>
                 {p.name} ({p.crop.split(' ')[0]})
               </option>

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
 import { ParcelMap } from './components/map/ParcelMap';
@@ -22,6 +22,7 @@ export default function App() {
   const [pipelineFinished, setPipelineFinished] = useState(false);
   const [analysisPayload, setAnalysisPayload] = useState<FullAnalysisPayload | null>(null);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
+  const [savedAnalyses, setSavedAnalyses] = useState<FullAnalysisPayload[]>([]);
 
   // Custom polygon drawing on map
   const [isDrawingMode, setIsDrawingMode] = useState(false);
@@ -34,6 +35,26 @@ export default function App() {
 
   // MRV modal
   const [mrvModalOpen, setMrvModalOpen] = useState(false);
+
+  const refreshSavedAnalyses = useCallback(async () => {
+    try {
+      const response = await fetch('/api/analyses');
+      if (response.ok) setSavedAnalyses(await response.json());
+    } catch {
+      // The active analysis remains usable while an offline archive is unavailable.
+    }
+  }, []);
+
+  useEffect(() => {
+    void refreshSavedAnalyses();
+  }, [refreshSavedAnalyses]);
+
+  const availableParcels = useMemo(() => {
+    const latestById = new Map(INITIAL_PARCELS.map((parcel) => [parcel.id, parcel]));
+    [...savedAnalyses].reverse().forEach((analysis) => latestById.set(analysis.parcel.id, analysis.parcel));
+    if (selectedParcel) latestById.set(selectedParcel.id, selectedParcel);
+    return [...latestById.values()];
+  }, [savedAnalyses, selectedParcel]);
 
   // Start analysis pipeline
   const handleStartAnalysis = useCallback(() => {
@@ -48,12 +69,14 @@ export default function App() {
   const handlePipelineCompleted = useCallback((payload?: FullAnalysisPayload) => {
     if (payload) {
       setAnalysisPayload(payload);
+      setSelectedParcel(payload.parcel);
+      void refreshSavedAnalyses();
     } else if (isDemoMode) {
       setAnalysisPayload(getDemoAnalysisPayload(selectedParcel?.id));
     }
     setIsAnalyzing(false);
     setPipelineFinished(true);
-  }, [isDemoMode, selectedParcel?.id]);
+  }, [isDemoMode, refreshSavedAnalyses, selectedParcel?.id]);
 
   const handlePipelineFailure = useCallback((message: string) => {
     setIsAnalyzing(false);
@@ -160,7 +183,7 @@ export default function App() {
               {/* Interactive Leaflet Satellite GIS Canvas */}
               <div className="flex-1 h-full relative">
                 <ParcelMap
-                  parcels={INITIAL_PARCELS}
+                  parcels={availableParcels}
                   selectedParcel={selectedParcel}
                   onSelectParcel={(p) => setSelectedParcel(p)}
                   isDrawingMode={isDrawingMode}
@@ -174,12 +197,13 @@ export default function App() {
               <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-md z-20 pointer-events-auto">
                 <SelectedParcelCard
                   parcel={selectedParcel}
+                  parcels={availableParcels}
                   onStartAnalysis={handleStartAnalysis}
                   isAnalyzing={isAnalyzing}
                   isDrawing={isDrawingMode}
                   onToggleDrawing={() => setIsDrawingMode(!isDrawingMode)}
                   isDemoMode={isDemoMode}
-                  onSelectQuickPreset={handleSelectQuickPreset}
+                  onSelectParcel={(parcel) => setSelectedParcel(parcel)}
                 />
               </div>
             </div>
@@ -244,7 +268,7 @@ export default function App() {
           {activeTab === 'assistant' && (
             <div className="w-full h-full overflow-hidden bg-[#070b16]">
               <AICopilotView
-                parcels={INITIAL_PARCELS}
+                parcels={availableParcels}
                 selectedParcel={selectedParcel}
                 onSelectParcel={(p) => setSelectedParcel(p)}
                 onOpenReport={(p) => {
@@ -260,7 +284,7 @@ export default function App() {
           {activeTab === 'practices' && (
             <div className="w-full h-full overflow-y-auto p-4 sm:p-6 lg:p-8 bg-[#070b16]">
               <PracticesView
-                parcels={INITIAL_PARCELS}
+                parcels={availableParcels}
                 selectedParcel={selectedParcel}
                 onSelectParcel={(p) => setSelectedParcel(p)}
                 onOpenReport={(p) => {
@@ -275,9 +299,10 @@ export default function App() {
           {activeTab === 'reports' && (
             <div className="w-full h-full p-4 sm:p-6 lg:p-8 overflow-y-auto bg-[#070b16]">
               <ReportsArchiveView
-                parcels={INITIAL_PARCELS}
-                onOpenReport={(p) => {
-                  setSelectedParcel(p);
+                analyses={savedAnalyses}
+                onOpenReport={(analysis) => {
+                  setSelectedParcel(analysis.parcel);
+                  setAnalysisPayload(analysis);
                   handleOpenReportModal();
                 }}
               />

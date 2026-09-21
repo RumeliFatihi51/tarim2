@@ -1,6 +1,10 @@
 node_modules/
 build/
 dist/
+release/
+release-windows/
+release-final/
+release-v0.1.0/
 coverage/
 .DS_Store
 *.log

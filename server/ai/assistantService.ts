@@ -28,6 +28,7 @@ export class AssistantService {
 
     // Locate parcel either from persistent analysis store or default parcels list
     let storedAnalysis = parcelId ? aiToolRouter.getLatestAnalysis(companyId, parcelId).data : null;
+    const storedHistory = parcelId ? aiToolRouter.getAnalysisHistory(companyId, parcelId).data || [] : [];
     let parcel: Parcel | undefined = storedAnalysis?.parcel;
     if (!parcel && parcelId) {
       parcel = INITIAL_PARCELS.find((p) => p.id === parcelId);
@@ -36,6 +37,13 @@ export class AssistantService {
     const client = this.getClient();
     let parcelContextText = '';
     const evidenceList: string[] = [];
+    const archiveContextText = storedHistory.length
+      ? `\nKAYITLI ANALİZ VE MRV RAPOR GEÇMİŞİ (${storedHistory.length} kayıt):\n${storedHistory.slice(0, 8).map((analysis, index) => {
+          const reportId = analysis.mrvReport?.reportId || 'MRV raporu hazırlanmadı';
+          const date = analysis.persistedAt || analysis.timestamp || analysis.parcel.lastObservation || 'Tarih yok';
+          return `${index + 1}. ${date} — Rapor: ${reportId}; NDVI: ${analysis.calculatedIndices.ndvi}; NDWI: ${analysis.calculatedIndices.ndwi}; NDMI: ${analysis.calculatedIndices.ndmi}`;
+        }).join('\n')}`
+      : '';
 
     if (parcel) {
       const ndviVal = !isNaN(parcel.ndvi) ? parcel.ndvi.toFixed(2) : 'Beklemede';
@@ -55,6 +63,7 @@ ${parcel.alerts?.length ? `- Aktif Uyarılar: ${parcel.alerts.map((a) => a.title
 `;
       if (!isNaN(parcel.ndvi)) evidenceList.push(`Sentinel-2 Ölçümü: NDVI ${ndviVal}, NDWI ${ndwiVal}`);
       if (parcel.crop) evidenceList.push(`Mahsul: ${parcel.crop}, Alan: ${parcel.areaHa} ha`);
+      if (storedHistory.length) evidenceList.push(`Kalıcı arşivde bu parsele ait ${storedHistory.length} analiz/MRV raporu kaydı var.`);
     }
 
     const conversationHistory = history
@@ -68,6 +77,7 @@ ${parcel.alerts?.length ? `- Aktif Uyarılar: ${parcel.alerts.map((a) => a.title
 Aşağıdaki kullanıcı sorusunu bir Kıdemli Ziraat Danışmanı ve Uzaktan Algılama / Tarımsal MRV Uzmanı olarak yanıtla.
 
 ${parcelContextText ? parcelContextText : 'NOT: Kullanıcı henüz belirli bir parsel seçmedi veya genel bir tarım sorusu soruyor. Genel tarım bilgisi, ziraat mühendisliği ve uydu indeksleri perspektifinden eksiksiz yanıt ver.'}
+${archiveContextText}
 
 KONUŞMA GEÇMİŞİ:
 ${conversationHistory || '(Yeni konuşma)'}

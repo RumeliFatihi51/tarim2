@@ -44,11 +44,8 @@ export const AICopilotView: React.FC<AICopilotViewProps> = ({
       content: `Merhaba! Ben TerraSat Tarım AI Ziraat ve Spektral Uzaktan Algılama Asistanıyım. 🛰️🌱\n\nCopernicus Sentinel-2 L2A uydu verileri (NDVI, NDWI, NDMI), sulama takvimi, bitki besleme, su stresi ve hastalık-zararlı önleme konularında sorularınızı yanıtlamaya hazırım.`,
       timestamp: 'Şimdi',
       structured: {
-        answer: `${activeParcel.name} (${activeParcel.crop}) parseli seçili. Aşağıdaki hazır konulardan birini seçebilir veya aklınızdaki soruyu iletebilirsiniz.`,
-        evidence: [
-          `Aktif Parsel: ${activeParcel.name} (${activeParcel.areaHa} ha)`,
-          `Vejetasyon Durumu: NDVI ${activeParcel.ndvi.toFixed(2)}, NDWI ${activeParcel.ndwi.toFixed(2)}`,
-        ],
+        answer: 'Soldaki aktif parsel kartı, seçtiğiniz alanın güncel adını, konumunu ve kaydedilmiş son Sentinel-2 ölçümlerini gösterir. Sorularınız bu bağlamla yanıtlanır.',
+        evidence: [],
         interpretation: 'Tarım araziniz için canlı uydu ve agronomik yapay zekâ servisi devrede.',
         confidence: 'High',
         limitations: [
@@ -56,11 +53,7 @@ export const AICopilotView: React.FC<AICopilotViewProps> = ({
         ],
         recommendedAction: 'Seçili parsel için sulama durumu, gübreleme veya hastalık risklerini analiz etmek için soru sorun.',
       },
-      actions: [
-        { type: 'TRIGGER_ANALYSIS', parcelId: activeParcel.id, label: 'Canlı Uydu Analizini Başlat' },
-        { type: 'OPEN_PARCEL', parcelId: activeParcel.id, label: 'Parseli Haritada Göster' },
-        { type: 'OPEN_MRV_REPORT', parcelId: activeParcel.id, label: 'MRV Raporunu Aç' },
-      ],
+      actions: [],
     },
   ]);
 
