@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+qa/*.png
+qa/*.jpg
+qa/*.zip
+*.blend1

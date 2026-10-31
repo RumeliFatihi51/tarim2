@@ -1,0 +1,67 @@
+name: Build and publish AgroMax
+on:
+  push:
+    branches: [agromax-website]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: agromax-pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      pages_enabled: ${{ steps.pages.outcome == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Read Pages configuration when enabled
+        id: pages
+        uses: actions/configure-pages@v5
+        continue-on-error: true
+      - name: Determine static base
+        id: target
+        env:
+          PAGE_BASE: ${{ steps.pages.outputs.base_path }}
+          PAGE_ORIGIN: ${{ steps.pages.outputs.origin }}
+        run: |
+          node --input-type=module - <<'JS'
+          import {appendFileSync} from 'node:fs';
+          const [owner,repo]=process.env.GITHUB_REPOSITORY.split('/');
+          const root=repo.toLowerCase()===`${owner.toLowerCase()}.github.io`;
+          const base=process.env.PAGE_BASE || (root?'':`/${repo}`);
+          appendFileSync(process.env.GITHUB_OUTPUT,`base=${base}/\norigin=${process.env.PAGE_ORIGIN||''}\n`);
+          JS
+      - run: npm ci
+      - name: Build static pages
+        run: npm run build
+        env:
+          BASE_PATH: ${{ steps.target.outputs.base }}
+          SITE_ORIGIN: ${{ steps.target.outputs.origin }}
+      - name: Check links and scope
+        run: npm run check
+        env:
+          BASE_PATH: ${{ steps.target.outputs.base }}
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: Explain pending hosting setup
+        if: steps.pages.outcome != 'success'
+        run: echo '::warning::Build is ready. Repository owner must enable GitHub Pages with GitHub Actions, then rerun this workflow. Deployment was intentionally skipped.'
+  deploy:
+    if: needs.build.outputs.pages_enabled == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,48 @@
+ERROR Draco mesh compression is not available because library could not be found at /usr/bin/4.3/python/lib/python3.13/site-packages/libextern_draco.so
+05:10:16 | INFO: Starting glTF 2.0 export
+05:10:16 | INFO: Extracting primitive: Mineral stratum 0
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.001
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.002
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.003
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Mineral stratum 1
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.004
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.005
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.006
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.007
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Mineral stratum 2
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.008
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.009
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.010
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.011
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Mineral stratum 3
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.012
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.013
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.014
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Extracting primitive: Contour incision.015
+05:10:16 | INFO: Primitives created: 1
+05:10:16 | INFO: Finished glTF 2.0 export in 0.4689345359802246 s
+
+Blender 4.3.2
+Read blend: "/workspace/sites/agromax/src/scenes/strata.blend"
+
+Blender quit
