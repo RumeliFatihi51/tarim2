@@ -1,0 +1,14 @@
+{
+  "mobileVideo": {
+    "width": 640,
+    "height": 800,
+    "source": "http://localhost:4173/media/filiz-motion-mobile.webm"
+  },
+  "controls": "manual pause/resume, menu pause, offscreen pause, reduced-motion pass",
+  "webgl": {
+    "forwardPixelDifference": 7.919148763020833,
+    "reversePixelDifference": 0,
+    "hiddenFilmPaused": true
+  },
+  "videoFailure": "poster remains visible"
+}

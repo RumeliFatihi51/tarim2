@@ -1,4 +1,4 @@
-# AgroMax — Kurumsal ürün sitesi
+# AgroMax — Cinematic Digital Experience 2.0
 
 **Canlı site: https://agromax-alpha.vercel.app/**
 
@@ -57,10 +57,10 @@ BASE_PATH=/tarim2/ npm run check
 
 ## Görsel üretim ve hareket
 
-- Lisanslı gerçek Toskana fotoğrafı; özgün üç Blender/Cycles renderı, bir Blender kaynaklı GLB.
+- İki yeni özgün konsept görseli; iki gerçek Blender/Cycles animasyon sekansı, sekiz masaüstü/mobil MP4-WebM çıktısı ve yeni Context Loom GLB. Önceki varlıklar kaynak arşivinde korunur.
 - GSAP doğal kaydırmayı izler; scroll kilitleme, pinleme veya zorunlu intro yoktur.
 - S02 masaüstünde görünmeye yaklaşırken gerçek 3D yüklenir. WebGL yoksa, mobilde veya reduced-motion’da poster korunur.
-- 3D yalnız görünürken ve scroll/resize değişiminde render edilir; sayfa kapanışında GPU kaynakları temizlenir. Görünmeyen video yoktur; bu sürümde video kullanılmaz.
+- 3D yalnız görünürken ve scroll/resize değişiminde render edilir; sayfa kapanışında GPU kaynakları temizlenir. Görünmeyen videolar, menü açıkken veya hareket azaltma tercihi etkin olduğunda durur. İki film poster öncelikli ve lazy yüklenir.
 - Görsel üretimini yeniden çalıştırmak için `docs/SCENE_CARDS.md`; dosya bazında haklar için `ASSET_CREDITS.md`.
 
 ## Dosya yapısı
@@ -83,3 +83,14 @@ Kullanıcının açık talimatıyla tarim2 deposunun main dalındaki eski ürün
 Bağlı GitHub entegrasyonu yeni depo oluşturmayı ve Pages etkinleştirmeyi reddetti (`createRepository: Resource not accessible by integration`; Pages create HTTP 403). Pages açılıncaya kadar workflow derleme, test ve artifact üretir; yayını atlar.
 
 Hesap sahibi [Settings → Pages](https://github.com/RumeliFatihi51/tarim2/settings/pages) ekranında Source: **GitHub Actions** seçmelidir. Ardından main dalının son workflow çalışması yeniden çalıştırılabilir. Bu ayar token yetkileriyle değiştirilemediği için çalışan bir Pages URL’si henüz doğrulanmış değildir.
+
+## Cinematic 2.0 üretim dosyaları
+
+- `docs/redesign-v2/PRODUCTION.md`: audit, sekiz konsept karşılaştırması ve gerçek final seçimi.
+- `docs/redesign-v2/REPRODUCE.md`: Blender → OIDN → FFmpeg üretimini yeniden çalıştırma.
+- `docs/redesign-v2/STORYBOARD.jpg`: gerçek render karelerinden kamera çalışması.
+- `src/scenes/context-loom-v2.blend`, `filiz-motion-v2.blend`: gerçek animasyon kaynakları.
+- `public/media/loom*`, `filiz-motion*`: masaüstü/mobil MP4, WebM ve posterler.
+- `qa/v2/`: yeni sürüme ait test, video envanteri, Lighthouse ve medya davranış kanıtları. Önceki QA sonuçları yeni sürümün skoru olarak kullanılmaz.
+
+Kaynak kareler (96 gerçek Cycles renderı) ve temizlenmiş kare dizileri bu çalışma alanında üretildi; Git boyutunu korumak için kare klasörleri dışarıda tutulur. Yeniden üretilebilir `.blend` ve scriptler, nihai video ve posterler depoda bulunur. Video 24 fps çıktıya hareket enterpolasyonu ile dönüştürülmüştür; native 24 fps render iddia edilmez.

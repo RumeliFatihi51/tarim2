@@ -1,0 +1,117 @@
+loom 1 /48 denoised
+loom 2 /48 denoised
+loom 3 /48 denoised
+loom 4 /48 denoised
+loom 5 /48 denoised
+loom 6 /48 denoised
+loom 7 /48 denoised
+loom 8 /48 denoised
+loom 9 /48 denoised
+loom 10 /48 denoised
+loom 11 /48 denoised
+loom 12 /48 denoised
+loom 13 /48 denoised
+loom 14 /48 denoised
+loom 15 /48 denoised
+loom 16 /48 denoised
+loom 17 /48 denoised
+loom 18 /48 denoised
+loom 19 /48 denoised
+loom 20 /48 denoised
+loom 21 /48 denoised
+loom 22 /48 denoised
+loom 23 /48 denoised
+loom 24 /48 denoised
+loom 25 /48 denoised
+loom 26 /48 denoised
+loom 27 /48 denoised
+loom 28 /48 denoised
+loom 29 /48 denoised
+loom 30 /48 denoised
+loom 31 /48 denoised
+loom 32 /48 denoised
+loom 33 /48 denoised
+loom 34 /48 denoised
+loom 35 /48 denoised
+loom 36 /48 denoised
+loom 37 /48 denoised
+loom 38 /48 denoised
+loom 39 /48 denoised
+loom 40 /48 denoised
+loom 41 /48 denoised
+loom 42 /48 denoised
+loom 43 /48 denoised
+loom 44 /48 denoised
+loom 45 /48 denoised
+loom 46 /48 denoised
+loom 47 /48 denoised
+loom 48 /48 denoised
+loom encoded desktop/mobile MP4 and WebM
+filiz-motion 1 /48 denoised
+filiz-motion 2 /48 denoised
+filiz-motion 3 /48 denoised
+filiz-motion 4 /48 denoised
+filiz-motion 5 /48 denoised
+filiz-motion 6 /48 denoised
+filiz-motion 7 /48 denoised
+filiz-motion 8 /48 denoised
+filiz-motion 9 /48 denoised
+filiz-motion 10 /48 denoised
+filiz-motion 11 /48 denoised
+filiz-motion 12 /48 denoised
+filiz-motion 13 /48 denoised
+filiz-motion 14 /48 denoised
+filiz-motion 15 /48 denoised
+filiz-motion 16 /48 denoised
+filiz-motion 17 /48 denoised
+filiz-motion 18 /48 denoised
+filiz-motion 19 /48 denoised
+Traceback (most recent call last):
+  File "/workspace/agromax-main/scripts/finish_films.py", line 34, in <module>
+    finish('loom','loom');finish('filiz-motion','filiz')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/agromax-main/scripts/finish_films.py", line 19, in finish
+    im=Image.open(src).convert('RGB');im.load();break
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/PIL/Image.py", line 1069, in convert
+    self.load()
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/PIL/ImageFile.py", line 392, in load
+    s = read(read_bytes)
+        ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/PIL/PngImagePlugin.py", line 1002, in load_read
+    cid, pos, length = self.png.read()
+                       ^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/PIL/PngImagePlugin.py", line 184, in read
+    raise SyntaxError(msg)
+SyntaxError: broken PNG file (chunk b'\xec\x89\xe6D')
+loom encoded desktop/mobile MP4 and WebM
+filiz-motion 20 /48 denoised
+filiz-motion 21 /48 denoised
+filiz-motion 22 /48 denoised
+filiz-motion 23 /48 denoised
+filiz-motion 24 /48 denoised
+filiz-motion 25 /48 denoised
+filiz-motion 26 /48 denoised
+filiz-motion 27 /48 denoised
+filiz-motion 28 /48 denoised
+filiz-motion 29 /48 denoised
+filiz-motion 30 /48 denoised
+filiz-motion 31 /48 denoised
+filiz-motion 32 /48 denoised
+filiz-motion 33 /48 denoised
+filiz-motion 34 /48 denoised
+filiz-motion 35 /48 denoised
+filiz-motion 36 /48 denoised
+filiz-motion 37 /48 denoised
+filiz-motion 38 /48 denoised
+filiz-motion 39 /48 denoised
+filiz-motion 40 /48 denoised
+filiz-motion 41 /48 denoised
+filiz-motion 42 /48 denoised
+filiz-motion 43 /48 denoised
+filiz-motion 44 /48 denoised
+filiz-motion 45 /48 denoised
+filiz-motion 46 /48 denoised
+filiz-motion 47 /48 denoised
+filiz-motion 48 /48 denoised
+filiz-motion encoded desktop/mobile MP4 and WebM

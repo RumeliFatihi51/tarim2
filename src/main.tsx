@@ -3,6 +3,7 @@ import {App} from './App';
 import type {PageId} from './content/site';
 import {initMotion} from './motion/scenes';
 import './styles/global.css';
+import './styles/experience.css';
 const root=document.getElementById('root')!;
 const base=import.meta.env.BASE_URL;const segment=location.pathname.slice(base.length).replace(/^\/+|\/+$/g,'');
 const known=['home','platform','teknoloji','filiz','cozumler','hakkimizda','iletisim','gizlilik','kullanim','gorsel-kredileri','404'];

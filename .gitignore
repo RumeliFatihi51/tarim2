@@ -5,3 +5,8 @@ qa/*.png
 qa/*.jpg
 qa/*.zip
 *.blend1
+src/assets/production/*-frames/
+qa/v2/*.png
+qa/v2/*.jpg
+src/assets/production/*-clean/
+*.blend1

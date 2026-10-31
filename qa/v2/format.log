@@ -1,0 +1,13 @@
+src/pages/Editorial.tsx 604ms
+src/pages/Filiz.tsx 68ms
+src/pages/Home.tsx 104ms
+src/pages/Platform.tsx 19ms
+src/pages/Technology.tsx 86ms
+src/components/Film.tsx 106ms
+src/components/ui.tsx 15ms
+src/layout/Layout.tsx 96ms
+src/sections/Cinematics.tsx 35ms
+src/styles/experience.css 589ms
+src/content/experience.ts 15ms
+src/motion/scenes.ts 103ms
+src/scenes/mineral.ts 154ms

@@ -1,0 +1,15 @@
+{
+  "routes": 33,
+  "screenshots": 29,
+  "a11yPages": 20,
+  "a11yFailures": [],
+  "consoleErrors": [],
+  "functional": {
+    "menu": "7 links, focus trap, Escape, focus return, scroll restoration pass",
+    "deepLinks": "direct load, menu navigation, reload and browser back pass",
+    "reducedMotion": "static poster; no WebGL canvas",
+    "noJavaScript": "complete prerendered content and footer navigation pass",
+    "glbFailure": "poster stays available when GLB download fails",
+    "webgl": "real GLB loaded and rendered"
+  }
+}

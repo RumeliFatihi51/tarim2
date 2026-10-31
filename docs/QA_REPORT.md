@@ -1,64 +1,43 @@
-# AgroMax / doğrulama raporu
+# AgroMax 2.0 / yayın öncesi doğrulama
 
-31 Ekim 2026. Bu rapor gerçek yerel üretim ve Chromium çıktıları içindir. Bağımsız tasarım değerlendirmesi veya canlı ürün doğrulaması değildir.
+Bu rapor yeni sürümün gerçek üretim çıktıları içindir. V1 ölçümleri `docs/redesign-v2/QA_BASELINE_V1.md` içinde ayrı tutulur.
 
-## Derleme ve statik kontrol
+## Gerçek üretim
 
-- `npm run build`: başarılı. TypeScript, Vite üretim paketi, 11 bağımsız HTML sayfası.
-- `npm run check`: başarılı. 370 yerel bağlantı / dosya başvurusu, her sayfada tek H1, benzersiz title/description, Open Graph, doğru görsel/font yolları, 1.5 MB altında her medya dosyası.
-- `/dashboard`, `/app`, `/login`, `/demo`, hesap, form, chatbot ve uydu API’si bulunmuyor.
-- Site dağıtımı yaklaşık 3.3 MB; tüm Three.js/GLB içeriği ilk ekranın zorunlu yükü değil. Three modülü lazy yüklenir. Vite, bu modülün sıkıştırılmamış boyutu 500 KB üzerinde olduğu için bilgilendirici chunk uyarısı verir; build başarısız değildir. Three chunk gzip yaklaşık 159 KB, ana paket gzip yaklaşık 132 KB.
+- İki özgün, açıkça kavramsal olduğu belirtilen görsel üretildi: arazi ve mineral arşiv. Bunlar gerçek uydu veya parsel analizi değildir.
+- Yeni Context Loom geometrisi ve GLB üretildi. Filiz için kamera/yüzey/ışık koreografili ayrı `.blend` animasyonu oluşturuldu.
+- İki sekans için toplam 96 gerçek Cycles karesi render edildi, OIDN ile denoise uygulandı ve 24 fps web çıktısına enterpole edildi.
+- Sekiz doğrulanmış video: iki film × masaüstü/mobil × MP4/WebM. Toplam video boyutu yaklaşık 2.18 MB. Desktop 1024×640 ve 1024×768; mobil 640×800. Dosya bazında codec, süre ve boyut `qa/v2/media-inventory.json` içinde.
+- Video üretimi gerçek kare sekansıdır; bir görseli CSS ile oynatmak video diye raporlanmaz. Ana sayfadaki arazi görseli ise sabit konsept sanatıdır ve arazi uçuş filmi olduğu iddia edilmez.
 
-## Tarayıcı kontrolleri
+## Build ve tarayıcı
 
-Kanıt: `qa/results.json`, `qa/browser.cjs` ve `qa/*.png`.
+- `npm run build` ve `npm run check`: başarılı. 11 statik HTML, 391 yerel bağlantı/medya başvurusu, benzersiz metadata ve kapsam kontrolü.
+- 33 rota/genişlik kontrolü; bozuk görsel veya yatay taşma yok.
+- 20 axe WCAG taraması; otomatik ihlal yok.
+- Brifteki masaüstü, laptop, tablet ve telefon ölçülerinde hero görüntüleri alındı; 320 px taşma kontrolü ayrıca yapıldı.
+- Mobil menü, focus trap, Escape, odak dönüşü, geri gezinme, alt sayfa yenileme ve JavaScript kapalı içerik test edildi.
+- Gerçek mobil video 640×800 kaynaktan oynadı; manuel durdurma/devam, menü açıkken durma, ekran dışındayken durma ve reduced-motion davranışı başarılı.
+- Video indirmesi bilinçli engellendiğinde poster görünür kaldı. GLB engellendiğinde film/poster yedeği korundu.
+- Gerçek 3D kamera, geometri, ışık ve materyal ilerlemesi kaydırmayla test edildi. İleri yönde görüntü değişti, aynı scroll konumuna dönüldüğünde karşılaştırma farkı sıfır oldu. WebGL altında gizlenen film duruyor.
+- Kapsam: uygulama, login, dashboard, indeks seçici, veri API’si veya chatbot eklenmedi. Filiz planlanan özellik olarak kalır.
 
-- 11 rota × 1440 / 390 / 320 genişlik = **33 başarılı rota/genişlik kontrolü**. Yatay taşma ve bozuk görsel yok.
-- Ana sayfa ve yardımcı sayfalarda 1440 ile 390 genişliklerde **20 axe WCAG A/AA/2.1 AA taraması, sıfır otomatik ihlal**.
-- 29 kayıtlı ana ekran ve tam sayfa görüntüsü; ayrıca sanat yönü panosu ve gerçek WebGL ekranı.
-- Brifteki 1440×900, 1920×1080, 1024×768, 768×1024, 390×844 ve 360×800 boyutlarında hero görüntüleri. Ek olarak 320×800.
-- Mobil menü: yedi bağlantı, odak döngüsü, Escape ile kapanma, düğmeye odak dönüşü, body scroll kilidinin temizlenmesi başarılı.
-- Doğrudan URL, menüden geçiş, alt sayfayı yenileme ve tarayıcı geri davranışı başarılı.
-- JavaScript kapalı Teknoloji sayfası: temel içerik ve footer gezinmesi erişilebilir.
-- Reduced-motion: WebGL yüklenmiyor; sabit poster mevcut.
-- GLB yüklemesi bilinçli engellendiğinde poster mevcut ve boş canvas gösterilmiyor.
-- Masaüstünde gerçek Blender GLB yüklenip render edildi.
-- Kaydedilen sayfa çalışma zamanı hatası: **0**.
+## Mobil Lighthouse — production preview
 
-Ek proje alt yolu kontrolü: `/tarim2/` temelinde beş ana sayfanın doğrudan yüklenmesi, yenilenmesi ve görselleri de başarılı (`qa/base-path-results.json`).
-
-## Mobil Lighthouse
-
-Kanıt: `qa/lighthouse-mobile.json`. Yerel production preview, Chromium, Lighthouse mobil benzetimi. Bu saha Core Web Vitals ölçümü değildir.
-
-| Kategori / ölçüm | Sonuç |
+| Ölçüm | Sonuç |
 |---|---|
-| Performans | 99 |
+| Performans | 97 |
 | Erişilebilirlik | 100 |
 | İyi uygulamalar | 100 |
 | SEO | 100 |
-| LCP | 1.6 s |
+| LCP | 2.6 s |
 | CLS | 0 |
-| Total Blocking Time | 80 ms |
+| TBT | 0 ms |
 
-İlk ölçümde kanıt adımlarının düşük opaklığı metin kontrastını düşürüyordu. Bu davranış kaldırıldı ve ölçüm yenilendi. Puanlar ortam, CPU ve önbelleğe göre değişir. Lighthouse INP için gerçek kullanım örneklemesi sağlamaz; canlı INP doğrulanmış gibi raporlanmaz. Menü etkileşimi fonksiyonel olarak test edildi.
+Bunlar Chromium yerel laboratuvar sonuçlarıdır; gerçek kullanıcı INP veya tüm fiziksel telefonlarda ölçüm yapılmış gibi sunulmaz. LCP 2.5 s iyi eşiğinin biraz üzerindedir; skor 97 olsa da mükemmel Core Web Vitals iddiası yoktur.
 
-## Sayfa bazında iç görsel inceleme
+## Görsel inceleme ve sınırlar
 
-| Sayfa | Özgün yaklaşım / ilk ekran | Mobil kırpım | Kapsam ve gerçeklik |
-|---|---|---|---|
-| Ana sayfa | Büyük sans/italik kompozisyon, doğal arazi kadrajı, optik gözlem grafiği; ardından farklı editoryal sahneler | Başlıklar ve CTA ayrı ritimde; ayrı dikey fotoğraf kırpımı | Ürün arayüzü, ölçüm veya sahte parsel yok. |
-| Platform | Fotoğraf ağırlıklı giriş ve altı adımlı tipografik akış; optik zaman sahnesi | Liste iki satırlı düzenlenir; sahne sadeleşir | İş akışı hedef olarak anlatılır; grafik veya canlı analiz yok. |
-| Teknoloji | Mineral/porselen sahne, kaynak satırları ve yöntem kataloğu | Malzeme sahnesi dikeye uyarlanır, katalog okunabilir kalır | İndeks/bant/AOT-WVP ayrımı; entegrasyonlar tamamlandı diye sunulmaz. |
-| Filiz | Büyük özel italik isim, özgün cam/porselen heykel ve bağlam çizgileri | Heykel metnin ardından kare kadraja geçer | Planlanan özellik; sohbet, mesaj alanı veya çevrimiçi iddiası yok. |
-| Çözümler | Farklı ihtiyaç soruları üzerine geniş editoryal satırlar | Görsel şerit ve senaryolar dikey okunur | Hedef kullanım alanları; müşteri hikâyesi veya başarı metriği yok. |
-| Hakkımızda | Büyük tipografik giriş, manzara ve üç temel ilke | Ayrı satır kırılımı ve dikey fotoğraf | Ekip, yatırım, kuruluş veya ortaklık uydurulmadı. |
-| İletişim | Sade tipografi, gerçek kanal durumu ve görüşmeye hazırlık | Okunaklı 16 px gövde ve tek sütun | Kullanıcı “şimdilik bunlar yok” dediği için adres ve form uydurulmadı. |
+Ana sayfa tam ekran arazi kompozisyonu, CGI inset ve gerçek zamanlı imza sahnesiyle değişti. Platform filmik materyal anlatısı, Teknoloji ayrı mineral/camera çalışması, Filiz ayrı film ve büyük dik tipografi, Çözümler asimetrik malzeme kompozisyonu, Hakkımızda manifesto ölçeği, İletişim sade ve dürüst kanal durumu ile değerlendirildi. Menü, marka işareti, alt gezinme ve geçişler birlikte yeniden ele alındı.
 
-Görsel kalite için keyfî 100/100 puanı verilmedi. Bu tablo, somut ekranlara dayanan iç incelemedir; haricî jüri değerlendirmesi değildir. Tüm sayfaların aynı kart/hero şablonundan oluşmaması, açık palet ve serbest gezinme korunmuştur.
-
-## Yayın durumu ve sınırlamalar
-
-GitHub entegrasyonu yeni depo oluşturmayı ve Pages etkinleştirmeyi reddetti. İlk teslim ayrı site dalındaydı. Kullanıcının sonraki açık talimatıyla `tarim2` main dalındaki dosyalar yeni siteyle değiştirildi; önceki ürün tam olarak `backup/product-before-agromax-20261031` dalında korundu. Gerçek push ve CI sonucu `DELIVERY_STATUS.md` dosyasında belirtilir. Hesap sahibinin Pages’i etkinleştirmesi bu token ile yapılamadı.
-
-Blender/Cycles gerçek renderlar ve bir GLB üretildi. Video üretimi yapılmadı; sahneler fotoğraf/CGI/WebGL/SVG/GSAP hibritidir. Ticari font ve fotoğraf hakları envanterde kayıtlıdır. Ürün API’si, canlı Filiz sürümü, saha performansı ve bilimsel analiz doğruluğu bu görevde doğrulanmadı.
+Referans sitelere hem metin hem tarayıcı erişimi denendi; tarayıcı görsel yakalama zaman aşımına uğradı. Motion kaliteleri bütünüyle incelenmiş veya kodları kopyalanmış gibi sunulmaz. Sekiz konseptin tamamı uygulanmış değildir; seçilen ve elenen prodüksiyonlar `PRODUCTION.md` son tablosunda açıkça ayrılır. Kaliteye keyfî 100/100 tasarım puanı verilmedi.

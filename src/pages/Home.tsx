@@ -1,16 +1,144 @@
-import {uiLists,uiLabels} from '../content/section-copy';
-import {uiTexts} from '../content/interface';
-import {copy,principles} from '../content/site';
-import {Eyebrow,Link} from '../components/ui';
-import {Observation,Strata,FilizScene,Evidence} from '../sections/Cinematics';
-export function Home({base}:{base:string}){const c=copy.home;return <>
-<section className="home-hero wrap"><div className="hero-kicker"><Eyebrow>{c.eyebrow}</Eyebrow><span>{uiTexts.home_001}</span></div><div className="home-hero-grid"><h1>{c.title[0]}<br/><em>{c.title[1]}</em></h1><div className="hero-intro"><p>{c.intro}</p><Link solid href={base+'platform/'}>{uiTexts.home_002}</Link></div></div><Observation base={base}/></section>
-<section className="thesis wrap"><Eyebrow num="01">{uiTexts.home_003}</Eyebrow><div><h2>{c.thesis.split('\n').map((s,i)=><span key={s}>{i===1?<em>{s}</em>:s}<br/></span>)}</h2><div className="thesis-bottom"><p>{c.thesisBody}</p><Link href={base+'platform/'}>{uiTexts.home_004}</Link></div></div></section>
-<div className="wrap"><Strata base={base}/></div>
-<section className="filiz-feature wrap"><div className="filiz-feature-art"><FilizScene base={base}/></div><div className="filiz-feature-copy"><Eyebrow num="04">{uiTexts.home_005}</Eyebrow><h2>{uiTexts.home_006}<br/><em>{uiTexts.home_007}</em></h2><p>{uiTexts.home_008}</p><Link href={base+'filiz/'}>{uiTexts.home_009}</Link><span className="subtle-note">{uiTexts.home_010}</span></div></section>
-<div className="wrap"><Evidence base={base}/></div>
-<section className="principles wrap"><Eyebrow>{uiTexts.home_011}</Eyebrow><div>{principles.map((p,i)=><article key={p.title}><span>{uiTexts.home_012}{i+1}</span><h3>{p.title}</h3><p>{p.text}</p></article>)}</div><Link href={base+'hakkimizda/'}>{uiTexts.home_013}</Link></section>
-<Next base={base} label={uiLabels.home_001} title={<>{uiTexts.home_014}<br/><em>{uiTexts.home_015}</em></>} href="cozumler/" cta={uiLabels.home_002}/>
-</>}
-import type {ReactNode} from 'react';
-export function Next({base,label,title,href,cta}:{base:string;label:string;title:ReactNode;href:string;cta:string}){return <section className="next-section wrap"><Eyebrow>{label}</Eyebrow><div><h2>{title}</h2><Link href={base+href} solid>{cta}</Link></div></section>}
+import { experience as e } from "../content/experience";
+import { principles } from "../content/site";
+import { Eyebrow, Link, Media } from "../components/ui";
+import { Film } from "../components/Film";
+import type { ReactNode } from "react";
+export function Home({ base }: { base: string }) {
+  return (
+    <>
+      <section className="hero-v2">
+        <Media base={base} name="terrain" alt={e.hero.caption} eager />
+        <div className="hero-v2-shade" />
+        <div className="hero-v2-top">
+          <Eyebrow>{e.hero.tag}</Eyebrow>
+          <span>AGROMAX — DİJİTAL TARIM</span>
+        </div>
+        <div className="hero-v2-title">
+          <h1>
+            {e.hero.lines.map((s, i) => (
+              <span key={s} className={`hero-line line-${i}`}>
+                {s}
+              </span>
+            ))}
+          </h1>
+          <div className="hero-v2-aside">
+            <div className="hero-preview">
+              <Film base={base} name="loom" />
+            </div>
+            <p>{e.hero.body}</p>
+            <Link href={base + "platform/"} solid>
+              {e.hero.cta}
+            </Link>
+            <Link href={base + "teknoloji/"}>{e.hero.secondary}</Link>
+          </div>
+        </div>
+        <div className="hero-v2-bottom">
+          <a href="#perspektif">
+            ↓ <span>{e.hero.scroll}</span>
+          </a>
+          <span>{e.hero.caption}</span>
+        </div>
+      </section>
+      <section id="perspektif" className="intro-v2 wrap">
+        <Eyebrow num="01">{e.intro.tag}</Eyebrow>
+        <h2>
+          {e.intro.title.split("\n").map((s) => (
+            <span key={s}>{s}</span>
+          ))}
+        </h2>
+        <div>
+          <p>{e.intro.body}</p>
+          <Link href={base + "hakkimizda/"}>{e.intro.link}</Link>
+        </div>
+      </section>
+      <section className="signature-v2">
+        <div className="signature-stage">
+          <div className="signature-visual strata-art" data-v2-loom>
+            <Film base={base} name="loom" />
+            <span className="art-caption">{e.loom.caption}</span>
+          </div>
+          <div className="signature-copy">
+            <Eyebrow num="02">{e.loom.tag}</Eyebrow>
+            <h2>
+              {e.loom.title.split("\n").map((s) => (
+                <span key={s}>{s}</span>
+              ))}
+            </h2>
+            <p>{e.loom.body}</p>
+            <Link href={base + "teknoloji/"}>{e.loom.link}</Link>
+            <div className="signature-progress" aria-hidden="true">
+              <i />
+              <span>GÖZLEM → BAĞLAM</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="filiz-v2 wrap">
+        <div className="filiz-v2-copy">
+          <Eyebrow num="03">{e.filiz.tag}</Eyebrow>
+          <h2>
+            {e.filiz.title.split("\n").map((s) => (
+              <span key={s}>{s}</span>
+            ))}
+          </h2>
+          <p>{e.filiz.body}</p>
+          <Link href={base + "filiz/"}>{e.filiz.link}</Link>
+        </div>
+        <Film base={base} name="filiz-motion" />
+      </section>
+      <section className="home-principles-v2 wrap">
+        <Eyebrow num="04">GÖZLEMDEN KARARA</Eyebrow>
+        {principles.map((p, i) => (
+          <article key={p.title}>
+            <span>0{i + 1}</span>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </article>
+        ))}
+      </section>
+      <section className="closing-v2">
+        <Media
+          base={base}
+          name="archive"
+          alt="Özgün mineral ve bilgi katmanları konsept çalışması."
+        />
+        <div>
+          <Eyebrow>{e.closing.tag}</Eyebrow>
+          <h2>
+            {e.closing.title.split("\n").map((s) => (
+              <span key={s}>{s}</span>
+            ))}
+          </h2>
+          <Link href={base + "cozumler/"} solid>
+            {e.closing.link}
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
+export function Next({
+  base,
+  label,
+  title,
+  href,
+  cta,
+}: {
+  base: string;
+  label: string;
+  title: ReactNode;
+  href: string;
+  cta: string;
+}) {
+  return (
+    <section className="next-section wrap">
+      <Eyebrow>{label}</Eyebrow>
+      <div>
+        <h2>{title}</h2>
+        <Link href={base + href} solid>
+          {cta}
+        </Link>
+      </div>
+    </section>
+  );
+}

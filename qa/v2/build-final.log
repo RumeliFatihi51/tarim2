@@ -1,0 +1,25 @@
+
+> agromax-editorial-site@1.0.0 build
+> tsc --noEmit && vite build && tsx scripts/prerender.tsx
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 58 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                    0.47 kB │ gzip:   0.34 kB
+dist/assets/style-CR1VcbrW.css    65.53 kB │ gzip:  13.14 kB
+dist/assets/index-N0Cr_dxV.js    391.06 kB │ gzip: 131.78 kB
+dist/assets/mineral-434NmfYg.js  630.53 kB │ gzip: 158.98 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.42s
+Prerendered 11 pages. JavaScript-free content and deep links ready. Base: /
+
+> agromax-editorial-site@1.0.0 check
+> tsx scripts/check.ts
+
+PASS: 11 statically rendered pages, 391 local references, unique metadata, valid media budget and locked product-site scope.

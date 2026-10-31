@@ -1,8 +1,172 @@
-import {uiLists,uiLabels} from '../content/section-copy';
-import {uiTexts} from '../content/interface';
-import {Media,Eyebrow,Link} from '../components/ui';
-export function Observation({base,compact=false}:{base:string;compact?:boolean}){return <figure className={`observation cinematic ${compact?'compact':''}`} data-scene="observation"><div className="observation-frame"><Media base={base} name="earth" alt={uiTexts.cinematics_001} eager/><div className="observation-shade"/><div className="optical-reticle" aria-hidden="true"><span/><span/><i/><b/></div><div className="observation-type" aria-hidden="true"><span>{uiTexts.cinematics_002}</span><span>{uiTexts.cinematics_003}</span><span>{uiTexts.cinematics_004}</span></div><span className="image-corner">{uiTexts.cinematics_005}</span><div className="image-scene-index" aria-hidden="true">{uiTexts.cinematics_006}</div></div><figcaption><span>{uiTexts.cinematics_007}</span><span>{uiTexts.cinematics_008}</span></figcaption></figure>}
-export function Strata({base,full=false}:{base:string;full?:boolean}){return <section className={`strata-section cinematic ${full?'full':''}`} data-scene="strata"><div className="strata-copy"><Eyebrow num="02">{uiTexts.cinematics_009}</Eyebrow><h2>{uiTexts.cinematics_010}<br/><em>{uiTexts.cinematics_011}</em></h2><p>{uiTexts.cinematics_012}</p><Link href={base+'teknoloji/'}>{uiTexts.cinematics_013}</Link></div><div className="strata-art"><Media base={base} name="strata" alt={uiTexts.cinematics_014}/><div className="strata-folio" aria-hidden="true"><span>{uiTexts.cinematics_015}</span><span>{uiTexts.cinematics_016}</span><span>{uiTexts.cinematics_017}</span></div><svg className="strata-orbit" viewBox="0 0 600 600" fill="none" aria-hidden="true"><ellipse cx="300" cy="300" rx="260" ry="210" stroke="currentColor" strokeWidth=".7" strokeDasharray="2 8"/></svg><span className="art-caption">{uiTexts.cinematics_018}</span></div></section>}
-export function FilizScene({base,hero=false}:{base:string;hero?:boolean}){return <div className={`filiz-art cinematic ${hero?'hero-art':''}`} data-scene="filiz"><Media base={base} name="filiz" alt={uiTexts.cinematics_019} eager={hero}/><svg viewBox="0 0 800 800" className="filiz-orchestration" fill="none" aria-hidden="true"><path className="context-path p1" d="M80 200C250 150 180 650 400 450S650 200 720 210"/><path className="context-path p2" d="M90 590C100 290 550 150 640 300S560 710 400 450"/><path className="context-path p3" d="M90 420C210 670 650 680 700 400S470 190 400 450"/><circle cx="80" cy="200" r="4"/><circle cx="720" cy="210" r="4"/><circle cx="90" cy="590" r="4"/><circle cx="700" cy="400" r="4"/></svg><div className="context-labels" aria-hidden="true"><span>{uiTexts.cinematics_020}</span><span>{uiTexts.cinematics_021}</span><span>{uiTexts.cinematics_022}</span><span>{uiTexts.cinematics_023}</span></div><span className="art-caption">{uiTexts.cinematics_024}</span></div>}
-export function Temporal({base}:{base:string}){return <section className="temporal cinematic" data-scene="temporal"><div className="temporal-header"><Eyebrow num="03">{uiTexts.cinematics_025}</Eyebrow><p>{uiTexts.cinematics_026}<br/>{uiTexts.cinematics_027}</p></div><div className="temporal-stage"><Media base={base} name="earth" alt={uiTexts.cinematics_028}/><div className="temporal-lens"><Media base={base} name="earth" alt=""/></div><div className="time-lines" aria-hidden="true"><i/><i/><i/><i/><i/><i/><i/><i/><i/></div><h2>{uiTexts.cinematics_029}<br/><em>{uiTexts.cinematics_030}</em></h2><span className="temporal-note">{uiTexts.cinematics_031}</span></div><div className="temporal-footer"><span>{uiTexts.cinematics_032}</span><p>{uiTexts.cinematics_033}</p></div></section>}
-export function Evidence({base}:{base:string}){return <section className="evidence cinematic" data-scene="evidence"><div className="evidence-intro"><Eyebrow num="05">{uiTexts.cinematics_034}</Eyebrow><h2>{uiTexts.cinematics_035}<br/><em>{uiTexts.cinematics_036}</em></h2><p>{uiTexts.cinematics_037}</p></div><div className="evidence-visual"><Media base={base} name="evidence" alt={uiTexts.cinematics_038}/><svg viewBox="0 0 1000 100" className="evidence-path" aria-hidden="true"><path d="M0 50C150 50 160 10 300 10S450 90 550 50 700 50 1000 50" fill="none" stroke="currentColor" strokeWidth="1.5"/></svg></div><ol className="evidence-steps">{uiLists.cinematics_001.map((s,i)=><li key={s}><span>{uiTexts.cinematics_039}{i+1}</span>{s}</li>)}</ol></section>}
+import { Film } from "../components/Film";
+import { uiLists, uiLabels } from "../content/section-copy";
+import { uiTexts } from "../content/interface";
+import { Media, Eyebrow, Link } from "../components/ui";
+export function Observation({
+  base,
+  compact = false,
+}: {
+  base: string;
+  compact?: boolean;
+}) {
+  return (
+    <figure
+      className={`observation cinematic ${compact ? "compact" : ""}`}
+      data-scene="observation"
+    >
+      <div className="observation-frame">
+        <Media base={base} name="earth" alt={uiTexts.cinematics_001} eager />
+        <div className="observation-shade" />
+        <div className="optical-reticle" aria-hidden="true">
+          <span />
+          <span />
+          <i />
+          <b />
+        </div>
+        <div className="observation-type" aria-hidden="true">
+          <span>{uiTexts.cinematics_002}</span>
+          <span>{uiTexts.cinematics_003}</span>
+          <span>{uiTexts.cinematics_004}</span>
+        </div>
+        <span className="image-corner">{uiTexts.cinematics_005}</span>
+        <div className="image-scene-index" aria-hidden="true">
+          {uiTexts.cinematics_006}
+        </div>
+      </div>
+      <figcaption>
+        <span>{uiTexts.cinematics_007}</span>
+        <span>{uiTexts.cinematics_008}</span>
+      </figcaption>
+    </figure>
+  );
+}
+export function Strata({
+  base,
+  full = false,
+}: {
+  base: string;
+  full?: boolean;
+}) {
+  return (
+    <section
+      className={`strata-section cinematic ${full ? "full" : ""}`}
+      data-scene="strata"
+    >
+      <div className="strata-copy">
+        <Eyebrow num="02">{uiTexts.cinematics_009}</Eyebrow>
+        <h2>
+          {uiTexts.cinematics_010}
+          <br />
+          <em>{uiTexts.cinematics_011}</em>
+        </h2>
+        <p>{uiTexts.cinematics_012}</p>
+        <Link href={base + "teknoloji/"}>{uiTexts.cinematics_013}</Link>
+      </div>
+      <div className="strata-art">
+        <Media base={base} name="strata" alt={uiTexts.cinematics_014} />
+        <div className="strata-folio" aria-hidden="true">
+          <span>{uiTexts.cinematics_015}</span>
+          <span>{uiTexts.cinematics_016}</span>
+          <span>{uiTexts.cinematics_017}</span>
+        </div>
+        <svg
+          className="strata-orbit"
+          viewBox="0 0 600 600"
+          fill="none"
+          aria-hidden="true"
+        >
+          <ellipse
+            cx="300"
+            cy="300"
+            rx="260"
+            ry="210"
+            stroke="currentColor"
+            strokeWidth=".7"
+            strokeDasharray="2 8"
+          />
+        </svg>
+        <span className="art-caption">{uiTexts.cinematics_018}</span>
+      </div>
+    </section>
+  );
+}
+export function FilizScene({
+  base,
+  hero = false,
+}: {
+  base: string;
+  hero?: boolean;
+}) {
+  return (
+    <div
+      className={`filiz-art cinematic ${hero ? "hero-art" : ""}`}
+      data-scene="filiz-film"
+    >
+      <Film base={base} name="filiz-motion" eager={hero} />
+      <span className="art-caption">Filiz / Bağlam üzerine görsel anlatı</span>
+    </div>
+  );
+}
+export function Temporal({ base }: { base: string }) {
+  return (
+    <section className="temporal cinematic v2-temporal">
+      <div className="temporal-header">
+        <Eyebrow num="03">GÖZLEMİ BİR ARADA DÜŞÜNMEK</Eyebrow>
+        <p>
+          Kaynak, zaman ve bağlam.
+          <br />
+          Aynı çerçevede.
+        </p>
+      </div>
+      <Film base={base} name="loom" />
+      <div className="temporal-footer">
+        <span>KAYNAK · GÖZLEM · BAĞLAM</span>
+        <p>
+          Bu kompozisyon verinin bağlama dönüşmesini temsil eder; gerçek parsel
+          veya zamansal ölçüm göstermez.
+        </p>
+      </div>
+    </section>
+  );
+}
+export function Evidence({ base }: { base: string }) {
+  return (
+    <section className="evidence cinematic" data-scene="evidence">
+      <div className="evidence-intro">
+        <Eyebrow num="05">{uiTexts.cinematics_034}</Eyebrow>
+        <h2>
+          {uiTexts.cinematics_035}
+          <br />
+          <em>{uiTexts.cinematics_036}</em>
+        </h2>
+        <p>{uiTexts.cinematics_037}</p>
+      </div>
+      <div className="evidence-visual">
+        <Media base={base} name="evidence" alt={uiTexts.cinematics_038} />
+        <svg
+          viewBox="0 0 1000 100"
+          className="evidence-path"
+          aria-hidden="true"
+        >
+          <path
+            d="M0 50C150 50 160 10 300 10S450 90 550 50 700 50 1000 50"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+        </svg>
+      </div>
+      <ol className="evidence-steps">
+        {uiLists.cinematics_001.map((s, i) => (
+          <li key={s}>
+            <span>
+              {uiTexts.cinematics_039}
+              {i + 1}
+            </span>
+            {s}
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}

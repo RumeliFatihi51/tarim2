@@ -1,0 +1,142 @@
+[
+  {
+    "file": "public/media/loom.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1024,
+        "height": 640,
+        "r_frame_rate": "24/1",
+        "nb_frames": "139"
+      }
+    ],
+    "format": {
+      "duration": "5.791667",
+      "size": "436727"
+    }
+  },
+  {
+    "file": "public/media/loom.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "vp9",
+        "width": 1024,
+        "height": 640,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.792000",
+      "size": "348538"
+    }
+  },
+  {
+    "file": "public/media/loom-mobile.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 800,
+        "r_frame_rate": "24/1",
+        "nb_frames": "139"
+      }
+    ],
+    "format": {
+      "duration": "5.791667",
+      "size": "379073"
+    }
+  },
+  {
+    "file": "public/media/loom-mobile.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "vp9",
+        "width": 640,
+        "height": 800,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.792000",
+      "size": "328267"
+    }
+  },
+  {
+    "file": "public/media/filiz-motion.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1024,
+        "height": 768,
+        "r_frame_rate": "24/1",
+        "nb_frames": "139"
+      }
+    ],
+    "format": {
+      "duration": "5.791667",
+      "size": "252474"
+    }
+  },
+  {
+    "file": "public/media/filiz-motion.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "vp9",
+        "width": 1024,
+        "height": 768,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.792000",
+      "size": "114013"
+    }
+  },
+  {
+    "file": "public/media/filiz-motion-mobile.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 800,
+        "r_frame_rate": "24/1",
+        "nb_frames": "139"
+      }
+    ],
+    "format": {
+      "duration": "5.791667",
+      "size": "212539"
+    }
+  },
+  {
+    "file": "public/media/filiz-motion-mobile.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "vp9",
+        "width": 640,
+        "height": 800,
+        "r_frame_rate": "24/1"
+      }
+    ],
+    "format": {
+      "duration": "5.792000",
+      "size": "105582"
+    }
+  }
+]

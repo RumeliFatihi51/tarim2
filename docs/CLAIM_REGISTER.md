@@ -32,3 +32,6 @@ Tarih: 31 Ekim 2026. Ana kaynak: kullanıcı tarafından sağlanan `AGROMAX_GPT6
 ## Kullanılmayan malzeme
 
 Eski deponun `src/demo/sampleData.ts` ve `src/data/parcels.ts` içeriği, gösterge değerleri, sahte parselleri, kontrol paneli ve ekranları bu siteye aktarılmadı. Diamond Challenge dosyaları bu oturumda sağlanmadı; incelenmiş sayılmadı. Ürün kodunun testleri bu görev kapsamında çalıştırılmadı; site testleri ürünün bilimsel performansını doğrulamaz.
+
+## Cinematic 2.0 update
+The redesign adds only conceptual brand artwork and real CGI animation. It introduces no new product capability claims. The generated landscape is not a factual satellite observation and the material sculptures are not analytic outputs. Filiz remains a planned in-product assistant. Existing scientific caveats, unknown integration status, and absent contact/app URL remain in force.

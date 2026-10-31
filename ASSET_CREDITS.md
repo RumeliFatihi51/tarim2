@@ -15,3 +15,11 @@ Kontrol tarihi: 31 Ekim 2026. Kullanılan her varlık aşağıda listelenir. Kul
 Üretim: Blender 4.3.2, Cycles 96 örnek, fiziksel materyaller ve özgün area light düzeni. WebGL için Three.js / GLTFLoader / RoomEnvironment kullanılır; kütüphane lisansları npm paketlerinde yer alır. GSAP yalnız site hareketi için kullanılır. Rakip site, NASA/ESA logosu, doğrulanmamış stock/3D varlık veya AI tarafından üretilmiş fotoğraf kullanılmadı.
 
 Temsili sahneler açıkça sanat çalışması diye belirtilir. Kaynak sağlayıcı veya yazılım kütüphanesi bir AgroMax iş ortağı olarak sunulmaz.
+
+## Cinematic 2.0 additions — 31 October 2026
+
+- `terrain.webp`, `terrain-mobile.webp`: original conceptual landscape artwork generated with OpenAI image generation for this project. Original PNG: `src/assets/production/terrain-art.png`. Not a satellite photograph, verified location, or AgroMax observation. No external stock or competitor image was supplied as reference input.
+- `archive.webp`, `archive-mobile.webp`: original generated mineral/porcelain/glass editorial composition, source `src/assets/production/archive-art.png`. Conceptual art, not a scientific illustration or measured data. Both outputs were visually inspected; no third-party brand asset is present. Use is governed by the OpenAI terms applicable to the user's generated output; no CC0 claim is made.
+- `context-loom.glb`, `src/scenes/context-loom-v2.blend`: original 9-surface sculptural atlas, authored parametrically in Blender, with thickness, individually animated surfaces and bronze contours. No external mesh or texture used.
+- `loom*.mp4/webm`, `filiz-motion*.mp4/webm` and corresponding posters: actual Cycles animation frame renders; camera and object/light motion. Desktop and portrait mobile encodings; exact outputs verified in production report after encoding.
+- Intel Open Image Denoise 2.5.1: Apache 2.0 licensed production tool (https://github.com/RenderKit/oidn); downloaded official Linux binary used offline to denoise Blender renders. The library is not shipped to browsers. Generated frame sequences are reproducible from the `.blend` and Python sources and are excluded from Git to avoid hundreds of redundant large files.

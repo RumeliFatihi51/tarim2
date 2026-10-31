@@ -1,0 +1,378 @@
+{
+  "date": "2026-10-31T07:03:43.855Z",
+  "routes": [
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "platform/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "filiz/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "cozumler/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "iletisim/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "gizlilik/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "kullanim/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "404.html",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "platform/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "teknoloji/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "filiz/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "cozumler/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "iletisim/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "gizlilik/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "kullanim/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "404.html",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "platform/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "teknoloji/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "filiz/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "cozumler/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "iletisim/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "gizlilik/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "kullanim/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    },
+    {
+      "route": "404.html",
+      "width": 320,
+      "status": 200,
+      "overflow": false,
+      "images": "pass"
+    }
+  ],
+  "screenshots": [
+    "qa/v2/home-1440.png",
+    "qa/v2/platform-1440.png",
+    "qa/v2/teknoloji-1440.png",
+    "qa/v2/filiz-1440.png",
+    "qa/v2/cozumler-1440.png",
+    "qa/v2/hakkimizda-1440.png",
+    "qa/v2/iletisim-1440.png",
+    "qa/v2/gizlilik-1440.png",
+    "qa/v2/kullanim-1440.png",
+    "qa/v2/gorsel-kredileri-1440.png",
+    "qa/v2/404.html-1440.png",
+    "qa/v2/home-390.png",
+    "qa/v2/platform-390.png",
+    "qa/v2/teknoloji-390.png",
+    "qa/v2/filiz-390.png",
+    "qa/v2/cozumler-390.png",
+    "qa/v2/hakkimizda-390.png",
+    "qa/v2/iletisim-390.png",
+    "qa/v2/gizlilik-390.png",
+    "qa/v2/kullanim-390.png",
+    "qa/v2/gorsel-kredileri-390.png",
+    "qa/v2/404.html-390.png",
+    "qa/v2/hero-1440x900.png",
+    "qa/v2/hero-1920x1080.png",
+    "qa/v2/hero-1024x768.png",
+    "qa/v2/hero-768x1024.png",
+    "qa/v2/hero-390x844.png",
+    "qa/v2/hero-360x800.png",
+    "qa/v2/hero-320x800.png"
+  ],
+  "consoleErrors": [],
+  "accessibility": [
+    {
+      "route": "/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "platform/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "filiz/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "cozumler/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "iletisim/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "gizlilik/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "kullanim/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "platform/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "teknoloji/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "filiz/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "cozumler/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "iletisim/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "gizlilik/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "kullanim/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 390,
+      "violations": []
+    }
+  ],
+  "functional": {
+    "menu": "7 links, focus trap, Escape, focus return, scroll restoration pass",
+    "deepLinks": "direct load, menu navigation, reload and browser back pass",
+    "reducedMotion": "static poster; no WebGL canvas",
+    "noJavaScript": "complete prerendered content and footer navigation pass",
+    "glbFailure": "poster stays available when GLB download fails",
+    "webgl": "real GLB loaded and rendered"
+  }
+}
