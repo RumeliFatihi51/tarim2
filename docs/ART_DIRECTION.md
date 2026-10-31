@@ -1,3 +1,5 @@
+> V1 arşiv belgesi. Güncel Cinematic 2.0 üretimi ve final seçimleri `docs/redesign-v2/PRODUCTION.md` içinde belgelenir. Aşağıdaki eski video/üretim durumu yeni sürüm için geçerli değildir.
+
 # Sanat yönetimi ve araştırma
 
 ## Karşılaştırılan üç yön

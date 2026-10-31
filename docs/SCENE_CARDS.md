@@ -1,3 +1,5 @@
+> V1 arşiv belgesi. Güncel Cinematic 2.0 üretimi ve final seçimleri `docs/redesign-v2/PRODUCTION.md` içinde belgelenir. Aşağıdaki eski video/üretim durumu yeni sürüm için geçerli değildir.
+
 # Sinematik sahne kartları
 
 Tüm sahneler ürün tanıtımı içindir. Gerçek uydu analizi veya uygulama arayüzü değildir. Yerel render aracı Blender 4.3.2; sahne üretim kodu `scripts/render_scenes.py`, düzenlenebilir kaynaklar `src/scenes/*.blend`.
