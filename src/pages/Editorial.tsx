@@ -1,34 +1,42 @@
-import { uiLists, uiLabels } from "../content/section-copy";
-import { uiTexts } from "../content/interface";
 import { useState } from "react";
-import { copy, audiences, principles, legal } from "../content/site";
-import { Eyebrow, Link, Media, Arrow } from "../components/ui";
+import { audiences, principles, legal } from "../content/site";
+import { uiLists } from "../content/section-copy";
+import { Eyebrow, Link, Media, Arrow, Mark, Icon } from "../components/ui";
 import { siteConfig } from "../config/site";
 import { Next } from "./Home";
 export function Solutions({ base }: { base: string }) {
-  const c = copy.cozumler;
   return (
     <>
-      <section className="solutions-hero wrap">
-        <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h1>
-          {c.title[0]}
-          <br />
-          <em>{c.title[1]}</em>
-        </h1>
-        <div className="solutions-hero-bottom">
-          <p>{c.intro}</p>
-          <span>{uiTexts.editorial_001}</span>
+      <section className="solutions-hero">
+        <div className="wrap solutions-heading">
+          <Eyebrow>KULLANIM ALANLARI</Eyebrow>
+          <h1>
+            Sahanın sorularına
+            <br />
+            <span>daha geniş bir bakış.</span>
+          </h1>
+          <p>
+            Uydu gözlemini sahadaki bilgiyle birlikte değerlendirmek isteyen
+            profesyoneller için tasarlanıyor.
+          </p>
         </div>
-        <div className="solutions-strip">
-          <Media base={base} name="archive" alt={uiTexts.editorial_002} eager />
-          <span>{uiTexts.editorial_003}</span>
+        <div className="solutions-panorama">
+          <Media
+            base={base}
+            name="agriculture"
+            eager
+            alt="Tarım alanlarının, zeytinliklerin ve doğal su yolunun havadan kavramsal görünümü."
+          />
+          <div className="panorama-label">
+            <span>TARIMSAL PEYZAJ</span>
+            <span>Kavramsal görsel · Analiz çıktısı değildir.</span>
+          </div>
         </div>
       </section>
-      <section className="audiences wrap">
-        <Eyebrow>{uiTexts.editorial_004}</Eyebrow>
+      <section className="audiences wrap section-space">
+        <Eyebrow>FARKLI İHTİYAÇLAR, ORTAK BİR ÇERÇEVE</Eyebrow>
         {audiences.map((a) => (
-          <article key={a.n}>
+          <article key={a.n} id={"alan-" + a.n}>
             <span className="audience-number">{a.n}</span>
             <div>
               <h2>{a.title}</h2>
@@ -40,165 +48,192 @@ export function Solutions({ base }: { base: string }) {
             </div>
           </article>
         ))}
+        <p className="source-note">
+          Bu örnekler hedeflenen kullanım alanlarıdır. Müşteri, tamamlanmış
+          proje veya doğrulanmış başarı hikâyesi değildir.
+        </p>
       </section>
-      <div className="audience-note wrap">
-        <p>{uiTexts.editorial_005}</p>
-      </div>
       <Next
         base={base}
-        label={uiLabels.editorial_001}
+        label="ÜRÜN YAKLAŞIMINI YAKINDAN TANI"
         title={
           <>
-            {uiTexts.editorial_006}
+            Parselden başla.
             <br />
-            <em>{uiTexts.editorial_007}</em>
+            Bütünü gör.
           </>
         }
         href="platform/"
-        cta={uiLabels.editorial_002}
+        cta="Platformu keşfet"
       />
     </>
   );
 }
 export function About({ base }: { base: string }) {
-  const c = copy.hakkimizda;
   return (
     <>
       <section className="about-hero wrap">
-        <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h1>
-          {c.title[0]}
-          <br />
-          <em>{c.title[1]}</em>
-        </h1>
-        <div className="about-hero-bottom">
-          <span>{uiTexts.editorial_008}</span>
-          <p>{c.intro}</p>
+        <div className="about-hero-copy">
+          <Eyebrow>AGROMAX HAKKINDA</Eyebrow>
+          <h1>
+            Toprağa yakın.
+            <br />
+            <span>Veriye bağlı.</span>
+          </h1>
+          <p>
+            Bir uydu görüntüsünü, sahadaki insan için nasıl daha anlamlı hâle
+            getirebiliriz?
+          </p>
         </div>
+        <figure className="about-photo">
+          <Media
+            base={base}
+            name="canopy"
+            eager
+            alt="Buğday başaklarından tarla sıralarına uzanan kavramsal, tarla seviyesinde bir görünüm."
+          />
+          <figcaption>GÖZLEMİN MERKEZİNDE YERYÜZÜ VAR.</figcaption>
+        </figure>
       </section>
-      <figure className="about-image">
-        <Media base={base} name="terrain" alt={uiTexts.editorial_009} eager />
-        <figcaption>{uiTexts.editorial_010}</figcaption>
-      </figure>
-      <section className="about-story wrap">
-        <Eyebrow>{uiTexts.editorial_011}</Eyebrow>
+      <section className="about-story wrap section-space">
+        <Eyebrow>ÇIKIŞ NOKTAMIZ</Eyebrow>
         <div>
           <h2>
-            {c.statement.split("\n")[0]}
+            Daha fazla veri değil,
             <br />
-            <em>{c.statement.split("\n")[1]}</em>
+            daha anlamlı bir bakış.
           </h2>
-          <p>{c.body}</p>
-          <p>{uiTexts.editorial_012}</p>
+          <p className="lead">
+            Uydu tabanlı tarımsal gözlem ve karar desteği üzerine bir yazılım
+            yaklaşımı geliştiriyoruz.
+          </p>
+          <p>
+            Parsel geçmişini, gözlem kalitesini ve uzman değerlendirmesini bir
+            arada düşünmek bu yaklaşımın merkezinde. Gözlemden değerlendirmeye
+            uzanan her adımın anlaşılır ve izlenebilir olmasını önemsiyoruz.
+          </p>
         </div>
       </section>
-      <section className="about-principles wrap">
-        <Eyebrow>{uiTexts.editorial_013}</Eyebrow>
-        {principles.map((p, i) => (
-          <article key={p.title}>
-            <span>
-              {uiTexts.editorial_014}
-              {i + 1}
-            </span>
-            <h2>{p.title}</h2>
-            <p>{p.text}</p>
-          </article>
-        ))}
+      <section className="about-principles">
+        <div className="wrap">
+          <Eyebrow>YAKLAŞIMIMIZI BELİRLEYEN İLKELER</Eyebrow>
+          {principles.map((p, i) => (
+            <article key={p.title}>
+              <span>0{i + 1}</span>
+              <h2>{p.title}</h2>
+              <p>{p.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
-      <section className="about-note wrap">
-        <Eyebrow>{uiTexts.editorial_015}</Eyebrow>
-        <p>{uiTexts.editorial_016}</p>
+      <section className="about-vision wrap section-space">
+        <div className="about-mark" aria-hidden="true">
+          <Mark />
+        </div>
+        <div>
+          <Eyebrow>GELECEĞE BAKIŞ</Eyebrow>
+          <h2>
+            Teknolojiyle gözlemle.
+            <br />
+            Bilgiyle değerlendir.
+          </h2>
+          <p>
+            AgroMax’ın hedefi, uzaktan algılama verilerini sahadaki sorularla
+            ilişkilendiren bir değerlendirme kültürüne katkı sağlamak.
+            Göstergenin sınırını bilmek, en az göstergeyi hesaplamak kadar
+            değerli.
+          </p>
+        </div>
       </section>
       <Next
         base={base}
-        label={uiLabels.editorial_003}
+        label="GÖZLEMİN ARKASINDA"
         title={
           <>
-            {uiTexts.editorial_017}
+            Bu yaklaşımın
             <br />
-            <em>{uiTexts.editorial_018}</em>
+            bilimsel temeli.
           </>
         }
         href="teknoloji/"
-        cta={uiLabels.editorial_004}
+        cta="Teknolojiyi incele"
       />
     </>
   );
 }
 export function Contact({ base }: { base: string }) {
-  const c = copy.iletisim;
   const [copied, setCopied] = useState(false);
   const email = siteConfig.contactEmail;
   return (
     <>
       <section className="contact-hero wrap">
-        <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h1>
-          {c.title[0]}
-          <br />
-          <em>{c.title[1]}</em>
-        </h1>
-        <div className="contact-grid">
-          <p className="contact-intro">{c.intro}</p>
-          <div className="contact-channel">
-            <span className="eyebrow">{uiTexts.editorial_019}</span>
-            {email ? (
-              <>
-                <a className="email-link" href={`mailto:${email}`}>
-                  {email}
-                  <Arrow diagonal />
-                </a>
-                <button
-                  onClick={() =>
-                    navigator.clipboard
-                      .writeText(email)
-                      .then(() => setCopied(true))
-                      .catch(() => setCopied(false))
-                  }
-                >
-                  {copied ? "E-posta kopyalandı" : "E-postayı kopyala"}
-                </button>
-                <span role="status">
-                  {copied ? "Adres panoya kopyalandı." : ""}
-                </span>
-              </>
-            ) : (
-              <>
-                <h2>{uiTexts.editorial_020}</h2>
-                <p>{uiTexts.editorial_021}</p>
-              </>
-            )}
-          </div>
+        <div>
+          <Eyebrow>İLETİŞİM</Eyebrow>
+          <h1>
+            Başlangıç noktası,
+            <br />
+            <span>sahadaki sorunuz.</span>
+          </h1>
+          <p>
+            Tarımsal gözlem, parsel takibi veya olası bir çalışma alanı. AgroMax
+            hakkında bir görüşmeye, ihtiyacınızı anlayarak başlamak isteriz.
+          </p>
+        </div>
+        <div className="contact-channel">
+          <Icon name="satellite" />
+          <Eyebrow>İLETİŞİM KANALI</Eyebrow>
+          {email ? (
+            <>
+              <a href={"mailto:" + email} className="email-link">
+                {email}
+                <Arrow diagonal />
+              </a>
+              <button
+                type="button"
+                onClick={() =>
+                  navigator.clipboard
+                    .writeText(email)
+                    .then(() => setCopied(true))
+                    .catch(() => setCopied(false))
+                }
+              >
+                {copied ? "Kopyalandı" : "Adresi kopyala"}
+              </button>
+              <span role="status">
+                {copied ? "E-posta adresi panoya kopyalandı." : ""}
+              </span>
+            </>
+          ) : (
+            <>
+              <h2>
+                Yakında
+                <br />
+                buradan ulaşabilirsin.
+              </h2>
+              <p>
+                Doğrulanmış iletişim adresi henüz paylaşılmadı. Kanal hazır
+                olduğunda bu sayfada yayımlanacak.
+              </p>
+              <Link href={base + "platform/"}>Bu sırada platformu keşfet</Link>
+            </>
+          )}
         </div>
       </section>
-      <section className="contact-preparation wrap">
-        <Eyebrow>{uiTexts.editorial_022}</Eyebrow>
+      <section className="contact-preparation wrap section-space">
+        <Eyebrow>GÖRÜŞMEYE HAZIRLIK</Eyebrow>
         <h2>
-          {uiTexts.editorial_023}
+          İhtiyacını anlamak için
           <br />
-          <em>{uiTexts.editorial_024}</em>
+          üç başlangıç noktası.
         </h2>
-        <div>
+        <div className="vision-grid">
           {uiLists.editorial_005.map(([t, p], i) => (
             <article key={t}>
-              <span>
-                {uiTexts.editorial_025}
-                {i + 1}
-              </span>
+              <span className="item-index">0{i + 1}</span>
               <h3>{t}</h3>
               <p>{p}</p>
             </article>
           ))}
-        </div>
-      </section>
-      <section className="contact-bottom wrap">
-        <span className="contact-symbol" aria-hidden="true">
-          {uiTexts.editorial_026}
-        </span>
-        <div>
-          <h2>{uiTexts.editorial_027}</h2>
-          <p>{uiTexts.editorial_028}</p>
-          <Link href={base + "platform/"}>{uiTexts.editorial_029}</Link>
         </div>
       </section>
     </>
@@ -211,107 +246,115 @@ export function Legal({
   base: string;
   type: "privacy" | "terms";
 }) {
-  const sections = legal[type];
   return (
     <section className="legal-page wrap">
-      <Eyebrow>{uiTexts.editorial_030}</Eyebrow>
+      <Eyebrow>AGROMAX / BİLGİLENDİRME</Eyebrow>
       <h1>{type === "privacy" ? "Gizlilik." : "Kullanım bilgileri."}</h1>
-      <p className="legal-date">{uiTexts.editorial_031}</p>
+      <p className="source-note">Son güncelleme: 31 Ekim 2026</p>
       <div className="legal-content">
-        {sections.map(([t, p]) => (
+        {legal[type].map(([t, p]) => (
           <article key={t}>
             <h2>{t}</h2>
             <p>{p}</p>
           </article>
         ))}
       </div>
-      <Link href={base + "iletisim/"}>{uiTexts.editorial_032}</Link>
+      <Link href={base + "iletisim/"}>İletişim bilgileri</Link>
     </section>
   );
 }
 export function Credits({ base }: { base: string }) {
   return (
     <section className="legal-page wrap">
-      <Eyebrow>{uiTexts.editorial_033}</Eyebrow>
-      <h1>{uiTexts.editorial_034}</h1>
-      <p className="legal-intro">{uiTexts.editorial_035}</p>
+      <Eyebrow>ÜRETİM / KAYNAK / LİSANS</Eyebrow>
+      <h1>Görsel kredileri.</h1>
+      <p className="lead">
+        Bu sitedeki sinematik sahneler ürünü anlatan kavramsal
+        prodüksiyonlardır. AgroMax tarafından analiz edilmiş parselleri veya
+        sahip olunan bir uyduyu göstermez.
+      </p>
       <div className="legal-content">
         <article>
-          <h2>{uiTexts.editorial_036}</h2>
-          <p>{uiTexts.editorial_037}</p>
+          <h2>Özgün uydu ve arazi prodüksiyonu</h2>
+          <p>
+            Gözlem uydusu modeli, hücreli güneş panelleri, optik sensör,
+            antenler, malzemeler ve kamera yolları bu proje için Blender ile
+            üretildi. İki gerçek Cycles görüntü dizisi, ayrı masaüstü ve mobil
+            MP4/WebM filmlerine dönüştürüldü. Uydu belirli bir görev aracının
+            kopyası değildir. Arazi görüntüsü OpenAI görsel üretimiyle
+            oluşturulmuş kavramsal bir peyzajdır; gerçek bir konum veya ölçüm
+            iddiası taşımaz.
+          </p>
+        </article>
+        <article>
+          <h2>Yeryüzü dokusu</h2>
+          <p>
+            NASA Visible Earth, Blue Marble: Next Generation, Aralık 2004
+            küresel renk dokusu. NASA Earth Observatory; Reto Stöckli, NASA
+            Goddard Space Flight Center. Yalnızca yeryüzünü resmetmek amacıyla
+            kullanılır. NASA’nın AgroMax’ı desteklediği veya bir ortaklık
+            bulunduğu ima edilmez.
+          </p>
           <a
-            href="https://unsplash.com/photos/aerial-view-of-green-trees-and-brown-field-during-daytime-haO04L8LoaU"
+            className="text-link"
+            href="https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/"
             target="_blank"
             rel="noreferrer"
-            className="text-link"
           >
-            {uiTexts.editorial_038}
+            NASA kaynak kaydı
             <Arrow diagonal />
           </a>
           <a
-            href="https://unsplash.com/license"
+            className="text-link"
+            href="https://www.nasa.gov/nasa-brand-center/images-and-media/"
             target="_blank"
             rel="noreferrer"
-            className="text-link"
           >
-            {uiTexts.editorial_039}
-            <Arrow diagonal />
-          </a>
-        </article>
-        <article>
-          <h2>{uiTexts.editorial_040}</h2>
-          <p>{uiTexts.editorial_041}</p>
-        </article>
-        <article>
-          <h2>{uiTexts.editorial_042}</h2>
-          <p>{uiTexts.editorial_043}</p>
-        </article>
-        <article>
-          <h2>{uiTexts.editorial_044}</h2>
-          <p>{uiTexts.editorial_045}</p>
-          <a
-            href="https://github.com/google/fonts/tree/main/ofl/manrope"
-            target="_blank"
-            rel="noreferrer"
-            className="text-link"
-          >
-            {uiTexts.editorial_046}
-            <Arrow diagonal />
-          </a>
-          <a
-            href="https://github.com/google/fonts/tree/main/ofl/cormorantgaramond"
-            target="_blank"
-            rel="noreferrer"
-            className="text-link"
-          >
-            {uiTexts.editorial_047}
+            NASA görsel kullanım ilkeleri
             <Arrow diagonal />
           </a>
         </article>
         <article>
-          <h2>{uiTexts.editorial_048}</h2>
-          <p>{uiTexts.editorial_049}</p>
+          <h2>Yazı karakteri</h2>
+          <p>
+            Instrument Sans — The Instrument Sans Project Authors, SIL Open Font
+            License 1.1. Türkçe karakterleri içeren değişken yazı tipi siteden
+            sunulur.
+          </p>
+          <a className="text-link" href={base + "fonts/InstrumentSans-OFL.txt"}>
+            Font lisansı
+            <Arrow diagonal />
+          </a>
+        </article>
+        <article>
+          <h2>Bilimsel kaynaklar</h2>
+          <p>
+            Sentinel ve Landsat açıklamaları Copernicus ile USGS’nin resmî
+            dokümantasyonuna dayanır. Kaynak adları ortaklık veya canlı
+            entegrasyon iddiası değildir. Bağlantılar Teknoloji sayfasındadır.
+          </p>
+          <Link href={base + "teknoloji/"}>Teknoloji ve kaynaklar</Link>
         </article>
       </div>
-      <Link href={base}>{uiTexts.editorial_050}</Link>
+      <Link href={base}>Ana sayfaya dön</Link>
     </section>
   );
 }
 export function NotFound({ base }: { base: string }) {
   return (
     <section className="not-found wrap">
-      <Eyebrow>{uiTexts.editorial_051}</Eyebrow>
+      <Eyebrow>AGROMAX / 404</Eyebrow>
       <span className="not-found-number" aria-hidden="true">
-        {uiTexts.editorial_052}
+        404
       </span>
       <h1>
-        {uiTexts.editorial_053}
+        Bu koordinatta
         <br />
-        <em>{uiTexts.editorial_054}</em>
+        bir sayfa yok.
       </h1>
-      <p>{uiTexts.editorial_055}</p>
+      <p>Aradığın sayfa taşınmış veya bağlantı değişmiş olabilir.</p>
       <Link href={base} solid>
-        {uiTexts.editorial_056}
+        Ana sayfaya dön
       </Link>
     </section>
   );

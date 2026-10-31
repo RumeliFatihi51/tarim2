@@ -1,43 +1,35 @@
-# AgroMax 2.0 / yayın öncesi doğrulama
+# Orbital / Güncel QA raporu
 
-Bu rapor yeni sürümün gerçek üretim çıktıları içindir. V1 ölçümleri `docs/redesign-v2/QA_BASELINE_V1.md` içinde ayrı tutulur.
+31 Ekim 2026. Önceki tasarım veya ölçümler bu sürümün sonucu olarak kullanılmadı.
 
-## Gerçek üretim
+## Doğrulanan ziyaretçi akışı
+Ziyaretçi ürün tanıtımına girer; uydu/arazi prodüksiyonlarını görüntüler, menü veya normal bağlantılarla yedi ana sayfayı gezer. Metinler ve yerel varlıklar statik HTML'den gelir. Analiz API'si, hesap veya sohbet bulunmaz.
 
-- İki özgün, açıkça kavramsal olduğu belirtilen görsel üretildi: arazi ve mineral arşiv. Bunlar gerçek uydu veya parsel analizi değildir.
-- Yeni Context Loom geometrisi ve GLB üretildi. Filiz için kamera/yüzey/ışık koreografili ayrı `.blend` animasyonu oluşturuldu.
-- İki sekans için toplam 96 gerçek Cycles karesi render edildi, OIDN ile denoise uygulandı ve 24 fps web çıktısına enterpole edildi.
-- Sekiz doğrulanmış video: iki film × masaüstü/mobil × MP4/WebM. Toplam video boyutu yaklaşık 2.18 MB. Desktop 1024×640 ve 1024×768; mobil 640×800. Dosya bazında codec, süre ve boyut `qa/v2/media-inventory.json` içinde.
-- Video üretimi gerçek kare sekansıdır; bir görseli CSS ile oynatmak video diye raporlanmaz. Ana sayfadaki arazi görseli ise sabit konsept sanatıdır ve arazi uçuş filmi olduğu iddia edilmez.
+## Sonuçlar
 
-## Build ve tarayıcı
-
-- `npm run build` ve `npm run check`: başarılı. 11 statik HTML, 391 yerel bağlantı/medya başvurusu, benzersiz metadata ve kapsam kontrolü.
-- 33 rota/genişlik kontrolü; bozuk görsel veya yatay taşma yok.
-- 20 axe WCAG taraması; otomatik ihlal yok.
-- Brifteki masaüstü, laptop, tablet ve telefon ölçülerinde hero görüntüleri alındı; 320 px taşma kontrolü ayrıca yapıldı.
-- Mobil menü, focus trap, Escape, odak dönüşü, geri gezinme, alt sayfa yenileme ve JavaScript kapalı içerik test edildi.
-- Gerçek mobil video 640×800 kaynaktan oynadı; manuel durdurma/devam, menü açıkken durma, ekran dışındayken durma ve reduced-motion davranışı başarılı.
-- Video indirmesi bilinçli engellendiğinde poster görünür kaldı. GLB engellendiğinde film/poster yedeği korundu.
-- Gerçek 3D kamera, geometri, ışık ve materyal ilerlemesi kaydırmayla test edildi. İleri yönde görüntü değişti, aynı scroll konumuna dönüldüğünde karşılaştırma farkı sıfır oldu. WebGL altında gizlenen film duruyor.
-- Kapsam: uygulama, login, dashboard, indeks seçici, veri API’si veya chatbot eklenmedi. Filiz planlanan özellik olarak kalır.
-
-## Mobil Lighthouse — production preview
-
-| Ölçüm | Sonuç |
+| Kontrol | Gerçek sonuç |
 |---|---|
-| Performans | 97 |
-| Erişilebilirlik | 100 |
-| İyi uygulamalar | 100 |
-| SEO | 100 |
-| LCP | 2.6 s |
-| CLS | 0 |
-| TBT | 0 ms |
+| TypeScript, Vite, prerender | Geçti. 11 bağımsız HTML, tek H1, benzersiz metadata. |
+| Alt yol | `/tarim2/` derlemesi ve 371 yerel referans kontrolü geçti; ardından kök production derlemesi yeniden üretildi. |
+| Yerel referanslar ve kapsam | 371 bağlantı/dosya referansı; bozuk yerel dosya, sahte form veya uygulama rotası yok. |
+| Responsive sayfalar | 1440, 768, 390 ve 320 px; 44 sayfa/genişlik kontrolü. Yatay taşma yok. |
+| Otomatik erişilebilirlik | 21 axe taraması; WCAG 2 A/AA ve 2.1 AA etiketlerinde 0 ihlal. |
+| Menü | Tab ve Shift+Tab döngüsü, Escape, odağın tetikleyiciye dönmesi, alt sayfa geçişi, yenileme ve geri gezinme geçti. |
+| JavaScript kapalı | Yedi ana sayfanın gerçek HTML içeriği ve normal alt menü bağlantıları erişilebilir. |
+| Medya | 12 davranış kontrolü; gerçek mobil WebM, MP4 yedeği, bağımsız arazi filmi, durdurma, menü/görünürlük/tercih duraklatmaları, kırık medya poster yedeği, GLB hatasında gerçek film, gerçek 3D kamera ve responsive GPU temizliği geçti. |
+| Video dosyaları | İki özgün film; sekiz kodlama. H.264 / VP9, 24 fps, 160 kare, yaklaşık 6.667 s. Mobil 576×720. |
+| Gerçek kaynaklar | İki paketli, animasyon timeline'lı Blender dosyası; özgün GLB, kaynak PNG/JPEG ve üretim scriptleri. |
 
-Bunlar Chromium yerel laboratuvar sonuçlarıdır; gerçek kullanıcı INP veya tüm fiziksel telefonlarda ölçüm yapılmış gibi sunulmaz. LCP 2.5 s iyi eşiğinin biraz üzerindedir; skor 97 olsa da mükemmel Core Web Vitals iddiası yoktur.
+Ham kayıtlar: `qa/v3/browser-results.json`, `media-results.json`, `assets.json`.
 
-## Görsel inceleme ve sınırlar
+## Mobil Lighthouse / Yerel production derlemesi
 
-Ana sayfa tam ekran arazi kompozisyonu, CGI inset ve gerçek zamanlı imza sahnesiyle değişti. Platform filmik materyal anlatısı, Teknoloji ayrı mineral/camera çalışması, Filiz ayrı film ve büyük dik tipografi, Çözümler asimetrik malzeme kompozisyonu, Hakkımızda manifesto ölçeği, İletişim sade ve dürüst kanal durumu ile değerlendirildi. Menü, marka işareti, alt gezinme ve geçişler birlikte yeniden ele alındı.
+`qa/v3/lighthouse-mobile.json`: Performans **96**, erişilebilirlik **100**, best practices **100**, SEO **100**. LCP **2.8 s**, CLS **0**, TBT **0 ms**. Ölçüm Chromium/Lighthouse'un mobil ağ ve CPU simülasyonuyla, kodlama/render işleri bittikten sonra yapıldı. Bunlar gerçek kullanıcı saha verisi veya canlı Vercel gecikmesi değildir.
 
-Referans sitelere hem metin hem tarayıcı erişimi denendi; tarayıcı görsel yakalama zaman aşımına uğradı. Motion kaliteleri bütünüyle incelenmiş veya kodları kopyalanmış gibi sunulmaz. Sekiz konseptin tamamı uygulanmış değildir; seçilen ve elenen prodüksiyonlar `PRODUCTION.md` son tablosunda açıkça ayrılır. Kaliteye keyfî 100/100 tasarım puanı verilmedi.
+WebGL yalnız büyük ekranlarda yüklenir. Model yaklaşık 130 KB; Three.js sahne modülü gzip yaklaşık 168 KB. Sekiz film varyantının toplamı 10,324,899 bayttır; bir ziyaretçi bu sekiz dosyanın tamamını indirmez. Cihaz ve codec'e uygun tek sürüm, sahne görünürken yüklenir.
+
+## Kamera kanıtı
+Gerçek WebGL canvas görüntüsü durdurulduğunda piksel farkı 0. İleri scroll kamera kadrajını belirgin değiştirir; geri scroll kadrajı başlangıca yaklaştırır. Bağımsız sakin idle yayı yürüdüğü için geri dönüş ekran görüntüsünün her pikselinin aynı olduğu iddia edilmez. Sayısal görüntü farkları `media-results.json` içindedir.
+
+## Sınırlar
+Fiziksel iOS/Android cihazlar veya Safari laboratuvarı kullanılmadı. Mobil/tablet testleri gerçek Chromium'da viewport emülasyonudur. MP4 yedeği Chromium'da WebM isteği engellenerek test edildi; bu Safari sertifikasyonu değildir. WebGL testleri Chromium/SwiftShader ile gerçek geometri ve shader yürütür; fiziksel cihaz FPS garantisi verilmez. Axe ve Lighthouse puanları kapsamlı erişilebilirlik sertifikası değildir. Saha verisi veya gerçek ürünün bilimsel doğruluğu bu tanıtım sitesi görevinin konusu değildir.

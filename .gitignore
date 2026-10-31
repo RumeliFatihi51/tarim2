@@ -10,3 +10,6 @@ qa/v2/*.png
 qa/v2/*.jpg
 src/assets/production/*-clean/
 *.blend1
+qa/v3/*.png
+qa/v3/*.jpg
+__pycache__/

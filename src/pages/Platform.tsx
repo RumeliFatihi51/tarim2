@@ -1,88 +1,143 @@
-import { uiLists, uiLabels } from "../content/section-copy";
-import { uiTexts } from "../content/interface";
-import { copy, workflow, future } from "../content/site";
-import { Eyebrow, Link, Media, SectionHeading } from "../components/ui";
-import { Temporal, Evidence } from "../sections/Cinematics";
+import { workflow, future } from "../content/site";
+import { Eyebrow, Link, Icon } from "../components/ui";
+import { Landscape } from "../components/Cinematic";
 import { Next } from "./Home";
 export function Platform({ base }: { base: string }) {
-  const c = copy.platform;
   return (
     <>
-      <section className="platform-hero wrap">
-        <Eyebrow>{c.eyebrow}</Eyebrow>
-        <div className="platform-hero-heading">
+      <section className="page-intro wrap">
+        <Eyebrow>AGROMAX PLATFORMU</Eyebrow>
+        <div className="page-intro-grid">
           <h1>
-            {c.title[0]}
+            Her parseli
             <br />
-            <em>{c.title[1]}</em>
+            <span>kendi bağlamında.</span>
           </h1>
-          <p>{c.intro}</p>
+          <div>
+            <p className="lead">
+              Uydu görüntüsünden anlamlı bir değerlendirmeye giden yol, parselin
+              hikâyesini bilmekle başlar.
+            </p>
+            <p>
+              AgroMax; gözlemi, spektral göstergeleri, zamanı ve uzman bilgisini
+              aynı çerçevede ele alan bir ürün yaklaşımı geliştiriyor.
+            </p>
+            <Link href="#urun-yaklasimi">Nasıl bir yaklaşım?</Link>
+          </div>
         </div>
-        <div className="platform-photo">
-          <Media base={base} name="terrain" alt={uiTexts.platform_001} eager />
-          <span className="platform-photo-text">{uiTexts.platform_002}</span>
-          <span className="photo-label">{uiTexts.platform_003}</span>
-        </div>
-        <p className="source-note">{c.note}</p>
       </section>
-      <section className="workflow wrap">
-        <SectionHeading
-          eyebrow={uiLabels.platform_001}
-          title={
-            <>
-              {uiTexts.platform_004}
-              <br />
-              <em>{uiTexts.platform_005}</em>
-            </>
-          }
-          body={uiLabels.platform_002}
-        />
+      <div className="platform-landscape wrap">
+        <Landscape base={base} eager />
+        <div className="figure-subline">
+          <span>GÖZLEMİN ÖTESİNDE BİR PERSPEKTİF</span>
+          <span>Kaynak · Zaman · Bağlam</span>
+        </div>
+      </div>
+      <section
+        className="workflow-section wrap section-space"
+        id="urun-yaklasimi"
+      >
+        <div className="sticky-heading">
+          <Eyebrow>GÖZLEMDEN DEĞERLENDİRMEYE</Eyebrow>
+          <h2>
+            Altı adım.
+            <br />
+            Bir bütün.
+          </h2>
+          <p>
+            Her adımda kaynağı, bağlamı ve belirsizliği görünür tutan bir
+            inceleme yaklaşımı.
+          </p>
+        </div>
         <div className="workflow-list">
-          {workflow.map((w) => (
+          {workflow.map((w, i) => (
             <article key={w.n}>
               <span>{w.n}</span>
-              <h3>{w.title}</h3>
-              <p>{w.text}</p>
+              <div>
+                <Icon
+                  name={
+                    [
+                      "target",
+                      "satellite",
+                      "layers",
+                      "time",
+                      "leaf",
+                      "evidence",
+                    ][i]
+                  }
+                />
+                <h3>{w.title}</h3>
+                <p>{w.text}</p>
+              </div>
             </article>
           ))}
         </div>
       </section>
-      <div className="wrap">
-        <Temporal base={base} />
-      </div>
-      <div className="wrap">
-        <Evidence base={base} />
-      </div>
-      <section className="future wrap">
-        <Eyebrow>{uiTexts.platform_006}</Eyebrow>
-        <h2>
-          {uiTexts.platform_007}
-          <br />
-          <em>{uiTexts.platform_008}</em>
-        </h2>
-        <div>
-          {future.map((f) => (
+      <section className="platform-evidence">
+        <div className="wrap evidence-grid">
+          <div>
+            <Eyebrow>KARAR DESTEĞİ</Eyebrow>
+            <h2>
+              Bir sonuç kadar,
+              <br />
+              dayanağı da önemli.
+            </h2>
+          </div>
+          <div>
+            <p className="lead">
+              Göstergeler bir sorunun nerede olabileceğine işaret edebilir.
+              Nedenini anlamak, daha fazlasını gerektirir.
+            </p>
+            <p>
+              Uydu gözlemi; ürün, dönem, yerel koşullar ve saha bilgisiyle
+              birlikte değerlendirilir. Tek bir indeks değeri kesin teşhis veya
+              uygulama reçetesi değildir.
+            </p>
+            <Link href={base + "teknoloji/"}>Bilimsel temeli keşfet</Link>
+          </div>
+        </div>
+      </section>
+      <section className="vision-section wrap section-space">
+        <div className="split-heading">
+          <div>
+            <Eyebrow>UZUN VADELİ VİZYON</Eyebrow>
+            <h2>
+              Bugünün ötesine
+              <br />
+              bakmak.
+            </h2>
+          </div>
+          <p>
+            Aşağıdaki alanlar araştırma ve vizyon kapsamındadır; tamamlanmış
+            ürün yetenekleri olarak sunulmaz.
+          </p>
+        </div>
+        <div className="vision-grid">
+          {future.map((f, i) => (
             <article key={f.title}>
+              <span className="item-index">0{i + 1} / ARAŞTIRMA</span>
               <h3>{f.title}</h3>
               <p>{f.text}</p>
-              <span>{uiTexts.platform_009}</span>
             </article>
           ))}
         </div>
-        <p className="source-note">{uiTexts.platform_010}</p>
+        <p className="source-note">
+          Bu sayfa ürün yaklaşımını tanıtır. Üretim ortamındaki
+          kullanılabilirlik ayrıca doğrulanmalıdır.
+        </p>
       </section>
       <Next
         base={base}
-        label={uiLabels.platform_003}
+        label="BAĞLAMI BİRLİKTE DÜŞÜNMEK"
         title={
           <>
-            {uiTexts.platform_011}
+            Filiz ile
             <br />
-            <em>{uiTexts.platform_012}</em>
+            bir adım daha.
           </>
         }
         href="filiz/"
-        cta={uiLabels.platform_004}
+        cta="Filiz’i tanı"
       />
     </>
   );

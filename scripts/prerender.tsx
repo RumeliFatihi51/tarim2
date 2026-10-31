@@ -20,13 +20,15 @@ for (const page of pages) {
   const meta = metadata[page];
   const path = page === "home" ? "" : page === "404" ? "404.html" : `${page}/`;
   const media =
-    page === "filiz"
-      ? "filiz-motion-poster"
-      : page === "teknoloji"
-        ? "strata"
-        : page === "cozumler"
-          ? "archive"
-          : "terrain";
+    page === "home" || page === "teknoloji"
+      ? "orbit-poster"
+      : page === "platform" || page === "filiz"
+        ? "field-poster"
+        : page === "hakkimizda"
+          ? "canopy"
+          : "agriculture";
+  const mobileMedia = media + "-mobile";
+  const film = media.endsWith("-poster");
   const preloadImage = [
     "home",
     "platform",
@@ -35,13 +37,13 @@ for (const page of pages) {
     "cozumler",
     "hakkimizda",
   ].includes(page)
-    ? `<link rel="preload" as="image" href="${base}media/${media}.webp" media="(min-width:${page === "filiz" ? 768 : 601}px)"/><link rel="preload" as="image" href="${base}media/${media === "filiz-motion-poster" ? "filiz-motion-poster-mobile" : media + "-mobile"}.webp" media="(max-width:${page === "filiz" ? 767 : 600}px)"/>`
+    ? `<link rel="preload" as="image" href="${base}media/${media}.webp" media="(min-width:${film ? 768 : 601}px)"/><link rel="preload" as="image" href="${base}media/${mobileMedia}.webp" media="(max-width:${film ? 767 : 600}px)"/>`
     : "";
   const html = template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(meta.title)}</title>`)
     .replace(
       "<!--metadata-->",
-      `<meta name="description" content="${escape(meta.description)}"/><meta property="og:title" content="${escape(meta.title)}"/><meta property="og:description" content="${escape(meta.description)}"/><meta property="og:type" content="website"/><meta property="og:locale" content="tr_TR"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image" content="${origin}${base}media/og.jpg"/>${origin ? `<link rel="canonical" href="${origin}${base}${path}"/><meta property="og:url" content="${origin}${base}${path}"/>` : ""}<link rel="icon" href="${base}favicon.svg" type="image/svg+xml"/><link rel="preload" as="font" href="${base}fonts/manrope.woff2" type="font/woff2" crossorigin/>${preloadImage}${page === "404" ? '<meta name="robots" content="noindex"/>' : ""}`,
+      `<meta name="description" content="${escape(meta.description)}"/><meta property="og:title" content="${escape(meta.title)}"/><meta property="og:description" content="${escape(meta.description)}"/><meta property="og:type" content="website"/><meta property="og:locale" content="tr_TR"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image" content="${origin}${base}media/og.jpg"/>${origin ? `<link rel="canonical" href="${origin}${base}${path}"/><meta property="og:url" content="${origin}${base}${path}"/>` : ""}<link rel="icon" href="${base}favicon.svg" type="image/svg+xml"/><link rel="preload" as="font" href="${base}fonts/instrument-sans.woff2" type="font/woff2" crossorigin/>${preloadImage}${page === "404" ? '<meta name="robots" content="noindex"/>' : ""}`,
     )
     .replace(
       '<div id="root">',

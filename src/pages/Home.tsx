@@ -1,144 +1,175 @@
-import { experience as e } from "../content/experience";
-import { principles } from "../content/site";
-import { Eyebrow, Link, Media } from "../components/ui";
-import { Film } from "../components/Film";
 import type { ReactNode } from "react";
-export function Home({ base }: { base: string }) {
-  return (
-    <>
-      <section className="hero-v2">
-        <Media base={base} name="terrain" alt={e.hero.caption} eager />
-        <div className="hero-v2-shade" />
-        <div className="hero-v2-top">
-          <Eyebrow>{e.hero.tag}</Eyebrow>
-          <span>AGROMAX — DİJİTAL TARIM</span>
-        </div>
-        <div className="hero-v2-title">
-          <h1>
-            {e.hero.lines.map((s, i) => (
-              <span key={s} className={`hero-line line-${i}`}>
-                {s}
-              </span>
-            ))}
-          </h1>
-          <div className="hero-v2-aside">
-            <div className="hero-preview">
-              <Film base={base} name="loom" />
-            </div>
-            <p>{e.hero.body}</p>
-            <Link href={base + "platform/"} solid>
-              {e.hero.cta}
-            </Link>
-            <Link href={base + "teknoloji/"}>{e.hero.secondary}</Link>
-          </div>
-        </div>
-        <div className="hero-v2-bottom">
-          <a href="#perspektif">
-            ↓ <span>{e.hero.scroll}</span>
-          </a>
-          <span>{e.hero.caption}</span>
-        </div>
-      </section>
-      <section id="perspektif" className="intro-v2 wrap">
-        <Eyebrow num="01">{e.intro.tag}</Eyebrow>
-        <h2>
-          {e.intro.title.split("\n").map((s) => (
-            <span key={s}>{s}</span>
-          ))}
-        </h2>
-        <div>
-          <p>{e.intro.body}</p>
-          <Link href={base + "hakkimizda/"}>{e.intro.link}</Link>
-        </div>
-      </section>
-      <section className="signature-v2">
-        <div className="signature-stage">
-          <div className="signature-visual strata-art" data-v2-loom>
-            <Film base={base} name="loom" />
-            <span className="art-caption">{e.loom.caption}</span>
-          </div>
-          <div className="signature-copy">
-            <Eyebrow num="02">{e.loom.tag}</Eyebrow>
-            <h2>
-              {e.loom.title.split("\n").map((s) => (
-                <span key={s}>{s}</span>
-              ))}
-            </h2>
-            <p>{e.loom.body}</p>
-            <Link href={base + "teknoloji/"}>{e.loom.link}</Link>
-            <div className="signature-progress" aria-hidden="true">
-              <i />
-              <span>GÖZLEM → BAĞLAM</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="filiz-v2 wrap">
-        <div className="filiz-v2-copy">
-          <Eyebrow num="03">{e.filiz.tag}</Eyebrow>
-          <h2>
-            {e.filiz.title.split("\n").map((s) => (
-              <span key={s}>{s}</span>
-            ))}
-          </h2>
-          <p>{e.filiz.body}</p>
-          <Link href={base + "filiz/"}>{e.filiz.link}</Link>
-        </div>
-        <Film base={base} name="filiz-motion" />
-      </section>
-      <section className="home-principles-v2 wrap">
-        <Eyebrow num="04">GÖZLEMDEN KARARA</Eyebrow>
-        {principles.map((p, i) => (
-          <article key={p.title}>
-            <span>0{i + 1}</span>
-            <h3>{p.title}</h3>
-            <p>{p.text}</p>
-          </article>
-        ))}
-      </section>
-      <section className="closing-v2">
-        <Media
-          base={base}
-          name="archive"
-          alt="Özgün mineral ve bilgi katmanları konsept çalışması."
-        />
-        <div>
-          <Eyebrow>{e.closing.tag}</Eyebrow>
-          <h2>
-            {e.closing.title.split("\n").map((s) => (
-              <span key={s}>{s}</span>
-            ))}
-          </h2>
-          <Link href={base + "cozumler/"} solid>
-            {e.closing.link}
-          </Link>
-        </div>
-      </section>
-    </>
-  );
-}
+import { orbitalCopy as c } from "../content/orbital";
+import { audiences } from "../content/site";
+import { Eyebrow, Link, Icon, Arrow, Media } from "../components/ui";
+import { Orbit, Landscape } from "../components/Cinematic";
 export function Next({
   base,
   label,
   title,
   href,
   cta,
+  body,
 }: {
   base: string;
   label: string;
   title: ReactNode;
   href: string;
   cta: string;
+  body?: string;
 }) {
   return (
-    <section className="next-section wrap">
-      <Eyebrow>{label}</Eyebrow>
-      <div>
-        <h2>{title}</h2>
-        <Link href={base + href} solid>
+    <section className="next-section">
+      <div className="wrap next-inner">
+        <div>
+          <Eyebrow>{label}</Eyebrow>
+          <h2>{title}</h2>
+          {body ? <p>{body}</p> : null}
+        </div>
+        <Link href={base + href} solid diagonal>
           {cta}
         </Link>
       </div>
     </section>
+  );
+}
+export function Home({ base }: { base: string }) {
+  return (
+    <>
+      <section className="home-hero">
+        <div className="hero-copy">
+          <Eyebrow>
+            <span className="label-dot" />
+            {c.hero.label}
+          </Eyebrow>
+          <h1>
+            {c.hero.title[0]}
+            <br />
+            <span>{c.hero.title[1]}</span>
+          </h1>
+          <p>{c.hero.description}</p>
+          <div className="hero-actions">
+            <Link href={base + "platform/"} solid>
+              {c.hero.primary}
+            </Link>
+            <Link href={base + "teknoloji/"}>{c.hero.secondary}</Link>
+          </div>
+          <a className="scroll-cue" href="#perspektif">
+            <span className="scroll-icon" aria-hidden="true">
+              ↓
+            </span>
+            {c.labels.scroll}
+          </a>
+        </div>
+        <Orbit base={base} eager />
+      </section>
+      <div className="pillar-strip">
+        <div className="wrap">
+          {c.pillars.map((s, i) => (
+            <span key={s}>
+              <small>0{i + 1}</small>
+              {s}
+              <span className="pillar-plus" aria-hidden="true">
+                +
+              </span>
+            </span>
+          ))}
+        </div>
+      </div>
+      <section
+        id="perspektif"
+        className="perspective-section wrap section-space"
+      >
+        <div className="perspective-heading">
+          <Eyebrow>{c.value.label}</Eyebrow>
+          <h2>{c.value.title}</h2>
+          <p>{c.value.body}</p>
+        </div>
+        <div className="perspective-grid">
+          <figure className="land-figure">
+            <Media
+              base={base}
+              name="agriculture"
+              alt="Yeşil ve hasat edilmiş tarlalar, zeytinlikler ve bir akarsu: kavramsal tarımsal arazi görseli."
+            />
+            <figcaption>
+              <span>YERYÜZÜ / TARIMSAL PEYZAJ</span>
+              <span>Kavramsal görsel</span>
+            </figcaption>
+          </figure>
+          <div className="feature-list">
+            {c.features.map((f, i) => (
+              <article key={f.title}>
+                <div className="feature-icon">
+                  <Icon name={f.icon} />
+                </div>
+                <div>
+                  <span className="item-index">0{i + 1}</span>
+                  <h3>{f.title}</h3>
+                  <p>{f.text}</p>
+                </div>
+              </article>
+            ))}
+            <Link href={base + "platform/"}>Ürün yaklaşımını incele</Link>
+          </div>
+        </div>
+      </section>
+      <section className="filiz-preview">
+        <div className="wrap filiz-preview-grid">
+          <div className="filiz-preview-copy">
+            <Eyebrow>{c.filiz.label}</Eyebrow>
+            <div className="filiz-wordmark">
+              <Icon name="leaf" />
+              filiz<span>AI</span>
+            </div>
+            <h2>{c.filiz.title}</h2>
+            <p>{c.filiz.body}</p>
+            <Link href={base + "filiz/"} solid>
+              {c.filiz.cta}
+            </Link>
+          </div>
+          <Landscape base={base} filiz />
+        </div>
+      </section>
+      <section className="audience-preview wrap section-space">
+        <div className="split-heading">
+          <div>
+            <Eyebrow>KİMİN İÇİN?</Eyebrow>
+            <h2>
+              Sahada farklı sorular.
+              <br />
+              Ortak bir bakış.
+            </h2>
+          </div>
+          <p>
+            Danışmanlıktan çok parsel yönetimine; uydu gözlemini sahadaki
+            bilgiyle birlikte ele almak isteyen profesyoneller için.
+          </p>
+        </div>
+        <div className="audience-links">
+          {audiences.map((a) => (
+            <a key={a.n} href={base + "cozumler/#alan-" + a.n}>
+              <span>{a.n}</span>
+              <h3>{a.title}</h3>
+              <Arrow diagonal />
+            </a>
+          ))}
+        </div>
+      </section>
+      <Next
+        base={base}
+        label={c.closing.label}
+        title={
+          <>
+            Daha geniş bir bakışla
+            <br />
+            başlayalım.
+          </>
+        }
+        body={c.closing.body}
+        href="platform/"
+        cta="Platformu keşfet"
+      />
+    </>
   );
 }

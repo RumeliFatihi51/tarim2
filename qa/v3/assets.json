@@ -1,0 +1,115 @@
+{
+  "films": [
+    {
+      "file": "public/media/orbit.mp4",
+      "bytes": 1413128,
+      "codec": "h264",
+      "duration": "6.666667",
+      "width": 1024,
+      "height": 920,
+      "fps": "24/1",
+      "sha256": "3bdd0f982d962428f789daefe6fe8e04052a5e9bf636236186e017f00fd82f66"
+    },
+    {
+      "file": "public/media/orbit.webm",
+      "bytes": 1191295,
+      "codec": "vp9",
+      "duration": "6.667000",
+      "width": 1024,
+      "height": 920,
+      "fps": "24/1",
+      "sha256": "00a879e788b72382a80569e9d12895e4ef4b0d0c0ea3344438d352528ad3c953"
+    },
+    {
+      "file": "public/media/orbit-mobile.mp4",
+      "bytes": 696705,
+      "codec": "h264",
+      "duration": "6.666667",
+      "width": 576,
+      "height": 720,
+      "fps": "24/1",
+      "sha256": "3f24bd7d22d3cd981bb7a06779d601053c3880f51e78a59c3a53bbbe4e3f39a3"
+    },
+    {
+      "file": "public/media/orbit-mobile.webm",
+      "bytes": 583933,
+      "codec": "vp9",
+      "duration": "6.667000",
+      "width": 576,
+      "height": 720,
+      "fps": "24/1",
+      "sha256": "1d84357cc4cbed5adcc31dc0e88a8fff3d69f1fafba94f99d4b4abd9697a2334"
+    },
+    {
+      "file": "public/media/field.mp4",
+      "bytes": 2607190,
+      "codec": "h264",
+      "duration": "6.666667",
+      "width": 1024,
+      "height": 760,
+      "fps": "24/1",
+      "sha256": "6c5e5f2d8ae6d3e7ba93f6d99acb99b7d2819351cd0ab1720109d2b9af42f769"
+    },
+    {
+      "file": "public/media/field.webm",
+      "bytes": 1871502,
+      "codec": "vp9",
+      "duration": "6.667000",
+      "width": 1024,
+      "height": 760,
+      "fps": "24/1",
+      "sha256": "f4f230118bc6f10428f84c1329c93af2037bcce84e619a5356d7355d35d41f14"
+    },
+    {
+      "file": "public/media/field-mobile.mp4",
+      "bytes": 1148983,
+      "codec": "h264",
+      "duration": "6.666667",
+      "width": 576,
+      "height": 720,
+      "fps": "24/1",
+      "sha256": "53df0f9fc908dcbbd52815be8e24d217d5d5f3337dc540b4d9c746af66c956ae"
+    },
+    {
+      "file": "public/media/field-mobile.webm",
+      "bytes": 812163,
+      "codec": "vp9",
+      "duration": "6.667000",
+      "width": 576,
+      "height": 720,
+      "fps": "24/1",
+      "sha256": "cce176b36250160f8f65d2c7d9d3cd312fd8f059562bfb0253890a3928a49129"
+    }
+  ],
+  "blender": [
+    {
+      "file": "src/assets/production/orbit-v3.blend",
+      "bytes": 11051160,
+      "sha256": "7ccdfbc1ebfd1bd30be67954659647021e2d3baf2ed5655b77e0eaef7ee04fc8"
+    },
+    {
+      "file": "src/assets/production/field-v3.blend",
+      "bytes": 6784196,
+      "sha256": "397fcca5801cbb2dc620b9aa9b48cebcd37ab62991475df0994cd2de7368e789"
+    }
+  ],
+  "sources": [
+    {
+      "file": "src/assets/production/agriculture-v3-original.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "f996d531522d7691a1a9a433cbd3e0b92d1224ec1267619507eb64a863e45504"
+    },
+    {
+      "file": "src/assets/production/canopy-v3-original.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "9d2bc4882322b69565c708a2809aebd5bb15e3017cef3ea7b26440c4ca40df03"
+    }
+  ],
+  "videoBytes": 10324899
+}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { experience } from "../content/experience";
+import { orbitalCopy } from "../content/orbital";
 /** Real encoded Blender footage, poster-first, paused offscreen and on reduced motion. */
 export function Film({
   base,
@@ -24,6 +24,13 @@ export function Film({
     let visible = false,
       menuBlocked = false;
     let loaded = Boolean(v.querySelector("source[src]"));
+    // Give the desktop WebGL scene first chance; don't fetch an invisible film.
+    let waitingForScene =
+      !loaded && innerWidth >= 900 && Boolean(h.closest("[data-orbit]"));
+    const fallbackTimer = window.setTimeout(() => {
+      waitingForScene = false;
+      sync();
+    }, 1500);
     const ensureSources = () => {
       if (loaded) return;
       v.querySelectorAll<HTMLSourceElement>("source").forEach((source) => {
@@ -37,6 +44,7 @@ export function Film({
       if (
         visible &&
         !menuBlocked &&
+        !waitingForScene &&
         !paused &&
         !media.matches &&
         !document.hidden &&
@@ -51,6 +59,7 @@ export function Film({
       sync();
     };
     document.addEventListener("agromax-menu", menuChange);
+    document.addEventListener("agromax-scene", sync);
     const obs = new IntersectionObserver(
       (es) => {
         visible = es[0].isIntersecting && es[0].intersectionRatio >= 0.05;
@@ -62,13 +71,15 @@ export function Film({
     media.addEventListener("change", sync);
     document.addEventListener("visibilitychange", sync);
     return () => {
+      clearTimeout(fallbackTimer);
       obs.disconnect();
       document.removeEventListener("agromax-menu", menuChange);
+      document.removeEventListener("agromax-scene", sync);
       media.removeEventListener("change", sync);
       document.removeEventListener("visibilitychange", sync);
       v.pause();
     };
-  }, [paused]);
+  }, [paused, name]);
   return (
     <div
       ref={host}
@@ -81,10 +92,16 @@ export function Film({
         />
         <img
           src={`${base}media/${name}-poster.webp`}
-          alt={experience.filmLabels.note}
+          alt={
+            name === "orbit"
+              ? orbitalCopy.labels.orbitAlt
+              : orbitalCopy.labels.fieldAlt
+          }
           width="1024"
           height="640"
           loading={eager ? "eager" : "lazy"}
+          fetchPriority={eager ? "high" : "auto"}
+          decoding="async"
         />
       </picture>
       <video
@@ -112,11 +129,17 @@ export function Film({
         className="film-toggle"
         onClick={() => setPaused((value) => !value)}
         aria-pressed={paused}
-        aria-label={
-          paused ? experience.filmLabels.play : experience.filmLabels.pause
-        }
+        aria-label={paused ? orbitalCopy.labels.play : orbitalCopy.labels.pause}
       >
-        {paused ? "▶" : "Ⅱ"}
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d={paused ? "m5 3 8 5-8 5z" : "M4 3h3v10H4zm5 0h3v10H9z"} />
+        </svg>
       </button>
     </div>
   );

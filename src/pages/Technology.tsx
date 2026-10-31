@@ -1,57 +1,60 @@
-import { uiLists, uiLabels } from "../content/section-copy";
-import { uiTexts } from "../content/interface";
-import { copy, sources, indexGroups, indexNotes } from "../content/site";
-import { Eyebrow, Arrow, Media, SectionHeading } from "../components/ui";
-import { Strata } from "../sections/Cinematics";
+import { sources, indexGroups, indexNotes } from "../content/site";
+import { uiLists } from "../content/section-copy";
+import { Eyebrow, Arrow, Link } from "../components/ui";
+import { Orbit } from "../components/Cinematic";
 import { Next } from "./Home";
 export function Technology({ base }: { base: string }) {
-  const c = copy.teknoloji;
   return (
     <>
-      <section className="technology-hero wrap">
-        <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h1>
-          {c.title[0]}
-          <br />
-          <em>{c.title[1]}</em>
-        </h1>
-        <div className="technology-hero-bottom">
-          <p>{c.intro}</p>
-          <span>{uiTexts.technology_001}</span>
+      <section className="technology-hero">
+        <div className="technology-copy">
+          <Eyebrow>UZAKTAN ALGILAMA TEKNOLOJİSİ</Eyebrow>
+          <h1>
+            Gözlemin
+            <br />
+            <span>arkasındaki bilim.</span>
+          </h1>
+          <p>
+            Farklı dalga boyları, farklı izler. Bir değerlendirme; verinin ne
+            gösterdiğini ve sınırlarının nerede başladığını bilmekle güçlenir.
+          </p>
+          <Link href="#gozlem-kaynaklari">Kaynakları keşfet</Link>
+          <span className="technology-sub">
+            UYDU · SPEKTRAL BİLGİ · ZAMAN · KALİTE
+          </span>
         </div>
-        <div className="technology-art">
-          <Media base={base} name="strata" alt={uiTexts.technology_002} eager />
-          <span>{uiTexts.technology_003}</span>
-          <small>{uiTexts.technology_004}</small>
-        </div>
+        <Orbit base={base} close eager />
       </section>
-      <section className="source-section wrap">
-        <SectionHeading
-          eyebrow={uiLabels.technology_001}
-          title={
-            <>
-              {uiTexts.technology_005}
+      <section
+        id="gozlem-kaynaklari"
+        className="source-section wrap section-space"
+      >
+        <div className="split-heading">
+          <div>
+            <Eyebrow>DÜNYA GÖZLEM KAYNAKLARI</Eyebrow>
+            <h2>
+              Aynı yeryüzü.
               <br />
-              <em>{uiTexts.technology_006}</em>
-            </>
-          }
-          body={uiLabels.technology_002}
-        />
-        <div>
+              Farklı pencereler.
+            </h2>
+          </div>
+          <p>
+            Bu kaynaklar yöntem çerçevesini anlatır. Listelenmeleri canlı
+            entegrasyon veya hizmet ortaklığı anlamına gelmez.
+          </p>
+        </div>
+        <div className="source-list">
           {sources.map((s, i) => (
-            <article className="source-row" key={s.title}>
-              <span className="source-n">
-                {uiTexts.technology_007}
-                {i + 1}
-              </span>
+            <article key={s.title}>
+              <span className="item-index">0{i + 1}</span>
               <div>
-                <span className="eyebrow">{s.type}</span>
+                <Eyebrow>{s.type}</Eyebrow>
                 <h3>{s.title}</h3>
               </div>
-              <p>
-                {s.text}
+              <div>
+                <p>{s.text}</p>
                 <small>{s.status}</small>
-              </p>
+              </div>
               <a
                 href={s.url}
                 target="_blank"
@@ -64,36 +67,53 @@ export function Technology({ base }: { base: string }) {
           ))}
         </div>
       </section>
-      <section className="quality-section wrap">
-        <div>
-          <Eyebrow>{uiTexts.technology_008}</Eyebrow>
+      <section className="spectral-section">
+        <div className="wrap">
+          <Eyebrow>SPEKTRAL PERSPEKTİF</Eyebrow>
           <h2>
-            {uiTexts.technology_009}
+            Gözün gördüğünden
             <br />
-            <em>{uiTexts.technology_010}</em>
+            daha fazlası.
           </h2>
-        </div>
-        <div className="quality-list">
-          {uiLists.technology_003.map(([t, p]) => (
-            <article key={t}>
-              <h3>{t}</h3>
-              <p>{p}</p>
-            </article>
-          ))}
+          <div
+            className="spectral-diagram"
+            role="img"
+            aria-label="Kavramsal elektromanyetik spektrum: görünür ışık, yakın kızılötesi ve kısa dalga kızılötesi. Ölçekli bir ölçüm değildir."
+          >
+            <div className="spectral-bands">
+              <span>GÖRÜNÜR IŞIK</span>
+              <span>YAKIN KIZILÖTESİ</span>
+              <span>KISA DALGA KIZILÖTESİ</span>
+            </div>
+            <div className="spectral-bar" />
+            <div className="spectral-tags">
+              <span>Bitki örtüsü</span>
+              <span>Kırmızı kenar</span>
+              <span>Nem ve yüzey</span>
+            </div>
+          </div>
+          <p>
+            Optik sensörler farklı spektral bantlardaki yansımayı kaydeder.
+            İndeksler bu bantlar arasında ilişki kurar; doğrudan hastalık
+            teşhisi veya kök bölgesi nem ölçümü yapmaz.
+          </p>
         </div>
       </section>
-      <section className="indices-section wrap">
-        <SectionHeading
-          eyebrow={uiLabels.technology_004}
-          title={
-            <>
-              {uiTexts.technology_011}
+      <section className="indices-section wrap section-space">
+        <div className="split-heading">
+          <div>
+            <Eyebrow>SPEKTRAL GÖSTERGELER</Eyebrow>
+            <h2>
+              Birer ipucu.
               <br />
-              <em>{uiTexts.technology_012}</em>
-            </>
-          }
-          body={uiLabels.technology_005}
-        />
+              Kesin hüküm değil.
+            </h2>
+          </div>
+          <p>
+            Bu bölüm bir yöntem kataloğudur. Bir göstergenin anlatılması,
+            AgroMax’ta tamamlandığı veya bu sitede hesaplandığı anlamına gelmez.
+          </p>
+        </div>
         <div className="index-notes">
           {indexNotes.map((n) => (
             <article key={n.name}>
@@ -104,62 +124,85 @@ export function Technology({ base }: { base: string }) {
         </div>
         <div className="index-catalog">
           {indexGroups.map((g) => (
-            <article key={g.title}>
-              <div>
-                <h3>{g.title}</h3>
-                <p>{g.description}</p>
+            <details key={g.title}>
+              <summary>
+                {g.title}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <p>{g.description}</p>
+              <div className="index-names">
+                {g.items.map((n) => (
+                  <span key={n}>{n}</span>
+                ))}
               </div>
-              <p className="index-names">{g.items.join(" · ")}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+      <section className="quality-section wrap section-space">
+        <div className="sticky-heading">
+          <Eyebrow>VERİ KALİTESİ</Eyebrow>
+          <h2>
+            Her piksel,
+            <br />
+            aynı kanıt değil.
+          </h2>
+          <p>Belirsizlik bir dipnot değil, analitik sürecin parçası.</p>
+        </div>
+        <div className="quality-list">
+          {uiLists.technology_003.map(([t, p], i) => (
+            <article key={t}>
+              <span>0{i + 1}</span>
+              <div>
+                <h3>{t}</h3>
+                <p>{p}</p>
+              </div>
             </article>
           ))}
         </div>
-        <p className="source-note">{uiTexts.technology_013}</p>
       </section>
       <section className="bands-section wrap">
-        <Eyebrow>{uiTexts.technology_014}</Eyebrow>
+        <Eyebrow>KAYNAK BANTLAR VE KALİTE ÜRÜNLERİ</Eyebrow>
         <div className="bands-grid">
           <article>
-            <h2>{uiTexts.technology_015}</h2>
-            <p>{uiTexts.technology_016}</p>
-            <div className="band-names">{uiTexts.technology_017}</div>
+            <h2>Spektral bantlar</h2>
+            <p>
+              B2, B3, B4 görünür; B5–B7 kırmızı kenar; B8/B8A yakın kızılötesi;
+              B11/B12 kısa dalga kızılötesi bilgisi taşır. Bantların doğal
+              çözünürlükleri farklıdır.
+            </p>
           </article>
           <article>
-            <h2>{uiTexts.technology_018}</h2>
-            <p>{uiTexts.technology_019}</p>
-            <div className="band-names">{uiTexts.technology_020}</div>
+            <h2>Kalite ve atmosfer</h2>
+            <p>
+              AOT, WV ve SCL; spektral bantlarla aynı tür ham gözlemler
+              değildir. Atmosferik koşul ve sahne sınıflandırması gibi yardımcı
+              ürünler olarak ele alınır.
+            </p>
           </article>
         </div>
         <a
-          className="text-link"
           href="https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel2.html"
           target="_blank"
           rel="noreferrer"
+          className="text-link"
         >
-          {uiTexts.technology_021}
+          Sentinel-2 dokümantasyonu
           <Arrow diagonal />
         </a>
       </section>
-      <section className="distinction wrap">
-        <Eyebrow>{uiTexts.technology_022}</Eyebrow>
-        <h2>
-          {uiTexts.technology_023}
-          <br />
-          <em>{uiTexts.technology_024}</em>
-        </h2>
-        <p>{uiTexts.technology_025}</p>
-      </section>
       <Next
         base={base}
-        label={uiLabels.technology_006}
+        label="BİLİMDEN ÜRÜN YAKLAŞIMINA"
         title={
           <>
-            {uiTexts.technology_026}
+            Veriyi parselin
             <br />
-            <em>{uiTexts.technology_027}</em>
+            bağlamına taşı.
           </>
         }
         href="platform/"
-        cta={uiLabels.technology_007}
+        cta="Platformu incele"
       />
     </>
   );

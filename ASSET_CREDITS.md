@@ -1,25 +1,26 @@
-# AgroMax / asset envanteri
+# Güncel varlıklar / Orbital v3
 
-Kontrol tarihi: 31 Ekim 2026. Kullanılan her varlık aşağıda listelenir. Kullanılmayan deneme fotoğrafları dağıtım paketinden çıkarılmıştır.
+Doğrulama tarihi: 31 Ekim 2026. Önceki görsel tasarımlar Git geçmişi ve backup/site-v2-before-orbital-v3 dalında korunur; aşağıdaki tablo güncel sitede kullanılanları listeler.
 
-| Dosyalar | İçerik sahibi / kaynak | Lisans ve ticari izin | Nitelik / kullanım |
-|---|---|---|---|
-| `public/media/earth.webp`, `earth-mobile.webp`, `og.jpg`; kaynak `src/assets/raw/earth.jpg` | Federico Di Dio photography, [fotoğraf sayfası](https://unsplash.com/photos/aerial-view-of-green-trees-and-brown-field-during-daytime-haO04L8LoaU), [asıl görsel](https://images.unsplash.com/photo-1605447302541-bd14aa1417ab) | [Unsplash License](https://unsplash.com/license), ücretsiz ticari kullanım, uyarlama ve site içinde dağıtıma izin. Atıf zorunlu değil; yine de sitede ve bu kayıtta verildi. Dosya kendi başına satılmaz. | Gerçek Toskana manzara fotoğrafı. Sayfa yayın tarihi 15 Kasım 2020; çekim tarihi teyit edilmedi. AgroMax analizi / müşteri parseli değildir. Mobil crop 780×1000; ana 2400×1600. |
-| `strata.webp`, `strata-mobile.webp`, `strata.glb`; `src/scenes/strata.blend`; kaynak PNG | Bu proje için özgün Blender üretimi | Üçüncü taraf mesh, HDRI veya doku yok. Proje sahibine teslim edilen özgün çalışma. | S02 kavramsal mineral/cam/porselen katmanları. Gerçek spektral harita değil. Cycles poster ve gerçek 3D GLB. Masaüstü 1500×1200, mobil 900×900. |
-| `filiz.webp`, `filiz-mobile.webp`; `src/scenes/filiz.blend`; kaynak PNG | Bu proje için özgün Blender üretimi | Üçüncü taraf varlık yok. Proje sahibine teslim edilen özgün çalışma. | S04 Filiz kavramsal sanat objesi. Porselen, yeşil cam ve bronz. Robot veya ürün ekranı değil. Masaüstü 1500×1200, mobil 900×900. |
-| `evidence.webp`, `evidence-mobile.webp`; `src/scenes/evidence.blend`; kaynak PNG | Bu proje için özgün Blender üretimi | Üçüncü taraf varlık yok. Proje sahibine teslim edilen özgün çalışma. | S05 kaynak/değerlendirme sürekliliği. Gerçek ölçüm verisi değil. Masaüstü 1500×1200, mobil 900×900. |
-| `public/fonts/manrope.woff2` | Mikhail Sharanda ve Manrope proje katkıcıları, [kaynak](https://github.com/google/fonts/tree/main/ofl/manrope) | SIL OFL 1.1; ticari kullanıma ve lisans metniyle dağıtıma izin. `docs/credits/Manrope-OFL.txt`. | Türkçe + Latin alt kümesi; self-hosted değişken ağırlık. |
-| `public/fonts/cormorant-italic.woff2` | Christian Thalmann ve Cormorant proje katkıcıları, [kaynak](https://github.com/google/fonts/tree/main/ofl/cormorantgaramond) | SIL OFL 1.1; ticari kullanım ve dağıtım izinli. `docs/credits/Cormorant-OFL.txt`. | Türkçe + Latin alt kümesi; self-hosted italik. |
-| `favicon.svg`, logo işareti, SVG çizgiler, optik grafikler | Bu proje için özgün kodla üretilen görsel tasarım | Haricî ikon veya marka dosyası kullanılmadı. | Düzenlenebilir öneri kelime markası ve işaret; tescilli marka olduğu iddia edilmez. |
+| Kullanılan dosya | Üretici / kaynak | Haklar ve kullanım |
+|---|---|---|
+| observation-satellite.glb | Bu proje için özgün Blender modellemesi; scripts/render_orbital_v3.py | Hazır üçüncü taraf model yok. Optik EO uydusu kavramı; gerçek bir görev aracı veya sahip olunan AgroMax uydusu olduğu ileri sürülmez. Meshopt optimize edilmiş dağıtım modeli. |
+| orbit.mp4, orbit.webm ve -mobile sürümleri; orbit-poster*.webp | Özgün Blender Cycles render dizisi; gerçek kamera ve ışık hareketi | Projeye özel model/malzeme/kamera üretimi. Dünya rengi aşağıdaki NASA kaynağını kullanır. |
+| field.mp4, field.webm ve -mobile sürümleri; field-poster*.webp | Özgün Blender arazi yüzeyi, ışık ve kamera; kaynak agriculture-v3-original.png | Gerçek arazi geometrisinin kamera animasyonu. Gerçek konum, tarih veya analiz çıktısı değildir. |
+| agriculture.webp, agriculture-mobile.webp; agriculture-v3-original.png | OpenAI image generation; bu görev için üretilen özgün kavramsal tarımsal peyzaj | Üçüncü taraf fotoğrafçının eseri olarak sunulmaz. Kullanıcıya konsept görsel olduğu açıklanır. Belirli bir parsel veya doğrulanmış gözlem iddiası yok. |
+| canopy.webp, canopy-mobile.webp; canopy-v3-original.png | OpenAI image generation; özgün tarla seviyesinde buğday kompozisyonu | Kavramsal tarım görseli; gerçek konum, ekip veya müşteri gösterimi değildir. |
+| nasa-blue-marble.jpg → earth-color.webp | NASA Earth Observatory, Blue Marble: Next Generation, December 2004, Topography and Bathymetry; Reto Stöckli / NASA GSFC | NASA görsel kullanım ilkeleri kapsamında yeryüzü betimlemesi. İnsan, NASA logosu, arma veya ticari destek ifadesi yok. Kaynak kamuya açık ve aşağıda bağlı; sahiplik/onay iddiası yok. |
+| instrument-sans.woff2 | The Instrument Sans Project Authors | SIL Open Font License 1.1; public/fonts/InstrumentSans-OFL.txt. Türkçe Latin alt kümesi, değişken ağırlık; kendimiz barındırıyoruz. |
+| favicon.svg, Mark, Icon ve gezinme simgeleri | Projede çizilen SVG | Üçüncü taraf simge paketi kullanılmadı. |
 
-Üretim: Blender 4.3.2, Cycles 96 örnek, fiziksel materyaller ve özgün area light düzeni. WebGL için Three.js / GLTFLoader / RoomEnvironment kullanılır; kütüphane lisansları npm paketlerinde yer alır. GSAP yalnız site hareketi için kullanılır. Rakip site, NASA/ESA logosu, doğrulanmamış stock/3D varlık veya AI tarafından üretilmiş fotoğraf kullanılmadı.
+## Doğrudan kaynaklar
 
-Temsili sahneler açıkça sanat çalışması diye belirtilir. Kaynak sağlayıcı veya yazılım kütüphanesi bir AgroMax iş ortağı olarak sunulmaz.
+- [NASA Blue Marble, topography and bathymetry, aylık küresel dokular](https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/)
+- [İndirilen 5400×2700 Aralık dosyası](https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73909/world.topo.bathy.200412.3x5400x2700.jpg)
+- [NASA Blue Marble arşivi ve üretici bilgisi](https://svs.gsfc.nasa.gov/12564/)
+- [NASA görsel/medya kullanım ilkeleri](https://www.nasa.gov/nasa-brand-center/images-and-media/), bilhassa ticari kullanım ve onay izlenimi yasağı.
+- [Instrument Sans kaynak ve OFL](https://github.com/google/fonts/tree/main/ofl/instrumentsans)
 
-## Cinematic 2.0 additions — 31 October 2026
+NASA dokusu bir LLM çıktısı olarak NASA'ya atfedilmez. Doğrudan alınan tarihsel görüntü yalnız Blender/WebGL malzeme dokusuna uygulanmıştır. CGI render ve site metni AgroMax projesinin üretimidir; NASA tarafından denetlenmiş veya desteklenmiş değildir.
 
-- `terrain.webp`, `terrain-mobile.webp`: original conceptual landscape artwork generated with OpenAI image generation for this project. Original PNG: `src/assets/production/terrain-art.png`. Not a satellite photograph, verified location, or AgroMax observation. No external stock or competitor image was supplied as reference input.
-- `archive.webp`, `archive-mobile.webp`: original generated mineral/porcelain/glass editorial composition, source `src/assets/production/archive-art.png`. Conceptual art, not a scientific illustration or measured data. Both outputs were visually inspected; no third-party brand asset is present. Use is governed by the OpenAI terms applicable to the user's generated output; no CC0 claim is made.
-- `context-loom.glb`, `src/scenes/context-loom-v2.blend`: original 9-surface sculptural atlas, authored parametrically in Blender, with thickness, individually animated surfaces and bronze contours. No external mesh or texture used.
-- `loom*.mp4/webm`, `filiz-motion*.mp4/webm` and corresponding posters: actual Cycles animation frame renders; camera and object/light motion. Desktop and portrait mobile encodings; exact outputs verified in production report after encoding.
-- Intel Open Image Denoise 2.5.1: Apache 2.0 licensed production tool (https://github.com/RenderKit/oidn); downloaded official Linux binary used offline to denoise Blender renders. The library is not shipped to browsers. Generated frame sequences are reproducible from the `.blend` and Python sources and are excluded from Git to avoid hundreds of redundant large files.
+Kullanılmayan Poly Haven, ambientCG, Sketchfab, BlenderKit veya Mixamo varlıkları kullanılmış gibi listelenmez. Önceki sürümlerin Unsplash görseli ve Manrope/Cormorant fontları güncel sayfalarda kullanılmaz.

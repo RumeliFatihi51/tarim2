@@ -1,6 +1,5 @@
-import { uiTexts } from "../content/interface";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { navigation, navLabels, type PageId } from "../content/site";
+import { navigation, type PageId } from "../content/site";
 import { siteConfig } from "../config/site";
 import { Arrow, Mark } from "../components/ui";
 export function Layout({
@@ -12,186 +11,193 @@ export function Layout({
   base: string;
   children: ReactNode;
 }) {
-  const appUrl = /^https:\/\/[^ ]+$/.test(siteConfig.externalPlatformUrl)
-    ? siteConfig.externalPlatformUrl
-    : "";
   const [open, setOpen] = useState(false);
-  const menu = useRef<HTMLElement>(null);
+  const menu = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   useEffect(() => {
+    const dialog = menu.current;
+    if (!dialog) return;
     document.dispatchEvent(new CustomEvent("agromax-menu", { detail: open }));
-    if (!open) return;
-    const saved = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const first = menu.current?.querySelector<HTMLAnchorElement>("a");
-    first?.focus();
-    const key = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-        trigger.current?.focus();
-      }
-      if (e.key === "Tab") {
-        const list = [
-          trigger.current,
-          ...Array.from(
-            menu.current?.querySelectorAll<HTMLAnchorElement>("a") || [],
-          ),
-        ].filter(Boolean) as HTMLElement[];
-        const i = list.indexOf(document.activeElement as HTMLElement);
-        if (e.shiftKey && i === 0) {
-          e.preventDefault();
-          list.at(-1)?.focus();
-        } else if (!e.shiftKey && i === list.length - 1) {
-          e.preventDefault();
-          list[0]?.focus();
-        }
-      }
-    };
-    document.addEventListener("keydown", key);
-    return () => {
-      document.body.style.overflow = saved;
-      document.removeEventListener("keydown", key);
-    };
+    if (open) {
+      dialog.showModal();
+      const previous = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = previous;
+        dialog.close();
+      };
+    }
+    dialog.close();
   }, [open]);
-  useEffect(() => {
-    const m = matchMedia("(min-width: 1100px)");
-    const change = () => {
-      if (m.matches) setOpen(false);
-    };
-    m.addEventListener("change", change);
-    return () => m.removeEventListener("change", change);
-  }, []);
+  const close = () => {
+    setOpen(false);
+    requestAnimationFrame(() => trigger.current?.focus());
+  };
   return (
     <>
-      <a href="#main" className="skip-link">
-        {uiTexts.layout_001}
+      <a className="skip-link" href="#main">
+        İçeriğe geç
       </a>
-      <header className={`header header-v2 ${open ? "is-open" : ""}`}>
-        <a className="brand" href={base} aria-label={uiTexts.layout_002}>
-          <Mark />
-          <span>{uiTexts.layout_003}</span>
-        </a>
-        <nav className="desktop-nav" aria-label={uiTexts.layout_004}>
-          {navigation
-            .filter((n) => n.id !== "home" && n.id !== "iletisim")
-            .map((n) => (
-              <a
-                key={n.id}
-                aria-current={page === n.id ? "page" : undefined}
-                href={base + n.path}
-              >
-                {n.label}
-                {n.id === "filiz" && (
-                  <span className="nav-spark" aria-hidden="true">
-                    {uiTexts.layout_005}
-                  </span>
-                )}
-              </a>
-            ))}
-        </nav>
-        <a
-          className="header-contact"
-          href={appUrl || base + "iletisim/"}
-          target={appUrl ? "_blank" : undefined}
-          rel={appUrl ? "noreferrer" : undefined}
-        >
-          {appUrl ? navLabels.external : uiTexts.layout_006}
-          <Arrow diagonal />
-        </a>
-        <button
-          className="menu-toggle"
-          ref={trigger}
-          onClick={() => setOpen(!open)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? navLabels.close : navLabels.open}
-        >
-          <span>{open ? navLabels.closeShort : navLabels.menu}</span>
-          <span className="menu-lines">
-            <i />
-            <i />
-          </span>
-        </button>
-        <nav
-          id="mobile-menu"
-          ref={menu}
-          className="mobile-nav"
-          aria-label={uiTexts.layout_007}
-          hidden={!open}
-        >
-          {navigation.map((n, i) => (
-            <a
-              key={n.id}
-              href={base + n.path}
-              aria-current={page === n.id ? "page" : undefined}
-            >
-              <small>
-                {uiTexts.layout_008}
-                {i + 1}
-              </small>
-              {n.label}
-              <Arrow />
-            </a>
-          ))}
-          <div className="menu-art">
-            <img
-              src={base + "media/archive.webp"}
-              loading="lazy"
-              decoding="async"
-              alt=""
-              width="500"
-              height="300"
-            />
-            <p>{uiTexts.layout_009}</p>
-          </div>
-        </nav>
-      </header>
-      <main id="main" tabIndex={-1}>
-        {children}
-      </main>
-      <footer className="footer">
-        <div className="footer-top">
-          <p>
-            {uiTexts.layout_010}
-            <br />
-            <span>{uiTexts.layout_011}</span>
-          </p>
-          <a href={base + "platform/"} className="footer-invite">
-            {uiTexts.layout_012}
+      <header className="header">
+        <div className="header-inner">
+          <a className="brand" href={base} aria-label="AgroMax ana sayfa">
+            <Mark />
+            <span>agromax</span>
+          </a>
+          <nav className="desktop-nav" aria-label="Ana menü">
+            {navigation
+              .filter((n) => n.id !== "home" && n.id !== "iletisim")
+              .map((n) => (
+                <a
+                  key={n.id}
+                  href={base + n.path}
+                  aria-current={page === n.id ? "page" : undefined}
+                >
+                  {n.id === "filiz" ? "Filiz" : n.label}
+                  {n.id === "filiz" ? (
+                    <span className="ai-label">AI</span>
+                  ) : null}
+                </a>
+              ))}
+          </nav>
+          <a
+            className="header-contact"
+            href={siteConfig.externalPlatformUrl || base + "iletisim/"}
+          >
+            İletişim
             <Arrow diagonal />
           </a>
+          <button
+            type="button"
+            ref={trigger}
+            className="menu-toggle"
+            onClick={() => setOpen(true)}
+            aria-haspopup="dialog"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label="Menüyü aç"
+          >
+            <span>Menü</span>
+            <span className="menu-bars">
+              <i />
+              <i />
+            </span>
+          </button>
         </div>
-        <div className="footer-middle">
-          <div>
-            <span className="eyebrow">{uiTexts.layout_013}</span>
+      </header>
+      <dialog
+        id="mobile-menu"
+        ref={menu}
+        className="menu-dialog"
+        onKeyDown={(event) => {
+          if (event.key !== "Tab") return;
+          const nodes =
+            menu.current?.querySelectorAll<HTMLElement>("button,a[href]");
+          if (!nodes?.length) return;
+          const first = nodes[0],
+            last = nodes[nodes.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }}
+        onCancel={(e) => {
+          e.preventDefault();
+          close();
+        }}
+        aria-labelledby="menu-title"
+      >
+        <div className="menu-head">
+          <span id="menu-title" className="brand">
+            <Mark />
+            agromax
+          </span>
+          <button type="button" onClick={close} aria-label="Menüyü kapat">
+            Kapat<span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div className="menu-body">
+          <div className="menu-intro">
+            <span className="eyebrow">DAHA GENİŞ BİR PERSPEKTİF</span>
             <p>
-              {uiTexts.layout_014}
+              Yeryüzünü gözlemle.
               <br />
-              {uiTexts.layout_015}
+              Tarlayı bağlamıyla anla.
             </p>
           </div>
-          <nav aria-label={uiTexts.layout_016}>
-            {navigation.map((n) => (
-              <a key={n.id} href={base + n.path}>
-                {n.label}
+          <nav aria-label="Tüm sayfalar">
+            {navigation.map((n, i) => (
+              <a
+                key={n.id}
+                href={base + n.path}
+                onClick={() => setOpen(false)}
+                aria-current={page === n.id ? "page" : undefined}
+              >
+                <small>0{i + 1}</small>
+                <span>{n.label}</span>
+                <Arrow />
               </a>
             ))}
           </nav>
         </div>
-        <div className="footer-wordmark" aria-hidden="true">
-          {uiTexts.layout_017}
+        <div className="menu-bottom">
+          <span>UYDU TABANLI TARIMSAL ANALİZ</span>
+          <span>GÖZLEM → BAĞLAM → İÇGÖRÜ</span>
         </div>
-        <div className="footer-bottom">
-          <span>
-            {uiTexts.layout_018}
-            {new Date().getFullYear()} {uiTexts.layout_019}
-          </span>
-          <div>
-            <a href={base + "gizlilik/"}>{uiTexts.layout_020}</a>
-            <a href={base + "kullanim/"}>{uiTexts.layout_021}</a>
-            <a href={base + "gorsel-kredileri/"}>{uiTexts.layout_022}</a>
+      </dialog>
+      <main id="main" tabIndex={-1}>
+        {children}
+      </main>
+      <footer className="footer">
+        <div className="footer-main wrap">
+          <div className="footer-brand">
+            <a className="brand" href={base}>
+              <Mark />
+              <span>agromax</span>
+            </a>
+            <p>
+              Uydu gözleminden
+              <br />
+              tarımsal içgörüye.
+            </p>
+            <span className="footer-tag">Yeryüzüne daha yakından.</span>
           </div>
-          <span>{uiTexts.layout_023}</span>
+          <nav aria-label="Alt menü">
+            <span className="eyebrow">KEŞFET</span>
+            {navigation
+              .filter((n) => ["platform", "teknoloji", "filiz"].includes(n.id))
+              .map((n) => (
+                <a key={n.id} href={base + n.path}>
+                  {n.label}
+                  <Arrow />
+                </a>
+              ))}
+          </nav>
+          <nav aria-label="AgroMax hakkında">
+            <span className="eyebrow">AGROMAX</span>
+            {navigation
+              .filter((n) =>
+                ["cozumler", "hakkimizda", "iletisim"].includes(n.id),
+              )
+              .map((n) => (
+                <a key={n.id} href={base + n.path}>
+                  {n.label}
+                  <Arrow />
+                </a>
+              ))}
+          </nav>
+        </div>
+        <div className="footer-bottom wrap">
+          <span>© {new Date().getFullYear()} AgroMax</span>
+          <div>
+            <a href={base + "gizlilik/"}>Gizlilik</a>
+            <a href={base + "kullanim/"}>Kullanım bilgileri</a>
+            <a href={base + "gorsel-kredileri/"}>Görsel kredileri</a>
+          </div>
+          <span>Bağımsız ürün tanıtım sitesi.</span>
         </div>
       </footer>
     </>

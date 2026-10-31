@@ -35,3 +35,6 @@ Eski deponun `src/demo/sampleData.ts` ve `src/data/parcels.ts` içeriği, göste
 
 ## Cinematic 2.0 update
 The redesign adds only conceptual brand artwork and real CGI animation. It introduces no new product capability claims. The generated landscape is not a factual satellite observation and the material sculptures are not analytic outputs. Filiz remains a planned in-product assistant. Existing scientific caveats, unknown integration status, and absent contact/app URL remain in force.
+
+## Orbital / üçüncü tasarım güncellemesi
+Yeni uzaktan algılama görsel dili özgün bir kavramsal gözlem uydusu ve tarımsal peyzaj kullanır. AgroMax'ın uydu sahibi/işleticisi olduğu, modelin Sentinel-2'nin gerçek bir kopyası olduğu veya sinematik sahnenin gerçek analiz yaptığı iddia edilmez. NASA Blue Marble dokusu yeryüzü betimlemesi içindir; güncel gözlem, AgroMax çıktısı, NASA ortaklığı veya onayı değildir. Kaynak ve kullanım ilkeleri Görsel Kredileri ve ASSET_CREDITS.md'de belirtilir. Arazi görseli yapay zekâ ile üretilmiş kavramsal anlatımdır. Filiz planlanan özellik olmaya devam eder. Yeni başarı yüzdesi, müşteri/ekip bilgisi veya gerçek olmayan iletişim kanalı eklenmedi.

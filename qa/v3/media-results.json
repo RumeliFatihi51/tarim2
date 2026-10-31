@@ -1,0 +1,21 @@
+{
+  "base": "http://localhost:4173/",
+  "checks": [
+    "Mobile uses its own decoded WebM film, no WebGL",
+    "Mobile film pause and resume",
+    "Menu pauses and resumes film",
+    "Offscreen and reduced-motion pause",
+    "Independent terrain camera film decodes and plays on Platform",
+    "MP4 plays when WebM fails",
+    "Broken videos retain poster and navigation",
+    "GLB failure falls back to the actual desktop film",
+    "Original GLB renders, hidden video stops, 3D pause freezes the actual image",
+    "Native scroll changes the real 3D camera and scrolling back returns toward its initial framing",
+    "Runtime reduced-motion disposes the GPU scene",
+    "Resize below desktop threshold releases GPU and back restores the scene"
+  ],
+  "errors": [],
+  "pauseDifference": 0,
+  "forwardDifference": 25.570943196614582,
+  "reverseDifference": 8.671976725260416
+}
