@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "BASE_PATH=/ npm run build && BASE_PATH=/ npm run check",
+  "outputDirectory": "dist",
+  "installCommand": "npm ci",
+  "trailingSlash": true
+}

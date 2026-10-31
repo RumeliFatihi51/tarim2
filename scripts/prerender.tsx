@@ -3,7 +3,7 @@ import {renderToString} from 'react-dom/server';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {App} from '../src/App';
 import {metadata,type PageId} from '../src/content/site';
-const base=process.env.BASE_PATH||'/';const origin=(process.env.SITE_ORIGIN||'').replace(/\/$/,'');
+const base=process.env.BASE_PATH||'/';const origin=(process.env.SITE_ORIGIN||(process.env.VERCEL_PROJECT_PRODUCTION_URL?'https://'+process.env.VERCEL_PROJECT_PRODUCTION_URL:'')).replace(/\/$/,'');
 if(!base.startsWith('/')||!base.endsWith('/'))throw new Error('BASE_PATH must start and end with /');
 const template=readFileSync('dist/index.html','utf8');
 const escape=(s:string)=>s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
