@@ -1,0 +1,97 @@
+{
+  "base": "https://agromax-alpha.vercel.app/",
+  "commit": "674893d8c5b5fc806abae3965eb16fb7e019969f",
+  "deployment": "dpl_7Ni4Yf3Nu9HTERxZkt8zWRZbBph2",
+  "pages": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "platform/",
+      "status": 200
+    },
+    {
+      "route": "teknoloji/",
+      "status": 200
+    },
+    {
+      "route": "filiz/",
+      "status": 200
+    },
+    {
+      "route": "cozumler/",
+      "status": 200
+    },
+    {
+      "route": "hakkimizda/",
+      "status": 200
+    },
+    {
+      "route": "iletisim/",
+      "status": 200
+    },
+    {
+      "route": "gizlilik/",
+      "status": 200
+    },
+    {
+      "route": "kullanim/",
+      "status": 200
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "status": 200
+    },
+    {
+      "route": "/bu-koordinat-yok/",
+      "status": 404
+    }
+  ],
+  "media": [
+    {
+      "path": "media/orbit.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "path": "media/orbit.webm",
+      "status": 200,
+      "type": "video/webm"
+    },
+    {
+      "path": "media/orbit-mobile.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "path": "media/orbit-mobile.webm",
+      "status": 200,
+      "type": "video/webm"
+    },
+    {
+      "path": "media/field.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "path": "media/field.webm",
+      "status": 200,
+      "type": "video/webm"
+    },
+    {
+      "path": "media/field-mobile.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "path": "media/field-mobile.webm",
+      "status": 200,
+      "type": "video/webm"
+    }
+  ],
+  "errors": [],
+  "desktopWebGL": true,
+  "mobileMovie": "https://agromax-alpha.vercel.app/media/orbit-mobile.webm",
+  "navigation": true
+}

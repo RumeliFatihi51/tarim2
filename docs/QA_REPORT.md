@@ -33,3 +33,7 @@ Gerçek WebGL canvas görüntüsü durdurulduğunda piksel farkı 0. İleri scro
 
 ## Sınırlar
 Fiziksel iOS/Android cihazlar veya Safari laboratuvarı kullanılmadı. Mobil/tablet testleri gerçek Chromium'da viewport emülasyonudur. MP4 yedeği Chromium'da WebM isteği engellenerek test edildi; bu Safari sertifikasyonu değildir. WebGL testleri Chromium/SwiftShader ile gerçek geometri ve shader yürütür; fiziksel cihaz FPS garantisi verilmez. Axe ve Lighthouse puanları kapsamlı erişilebilirlik sertifikası değildir. Saha verisi veya gerçek ürünün bilimsel doğruluğu bu tanıtım sitesi görevinin konusu değildir.
+
+## Canlı Vercel kontrolü
+
+`674893d` kod sürümü, Vercel production `dpl_7Ni4Yf3Nu9HTERxZkt8zWRZbBph2`, https://agromax-alpha.vercel.app/ adresinde doğrulandı. On gerçek sayfa 200; bilinmeyen yol özel 404 döndürüyor. Canonical adresleri doğru. Sekiz video doğru video MIME türüyle 200 veriyor. Canlı Chromium'da masaüstü WebGL açıldı; mobil cihaz boyutunda ayrı mobil film oynadı; menü, teknoloji sayfası, yenileme ve geri dönüş geçti. Sayfa JavaScript hatası yok. Ham kayıt: `qa/v3/live-results.json`. Son belgeleme commit'i bu arayüzü değiştirmez.
