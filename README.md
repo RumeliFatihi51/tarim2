@@ -1,5 +1,10 @@
 # AgroMax — Kurumsal ürün sitesi
 
+**Canlı site: https://agromax-alpha.vercel.app/**
+
+Güncel yayın Vercel üzerindedir. Eymen (`eymen3`) hesabındaki `agromax` projesi bu deponun main dalına bağlıdır; yeni push otomatik production deploy başlatır. `vercel.json`, statik derlemeyi kök yolunda çalıştırır ve build sonrası bağlantı/kapsam kontrolünü zorunlu tutar. GitHub Pages aşağıda alternatif yayın olarak belgelenmiştir.
+
+
 Uydu tabanlı dijital tarım yazılımı için özgün, Türkçe, çok sayfalı tanıtım sitesi. **Ürün uygulaması değildir:** dashboard, hesap, giriş, demo, uydu analizi, parsel kontrolü, chatbot veya ürün API’si içermez.
 
 ## Çalıştırma
@@ -29,7 +34,7 @@ Her ana sayfanın farklı hero ve editoryal düzeni vardır. Canonical URL gerç
 
 Depo: https://github.com/RumeliFatihi51/tarim2
 
-`.github/workflows/pages.yml`, main dalına push veya manuel tetiklemede `npm ci`, `npm run build`, `npm run check`, Pages artifact upload ve deploy adımlarını çalıştırır. Depoda Settings → Pages → Source: GitHub Actions kullanılmalıdır. `actions/configure-pages` origin ve base path’i belirler; proje deposu ve kullanıcı alan adı senaryoları desteklenir. CNAME dosyası eklenmez; kullanıcı özel alan adı sağlamadı.
+`.github/workflows/pages.yml`, manuel tetiklemede `npm ci`, `npm run build`, `npm run check`, Pages artifact upload ve deploy adımlarını çalıştırır. Depoda Settings → Pages → Source: GitHub Actions kullanılmalıdır. `actions/configure-pages` origin ve base path’i belirler; proje deposu ve kullanıcı alan adı senaryoları desteklenir. CNAME dosyası eklenmez; kullanıcı özel alan adı sağlamadı.
 
 Yerel proje-alt-yol doğrulaması:
 

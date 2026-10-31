@@ -1,5 +1,12 @@
 # AgroMax / son teslim durumu
 
+## Güncel yayın: Vercel — başarılı
+
+Canlı adres: https://agromax-alpha.vercel.app/
+
+Eymen (`eymen3`) hesabında `agromax` projesi GitHub `RumeliFatihi51/tarim2` main dalına bağlandı. Production durumu READY olarak doğrulandı. On sayfa HTTP 200, bilinmeyen rota HTTP 404; mobil görsel, menü, Filiz geçişi ve deep-link yenileme kontrolü başarılı, tarayıcı çalışma zamanı hatası sıfır. Yeni main pushları otomatik Vercel yayını başlatır. Aşağıdaki Pages engeli önceki GitHub Pages denemesinin tarihsel kaydıdır; güncel Vercel yayınını engellemez.
+
+
 31 Ekim 2026.
 
 ## Kod teslimi

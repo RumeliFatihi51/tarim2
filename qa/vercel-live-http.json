@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "title": "AgroMax — Uydu gözleminden tarımsal içgörüye"
+  },
+  {
+    "path": "/platform/",
+    "status": 200,
+    "title": "Platform — Parselin bütün hikâyesi | AgroMax"
+  },
+  {
+    "path": "/teknoloji/",
+    "status": 200,
+    "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax"
+  },
+  {
+    "path": "/filiz/",
+    "status": 200,
+    "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax"
+  },
+  {
+    "path": "/cozumler/",
+    "status": 200,
+    "title": "Çözümler — Sahadaki farklı sorular için | AgroMax"
+  },
+  {
+    "path": "/hakkimizda/",
+    "status": 200,
+    "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax"
+  },
+  {
+    "path": "/iletisim/",
+    "status": 200,
+    "title": "İletişim — AgroMax hakkında konuşalım"
+  },
+  {
+    "path": "/gizlilik/",
+    "status": 200,
+    "title": "Gizlilik — AgroMax"
+  },
+  {
+    "path": "/kullanim/",
+    "status": 200,
+    "title": "Kullanım bilgileri — AgroMax"
+  },
+  {
+    "path": "/gorsel-kredileri/",
+    "status": 200,
+    "title": "Görsel kredileri — AgroMax"
+  }
+]
