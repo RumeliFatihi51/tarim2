@@ -1,0 +1,13 @@
+build	Run actions/checkout@v4	2026-10-31T05:26:02.1154817Z hint: to use in all of your new repositories, which will suppress this warning,
+build	Run actions/setup-node@v4	2026-10-31T05:26:03.2610656Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	Read Pages configuration when enabled	2026-10-31T05:26:04.5258441Z ##[error]Get Pages site failed. Please verify that the repository has Pages enabled and configured to build using GitHub Actions, or consider exploring the `enablement` parameter for this action. Error: Not Found - https://docs.github.com/rest/pages/pages#get-a-apiname-pages-site
+build	Read Pages configuration when enabled	2026-10-31T05:26:04.5270787Z ##[error]HttpError: Not Found - https://docs.github.com/rest/pages/pages#get-a-apiname-pages-site
+build	Build static pages	2026-10-31T05:26:12.5481232Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+build	Build static pages	2026-10-31T05:26:12.9473214Z Prerendered 11 pages. JavaScript-free content and deep links ready. Base: /tarim2/
+build	Check links and scope	2026-10-31T05:26:13.2962022Z PASS: 11 statically rendered pages, 370 local references, unique metadata, valid media budget and locked product-site scope.
+build	Run actions/upload-pages-artifact@v4	2026-10-31T05:26:13.5400768Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	Explain pending hosting setup	﻿2026-10-31T05:26:15.4710207Z ##[group]Run echo '::warning::Build is ready. Repository owner must enable GitHub Pages with GitHub Actions, then rerun this workflow. Deployment was intentionally skipped.'
+build	Explain pending hosting setup	2026-10-31T05:26:15.4711384Z [36;1mecho '::warning::Build is ready. Repository owner must enable GitHub Pages with GitHub Actions, then rerun this workflow. Deployment was intentionally skipped.'[0m
+build	Explain pending hosting setup	2026-10-31T05:26:15.4794008Z ##[warning]Build is ready. Repository owner must enable GitHub Pages with GitHub Actions, then rerun this workflow. Deployment was intentionally skipped.
+build	Post Run actions/setup-node@v4	2026-10-31T05:26:15.6105918Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	Complete job	2026-10-31T05:26:17.9367779Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/configure-pages@v5, actions/setup-node@v4, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

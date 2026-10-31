@@ -1,10 +1,12 @@
-import {StrictMode} from 'react';
-import {createRoot} from 'react-dom/client';
-import App from './App.tsx';
-import './index.css';
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+import {hydrateRoot,createRoot} from 'react-dom/client';
+import {App} from './App';
+import type {PageId} from './content/site';
+import {initMotion} from './motion/scenes';
+import './styles/global.css';
+const root=document.getElementById('root')!;
+const base=import.meta.env.BASE_URL;const segment=location.pathname.slice(base.length).replace(/^\/+|\/+$/g,'');
+const known=['home','platform','teknoloji','filiz','cozumler','hakkimizda','iletisim','gizlilik','kullanim','gorsel-kredileri','404'];
+const page=(root.dataset.page||(!segment?'home':known.includes(segment)?segment:'404')) as PageId;
+const props={page,base:root.dataset.base||base};
+if(root.querySelector('main'))hydrateRoot(root,<App {...props}/>);else createRoot(root).render(<App {...props}/>);
+requestAnimationFrame(()=>requestAnimationFrame(()=>initMotion()));

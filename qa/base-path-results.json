@@ -1,0 +1,31 @@
+{
+  "base": "/tarim2/",
+  "rows": [
+    {
+      "path": "/tarim2/",
+      "directLoad": "pass",
+      "reload": "pass"
+    },
+    {
+      "path": "/tarim2/platform/",
+      "directLoad": "pass",
+      "reload": "pass"
+    },
+    {
+      "path": "/tarim2/teknoloji/",
+      "directLoad": "pass",
+      "reload": "pass"
+    },
+    {
+      "path": "/tarim2/filiz/",
+      "directLoad": "pass",
+      "reload": "pass"
+    },
+    {
+      "path": "/tarim2/iletisim/",
+      "directLoad": "pass",
+      "reload": "pass"
+    }
+  ],
+  "errors": []
+}

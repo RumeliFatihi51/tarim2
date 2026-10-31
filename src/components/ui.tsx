@@ -1,0 +1,8 @@
+import {uiTexts} from '../content/interface';
+import type {ReactNode} from 'react';
+export function Arrow({diagonal=false}:{diagonal?:boolean}){return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d={diagonal?'M5 19 19 5M5 5h14v14':'M4 12h15m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.4"/></svg>}
+export function Mark(){return <svg viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M4 27C4 15 14 4 28 4 28 17 19 28 7 28M8 25C9 16 16 9 24 8M13 27C15 20 21 14 28 13M5 17C12 17 17 22 17 28" stroke="currentColor" strokeWidth="2.3"/></svg>}
+export function Link({href,children,className='',solid=false,diagonal=false}:{href:string;children:ReactNode;className?:string;solid?:boolean;diagonal?:boolean}){return <a href={href} className={`${solid?'button':'text-link'} ${className}`}><span>{children}</span><Arrow diagonal={diagonal}/></a>}
+export function Eyebrow({children,num}:{children:ReactNode;num?:string}){return <div className="eyebrow">{num&&<span className="index">{num} {uiTexts.ui_001}</span>}{children}</div>}
+export function Media({base,name,alt,className='',eager=false}:{base:string;name:string;alt:string;className?:string;eager?:boolean}){return <picture className={className}><source media="(max-width: 600px)" srcSet={`${base}media/${name}-mobile.webp`}/><img src={`${base}media/${name}.webp`} alt={alt} width={name==='earth'?2400:1500} height={name==='earth'?1600:1200} loading={eager?'eager':'lazy'} fetchPriority={eager?'high':'auto'} decoding="async"/></picture>}
+export function SectionHeading({eyebrow,title,body}:{eyebrow:string;title:ReactNode;body?:string}){return <div className="section-heading"><Eyebrow>{eyebrow}</Eyebrow><h2>{title}</h2>{body&&<p>{body}</p>}</div>}
