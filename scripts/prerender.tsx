@@ -27,7 +27,7 @@ for (const page of pages) {
         : page === "teknoloji"
           ? "revision1/leaf-poster"
           : page === "filiz"
-            ? "revision1/filiz-archive"
+            ? "field-poster"
             : page === "hakkimizda"
               ? "stage1/about-material"
               : "agriculture";

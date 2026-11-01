@@ -1,0 +1,13 @@
+/* Scoped restoration of 674893d8c. No Journey or global layout selectors. */
+.restored-field { position: relative; min-width: 0; }
+.restored-field > .landscape-stage { height: 100%; min-height: 560px; }
+.field-context-section .restored-field { height: clamp(560px, 52vw, 760px); }
+.filiz-hero > .restored-field { height: 100%; min-height: 760px; }
+.restored-field .context-point { border-radius: 4px; background: #17291edd; backdrop-filter: blur(8px); }
+.field-context-description { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width:767px) {
+ .field-context-section .restored-field { height: 560px; }
+ .filiz-hero > .restored-field { min-height: 560px; height: 560px; }
+ .restored-field .landscape-label { left: 20px; top: 20px; font-size: 8px; }
+ .restored-field .landscape-caption { right: 70px; }
+}

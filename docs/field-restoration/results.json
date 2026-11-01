@@ -1,0 +1,406 @@
+[
+  {
+    "route": "",
+    "width": 1024,
+    "url": "http://localhost:4173/media/field.webm",
+    "height": 760,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "overflow": 0,
+    "pts": [
+      {
+        "text": "Parsel",
+        "x": 243.0625,
+        "y": 295.652587890625,
+        "w": 72.796875,
+        "h": 37.1875
+      },
+      {
+        "text": "Gözlem",
+        "x": 1141.890625,
+        "y": 430.433837890625,
+        "w": 81.53125,
+        "h": 37.1875
+      },
+      {
+        "text": "Geçmiş",
+        "x": 322.546875,
+        "y": 625.386962890625,
+        "w": 80.921875,
+        "h": 37.1875
+      },
+      {
+        "text": "Dayanak",
+        "x": 1083.875,
+        "y": 692.777587890625,
+        "w": 86.5625,
+        "h": 37.1875
+      }
+    ],
+    "box": {
+      "x": 57.59375,
+      "y": 130.125,
+      "w": 1324.796875,
+      "h": 748.796875
+    },
+    "axeViolations": 0,
+    "controls": true,
+    "offscreenPause": true
+  },
+  {
+    "route": "filiz/",
+    "width": 1024,
+    "url": "http://localhost:4173/media/field.webm",
+    "height": 760,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "overflow": 0,
+    "pts": [
+      {
+        "text": "Parsel",
+        "x": 898.9375,
+        "y": 308.1994934082031,
+        "w": 72.796875,
+        "h": 37.1875
+      },
+      {
+        "text": "Gözlem",
+        "x": 1233.40625,
+        "y": 445.0119934082031,
+        "w": 81.53125,
+        "h": 37.1875
+      },
+      {
+        "text": "Geçmiş",
+        "x": 932.671875,
+        "y": 643.433837890625,
+        "w": 80.921875,
+        "h": 37.18756103515625
+      },
+      {
+        "text": "Dayanak",
+        "x": 1205.890625,
+        "y": 711.8245239257812,
+        "w": 86.5625,
+        "h": 37.1875
+      }
+    ],
+    "box": {
+      "x": 820.25,
+      "y": 140,
+      "w": 562.140625,
+      "h": 760
+    },
+    "axeViolations": 0,
+    "controls": true,
+    "offscreenPause": true
+  },
+  {
+    "route": "",
+    "width": 1024,
+    "url": "http://localhost:4173/media/field.webm",
+    "height": 760,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "overflow": 0,
+    "pts": [
+      {
+        "text": "Parsel",
+        "x": 129.625,
+        "y": 349.35723876953125,
+        "w": 72.796875,
+        "h": 37.1875
+      },
+      {
+        "text": "Gözlem",
+        "x": 570.953125,
+        "y": 450.16973876953125,
+        "w": 81.53125,
+        "h": 37.1875
+      },
+      {
+        "text": "Geçmiş",
+        "x": 172.015625,
+        "y": 586.5916137695312,
+        "w": 80.921875,
+        "h": 37.1875
+      },
+      {
+        "text": "Dayanak",
+        "x": 537.65625,
+        "y": 636.9822387695312,
+        "w": 86.5625,
+        "h": 37.1875
+      }
+    ],
+    "box": {
+      "x": 30.71875,
+      "y": 225.265625,
+      "w": 706.546875,
+      "h": 560
+    },
+    "axeViolations": 0,
+    "controls": true,
+    "offscreenPause": true
+  },
+  {
+    "route": "filiz/",
+    "width": 1024,
+    "url": "http://localhost:4173/media/field.webm",
+    "height": 760,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "overflow": 0,
+    "pts": [
+      {
+        "text": "Parsel",
+        "x": 129.625,
+        "y": 270.58050537109375,
+        "w": 72.796875,
+        "h": 37.1875
+      },
+      {
+        "text": "Gözlem",
+        "x": 570.953125,
+        "y": 371.39300537109375,
+        "w": 81.53125,
+        "h": 37.187530517578125
+      },
+      {
+        "text": "Geçmiş",
+        "x": 172.015625,
+        "y": 507.8149108886719,
+        "w": 80.921875,
+        "h": 37.187530517578125
+      },
+      {
+        "text": "Dayanak",
+        "x": 537.65625,
+        "y": 558.20556640625,
+        "w": 86.5625,
+        "h": 37.1875
+      }
+    ],
+    "box": {
+      "x": 30.71875,
+      "y": 139.765625,
+      "w": 706.546875,
+      "h": 760
+    },
+    "axeViolations": 0,
+    "controls": true,
+    "offscreenPause": true
+  },
+  {
+    "route": "",
+    "width": 576,
+    "url": "http://localhost:4173/media/field-mobile.webm",
+    "height": 720,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "overflow": 0,
+    "pts": [
+      {
+        "text": "Parsel",
+        "x": 71.875,
+        "y": 349.54473876953125,
+        "w": 65.984375,
+        "h": 33.59375
+      },
+      {
+        "text": "Gözlem",
+        "x": 250.984375,
+        "y": 450.35723876953125,
+        "w": 73.984375,
+        "h": 33.59375
+      },
+      {
+        "text": "Geçmiş",
+        "x": 92.390625,
+        "y": 590.3728637695312,
+        "w": 73.4375,
+        "h": 33.59375
+      },
+      {
+        "text": "Dayanak",
+        "x": 232.6875,
+        "y": 640.7634887695312,
+        "w": 78.59375,
+        "h": 33.59375
+      }
+    ],
+    "box": {
+      "x": 24,
+      "y": 225.453125,
+      "w": 342,
+      "h": 560
+    },
+    "axeViolations": 0,
+    "controls": true,
+    "offscreenPause": true
+  },
+  {
+    "route": "filiz/",
+    "width": 576,
+    "url": "http://localhost:4173/media/field-mobile.webm",
+    "height": 720,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "overflow": 0,
+    "pts": [
+      {
+        "text": "Parsel",
+        "x": 54.59375,
+        "y": 471.1952209472656,
+        "w": 65.984375,
+        "h": 33.59375
+      },
+      {
+        "text": "Gözlem",
+        "x": 269.21875,
+        "y": 572.0076904296875,
+        "w": 73.984375,
+        "h": 33.59375
+      },
+      {
+        "text": "Geçmiş",
+        "x": 78,
+        "y": 712.0233154296875,
+        "w": 73.4375,
+        "h": 33.59375
+      },
+      {
+        "text": "Dayanak",
+        "x": 249.015625,
+        "y": 762.4139404296875,
+        "w": 78.59375,
+        "h": 33.59375
+      }
+    ],
+    "box": {
+      "x": 0,
+      "y": 339.640625,
+      "w": 390,
+      "h": 560
+    },
+    "axeViolations": 0,
+    "controls": true,
+    "offscreenPause": true
+  },
+  {
+    "route": "",
+    "width": 576,
+    "url": "http://localhost:4173/media/field-mobile.webm",
+    "height": 720,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "overflow": 0,
+    "pts": [
+      {
+        "text": "Parsel",
+        "x": 62.078125,
+        "y": 349.54473876953125,
+        "w": 65.984375,
+        "h": 33.59375
+      },
+      {
+        "text": "Gözlem",
+        "x": 189.390625,
+        "y": 450.35723876953125,
+        "w": 73.984375,
+        "h": 33.59375
+      },
+      {
+        "text": "Geçmiş",
+        "x": 78.390625,
+        "y": 590.3728637695312,
+        "w": 73.4375,
+        "h": 33.59375
+      },
+      {
+        "text": "Dayanak",
+        "x": 173.890625,
+        "y": 640.7634887695312,
+        "w": 78.59375,
+        "h": 33.59375
+      }
+    ],
+    "box": {
+      "x": 24,
+      "y": 225.453125,
+      "w": 272,
+      "h": 560
+    },
+    "axeViolations": 0,
+    "controls": true,
+    "offscreenPause": true
+  },
+  {
+    "route": "filiz/",
+    "width": 576,
+    "url": "http://localhost:4173/media/field-mobile.webm",
+    "height": 720,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "overflow": 0,
+    "pts": [
+      {
+        "text": "Parsel",
+        "x": 44.796875,
+        "y": 472.3891296386719,
+        "w": 65.984375,
+        "h": 33.59375
+      },
+      {
+        "text": "Gözlem",
+        "x": 207.625,
+        "y": 573.20166015625,
+        "w": 73.984375,
+        "h": 33.59375
+      },
+      {
+        "text": "Geçmiş",
+        "x": 64,
+        "y": 713.21728515625,
+        "w": 73.4375,
+        "h": 33.59375
+      },
+      {
+        "text": "Dayanak",
+        "x": 190.21875,
+        "y": 763.60791015625,
+        "w": 78.59375,
+        "h": 33.59375
+      }
+    ],
+    "box": {
+      "x": 0,
+      "y": 340.390625,
+      "w": 320,
+      "h": 560
+    },
+    "axeViolations": 0,
+    "controls": true,
+    "offscreenPause": true
+  },
+  {
+    "fallback": "reduce",
+    "passed": true
+  },
+  {
+    "fallback": "webm",
+    "passed": true
+  },
+  {
+    "fallback": "all",
+    "passed": true
+  }
+]

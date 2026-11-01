@@ -1,0 +1,11 @@
+{
+  "reference": "674893d8c",
+  "originalOverlayMarkupUnchanged": true,
+  "sha256": "1c07eb8c393a7cd1e033480a71ef4e4c93be7e9b22953158e5a3946f1a04a3f3",
+  "originalScrollDrift": [
+    12,
+    -12
+  ],
+  "scrollStart": "top bottom",
+  "scrollEnd": "bottom top"
+}

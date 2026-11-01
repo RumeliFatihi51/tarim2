@@ -4,6 +4,7 @@ import { audiences } from "../content/site";
 import { Eyebrow, Link, Icon, Arrow, Media } from "../components/ui";
 import { WorldOpening, Journey } from "../components/Journey";
 import { stage1 } from "../content/stage1";
+import { FieldContext } from "../components/FieldContext";
 import { Landscape } from "../components/Cinematic";
 export function Next({
   base,
@@ -132,6 +133,16 @@ export function Home({ base }: { base: string }) {
             Kavramsal anlatım; farklı tarihlere ait gerçek ölçüm gösterilmez.
           </small>
         </div>
+      </section>
+      <section className="field-context-section wrap section-space" aria-labelledby="field-context-heading">
+        <div className="split-heading">
+          <div>
+            <Eyebrow>GÖZLEMDEN BAĞLAMA</Eyebrow>
+            <h2 id="field-context-heading">Bir parsel.<br />Birbirini tamamlayan izler.</h2>
+          </div>
+          <p>Bir gözlem, parselin geçmişi ve dayanaklarıyla birlikte anlam kazanır. AgroMax’ın yaklaşımı, bu bilgileri aynı bağlamda değerlendirmektir.</p>
+        </div>
+        <FieldContext base={base} />
       </section>
       <section className="filiz-preview">
         <div className="wrap filiz-preview-grid">
