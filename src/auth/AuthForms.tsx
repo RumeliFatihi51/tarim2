@@ -23,6 +23,7 @@ export default function AuthForms({base}:{base:string}){
  const logout=async()=>{setBusy(true);setError('');try{const c=await authClient();const r=await c.auth.signOut();if(r.error)throw r.error;setUser(null);move('giris');setStatus('Oturumun kapatıldı.')}catch{setError('Çıkış tamamlanamadı. Tekrar dene.')}finally{setBusy(false)}};
  const protectedMode=mode==='profil'||mode==='sifirla';
  return <div className="auth-form-shell">
+ <p className="auth-notice">Hesap alanı ön sürümdedir. E-posta doğrulama ve şifre yenileme henüz genel kullanıma hazır değildir.</p>
  <div className="auth-switch" role="group" aria-label="Hesap işlemi"><button type="button" aria-pressed={mode==='giris'} onClick={()=>move('giris')}>Giriş yap</button><button type="button" aria-pressed={mode==='kayit'} onClick={()=>move('kayit')}>Kayıt ol</button></div>
  <h2 ref={heading} tabIndex={-1}>{mode==='dogrula'&&user?.email_confirmed_at?'E-postan doğrulandı.':labels[mode]}</h2>
  {!configured()&&<p className="auth-notice" role="status">Hesap hizmeti henüz etkinleştirilmedi. Giriş ve kayıt şu anda kullanılamıyor.</p>}

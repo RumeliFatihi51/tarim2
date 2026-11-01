@@ -1,6 +1,8 @@
 # AgroMax Aşama 2
 
-**Üretim yayını engelli; tüm hedefler tamamlandı olarak işaretlenmedi.**
+**Güncel talimat:** Kullanıcı mevcut değişikliklerin Vercel’e yayımlanmasını istedi. Önceki Vercel dışı yayın kısıtı bu yayın için kaldırıldı. E-posta akışının doğrulanması ve fiziksel cihaz testleri hâlâ açık; tüm hedefler tamamlandı sayılmıyor.
+
+[Güncel Vercel yayın kaydı](VERCEL_RELEASE.md)
 
 [Taslak PR #1](https://github.com/RumeliFatihi51/tarim2/pull/1) · [GitHub CI sonucu](ci-tests.json)
 
