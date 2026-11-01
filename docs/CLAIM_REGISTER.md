@@ -44,3 +44,6 @@ Kamera, bitki geometrisi ve atmosferik sahneler kavramsal görsel anlatımdır. 
 
 ## Aşama 01 / sayfaya özgü görsel prodüksiyon
 1 Kasım 2026: Yeni parsel, araştırma malzemeleri, dört kullanım alanı ve Filiz kompozisyonları kavramsal görsellerdir. Yeni görüntülerin gerçek çiftlik, gerçek AgroMax ekibi/atölyesi, müşteri veya uydu çıktısı olduğu iddia edilmez. Optik yüzeyler gerçek NIR/SWIR ölçümünü göstermez. Tarih anlatımında iki görsel gerçek zaman serisi değildir. Kısa filmlerin 2.5D üretim niteliği kredilerde açıkça belirtilir. Journey gerçek CGI ile özgün raster kompoziti birleştirir. Filiz'in planlanan durumuna, bilinmeyen entegrasyonlara, NDMI/NDWI ayrımına ve iletişim yokluğuna ilişkin önceki kayıtlar değişmez.
+
+## Aşama 1 premium görsel revizyonu / 1 Kasım 2026
+Filiz botanik arşivi ve arazi yüzey dokusu özgün kavramsal görsel üretimleridir. Platform rölyefinin yükseltisi yazılmış sentetik bir yüzeydir; DEM, ölçülmüş coğrafya veya analiz değildir. Teknoloji yaprağı paralel damarlı buğday laminasını anlatan kavramsal geometri/tekstürdür; NIR/SWIR ölçümü veya gerçek bilimsel mikrograf değildir. Optik cam panel metaforu kullanımından vazgeçilmiştir. Önceki ürün kısıtları korunur. Yeryüzüne Yolculuk bu revizyonun dışındadır.

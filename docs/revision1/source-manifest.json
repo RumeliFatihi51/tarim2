@@ -1,0 +1,32 @@
+[
+  {
+    "file": "src/assets/production/revision1/filiz-archive.png",
+    "bytes": 3279761,
+    "sha256": "b8fc9b5d96bc74059b23408d78170f4a715152a11013de4c040272f05507da9f"
+  },
+  {
+    "file": "src/assets/production/revision1/leaf-portrait.blend",
+    "bytes": 4236964,
+    "sha256": "6b507f1701506fdf131bf1f2f7d795f583587b11fc10aafb2182257bfdadb4b8"
+  },
+  {
+    "file": "src/assets/production/revision1/leaf-wide.blend",
+    "bytes": 4236964,
+    "sha256": "c64748f229e7d391f77c423eaa6e3d308e330f60b19d622e2d718e78bbcc2fbd"
+  },
+  {
+    "file": "src/assets/production/revision1/parcel-portrait.blend",
+    "bytes": 9061972,
+    "sha256": "983c9803e01afe6385ee7d9074f257791cd31a27c62424d8cf3ee33413ed9eaf"
+  },
+  {
+    "file": "src/assets/production/revision1/parcel-surface.png",
+    "bytes": 4384835,
+    "sha256": "108df5db0814adaca300891e401f0d5e051cbe9eeecf745ef2f61a3e5291d131"
+  },
+  {
+    "file": "src/assets/production/revision1/parcel-wide.blend",
+    "bytes": 9061972,
+    "sha256": "1608dc5e6d1bed2515d87d9a720d94bb7cd923de55bfffa60085ea6c788d79ba"
+  }
+]

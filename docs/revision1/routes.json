@@ -1,0 +1,610 @@
+{
+  "base": "http://localhost:4173/",
+  "routes": [
+    {
+      "route": "",
+      "width": 1440,
+      "overflow": 0,
+      "title": "AgroMax — Uydu gözleminden tarımsal içgörüye",
+      "main": 2842,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "platform/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Platform — Parselin bütün hikâyesi | AgroMax",
+      "main": 2051,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax",
+      "main": 3473,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax",
+      "main": 1480,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Çözümler — Sahadaki farklı sorular için | AgroMax",
+      "main": 1841,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax",
+      "main": 1263,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "İletişim — AgroMax hakkında konuşalım",
+      "main": 684,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "gizlilik/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Gizlilik — AgroMax",
+      "main": 917,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "kullanim/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Kullanım bilgileri — AgroMax",
+      "main": 949,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Görsel kredileri — AgroMax",
+      "main": 2338,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "404.html",
+      "width": 1440,
+      "overflow": 0,
+      "title": "Sayfa bulunamadı — AgroMax",
+      "main": 122,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "",
+      "width": 768,
+      "overflow": 0,
+      "title": "AgroMax — Uydu gözleminden tarımsal içgörüye",
+      "main": 2816,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "platform/",
+      "width": 768,
+      "overflow": 0,
+      "title": "Platform — Parselin bütün hikâyesi | AgroMax",
+      "main": 2051,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 768,
+      "overflow": 0,
+      "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax",
+      "main": 3473,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 768,
+      "overflow": 0,
+      "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax",
+      "main": 1480,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 768,
+      "overflow": 0,
+      "title": "Çözümler — Sahadaki farklı sorular için | AgroMax",
+      "main": 1841,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 768,
+      "overflow": 0,
+      "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax",
+      "main": 1263,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 768,
+      "overflow": 0,
+      "title": "İletişim — AgroMax hakkında konuşalım",
+      "main": 684,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "gizlilik/",
+      "width": 768,
+      "overflow": 0,
+      "title": "Gizlilik — AgroMax",
+      "main": 917,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "kullanim/",
+      "width": 768,
+      "overflow": 0,
+      "title": "Kullanım bilgileri — AgroMax",
+      "main": 949,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 768,
+      "overflow": 0,
+      "title": "Görsel kredileri — AgroMax",
+      "main": 2338,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "404.html",
+      "width": 768,
+      "overflow": 0,
+      "title": "Sayfa bulunamadı — AgroMax",
+      "main": 122,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "",
+      "width": 390,
+      "overflow": 0,
+      "title": "AgroMax — Uydu gözleminden tarımsal içgörüye",
+      "main": 2816,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "platform/",
+      "width": 390,
+      "overflow": 0,
+      "title": "Platform — Parselin bütün hikâyesi | AgroMax",
+      "main": 2051,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 390,
+      "overflow": 0,
+      "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax",
+      "main": 3473,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 390,
+      "overflow": 0,
+      "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax",
+      "main": 1480,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 390,
+      "overflow": 0,
+      "title": "Çözümler — Sahadaki farklı sorular için | AgroMax",
+      "main": 1841,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 390,
+      "overflow": 0,
+      "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax",
+      "main": 1263,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 390,
+      "overflow": 0,
+      "title": "İletişim — AgroMax hakkında konuşalım",
+      "main": 684,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "gizlilik/",
+      "width": 390,
+      "overflow": 0,
+      "title": "Gizlilik — AgroMax",
+      "main": 917,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "kullanim/",
+      "width": 390,
+      "overflow": 0,
+      "title": "Kullanım bilgileri — AgroMax",
+      "main": 949,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 390,
+      "overflow": 0,
+      "title": "Görsel kredileri — AgroMax",
+      "main": 2338,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "404.html",
+      "width": 390,
+      "overflow": 0,
+      "title": "Sayfa bulunamadı — AgroMax",
+      "main": 122,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "",
+      "width": 320,
+      "overflow": 0,
+      "title": "AgroMax — Uydu gözleminden tarımsal içgörüye",
+      "main": 2816,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "platform/",
+      "width": 320,
+      "overflow": 0,
+      "title": "Platform — Parselin bütün hikâyesi | AgroMax",
+      "main": 2051,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 320,
+      "overflow": 0,
+      "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax",
+      "main": 3473,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 320,
+      "overflow": 0,
+      "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax",
+      "main": 1480,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 320,
+      "overflow": 0,
+      "title": "Çözümler — Sahadaki farklı sorular için | AgroMax",
+      "main": 1841,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 320,
+      "overflow": 0,
+      "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax",
+      "main": 1263,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 320,
+      "overflow": 0,
+      "title": "İletişim — AgroMax hakkında konuşalım",
+      "main": 684,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "gizlilik/",
+      "width": 320,
+      "overflow": 0,
+      "title": "Gizlilik — AgroMax",
+      "main": 917,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "kullanim/",
+      "width": 320,
+      "overflow": 0,
+      "title": "Kullanım bilgileri — AgroMax",
+      "main": 949,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 320,
+      "overflow": 0,
+      "title": "Görsel kredileri — AgroMax",
+      "main": 2338,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    },
+    {
+      "route": "404.html",
+      "width": 320,
+      "overflow": 0,
+      "title": "Sayfa bulunamadı — AgroMax",
+      "main": 122,
+      "badImages": [],
+      "forms": 0,
+      "videoSources": 0,
+      "canvas": 0
+    }
+  ],
+  "accessibility": [
+    {
+      "route": "",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "platform/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "filiz/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "cozumler/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "iletisim/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "gizlilik/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "kullanim/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "platform/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "teknoloji/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "filiz/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "cozumler/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "iletisim/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "gizlilik/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "kullanim/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "mobile-menu",
+      "width": 390,
+      "violations": []
+    }
+  ],
+  "navigation": [
+    "Native dialog traps focus, Escape closes, trigger receives focus",
+    "Mobile menu navigation, deep-link reload and history back"
+  ],
+  "noJavaScript": [
+    "/",
+    "platform/",
+    "teknoloji/",
+    "filiz/",
+    "cozumler/",
+    "hakkimizda/",
+    "iletisim/"
+  ],
+  "failures": []
+}

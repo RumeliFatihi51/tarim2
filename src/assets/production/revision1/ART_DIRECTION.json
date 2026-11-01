@@ -1,0 +1,16 @@
+{
+  "filiz-archive.png": {
+    "source": "OpenAI image generation / original project artwork",
+    "directionSummary": "Physically grounded botanical archive on a single warm limestone table: parallel-veined wheat lamina, translucent contour tracing paper and limestone relief. Restrained sage and ivory, soft raking daylight, real contact-shadow aesthetic. No screens, charts, labels, floating glass or invented scientific output.",
+    "mobile": "720x960 authored crop, focus x=0.6 y=0.5; not an independently generated portrait"
+  },
+  "parcel-surface.png": {
+    "source": "OpenAI image generation / original project artwork",
+    "directionSummary": "Perfectly nadir fictional Mediterranean agricultural texture: fine cereal rows, ochre stubble plots, olive terraces, track and seasonal stream. No horizon, buildings, labels, coordinates or map controls. No factual geographic location.",
+    "use": "UV albedo on a synthetic continuous height-field relief in Blender; not a measured DEM and not a completely geometric orchard"
+  },
+  "leaf texture": {
+    "source": "../stage1/wheat-lamina-original.png",
+    "use": "Existing original generated lamina artwork, packed into the .blend; not a measured scan"
+  }
+}

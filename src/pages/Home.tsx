@@ -3,6 +3,7 @@ import { orbitalCopy as c } from "../content/orbital";
 import { audiences } from "../content/site";
 import { Eyebrow, Link, Icon, Arrow, Media } from "../components/ui";
 import { WorldOpening, Journey } from "../components/Journey";
+import { stage1 } from "../content/stage1";
 import { Landscape } from "../components/Cinematic";
 export function Next({
   base,
@@ -146,7 +147,7 @@ export function Home({ base }: { base: string }) {
               {c.filiz.cta}
             </Link>
           </div>
-          <Landscape base={base} filiz />
+          <Landscape base={base} filiz scene={stage1.filiz} still />
         </div>
       </section>
       <section className="audience-preview wrap section-space">

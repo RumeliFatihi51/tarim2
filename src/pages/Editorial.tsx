@@ -296,13 +296,14 @@ export function Credits({ base }: { base: string }) {
         <article>
           <h2>Sayfalara özgü görsel çalışmalar</h2>
           <p>
-            Şafak peyzajı, parsel, optik yüzeyler, Filiz’in bağlam kompozisyonu,
-            dört kullanım alanı ve doğal malzeme çalışmaları bu proje için OpenAI
-            görsel üretimiyle oluşturuldu. Bunlar gerçek bir çiftliğin, ekibin
-            veya analiz sonucunun fotoğrafları değildir. Ana sayfa, Platform ve
-            Teknoloji’nin kısa filmleri bu özgün görüntülerin Blender’da kamera
-            hareketiyle işlenmiş 2.5D kompozitleridir; drone çekimi veya tam üç
-            boyutlu arazi simülasyonu olarak sunulmaz.
+            Şafak peyzajı, parsel, Filiz’in botanik arşivi, dört kullanım alanı
+            ve doğal malzeme çalışmaları bu proje için OpenAI görsel üretimiyle
+            oluşturuldu. Bunlar gerçek bir çiftliğin, ekibin veya analiz
+            sonucunun fotoğrafları değildir. Ana sayfanın açılış filmi özgün
+            görüntünün Blender’da işlenmiş 2.5D kompozitidir. Platform’daki
+            arazi maketi ile Teknoloji’deki eğimli yaprak çalışması gerçek
+            geometri, fiziksel malzeme, ışık ve kamera ile Blender Cycles’da
+            üretildi. Bu sahneler kavramsaldır; coğrafi veya spektral ölçüm değildir.
           </p>
         </article>
         <article>

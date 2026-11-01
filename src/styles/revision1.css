@@ -1,0 +1,49 @@
+/* Premium media revision. Selectors deliberately exclude WorldOpening / Journey.
+   Existing type, palette, navigation, section sequence and layout tokens retained. */
+.parcel-study { margin-top: 56px; margin-bottom: 0; }
+.parcel-study > .film { position: relative; height: clamp(350px, 42vw, 620px); overflow: hidden; background: var(--paper); }
+.parcel-study .film picture, .parcel-study .film video { object-fit: cover; }
+.parcel-study figcaption { display: flex; justify-content: space-between; gap: 16px; padding-top: 14px; font-size: 10px; line-height: 1.6; }
+.platform-evidence { padding-bottom: 40px; }
+.refined-landscape .landscape-label { max-width: calc(100% - 56px); }
+.filiz-hero .refined-landscape .landscape-label,
+.filiz-preview .refined-landscape .landscape-label { color: #173326; background: #f2f1e8eb; padding: 8px 10px; }
+.filiz-hero .refined-landscape:after,
+.filiz-preview .refined-landscape:after { background: linear-gradient(transparent 65%, #142d2270); }
+.filiz-preview .refined-landscape img { object-position: 48% 50%; }
+.time-story .time-land:after { background: linear-gradient(0deg, #142d2233, transparent 50%); }
+/* Distinct editorial framing for each audience; retain the actual four originals. */
+.audiences article:nth-of-type(1) .stage1-audience-media { height: clamp(300px, 34vw, 460px); }
+.audiences article:nth-of-type(2) .stage1-audience-media { height: clamp(300px, 37vw, 500px); }
+.audiences article:nth-of-type(3) .stage1-audience-media { height: clamp(250px, 26vw, 360px); }
+.audiences article:nth-of-type(4) .stage1-audience-media { height: clamp(340px, 40vw, 540px); }
+.audiences article:nth-of-type(1) img { object-position: 65% 60%; }
+.audiences article:nth-of-type(2) img { object-position: 40% 55%; }
+.audiences article:nth-of-type(3) img { object-position: 50% 45%; }
+.audiences article:nth-of-type(4) img { object-position: 42% 50%; }
+.about-photo img { object-position: 55% 50%; }
+.about-photo:after { background: linear-gradient(transparent 78%, #142d2280); }
+.about-photo figcaption { background: #142d22e8; padding: 7px 10px; width: fit-content; max-width: calc(100% - 40px); }
+.stage1-contact-media { height: clamp(220px, 23vw, 320px); }
+.stage1-contact-media img { object-position: 50% 55%; }
+@media (max-width: 767px) {
+  .parcel-study { margin-top: 32px; }
+  .parcel-study > .film { height: 470px; }
+  .parcel-study figcaption { flex-direction: column; gap: 3px; }
+  .filiz-hero .refined-landscape .landscape-label,
+  .filiz-preview .refined-landscape .landscape-label { top: 16px; left: 16px; font-size: 8px; }
+  .audiences article:nth-of-type(1) .stage1-audience-media { height: 400px; }
+  .audiences article:nth-of-type(2) .stage1-audience-media { height: 370px; }
+  .audiences article:nth-of-type(3) .stage1-audience-media { height: 280px; }
+  .audiences article:nth-of-type(4) .stage1-audience-media { height: 420px; }
+  .stage1-contact-media { height: 260px; }
+}
+/* The contact study belongs to the channel surface rather than a second inset card. */
+.contact-channel { --channel-inset: 40px; }
+.contact-channel .stage1-contact-media {
+  margin: calc(-1 * var(--channel-inset)) calc(-1 * var(--channel-inset)) 30px;
+  width: calc(100% + 2 * var(--channel-inset));
+  -webkit-mask-image: linear-gradient(#000 78%, transparent);
+  mask-image: linear-gradient(#000 78%, transparent);
+}
+@media (max-width:767px) { .contact-channel { --channel-inset:30px; } }

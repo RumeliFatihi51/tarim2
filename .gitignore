@@ -25,3 +25,7 @@ src/assets/production/stage1/*-clean/
 src/assets/production/stage1/*-proof/
 qa/stage1/**/*.png
 qa/stage1/**/*.jpg
+
+# Reproducible premium-revision render intermediates
+src/assets/production/revision1/*-frames/
+src/assets/production/revision1/*-clean/

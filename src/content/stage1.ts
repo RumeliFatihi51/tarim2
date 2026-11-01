@@ -9,13 +9,13 @@ export const stage1 = {
     alt: "Kavramsal parsel: eğim, doğal sınır, bitki örtüsü ve toprak kesiti.",
   },
   technology: {
-    name: "stage1/spectrum-optics",
-    alt: "Temsili ışık kompozisyonu: yaprak dokusu ve optik yüzeyler; gerçek spektral ölçüm değildir.",
-    note: "Temsili ışık kompozisyonu · Gerçek spektral ölçüm değildir.",
+    name: "revision1/leaf",
+    alt: "Doğal ışıkta eğimli buğday yaprağı ve paralel damarlar; kavramsal botanik 3D çalışması, gerçek spektral ölçüm değildir.",
+    note: "Botanik ışık çalışması · Gerçek spektral ölçüm değildir.",
   },
   filiz: {
-    name: "stage1/filiz-context",
-    alt: "Filiz için kavramsal bağlam kompozisyonu: botanik damar, topografya ve kaynak izlerinin ilişkisi.",
+    name: "revision1/filiz-archive",
+    alt: "Filiz için kavramsal botanik arşiv: buğday yaprağı, topografik rölyef ve aynı yüzeyde bir araya gelen kaynaklar.",
     note: "Kavramsal bağlam kompozisyonu · Gerçek analiz çıktısı değildir.",
   },
   about: {

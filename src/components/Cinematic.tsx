@@ -69,7 +69,7 @@ export function Landscape({
 }) {
   return (
     <div
-      className={`landscape-stage ${filiz ? "filiz-landscape" : ""}`}
+      className={`landscape-stage ${filiz ? "filiz-landscape" : ""} ${scene?.name.startsWith("revision1/") ? "refined-landscape" : ""}`}
       data-landscape
     >
       {still && scene ? (
@@ -92,7 +92,7 @@ export function Landscape({
         <Icon name={filiz ? "leaf" : "target"} />
         <span>{filiz ? "FİLİZ / BAĞLAM ODAKLI AI" : c.field.label}</span>
       </div>
-      {filiz ? (
+      {filiz && !scene?.name.startsWith("revision1/") ? (
         <div className="context-points" aria-hidden="true">
           <span className="context-point point-1">
             <i />

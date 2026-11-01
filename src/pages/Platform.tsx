@@ -2,6 +2,7 @@ import { stage1 } from "../content/stage1";
 import { workflow, future } from "../content/site";
 import { Eyebrow, Link, Icon } from "../components/ui";
 import { Landscape } from "../components/Cinematic";
+import { Film } from "../components/Film";
 import { Next } from "./Home";
 export function Platform({ base }: { base: string }) {
   return (
@@ -28,7 +29,7 @@ export function Platform({ base }: { base: string }) {
         </div>
       </section>
       <div className="platform-landscape wrap">
-        <Landscape base={base} eager scene={stage1.platform} />
+        <Landscape base={base} eager scene={stage1.platform} still />
         <div className="figure-subline">
           <span>GÖZLEMİN ÖTESİNDE BİR PERSPEKTİF</span>
           <span>Kaynak · Zaman · Bağlam</span>
@@ -97,6 +98,17 @@ export function Platform({ base }: { base: string }) {
             <Link href={base + "teknoloji/"}>Bilimsel temeli keşfet</Link>
           </div>
         </div>
+        <figure className="parcel-study wrap">
+          <Film
+            base={base}
+            name="revision1/parcel"
+            alt="Üç boyutlu kavramsal arazi maketi: ekim sıraları, zeytinlik, doğal drenaj ve toprak kesiti. Gerçek parsel veya ölçüm değildir."
+          />
+          <figcaption>
+            <span>ARAZİ / ÖLÇEK / BAĞLAM</span>
+            <span>Kavramsal 3D arazi çalışması · Gerçek ölçüm değildir.</span>
+          </figcaption>
+        </figure>
       </section>
       <section className="vision-section wrap section-space">
         <div className="split-heading">

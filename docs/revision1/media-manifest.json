@@ -1,0 +1,72 @@
+[
+  {
+    "file": "public/media/revision1/filiz-archive-mobile.webp",
+    "bytes": 151952,
+    "sha256": "ce3c05823c58ccc8e5eaa6b9f2e67befb3c5cfd9451d74434e557d4c1b20f0fb"
+  },
+  {
+    "file": "public/media/revision1/filiz-archive.webp",
+    "bytes": 442464,
+    "sha256": "f281f883fc7246572863409075ee490fb71fb427744e966923bc1532404ead9b"
+  },
+  {
+    "file": "public/media/revision1/leaf-mobile.mp4",
+    "bytes": 260720,
+    "sha256": "bc2a17a9c25e3f80a6c05c8a3243f29c967924d117d7dc33d07969d4d57dc5cb"
+  },
+  {
+    "file": "public/media/revision1/leaf-mobile.webm",
+    "bytes": 125673,
+    "sha256": "081f433d7187d6885d9091c8141a7533d846302457947ad7875e23bb5dceeff5"
+  },
+  {
+    "file": "public/media/revision1/leaf-poster-mobile.webp",
+    "bytes": 33390,
+    "sha256": "9ddec6f1458bd5c4ac76b4b77d4c69833453d5f268fc98f97ea9e620bfd23694"
+  },
+  {
+    "file": "public/media/revision1/leaf-poster.webp",
+    "bytes": 67382,
+    "sha256": "48b66a26b554a0cd0ad549eaacb7641d5db21c1ccc04d022bbfb90ca9d3fafbc"
+  },
+  {
+    "file": "public/media/revision1/leaf.mp4",
+    "bytes": 650515,
+    "sha256": "eeb29c1a55324f62d3a6b92e053b1714a1423e1185cc3bbd1af061792fa89ef2"
+  },
+  {
+    "file": "public/media/revision1/leaf.webm",
+    "bytes": 351943,
+    "sha256": "0fa907e47d086d33e4d8f9b7ac2c55c1cd41032c4c7a84c11aa317fd8568f723"
+  },
+  {
+    "file": "public/media/revision1/parcel-mobile.mp4",
+    "bytes": 919505,
+    "sha256": "30b1e9ed37ae4639fb7bc61751437957ca4ad0ecc17e06228705ba4c7c578758"
+  },
+  {
+    "file": "public/media/revision1/parcel-mobile.webm",
+    "bytes": 419638,
+    "sha256": "e817646d5566b40dbaf1ba2220f736bbd66348b10c342067e7be09b3de60b9a1"
+  },
+  {
+    "file": "public/media/revision1/parcel-poster-mobile.webp",
+    "bytes": 96264,
+    "sha256": "c44d195c5540501ce36f4857bebcb0b3bf0e7fcda2a3663e3eb667fca4c7a670"
+  },
+  {
+    "file": "public/media/revision1/parcel-poster.webp",
+    "bytes": 221024,
+    "sha256": "e7c5a068e97ef44925b1c5554ba467bfbcb3f33596c8f081e7e12af25ee990a4"
+  },
+  {
+    "file": "public/media/revision1/parcel.mp4",
+    "bytes": 2104948,
+    "sha256": "328e11d9fc21d4af03bf6cf34b0c382ced649667065a24559f896d0ba45c2370"
+  },
+  {
+    "file": "public/media/revision1/parcel.webm",
+    "bytes": 1140485,
+    "sha256": "ff9637dd904da98c2667d25b9088472fe059b6668379ff3d86f36dbab15dc6ea"
+  }
+]

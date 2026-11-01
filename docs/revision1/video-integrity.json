@@ -1,0 +1,122 @@
+[
+  {
+    "file": "public/media/revision1/leaf-mobile.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 480,
+        "height": 674,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  },
+  {
+    "file": "public/media/revision1/leaf-mobile.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 480,
+        "height": 674,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  },
+  {
+    "file": "public/media/revision1/leaf.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 960,
+        "height": 600,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  },
+  {
+    "file": "public/media/revision1/leaf.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 960,
+        "height": 600,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  },
+  {
+    "file": "public/media/revision1/parcel-mobile.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 480,
+        "height": 674,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  },
+  {
+    "file": "public/media/revision1/parcel-mobile.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 480,
+        "height": 674,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  },
+  {
+    "file": "public/media/revision1/parcel.mp4",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 960,
+        "height": 600,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  },
+  {
+    "file": "public/media/revision1/parcel.webm",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 960,
+        "height": 600,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  }
+]
