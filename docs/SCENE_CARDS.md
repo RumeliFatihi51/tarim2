@@ -1,7 +1,7 @@
-# Güncel sahne kartları
+# Güncel sahneler
 
-- Sekiz alternatif ve storyboard: [Creative direction](v3/CREATIVE_DIRECTION.md)
-- Gerçek model, film, kamera ve kaynak dosyaları: [Production](v3/PRODUCTION.md)
-- Varlık kaynağı ve kullanım hakları: [ASSET_CREDITS](../ASSET_CREDITS.md)
+Açılış: tam ekran tarımsal film; gözlem, spektral bağlam, zaman ve Filiz anlatısı; Yeryüzüne Yolculuk.
 
-Önceki soyut kâğıt/mineral/seramik sahneleri bu sürümde kullanılmaz.
+Altı durak: Başlangıç → Atmosfer → Arazi → Gözlem → Yaşam → Yeryüzü. Kamera, bitki ve sürekli arazi kaynakları `src/assets/production/journey-refined.blend`; web kompozisyonu `src/components/Journey.tsx`, `src/scenes/world.ts`.
+
+Kamera/kurgu/hiprit kaynak ayrımı [üretim belgesinde](journey-production.md); kalite düzeltmeleri [sanat yönetiminde](agromax-creative-direction.md).

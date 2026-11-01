@@ -1,0 +1,81 @@
+{
+  "base": "https://agromax-alpha.vercel.app/",
+  "commit": "a27f601be65509956ce8438e1fb71abe61dd9a7c",
+  "pages": [
+    {
+      "route": "",
+      "status": 200
+    },
+    {
+      "route": "platform/",
+      "status": 200
+    },
+    {
+      "route": "teknoloji/",
+      "status": 200
+    },
+    {
+      "route": "filiz/",
+      "status": 200
+    },
+    {
+      "route": "cozumler/",
+      "status": 200
+    },
+    {
+      "route": "hakkimizda/",
+      "status": 200
+    },
+    {
+      "route": "iletisim/",
+      "status": 200
+    },
+    {
+      "route": "gizlilik/",
+      "status": 200
+    },
+    {
+      "route": "kullanim/",
+      "status": 200
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "status": 200
+    }
+  ],
+  "media": [
+    {
+      "name": "journey.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "name": "journey.webm",
+      "status": 200,
+      "type": "video/webm"
+    },
+    {
+      "name": "journey-mobile.mp4",
+      "status": 200,
+      "type": "video/mp4"
+    },
+    {
+      "name": "journey-mobile.webm",
+      "status": 200,
+      "type": "video/webm"
+    },
+    {
+      "name": "crop.glb",
+      "status": 200,
+      "type": "model/gltf-binary"
+    }
+  ],
+  "errors": [],
+  "unknownRoute": 404,
+  "desktop3D": true,
+  "mobileSeek": {
+    "time": 9.602374,
+    "src": "https://agromax-alpha.vercel.app/media/journey-mobile.webm"
+  },
+  "mobileNavigation": true
+}

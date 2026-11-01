@@ -1,5 +1,9 @@
 # Güncel sanat yönetimi
 
-Geçerli yön: [Orbital creative direction](v3/CREATIVE_DIRECTION.md).
+[Yüzeyin ötesini gör / yaratıcı yön](agromax-creative-direction.md).
 
-Bu tasarım; uydu, tarımsal arazi ve bağlamsal değerlendirmeyi görünür kılar. Önceki soyut seramik/bilgi-katmanı yönü güncel siteye uygulanmaz. Önceki kaynaklar Git geçmişi ve `backup/site-v2-before-orbital-v3` dalında bulunur.
+[Referansın gerçek incelemesi ve sınırları](lusion-reference-audit.md).
+
+[Gerçek üretim kaynakları](journey-production.md).
+
+Önceki Orbital notları `docs/v3` tarihsel kaydıdır.
