@@ -1,0 +1,110 @@
+[
+  {
+    "phase": 1,
+    "position": "start",
+    "sourceFrame": 1,
+    "file": "wide-phase-1-start.webp"
+  },
+  {
+    "phase": 1,
+    "position": "mid",
+    "sourceFrame": 5,
+    "file": "wide-phase-1-mid.webp"
+  },
+  {
+    "phase": 1,
+    "position": "end",
+    "sourceFrame": 8,
+    "file": "wide-phase-1-end.webp"
+  },
+  {
+    "phase": 2,
+    "position": "start",
+    "sourceFrame": 8,
+    "file": "wide-phase-2-start.webp"
+  },
+  {
+    "phase": 2,
+    "position": "mid",
+    "sourceFrame": 15,
+    "file": "wide-phase-2-mid.webp"
+  },
+  {
+    "phase": 2,
+    "position": "end",
+    "sourceFrame": 22,
+    "file": "wide-phase-2-end.webp"
+  },
+  {
+    "phase": 3,
+    "position": "start",
+    "sourceFrame": 22,
+    "file": "wide-phase-3-start.webp"
+  },
+  {
+    "phase": 3,
+    "position": "mid",
+    "sourceFrame": 29,
+    "file": "wide-phase-3-mid.webp"
+  },
+  {
+    "phase": 3,
+    "position": "end",
+    "sourceFrame": 37,
+    "file": "wide-phase-3-end.webp"
+  },
+  {
+    "phase": 4,
+    "position": "start",
+    "sourceFrame": 37,
+    "file": "wide-phase-4-start.webp"
+  },
+  {
+    "phase": 4,
+    "position": "mid",
+    "sourceFrame": 44,
+    "file": "wide-phase-4-mid.webp"
+  },
+  {
+    "phase": 4,
+    "position": "end",
+    "sourceFrame": 51,
+    "file": "wide-phase-4-end.webp"
+  },
+  {
+    "phase": 5,
+    "position": "start",
+    "sourceFrame": 51,
+    "file": "wide-phase-5-start.webp"
+  },
+  {
+    "phase": 5,
+    "position": "mid",
+    "sourceFrame": 58,
+    "file": "wide-phase-5-mid.webp"
+  },
+  {
+    "phase": 5,
+    "position": "end",
+    "sourceFrame": 65,
+    "file": "wide-phase-5-end.webp"
+  },
+  {
+    "phase": 6,
+    "position": "start",
+    "sourceFrame": 65,
+    "file": "wide-phase-6-start.webp"
+  },
+  {
+    "phase": 6,
+    "position": "mid",
+    "sourceFrame": 68,
+    "file": "wide-phase-6-mid.webp"
+  },
+  {
+    "phase": 6,
+    "position": "end",
+    "sourceFrame": 72,
+    "file": "wide-phase-6-end.webp"
+  }
+]

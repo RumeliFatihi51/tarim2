@@ -41,3 +41,6 @@ Yeni uzaktan algılama görsel dili özgün bir kavramsal gözlem uydusu ve tar�
 
 ## Yeryüzüne Yolculuk güncellemesi
 Kamera, bitki geometrisi ve atmosferik sahneler kavramsal görsel anlatımdır. Gözlem aşamasının renkleri ve sınırları gerçek parsel, gerçek tarihte ölçülmüş spektral veri veya üretimde çalışan AgroMax analizi değildir. Zamansal bölüm tarihsiz yaklaşımı anlatır, farklı tarihlerden ölçüm gibi sunulmaz. Hava koşulları yorum bağlamına dahildir; canlı hava entegrasyonu doğrulanmış sayılmaz. Filiz hâlâ planlanan özellik; iddia kaydındaki önceki bilinmeyenler korunur.
+
+## Aşama 01 / sayfaya özgü görsel prodüksiyon
+1 Kasım 2026: Yeni parsel, araştırma malzemeleri, dört kullanım alanı ve Filiz kompozisyonları kavramsal görsellerdir. Yeni görüntülerin gerçek çiftlik, gerçek AgroMax ekibi/atölyesi, müşteri veya uydu çıktısı olduğu iddia edilmez. Optik yüzeyler gerçek NIR/SWIR ölçümünü göstermez. Tarih anlatımında iki görsel gerçek zaman serisi değildir. Kısa filmlerin 2.5D üretim niteliği kredilerde açıkça belirtilir. Journey gerçek CGI ile özgün raster kompoziti birleştirir. Filiz'in planlanan durumuna, bilinmeyen entegrasyonlara, NDMI/NDWI ayrımına ve iletişim yokluğuna ilişkin önceki kayıtlar değişmez.

@@ -1,3 +1,4 @@
+import { stage1 } from "../content/stage1";
 import { useState } from "react";
 import { audiences, principles, legal } from "../content/site";
 import { uiLists } from "../content/section-copy";
@@ -35,7 +36,7 @@ export function Solutions({ base }: { base: string }) {
       </section>
       <section className="audiences wrap section-space">
         <Eyebrow>FARKLI İHTİYAÇLAR, ORTAK BİR ÇERÇEVE</Eyebrow>
-        {audiences.map((a) => (
+        {audiences.map((a, i) => (
           <article key={a.n} id={"alan-" + a.n}>
             <span className="audience-number">{a.n}</span>
             <div>
@@ -46,6 +47,17 @@ export function Solutions({ base }: { base: string }) {
               <p>{a.text}</p>
               <small>{a.use}</small>
             </div>
+            <figure className="stage1-audience-media">
+              <Media
+                base={base}
+                name={stage1.audiences[i].name}
+                alt={stage1.audiences[i].alt}
+              />
+              <figcaption>
+                Kavramsal kullanım sahnesi · Gerçek müşteri veya analiz çıktısı
+                değildir.
+              </figcaption>
+            </figure>
           </article>
         ))}
         <p className="source-note">
@@ -88,9 +100,9 @@ export function About({ base }: { base: string }) {
         <figure className="about-photo">
           <Media
             base={base}
-            name="canopy"
+            name={stage1.about.name}
             eager
-            alt="Buğday başaklarından tarla sıralarına uzanan kavramsal, tarla seviyesinde bir görünüm."
+            alt={stage1.about.alt}
           />
           <figcaption>GÖZLEMİN MERKEZİNDE YERYÜZÜ VAR.</figcaption>
         </figure>
@@ -180,6 +192,13 @@ export function Contact({ base }: { base: string }) {
           </p>
         </div>
         <div className="contact-channel">
+          <figure className="stage1-contact-media">
+            <Media
+              base={base}
+              name={stage1.contact.name}
+              alt={stage1.contact.alt}
+            />
+          </figure>
           <Icon name="satellite" />
           <Eyebrow>İLETİŞİM KANALI</Eyebrow>
           {email ? (
@@ -275,9 +294,31 @@ export function Credits({ base }: { base: string }) {
       </p>
       <div className="legal-content">
         <article>
-          <h2>Özgün uydu ve arazi prodüksiyonu</h2>
+          <h2>Sayfalara özgü görsel çalışmalar</h2>
           <p>
-            Gözlem uydusu modeli, hücreli güneş panelleri, optik sensör,
+            Şafak peyzajı, parsel, optik yüzeyler, Filiz’in bağlam kompozisyonu,
+            dört kullanım alanı ve doğal malzeme çalışmaları bu proje için OpenAI
+            görsel üretimiyle oluşturuldu. Bunlar gerçek bir çiftliğin, ekibin
+            veya analiz sonucunun fotoğrafları değildir. Ana sayfa, Platform ve
+            Teknoloji’nin kısa filmleri bu özgün görüntülerin Blender’da kamera
+            hareketiyle işlenmiş 2.5D kompozitleridir; drone çekimi veya tam üç
+            boyutlu arazi simülasyonu olarak sunulmaz.
+          </p>
+        </article>
+        <article>
+          <h2>Yeryüzüne Yolculuk</h2>
+          <p>
+            Altı aşamalı kavramsal yolculuğun bitki modeli, yaprak dokuları,
+            atmosferi, arazi yüzeyi, ışığı ve kameraları projede üretildi.
+            Masaüstündeki gerçek zamanlı sahneye, mobil için ayrı kamerayla
+            alınan Blender renderı eşlik eder. Gözlem renkleri gerçek spektral
+            ölçüm değildir. Gezegen aşağıdaki tarihsel NASA dokusunu kullanır.
+          </p>
+        </article>
+        <article>
+          <h2>Korunan uydu ve arazi kaynakları</h2>
+          <p>
+            Önceki prodüksiyonun gözlem uydusu modeli, hücreli güneş panelleri, optik sensör,
             antenler, malzemeler ve kamera yolları bu proje için Blender ile
             üretildi. İki gerçek Cycles görüntü dizisi, ayrı masaüstü ve mobil
             MP4/WebM filmlerine dönüştürüldü. Uydu belirli bir görev aracının

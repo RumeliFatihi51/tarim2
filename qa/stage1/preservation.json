@@ -1,0 +1,113 @@
+{
+  "baseline": "579bbe9236640d820eaab9165bbf341f74e1abc2",
+  "lockedFiles": [
+    {
+      "file": "src/styles/orbital.css",
+      "sha256": "df6f70cf1d1aac08deab2f6685f99f1f906f3349d23010cf78ce420af454f71d",
+      "unchanged": true
+    },
+    {
+      "file": "src/styles/story.css",
+      "sha256": "ea3d6e9e890fd5b6d70f13892f5c7fa34edb6aa6cb7df54a9d6fc9af341dde9b",
+      "unchanged": true
+    },
+    {
+      "file": "src/layout/Layout.tsx",
+      "sha256": "4d880108b7cae605c7b52fbe0f9e4df01aeeb560673c4da018c68232cd0a5e34",
+      "unchanged": true
+    },
+    {
+      "file": "src/content/site.ts",
+      "sha256": "b67f468a7828c573141193fdd0c4f4438986103a9841378c676dc904f9eda91c",
+      "unchanged": true
+    },
+    {
+      "file": "src/content/orbital.ts",
+      "sha256": "0e94003735bfc3980ab4a20293cfc643d2f0498bfa268b4028a09c303fe6b411",
+      "unchanged": true
+    },
+    {
+      "file": "src/content/section-copy.ts",
+      "sha256": "c232f2ce42d03eeb64d77e37c50eeb167da46ab3f2edc36e8a2f153083a64c6b",
+      "unchanged": true
+    },
+    {
+      "file": "src/config/site.ts",
+      "sha256": "38951adbfbfad3ef99554b77b3de448ff0c675e0d969dc9fc159f16329697ea6",
+      "unchanged": true
+    },
+    {
+      "file": "src/components/ui.tsx",
+      "sha256": "d9d5f34814e84049f281c3b1af0ebce1f7717ff6ace519e4b1716efa9e0d91be",
+      "unchanged": true
+    },
+    {
+      "file": "public/favicon.svg",
+      "sha256": "4d8b472fe66a3c30c4d70675fadf3525196c63727bff8f912ae5342bafc4b667",
+      "unchanged": true
+    },
+    {
+      "file": "public/fonts/instrument-sans.woff2",
+      "sha256": "378a9f532076362b660a311355de836101d6e0e1b05f68ae2d6604f8bb39eda8",
+      "unchanged": true
+    },
+    {
+      "file": "public/fonts/InstrumentSans-OFL.txt",
+      "sha256": "bc29b497c4e8316b2d248322a9cea670c2f0afc24ae0eb7bbaa54e02e00eebab",
+      "unchanged": true
+    },
+    {
+      "file": "src/App.tsx",
+      "sha256": "9fcfa5a9b9e3f7f8679b02aee84c27244e2b47e3fa02b9ded5b6aa0c9b5ff19b",
+      "unchanged": true
+    },
+    {
+      "file": "vercel.json",
+      "sha256": "c60670b6a9372bf9408863633ba7c9fbe237095bcb0ae3dc2d850564db822a7a",
+      "unchanged": true
+    },
+    {
+      "file": "package.json",
+      "sha256": "cdc6d1d463895975c5db2e3a99b1f39fc0278fda34cbff25e8db97589b23b658",
+      "unchanged": true
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "9bc70540bd80c58327491ee3587b568aca07961a4a0efc796d8fefa407b6a7cf",
+      "unchanged": true
+    }
+  ],
+  "oldMediaPreserved": [
+    "public/media/agriculture-mobile.webp",
+    "public/media/agriculture.webp",
+    "public/media/canopy-mobile.webp",
+    "public/media/canopy.webp",
+    "public/media/crop.glb",
+    "public/media/earth-color.webp",
+    "public/media/field-mobile.mp4",
+    "public/media/field-mobile.webm",
+    "public/media/field-poster-mobile.webp",
+    "public/media/field-poster.webp",
+    "public/media/field.mp4",
+    "public/media/field.webm",
+    "public/media/journey-descent.webp",
+    "public/media/journey-land.webp",
+    "public/media/journey-leaf.webp",
+    "public/media/journey-mobile.mp4",
+    "public/media/journey-mobile.webm",
+    "public/media/journey-observation.webp",
+    "public/media/journey-origin.webp",
+    "public/media/journey-reveal.webp",
+    "public/media/journey.mp4",
+    "public/media/journey.webm",
+    "public/media/observation-satellite.glb",
+    "public/media/og.jpg",
+    "public/media/orbit-mobile.mp4",
+    "public/media/orbit-mobile.webm",
+    "public/media/orbit-poster-mobile.webp",
+    "public/media/orbit-poster.webp",
+    "public/media/orbit.mp4",
+    "public/media/orbit.webm"
+  ],
+  "journeySixPhaseCopyUnchanged": true
+}

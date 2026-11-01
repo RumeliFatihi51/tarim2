@@ -21,14 +21,16 @@ for (const page of pages) {
   const path = page === "home" ? "" : page === "404" ? "404.html" : `${page}/`;
   const media =
     page === "home"
-      ? "field-poster"
-      : page === "teknoloji"
-        ? "field-poster"
-        : page === "platform" || page === "filiz"
-          ? "field-poster"
-          : page === "hakkimizda"
-            ? "canopy"
-            : "agriculture";
+      ? "stage1/home-dawn-poster"
+      : page === "platform"
+        ? "stage1/parcel-context-poster"
+        : page === "teknoloji"
+          ? "stage1/spectrum-optics-poster"
+          : page === "filiz"
+            ? "stage1/filiz-context"
+            : page === "hakkimizda"
+              ? "stage1/about-material"
+              : "agriculture";
   const mobileMedia = media + "-mobile";
   const film = media.endsWith("-poster");
   const preloadImage = [

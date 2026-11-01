@@ -1,3 +1,4 @@
+import { stage1 } from "../content/stage1";
 import { sources, indexGroups, indexNotes } from "../content/site";
 import { uiLists } from "../content/section-copy";
 import { Eyebrow, Arrow, Link } from "../components/ui";
@@ -23,7 +24,7 @@ export function Technology({ base }: { base: string }) {
             UYDU · SPEKTRAL BİLGİ · ZAMAN · KALİTE
           </span>
         </div>
-        <Landscape base={base} eager />
+        <Landscape base={base} eager scene={stage1.technology} />
       </section>
       <section
         id="gozlem-kaynaklari"

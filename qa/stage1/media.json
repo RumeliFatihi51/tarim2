@@ -1,0 +1,302 @@
+{
+  "base": "http://localhost:4173/",
+  "pages": [
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/home-dawn-poster.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/perspective-detail.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/temporal-earth.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/field-poster.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/journey-origin.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/journey-reveal.webp",
+          "ok": true
+        }
+      ],
+      "films": 2
+    },
+    {
+      "route": "platform/",
+      "width": 1440,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/parcel-context-poster.webp",
+          "ok": true
+        }
+      ],
+      "films": 1
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1440,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/spectrum-optics-poster.webp",
+          "ok": true
+        }
+      ],
+      "films": 1
+    },
+    {
+      "route": "filiz/",
+      "width": 1440,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/filiz-context.webp",
+          "ok": true
+        }
+      ],
+      "films": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 1440,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/agriculture.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/solution-advisor.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/solution-cooperative.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/solution-enterprise.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/solution-research.webp",
+          "ok": true
+        }
+      ],
+      "films": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1440,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/about-material.webp",
+          "ok": true
+        }
+      ],
+      "films": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 1440,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/contact-earth.webp",
+          "ok": true
+        }
+      ],
+      "films": 0
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/home-dawn-poster-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/perspective-detail-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/temporal-earth-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/field-poster-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/journey-origin-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/journey-reveal-mobile.webp",
+          "ok": true
+        }
+      ],
+      "films": 2
+    },
+    {
+      "route": "platform/",
+      "width": 390,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/parcel-context-poster-mobile.webp",
+          "ok": true
+        }
+      ],
+      "films": 1
+    },
+    {
+      "route": "teknoloji/",
+      "width": 390,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/spectrum-optics-poster-mobile.webp",
+          "ok": true
+        }
+      ],
+      "films": 1
+    },
+    {
+      "route": "filiz/",
+      "width": 390,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/filiz-context-mobile.webp",
+          "ok": true
+        }
+      ],
+      "films": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 390,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/agriculture-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/solution-advisor-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/solution-cooperative-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/solution-enterprise-mobile.webp",
+          "ok": true
+        },
+        {
+          "url": "http://localhost:4173/media/stage1/solution-research-mobile.webp",
+          "ok": true
+        }
+      ],
+      "films": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 390,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/about-material-mobile.webp",
+          "ok": true
+        }
+      ],
+      "films": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 390,
+      "overflow": 0,
+      "images": [
+        {
+          "url": "http://localhost:4173/media/stage1/contact-earth-mobile.webp",
+          "ok": true
+        }
+      ],
+      "films": 0
+    }
+  ],
+  "films": [
+    {
+      "route": "/",
+      "width": 1280,
+      "url": "http://localhost:4173/media/stage1/home-dawn.webm",
+      "height": 720,
+      "duration": 2.667,
+      "controls": true,
+      "offscreenPaused": true
+    },
+    {
+      "route": "platform/",
+      "width": 1280,
+      "url": "http://localhost:4173/media/stage1/parcel-context.webm",
+      "height": 720,
+      "duration": 2.667,
+      "controls": true,
+      "offscreenPaused": true
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1280,
+      "url": "http://localhost:4173/media/stage1/spectrum-optics.webm",
+      "height": 720,
+      "duration": 2.667,
+      "controls": true,
+      "offscreenPaused": true
+    },
+    {
+      "route": "/",
+      "width": 720,
+      "url": "http://localhost:4173/media/stage1/home-dawn-mobile.webm",
+      "height": 960,
+      "duration": 2.667,
+      "controls": true,
+      "offscreenPaused": true
+    },
+    {
+      "route": "platform/",
+      "width": 720,
+      "url": "http://localhost:4173/media/stage1/parcel-context-mobile.webm",
+      "height": 960,
+      "duration": 2.667,
+      "controls": true,
+      "offscreenPaused": true
+    },
+    {
+      "route": "teknoloji/",
+      "width": 720,
+      "url": "http://localhost:4173/media/stage1/spectrum-optics-mobile.webm",
+      "height": 960,
+      "duration": 2.667,
+      "controls": true,
+      "offscreenPaused": true
+    }
+  ],
+  "errors": []
+}

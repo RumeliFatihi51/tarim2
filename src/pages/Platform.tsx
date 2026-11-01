@@ -1,3 +1,4 @@
+import { stage1 } from "../content/stage1";
 import { workflow, future } from "../content/site";
 import { Eyebrow, Link, Icon } from "../components/ui";
 import { Landscape } from "../components/Cinematic";
@@ -27,7 +28,7 @@ export function Platform({ base }: { base: string }) {
         </div>
       </section>
       <div className="platform-landscape wrap">
-        <Landscape base={base} eager />
+        <Landscape base={base} eager scene={stage1.platform} />
         <div className="figure-subline">
           <span>GÖZLEMİN ÖTESİNDE BİR PERSPEKTİF</span>
           <span>Kaynak · Zaman · Bağlam</span>

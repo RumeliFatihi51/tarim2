@@ -1,3 +1,4 @@
+import { stage1 } from "../content/stage1";
 import { filizContexts } from "../content/site";
 import { uiLists } from "../content/section-copy";
 import { Eyebrow, Link, Icon } from "../components/ui";
@@ -30,7 +31,7 @@ export function Filiz({ base }: { base: string }) {
             Filiz’in yaklaşımını keşfet
           </Link>
         </div>
-        <Landscape base={base} eager filiz />
+        <Landscape base={base} eager filiz scene={stage1.filiz} still />
       </section>
       <section
         id="filiz-yaklasimi"

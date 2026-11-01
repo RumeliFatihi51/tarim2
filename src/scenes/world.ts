@@ -1,4 +1,6 @@
+import { journeySourceFrame } from "../content/journey-clock";
 import * as T from "three";
+import cameraTrack from "../content/journey-camera.json";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 /** A shared physical coordinate system, deterministic forward/reverse camera track. */
 export async function mountWorld(host: HTMLElement, base: string) {
@@ -28,23 +30,27 @@ export async function mountWorld(host: HTMLElement, base: string) {
   scene.fog = fog;
   r.setPixelRatio(Math.min(devicePixelRatio, 1.35));
   r.toneMapping = T.ACESFilmicToneMapping;
-  r.toneMappingExposure = 1.12;
+  r.toneMappingExposure = 1;
   r.domElement.setAttribute("aria-hidden", "true");
   host.prepend(r.domElement);
   const camera = new T.PerspectiveCamera(48, 1, 0.03, 100000);
-  scene.add(new T.HemisphereLight("#e9eff6", "#494b28", 2));
-  const sun = new T.DirectionalLight("#ffe5a0", 3.4);
+  scene.add(new T.HemisphereLight("#e9eff6", "#494b28", 1.25));
+  const sun = new T.DirectionalLight("#ffe5c0", 2.5);
   sun.position.set(-30, 45, -25);
   scene.add(sun);
   const tex = new T.TextureLoader();
   const groundMap = await tex
-    .loadAsync(base + "media/agriculture.webp")
+    .loadAsync(base + "media/stage1/journey-geography.webp")
     .catch(() => null);
   if (dead) {
     groundMap?.dispose();
     return;
   }
-  if (groundMap) groundMap.colorSpace = T.SRGBColorSpace;
+  if (groundMap) {
+    groundMap.colorSpace = T.SRGBColorSpace;
+    groundMap.wrapS = groundMap.wrapT = T.RepeatWrapping;
+    groundMap.repeat.set(2.5, 2.5);
+  }
   const geometry = new T.PlaneGeometry(2000, 2000, 128, 128);
   geometry.rotateX(-Math.PI / 2);
   const a = geometry.attributes.position;
@@ -54,7 +60,7 @@ export async function mountWorld(host: HTMLElement, base: string) {
   const groundMaterial = new T.MeshStandardMaterial({
     map: groundMap,
     roughness: 0.98,
-    color: "#c4cba8",
+    color: "#ffffff",
   });
   let revealShader: any;
   groundMaterial.onBeforeCompile = (s) => {
@@ -79,7 +85,7 @@ export async function mountWorld(host: HTMLElement, base: string) {
   const crops = new T.Group();
   scene.add(crops);
   try {
-    const gltf = await new GLTFLoader().loadAsync(base + "media/crop.glb");
+    const gltf = await new GLTFLoader().loadAsync(base + "media/stage1/wheat.glb");
     if (dead) return;
     gltf.scene.updateMatrixWorld(true);
     gltf.scene.traverse((o) => {
@@ -89,7 +95,7 @@ export async function mountWorld(host: HTMLElement, base: string) {
         mats.forEach((m) => {
           m.side = T.DoubleSide;
           if (m instanceof T.MeshStandardMaterial) {
-            m.roughness = 0.82;
+            m.roughness = Math.max(0.45, m.roughness);
             m.metalness = 0;
             if (m.name.includes("chlorophyll")) {
               m.color.set("#647b2c");
@@ -105,14 +111,16 @@ export async function mountWorld(host: HTMLElement, base: string) {
         for (let x = hero ? -1 : -6; x <= (hero ? 1 : 6); x++)
           for (let z = hero ? -1 : -6; z <= (hero ? 1 : 6); z++) {
             m.makeTranslation(
-              hero ? 6 + x * 1.5 : x * 0.56,
+              hero ? 6 + x * 1.5 : x * 0.12,
               0,
-              hero ? -2 + z * 1.8 : z * 0.7,
+              hero ? -2 + z * 1.8 : z * 0.12,
             );
             if (hero) m.scale(new T.Vector3(2.1, 2.1, 2.1));
             m.multiply(
               new T.Matrix4().makeRotationY(Math.sin(x * 17 + z * 31) * 0.35),
             );
+            if (!hero)
+              m.scale(new T.Vector3(1, 1 + Math.sin(x * 5 + z * 7) * 0.06, 1));
             m.multiply(o.matrixWorld);
             inst.setMatrixAt(k++, m);
           }
@@ -184,22 +192,6 @@ export async function mountWorld(host: HTMLElement, base: string) {
     cloud.scale.set(220 + (i % 3) * 100, 100 + (i % 4) * 30, 1);
     clouds.add(cloud);
   }
-  const poses = [
-    [0, 8000, 14000],
-    [0, 1500, 1200],
-    [100, 140, 180],
-    [35, 90, 110],
-    [0.75, 1.15, 2.3],
-    [18, 12, 45],
-  ];
-  const aims = [
-    [0, -6350, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 1.05, 0],
-    [0, 1.5, -20],
-  ];
   const pointer = new T.Vector2();
   let pointerTarget = new T.Vector2();
   const resize = () => {
@@ -230,18 +222,21 @@ export async function mountWorld(host: HTMLElement, base: string) {
       const section = host.closest<HTMLElement>(".journey")!;
       const b = section.getBoundingClientRect();
       phase = T.MathUtils.clamp(-b.top / (b.height - innerHeight), 0, 1);
-      const q = phase * 5,
-        i = Math.min(4, Math.floor(q)),
-        t = q - i,
-        u = t * t * (3 - 2 * t);
-      camera.position
-        .fromArray(poses[i])
-        .lerp(new T.Vector3().fromArray(poses[i + 1]), u);
-      camera.lookAt(
-        new T.Vector3()
-          .fromArray(aims[i])
-          .lerp(new T.Vector3().fromArray(aims[i + 1]), u),
-      );
+      // Samples come from the editable Blender camera, not a second approximate path.
+      // Match the 6fps source clock, including the held final frame of the 12s film.
+      const q = journeySourceFrame(phase);
+      const i = Math.min(cameraTrack.frames.length - 2, Math.floor(q));
+      const t = Math.min(1, q - i);
+      const frameA = cameraTrack.frames[i], frameB = cameraTrack.frames[i + 1];
+      camera.position.fromArray(frameA).lerp(new T.Vector3().fromArray(frameB), t);
+      const direction = new T.Vector3().fromArray(frameA, 3)
+        .lerp(new T.Vector3().fromArray(frameB, 3), t).normalize();
+      camera.lookAt(camera.position.clone().add(direction));
+      const focal = T.MathUtils.lerp(frameA[6], frameB[6], t);
+      camera.fov = T.MathUtils.radToDeg(2 * Math.atan(
+        (cameraTrack.sensorHeight * Math.min(1, cameraTrack.aspect / camera.aspect)) / (2 * focal),
+      ));
+      camera.updateProjectionMatrix();
       fog.density =
         phase < 0.16 ? 0 : T.MathUtils.smoothstep(phase, 0.16, 0.4) * 0.002;
       scene.background = new T.Color("#091725").lerp(
@@ -251,7 +246,7 @@ export async function mountWorld(host: HTMLElement, base: string) {
       earth.visible = atmosphere.visible = phase < 0.42;
       ground.visible = phase > 0.28;
       crops.visible = phase > 0.71 && phase < 0.87;
-      clouds.visible = phase > 0.12 && phase < 0.46;
+      clouds.visible = phase > 0.12 && phase < 0.46 && !host.classList.contains("film-world-ready");
       if (revealShader)
         revealShader.uniforms.observation.value = Math.max(
           0,
@@ -303,9 +298,13 @@ export async function mountWorld(host: HTMLElement, base: string) {
     scene.traverse((o) => {
       if (o instanceof T.Mesh) {
         o.geometry.dispose();
-        (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) =>
-          m.dispose(),
-        );
+        (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) => {
+          // Stage 1 introduces authored PBR maps; release these with their materials.
+          Object.values(m).forEach((value) => {
+            if (value instanceof T.Texture) value.dispose();
+          });
+          m.dispose();
+        });
       }
     });
     groundMap?.dispose();

@@ -18,3 +18,10 @@ qa/lusion/*.png
 qa/lusion/*.html
 
 qa/journey/*.png
+
+# Stage 1 reproducible render intermediates; editable sources and web exports are tracked.
+src/assets/production/stage1/*-frames/
+src/assets/production/stage1/*-clean/
+src/assets/production/stage1/*-proof/
+qa/stage1/**/*.png
+qa/stage1/**/*.jpg

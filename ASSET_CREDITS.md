@@ -1,6 +1,6 @@
-# Güncel varlıklar / Orbital v3
+# Varlıklar ve sürüm kaydı
 
-Doğrulama tarihi: 31 Ekim 2026. Önceki görsel tasarımlar Git geçmişi ve backup/site-v2-before-orbital-v3 dalında korunur; aşağıdaki tablo güncel sitede kullanılanları listeler.
+Doğrulama tarihi: 31 Ekim 2026. Önceki görsel tasarımlar Git geçmişi ve backup/site-v2-before-orbital-v3 dalında korunur; aşağıdaki ilk tablo Orbital v3 kaynaklarını, son bölüm Aşama 01 güncellemesini kaydeder. Korunan arşiv kaynakları aktif sayfa medyası olarak sunulmaz.
 
 | Kullanılan dosya | Üretici / kaynak | Haklar ve kullanım |
 |---|---|---|
@@ -27,3 +27,17 @@ Kullanılmayan Poly Haven, ambientCG, Sketchfab, BlenderKit veya Mixamo varlıkl
 
 ## Yeryüzüne Yolculuk / 1 Kasım 2026
 `crop.glb`, `journey.blend`, `journey-refined.blend`, `render_journey.py`, `refine_journey.py`: proje için özgün gövde, yaprak, başak, arazi, toprak, kamera ve ışık üretimi. `journey*.mp4/webm` gerçek Cycles karelerinden kodlanır. Gezegen önceki NASA Blue Marble tarihsel dokusunu; arazi önceki özgün kavramsal peyzajı kullanır. Gerçek uydu ölçümü değildir. Lusion'a ait geometri, karakter, fotoğraf, video veya kod bu siteye aktarılmadı. Araştırma ekran görüntüleri yalnız yerel QA arşivindedir, siteye dağıtılmaz.
+
+## Aşama 01 görsel prodüksiyon / 1 Kasım 2026
+
+`public/media/stage1/` ve `src/assets/production/stage1/`:
+
+- `home-dawn`, `home-dawn-portrait`, `perspective-detail`, `temporal-earth`, `parcel-context`, `spectrum-optics`, `filiz-context`, `solution-advisor`, `solution-cooperative`, `solution-enterprise`, `solution-research`, `about-material`, `contact-earth`, `journey-geography`, `journey-reveal`, `journey-reveal-portrait`, `botanical-reference`: OpenAI image generation ile bu görevde üretilen özgün kavramsal sanat. [OpenAI kullanım koşulları](https://openai.com/policies/terms-of-use/) çerçevesinde çıktı kullanımı; üçüncü taraf stok lisansı veya CC0 lisansı ileri sürülmez. Üretilmiş görüntülere mutlak benzersizlik/telif garantisi verilmez. Gerçek konum, ölçüm, insan veya çalışma fotoğrafı olarak kullanılmaz. `botanical-reference` yalnız üretim referansıdır; sitede gösterilmez.
+- Aynı isimli PNG'ler orijinal raster kaynak, SVG'ler gömülü raster + ayrı anotasyon grubudur. Düzenlenebilir vektör arazi veya tam modellenmiş ortam oldukları iddia edilmez. SHA-256: `src/assets/production/stage1/source-register.json`.
+- `home-dawn`, `parcel-context`, `spectrum-optics` filmleri/posterleri: bu rasterların Blender emisyon düzlemi ve kamera mikro hareketiyle işlenmiş **2.5D kompozit renderları**. Fiziksel drone çekimi veya tam 3D arazi prodüksiyonu değildir. Her formatta ayrı geniş/portre kamera kaynağı saklanır.
+- `wheat.glb`, `leaf-color.jpg`, `leaf-normal.png`, `leaf-roughness.jpg`, `grain-color.jpg`, `grain-height.png`, `journey-botany.blend`, `journey-wide.blend`, `journey-portrait.blend`: projede özgün geometri ve prosedürel doku üretimi; hazır model paketi kullanılmadı. Yeryüzü tarihsel NASA kaynağı önceki tabloda kayıtlıdır. Journey'nin hacimsel bulutları ve kamera hareketleri Blender'da üretilir. Kapanışta özgün peyzaj ile hibrit kompozisyon kullanılır. Sayısal analiz değildir.
+- Blender: [GNU GPL](https://www.blender.org/about/license/); bu lisans renderların GPL olmasını şart koşmaz. FFmpeg/Intel OIDN yalnız üretim araçlarıdır. Web dağıtımına araç ikilisi eklenmez.
+
+Yeni ticari stok, Poly Haven, Sketchfab, ambientCG, BlenderKit veya Mixamo varlığı kullanılmadı. Lusion araştırma görüntüleri web'e veya kaynak prodüksiyon varlığı olarak aktarılmadı. Üretim ayrıntıları `docs/stage1/PRODUCTION.md`.
+
+`wheat-lamina-original.png`: bu aşamada ayrıca OpenAI image generation ile üretilmiş buğday yaprak yüzeyi, gerçek taranmış numune değildir. `leaf-color.jpg` bu orijinal doku kaynağını kullanır. Normal/roughness haritaları kodla türetilmiş temsili materyal parametreleridir, ölçülmüş fiziksel özellikler veya bitki analizi değildir.

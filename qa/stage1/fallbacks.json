@@ -1,0 +1,8 @@
+{
+  "base": "http://localhost:4173/",
+  "checks": [
+    "Mobile WebM failure selects real MP4",
+    "Both journey codecs blocked: static poster and text remain",
+    "Actual WebGL context loss releases canvas and reveals wide render"
+  ]
+}

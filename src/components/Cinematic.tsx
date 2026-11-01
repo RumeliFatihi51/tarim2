@@ -1,3 +1,4 @@
+import { Media } from "./ui";
 import { Film } from "./Film";
 import { orbitalCopy as c } from "../content/orbital";
 import { Icon } from "./ui";
@@ -57,17 +58,36 @@ export function Landscape({
   base,
   eager = false,
   filiz = false,
+  scene,
+  still = false,
 }: {
   base: string;
   eager?: boolean;
   filiz?: boolean;
+  scene?: { name: string; alt: string; note?: string };
+  still?: boolean;
 }) {
   return (
     <div
       className={`landscape-stage ${filiz ? "filiz-landscape" : ""}`}
       data-landscape
     >
-      <Film base={base} name="field" eager={eager} />
+      {still && scene ? (
+        <Media
+          base={base}
+          name={scene.name}
+          alt={scene.alt}
+          eager={eager}
+          className="stage1-media"
+        />
+      ) : (
+        <Film
+          base={base}
+          name={scene?.name || "field"}
+          alt={scene?.alt}
+          eager={eager}
+        />
+      )}
       <div className="landscape-label">
         <Icon name={filiz ? "leaf" : "target"} />
         <span>{filiz ? "FİLİZ / BAĞLAM ODAKLI AI" : c.field.label}</span>
@@ -95,7 +115,7 @@ export function Landscape({
           </svg>
         </div>
       ) : null}
-      <div className="landscape-caption">{c.field.note}</div>
+      <div className="landscape-caption">{scene?.note || c.field.note}</div>
     </div>
   );
 }

@@ -1,0 +1,105 @@
+/* Stage 1 media integration only. Existing design tokens, typography, page grids,
+   menu, navigation, section order and CTA styling remain in their original files. */
+.landscape-stage > .stage1-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.landscape-stage > .stage1-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.technology-hero > .landscape-stage .landscape-caption {
+  display: block;
+  z-index: 4;
+  left: var(--gutter);
+  right: 80px;
+  bottom: 18px;
+  max-width: 440px;
+  width: fit-content;
+  padding: 5px 8px;
+  background: #142d22ed;
+  color: #fff;
+  font-size: 9px;
+  line-height: 1.5;
+  pointer-events: none;
+}
+.stage1-audience-media {
+  grid-column: 2/-1;
+  position: relative;
+  height: clamp(260px, 30vw, 420px);
+  margin: 15px 0 0;
+  overflow: hidden;
+}
+.stage1-audience-media picture,
+.stage1-audience-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.stage1-audience-media figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 20px 12px;
+  background: linear-gradient(transparent, #12251bd9);
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.stage1-contact-media {
+  height: 180px;
+  margin: 0 0 28px;
+  overflow: hidden;
+}
+.stage1-contact-media picture,
+.stage1-contact-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Preserve native scroll/seek. Matched Cycles windows supply volumetric
+   atmosphere and macro depth of field; the full film remains the fallback. */
+.journey-sticky.world-ready.film-world-ready > .journey-film {
+  z-index: 1;
+  opacity: max(
+    min(
+      clamp(0, calc((var(--journey-progress, 0) - 0.12) * 25), 1),
+      clamp(0, calc((0.36 - var(--journey-progress, 0)) * 25), 1)
+    ),
+    min(
+      clamp(0, calc((var(--journey-progress, 0) - 0.62) * 20), 1),
+      clamp(0, calc((0.94 - var(--journey-progress, 0)) * 20), 1)
+    )
+  );
+}
+/* The existing bottom caption spans the hero; empty space must pass clicks
+   through to its video control while the exploration link stays interactive. */
+.world-opening .world-bottom {
+  pointer-events: none;
+}
+.world-opening .world-bottom a {
+  pointer-events: auto;
+}
+@media (max-width: 767px) {
+  .stage1-audience-media {
+    grid-column: 2;
+    height: 340px;
+    margin-top: 14px;
+  }
+  .audiences article > div:last-of-type {
+    grid-column: 2;
+  }
+  .stage1-audience-media figcaption {
+    font-size: 9px;
+    padding: 25px 15px 12px;
+  }
+  .stage1-contact-media {
+    height: 180px;
+  }
+}

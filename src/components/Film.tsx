@@ -1,16 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { orbitalCopy } from "../content/orbital";
-/** Real encoded Blender footage, poster-first, paused offscreen and on reduced motion. */
+/** Encoded Blender production (3D or authored 2.5D), poster-first and paused offscreen. */
 export function Film({
   base,
   name,
   className = "",
   eager = false,
+  alt,
 }: {
   base: string;
   name: string;
   className?: string;
   eager?: boolean;
+  alt?: string;
 }) {
   const host = useRef<HTMLDivElement>(null),
     video = useRef<HTMLVideoElement>(null);
@@ -93,9 +95,10 @@ export function Film({
         <img
           src={`${base}media/${name}-poster.webp`}
           alt={
-            name === "orbit"
+            alt ||
+            (name === "orbit"
               ? orbitalCopy.labels.orbitAlt
-              : orbitalCopy.labels.fieldAlt
+              : orbitalCopy.labels.fieldAlt)
           }
           width="1024"
           height="640"

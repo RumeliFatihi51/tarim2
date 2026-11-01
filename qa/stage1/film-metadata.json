@@ -1,0 +1,338 @@
+[
+  {
+    "file": "public/media/stage1/home-dawn-mobile.mp4",
+    "bytes": 339048,
+    "sha256": "422680f38dfd7a8abb8d2c8429e3e0f79c47be59ce04ebea01f8785a707fbf04",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 960,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.666667",
+        "size": "339048"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/home-dawn-mobile.webm",
+    "bytes": 311063,
+    "sha256": "9b0c55c513e25353d624b3bcfe7da2d6f34affd0fdbf46195d1dc54ec0a7ed7c",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp9",
+          "width": 720,
+          "height": 960,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.667000",
+        "size": "311063"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/home-dawn.mp4",
+    "bytes": 289319,
+    "sha256": "b2bd4e4cd6bcd7cea06d40d2e4e12f7ffd7acb445a916629467dc898342cae02",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.666667",
+        "size": "289319"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/home-dawn.webm",
+    "bytes": 230138,
+    "sha256": "db0f279fca1a5cef9d68756dd8112206c2506c34dae6709edf13f5c17eb329aa",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp9",
+          "width": 1280,
+          "height": 720,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.667000",
+        "size": "230138"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/journey-mobile.mp4",
+    "bytes": 5112442,
+    "sha256": "f11a056788817ed88ba903f37d09e60e9640273598718813f06963dcc092b2c0",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 576,
+          "height": 1024,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "12.000000",
+        "size": "5112442"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/journey-mobile.webm",
+    "bytes": 4420974,
+    "sha256": "f9a80629c93ec81ffdb95d47ef664d07367b4f1903bb1dd8b142ef75bb4c36b9",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp9",
+          "width": 576,
+          "height": 1024,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "12.000000",
+        "size": "4420974"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/journey.mp4",
+    "bytes": 6830239,
+    "sha256": "f2aa86b6ef7efaa2f96d5bea5932320a989647f84eb046a6b473d47b6750bade",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1040,
+          "height": 650,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "12.000000",
+        "size": "6830239"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/journey.webm",
+    "bytes": 6090282,
+    "sha256": "c0d54e1a0e06b7466011bd719623baa4ba5f29132239ec9707bb347120ef153d",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp9",
+          "width": 1040,
+          "height": 650,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "12.000000",
+        "size": "6090282"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/parcel-context-mobile.mp4",
+    "bytes": 893497,
+    "sha256": "4a635c9096cbcc751f69e2c8bb544516cf4347a96527b865145435af6ee2aa3a",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 960,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.666667",
+        "size": "893497"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/parcel-context-mobile.webm",
+    "bytes": 363837,
+    "sha256": "7092abffc8489e0cafcb7fa7758280c245b48ef3747ac5536617b190dcc72f46",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp9",
+          "width": 720,
+          "height": 960,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.667000",
+        "size": "363837"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/parcel-context.mp4",
+    "bytes": 1528840,
+    "sha256": "c6abdc4306c75a298e95d6a3f249f22a24fef4ae52249c4dd1b40cbb316feb79",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.666667",
+        "size": "1528840"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/parcel-context.webm",
+    "bytes": 811551,
+    "sha256": "1b4b465021ffd0aea2a5b85bd388247b7543a51198ef8fa43739c5377dbdacd6",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp9",
+          "width": 1280,
+          "height": 720,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.667000",
+        "size": "811551"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/spectrum-optics-mobile.mp4",
+    "bytes": 360416,
+    "sha256": "2c8fa9a7589a22df982164c9ee2a3e6704a4dbc7aaa22ce47b4c5265783913e3",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 960,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.666667",
+        "size": "360416"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/spectrum-optics-mobile.webm",
+    "bytes": 180975,
+    "sha256": "61764de941589670cbd694a6ef33f43084b6c07ee4ea9e438880ba5c01d7c937",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp9",
+          "width": 720,
+          "height": 960,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.667000",
+        "size": "180975"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/spectrum-optics.mp4",
+    "bytes": 382294,
+    "sha256": "00ec38f5a1c22060cd946030c5f580521fb12abd6aaf99e3c40aa1b074beb8fb",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.666667",
+        "size": "382294"
+      }
+    }
+  },
+  {
+    "file": "public/media/stage1/spectrum-optics.webm",
+    "bytes": 169292,
+    "sha256": "22c26e4dc2a7e1c65e40a523c594749d0a5769f97d1a6cd7a0133896d27f3bb8",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp9",
+          "width": 1280,
+          "height": 720,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "2.667000",
+        "size": "169292"
+      }
+    }
+  }
+]

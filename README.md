@@ -35,7 +35,18 @@ OIDN_BIN=/path/to/oidnDenoise python scripts/finish_journey.py
 - `docs/lusion-reference-audit.md`: gerçek referans incelemesi ve doğrulanamayan hareketler.
 - `docs/agromax-creative-direction.md`: sanat yönetimi, beş zayıf nokta ve düzeltmeler.
 - `docs/journey-production.md`: üretim süreci.
-- `docs/QA_REPORT.md`, `qa/journey`: güncel gerçek testler; `qa/v3` tarihsel kayıt.
+- `docs/QA_REPORT.md`, `qa/journey`: önceki Journey sürümünün testleri; güncel Aşama 01 kayıtları `docs/stage1/QA_REPORT.md` ve `qa/stage1` altındadır.
 - `ASSET_CREDITS.md`, `THIRD_PARTY_NOTICES.md`: kaynak ve lisanslar.
 
 “Lusion ile aynı kaliteye ulaşıldı” ölçülmüş bir sonuç olarak sunulmaz. Referansın astronot hareketleri bu ortamda doğrulanamadı; bu sınır araştırma belgesinde açıkça kayıtlıdır. Fiziksel mobil cihaz/Safari sertifikasyonu yoktur; gerçek Chromium'da viewport, medya ve GPU testleri yapılır.
+
+## Aşama 01 — görsel prodüksiyon
+Mevcut tasarım korunarak her ana sayfaya ayrı sanat yönetimi eklendi. Ana sayfa şafak peyzajı, Platform parseli, Teknoloji optik malzemeleri, Filiz bağlam kompozisyonu, Çözümler'in dört ayrı hedef kitle sahnesi, Hakkımızda doğal çalışma malzemeleri ve İletişim toprak rölyefi kullanır. Üç kısa film 2.5D Blender kompozitidir; tam 3D arazi veya gerçek çekim olarak sunulmaz.
+
+Yeni kaynaklar `src/assets/production/stage1`, web exportları `public/media/stage1`, tekrar üretim betikleri `scripts/stage1_*`. Journey'nin özgün buğday/PBR modeli, hacimsel bulutları, gün ışığı ve ayrı 576×1024 mobil kamera renderı vardır. Masaüstünde bitki yakın planı aynı scroll-seek yolundaki renderla desteklenir. Önceki kaynaklar arşiv olarak durur.
+
+- [Üretim ve tam dosya yolları](docs/stage1/PRODUCTION.md)
+- [Yedi ayrı sahne kartı](docs/stage1/SCENE_CARDS.md)
+- [Tasarım koruma kaydı](docs/stage1/PRESERVATION.md)
+- [Gerçek önce/sonra panoları](docs/stage1/review/README.md)
+- [Kontrol sonuçları ve sınırlamalar](docs/stage1/QA_REPORT.md)

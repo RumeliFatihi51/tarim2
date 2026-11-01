@@ -1,3 +1,4 @@
+import { journeySourceFrame, journeySourceFps } from "../content/journey-clock";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 export function initMotion() {
@@ -15,7 +16,11 @@ export function initMotion() {
       el.dataset.filmMounted = "true";
       const v = el.querySelector<HTMLVideoElement>("video");
       if (!v) return () => {};
-      v.src = v.canPlayType("video/webm") ? v.dataset.webm! : v.dataset.mp4!;
+      const source = (webm: boolean) =>
+        wide.matches
+          ? (webm ? v.dataset.wideWebm! : v.dataset.wideMp4!)
+          : (webm ? v.dataset.webm! : v.dataset.mp4!);
+      v.src = source(Boolean(v.canPlayType("video/webm")));
       v.load();
       let pending = false,
         dead = false;
@@ -32,19 +37,21 @@ export function initMotion() {
               Math.min(1, -rect.top / (rect.height - innerHeight)),
             );
           if (!Number.isFinite(v.duration) || v.seeking) return;
-          const t = Math.min(v.duration - 0.05, p * v.duration);
+          const t = Math.min(v.duration - 0.05, journeySourceFrame(p) / journeySourceFps);
           if (Math.abs(v.currentTime - t) > 0.05) v.currentTime = t;
+          else if (v.readyState >= 2) el.classList.add("film-world-ready");
         });
       };
       const ready = () => {
-        el.classList.add("film-world-ready");
+        // A late initial load must seek to the current phase before being revealed.
         seek();
       };
       const error = () => {
+        el.classList.remove("film-world-ready");
         if (v.src.endsWith(".webm")) {
-          v.src = v.dataset.mp4!;
+          v.src = source(false);
           v.load();
-        } else el.classList.remove("film-world-ready");
+        }
       };
       v.addEventListener("loadeddata", ready);
       v.addEventListener("seeked", seek);
@@ -88,7 +95,9 @@ export function initMotion() {
                   return;
                 }
                 stopWorld = fn;
-                if (!fn) fallback();
+                // Same scroll-seek controller supplies the authored macro close-up.
+                // CSS reveals it only around the plant phase when WebGL is present.
+                fallback();
               })
               .catch(fallback);
           else fallback();

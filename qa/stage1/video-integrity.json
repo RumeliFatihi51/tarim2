@@ -1,0 +1,18 @@
+[
+  {
+    "file": "public/media/stage1/journey.mp4",
+    "decodedFrames": 288,
+    "blackFrames": 0,
+    "minimumMeanRGB": 37.606689453125,
+    "macroExitMinimumSpatialStd": 13.687594397886064,
+    "note": "Opaque cloud passage and final reading hold are intentional; these statistics are not a flicker or quality certificate."
+  },
+  {
+    "file": "public/media/stage1/journey-mobile.mp4",
+    "decodedFrames": 288,
+    "blackFrames": 0,
+    "minimumMeanRGB": 37.306966145833336,
+    "macroExitMinimumSpatialStd": 14.400115805193245,
+    "note": "Opaque cloud passage and final reading hold are intentional; these statistics are not a flicker or quality certificate."
+  }
+]

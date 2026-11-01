@@ -1,0 +1,7 @@
+{
+  "base": "http://localhost:4173/",
+  "wrongFirstFrames": [],
+  "checks": [
+    "Delayed initial video load at phase 5 is revealed after the correct seek"
+  ]
+}

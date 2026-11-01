@@ -1,0 +1,11 @@
+{
+  "base": "http://localhost:4173/",
+  "checks": [
+    "Desktop six real camera stages, readable headings and final reveal",
+    "Camera forward/reverse verified with actual pixel comparison",
+    "Runtime reduced motion releases WebGL"
+  ],
+  "errors": [],
+  "forwardDifference": 61.85616769547325,
+  "reverseDifference": 0
+}

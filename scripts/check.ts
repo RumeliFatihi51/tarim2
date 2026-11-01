@@ -32,7 +32,7 @@ for (const f of htmlFiles) {
   assert(s.includes("og:image"), "Open Graph");
   assert(!s.includes("<!--app-->"), "Prerender complete");
   for (const match of s.matchAll(
-    /(?:href|src|data-desktop|data-mobile)="([^"]+)"/g,
+    /(?:href|src|srcSet|srcset|data-desktop|data-mobile|data-webm|data-mp4|data-wide-webm|data-wide-mp4)="([^"]+)"/g,
   )) {
     const link = match[1].replaceAll("&amp;", "&");
     if (!link || link.startsWith("#") || /^(https?:|mailto:|data:)/.test(link))

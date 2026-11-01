@@ -1,3 +1,4 @@
+import { stage1 } from "../content/stage1";
 import { useEffect, useRef, useState } from "react";
 import { Film } from "./Film";
 import { Media, Link } from "./ui";
@@ -36,7 +37,7 @@ export const journeyPhases = [
 export function WorldOpening({ base }: { base: string }) {
   return (
     <section className="world-opening">
-      <Film base={base} name="field" eager />
+      <Film base={base} name={stage1.home.name} alt={stage1.home.alt} eager />
       <div className="world-shade" />
       <div className="world-opening-top">
         <span>AGROMAX / TARIMSAL ZEKA</span>
@@ -118,11 +119,19 @@ export function Journey({ base }: { base: string }) {
       <div className="journey-sticky" data-world="journey">
         <picture>
           <source
+            media="(prefers-reduced-motion:reduce) and (max-width:899px)"
+            srcSet={base + "media/stage1/journey-reveal-mobile.webp"}
+          />
+          <source
             media="(prefers-reduced-motion:reduce)"
-            srcSet={base + "media/canopy.webp"}
+            srcSet={base + "media/stage1/journey-reveal.webp"}
+          />
+          <source
+            media="(max-width:899px)"
+            srcSet={base + "media/stage1/journey-origin-mobile.webp"}
           />
           <img
-            src={base + "media/journey-origin.webp"}
+            src={base + "media/stage1/journey-origin.webp"}
             alt="Yeryüzüne Yolculuk: kavramsal gezegen ve tarımsal çevre."
             width="960"
             height="600"
@@ -135,12 +144,14 @@ export function Journey({ base }: { base: string }) {
           playsInline
           preload="none"
           aria-hidden="true"
-          data-webm={base + "media/journey-mobile.webm"}
-          data-mp4={base + "media/journey-mobile.mp4"}
+          data-webm={base + "media/stage1/journey-mobile.webm"}
+          data-mp4={base + "media/stage1/journey-mobile.mp4"}
+          data-wide-webm={base + "media/stage1/journey.webm"}
+          data-wide-mp4={base + "media/stage1/journey.mp4"}
         />
         <Media
           base={base}
-          name="canopy"
+          name="stage1/journey-reveal"
           className="journey-reveal"
           alt="Yolculuğun sonunda sabah ışığına açılan geniş tarımsal peyzaj."
         />

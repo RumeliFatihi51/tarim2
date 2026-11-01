@@ -64,7 +64,7 @@ export function Home({ base }: { base: string }) {
           <figure className="land-figure">
             <Media
               base={base}
-              name="agriculture"
+              name="stage1/perspective-detail"
               alt="Yeşil ve hasat edilmiş tarlalar, zeytinlikler ve bir akarsu: kavramsal tarımsal arazi görseli."
             />
             <figcaption>
@@ -122,7 +122,7 @@ export function Home({ base }: { base: string }) {
           <div className="time-land">
             <Media
               base={base}
-              name="agriculture"
+              name="stage1/temporal-earth"
               alt="Zamansal bağlamı anlatan tarihsiz, kavramsal arazi görseli."
             />
             <span>GÖZLEM → GEÇMİŞ → BAĞLAM</span>

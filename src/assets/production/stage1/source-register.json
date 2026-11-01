@@ -1,0 +1,242 @@
+[
+  {
+    "name": "home-dawn",
+    "original": "src/assets/production/stage1/home-dawn.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "cb466bfb364fe19463505125a704d7c6e894c5f3f44551def15d9e1f12dcd9d3",
+    "mobileFocus": [
+      0.73,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "solution-advisor",
+    "original": "src/assets/production/stage1/solution-advisor.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "12fad09375d4a97b5f820d9e8652a99a54040009e4f85521d9c1f90140858a9f",
+    "mobileFocus": [
+      0.73,
+      0.6
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "botanical-reference",
+    "original": "src/assets/production/stage1/botanical-reference.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "c3ad55989e811980ac8a88e90ef8703a337714c8fa03c95f2e8148d27ffe4622",
+    "mobileFocus": [
+      0.5,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "parcel-context",
+    "original": "src/assets/production/stage1/parcel-context.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "c0b98387c0bf6ec8be60d50cde9d80122de028800464fe0e766cc5fddd4dfdf1",
+    "mobileFocus": [
+      0.58,
+      0.62
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "spectrum-optics",
+    "original": "src/assets/production/stage1/spectrum-optics.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "b68b188879dd7f8924f52ee0ea998e925979389be4dca9a5892f3400e4093700",
+    "mobileFocus": [
+      0.79,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "filiz-context",
+    "original": "src/assets/production/stage1/filiz-context.png",
+    "size": [
+      1122,
+      1402
+    ],
+    "sha256": "59cf7ff1994a63512856cc0f155e57f84ea0a1810ce843163337632d16fa03e5",
+    "mobileFocus": [
+      0.48,
+      0.55
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "solution-cooperative",
+    "original": "src/assets/production/stage1/solution-cooperative.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "b2079824db1e2916d678faa92885b3b37d91639db84e12bfdec4d2ecbd465ec5",
+    "mobileFocus": [
+      0.38,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "solution-enterprise",
+    "original": "src/assets/production/stage1/solution-enterprise.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "7ad6f5ae083b3db658f986dd5d9b4500cad2d59bf24926423d15a7986840b919",
+    "mobileFocus": [
+      0.67,
+      0.45
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "solution-research",
+    "original": "src/assets/production/stage1/solution-research.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "335a0412262f45d69b5be5f5006eb486abc681259bfeaf3d0d5f06b136acc7ff",
+    "mobileFocus": [
+      0.4,
+      0.6
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "about-material",
+    "original": "src/assets/production/stage1/about-material.png",
+    "size": [
+      1122,
+      1402
+    ],
+    "sha256": "3802bfa73931b181d0440cc6b363ccb055ef460317566a883e8b96ae0e759df9",
+    "mobileFocus": [
+      0.5,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "contact-earth",
+    "original": "src/assets/production/stage1/contact-earth.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "668fa47c43af9fcc730d45a609dc6e6fd7405a4c46047c2ec53cf72b819d83eb",
+    "mobileFocus": [
+      0.5,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "journey-geography",
+    "original": "src/assets/production/stage1/journey-geography.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "9784421e59d4acd20cd3b996b1ebce567f0f120bde171db540615fc402921be6",
+    "mobileFocus": [
+      0.5,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "perspective-detail",
+    "original": "src/assets/production/stage1/perspective-detail.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "8c84615d343f84c7dec86bb8f5fa246d34623658f070c32953cefd4f5ee75454",
+    "mobileFocus": [
+      0.5,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "temporal-earth",
+    "original": "src/assets/production/stage1/temporal-earth.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5396c419b1025b2d64013be68941d93200d11544395b322e8bc3cf2b4896166b",
+    "mobileFocus": [
+      0.5,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "journey-reveal",
+    "original": "src/assets/production/stage1/journey-reveal.png",
+    "size": [
+      1672,
+      940
+    ],
+    "sha256": "3d77e644851ec6b00bd6fc3e04eeeaf98583f8356ddae965ce4a769bc5f3243e",
+    "mobileFocus": [
+      0.5,
+      0.5
+    ],
+    "kind": "original conceptual image-generation art; not a photograph of a real AgroMax operation"
+  },
+  {
+    "name": "home-dawn-portrait",
+    "original": "src/assets/production/stage1/home-dawn-portrait.png",
+    "size": [
+      1086,
+      1448
+    ],
+    "sha256": "73659c8423986a1c61453fe475cd6e386a8abda9c929d0054d3f014a55f9788c",
+    "kind": "independently image-generated portrait composition of the same conceptual location, not a crop"
+  },
+  {
+    "name": "journey-reveal-portrait",
+    "original": "src/assets/production/stage1/journey-reveal-portrait.png",
+    "size": [
+      1086,
+      1448
+    ],
+    "sha256": "6041173d525c725755a593308787ab564f22aae326f75f7ad18316e0b349156f",
+    "kind": "independently image-generated portrait composition of the same conceptual location, not a crop"
+  },
+  {
+    "name": "wheat-lamina-original",
+    "original": "src/assets/production/stage1/wheat-lamina-original.png",
+    "size": [
+      941,
+      1672
+    ],
+    "sha256": "9440323f4e971d5d7660b1dbe585a8d0c7360ec69f6a0fd1f87fad008810cfd2",
+    "kind": "original image-generated wheat lamina material; not a measured scan"
+  }
+]
