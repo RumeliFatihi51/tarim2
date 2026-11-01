@@ -39,7 +39,7 @@ Her görüntünün orijinal PNG'si ve düzenlenebilir kompozisyon kabı `src/ass
 
 [Gerçek önce/sonra karşılaştırmaları ve 18 karelik render panoları](review/README.md) · [görsel puanlama](VISUAL_REVIEW.md) · [QA ayrıntıları](QA_REPORT.md) · [üretim/tekrar üretim](PRODUCTION.md) · [sahne kartları](SCENE_CARDS.md).
 
-Statik rota, responsive, a11y, JavaScript'siz erişim, medya çözümleme, durdurma/ekran dışı pause, kamera ileri/geri ve fallback kontrollerinin gerçek JSON kayıtları `qa/stage1/` altındadır. Canlı dağıtım kontrolü ayrıca kaydedilir. Ölçümler ürünün bilimsel performansını kanıtlamaz.
+Statik rota, responsive, a11y, JavaScript'siz erişim, medya çözümleme, durdurma/ekran dışı pause, kamera ileri/geri ve fallback kontrollerinin gerçek JSON kayıtları `qa/stage1/` altındadır. [Canlı dağıtım kontrolü tamamlandı](LIVE_VERIFICATION.md): 20 görünüm, 65 medya, 206 range, özel 404 ve Journey motion/fallback kontrolleri geçti; JS hatası 0. Ölçümler ürünün bilimsel performansını kanıtlamaz.
 
 ## Sınırlar
 

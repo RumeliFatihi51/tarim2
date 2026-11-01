@@ -2,7 +2,7 @@
 
 Amaç: Yedi mevcut ürün tanıtım sayfası → özgün yerel medya → poster/video/WebGL görüntüsü → serbest gezinme. API, kullanıcı girişi, gerçek analiz veya çalışan Filiz servisi eklenmedi. Testler ürünün bilimsel performansını doğrulamaz.
 
-## Şimdiye kadar fiilen geçen kontroller
+## Geçen kontroller
 
 | Sınır | Sonuç | Kanıt |
 |---|---|---|
@@ -18,7 +18,7 @@ Amaç: Yedi mevcut ürün tanıtım sayfası → özgün yerel medya → poster/
 | İlk görsel kayıt | 14 gerçek canlı before + 14 yerel after ekranı | `qa/stage1/before`, `after`; inceleme panoları `review/` |
 | Önceki Journey | 18 nokta × 2 cihazda gerçek canlı tarayıcı kaydı | `qa/stage1/journey-before` |
 
-Bu tablo yalnız gerçekten yürütülen kontrolleri sayar. Son kamera/render revizyonunun motion ve canlı dağıtım kontrolleri tamamlandığında altına ayrı kayıt eklenir.
+Bu tablo yalnız gerçekten yürütülen kontrolleri sayar. Son kamera/render revizyonunun motion ve canlı dağıtım kayıtları aşağıdadır.
 
 ## Yakalanan ve düzeltilen sorunlar
 
@@ -49,8 +49,10 @@ Render işi geçici olarak durdurularak, yerel production build üzerinde gerçe
 - Son `journey-capture`: her iki cihazda 6 faz × başlangıç/orta/bitiş = **36 gerçek tarayıcı görüntüsü**; ayrıca 36 ham render örneği ve iki 18'li pano.
 - Web dosyalarının gerçek byte/hash, boyut ve ffprobe codec kayıtları: `qa/stage1/media-manifest.json`. Kaynak kareler ile 24 fps dağıtım kareleri ayrıdır.
 
-Bu kapı yerel production build içindir. Vercel/gerçek canlı URL doğrulaması ayrıca kaydedilir.
+Bu kapı yerel production build içindir. Canlı doğrulama `LIVE_VERIFICATION.md` ve `qa/stage1/live*.json` içinde tamamlandı.
 
-Son görsel inceleme, makro çıkışında erken ufuk pan'ının netliği bozduğunu yakaladı; kamera hedefi düzeltildi ve etkilenen kaynak kareler tekrar üretildi. Anlatı duraklarının da 1/15/29/44/58/72 karelerine tam eşlenmesi sağlandı. Bu son medya sürümüyle motion/seek ve canlı kontroller yeniden yürütülür; ilk teknik geçişin görsel tamamlanma anlamına geldiği varsayılmadı.
+Son görsel inceleme, makro çıkışında erken ufuk pan'ının netliği bozduğunu yakaladı; kamera hedefi düzeltildi ve etkilenen kaynak kareler tekrar üretildi. Anlatı duraklarının da 1/15/29/44/58/72 karelerine tam eşlenmesi sağlandı. Bu son medya sürümüyle motion/seek ve canlı kontroller tekrar geçti; ilk teknik geçişin görsel tamamlanma anlamına geldiği varsayılmadı.
 
 Son kamera ve medya sürümüyle bütün motion/fallback/ilk-seek kontrolleri tekrar geçti; JS hatası 0, dönüş piksel farkı 0. İki nihai MP4 tamamen çözümlendi: 288 + 288 kare, siyah kare 0. `video-integrity.json` yalnız bütünlük kontrolüdür; estetik/flicker sertifikası değildir.
+
+Canlı son kapı: 20 sayfa görünümü, 65 medya / doğru byte, HTTP 206 range, özel 404 ve canlı motion/fallback geçti. JS hatası 0. [Canlı kayıt](LIVE_VERIFICATION.md).

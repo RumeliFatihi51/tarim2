@@ -1,0 +1,539 @@
+{
+  "base": "https://agromax-alpha.vercel.app/",
+  "pages": [
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/",
+      "title": "AgroMax — Uydu gözleminden tarımsal içgörüye"
+    },
+    {
+      "route": "platform/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/platform/",
+      "title": "Platform — Parselin bütün hikâyesi | AgroMax"
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/teknoloji/",
+      "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax"
+    },
+    {
+      "route": "filiz/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/filiz/",
+      "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax"
+    },
+    {
+      "route": "cozumler/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/cozumler/",
+      "title": "Çözümler — Sahadaki farklı sorular için | AgroMax"
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/hakkimizda/",
+      "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax"
+    },
+    {
+      "route": "iletisim/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/iletisim/",
+      "title": "İletişim — AgroMax hakkında konuşalım"
+    },
+    {
+      "route": "gizlilik/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/gizlilik/",
+      "title": "Gizlilik — AgroMax"
+    },
+    {
+      "route": "kullanim/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/kullanim/",
+      "title": "Kullanım bilgileri — AgroMax"
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/gorsel-kredileri/",
+      "title": "Görsel kredileri — AgroMax"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/",
+      "title": "AgroMax — Uydu gözleminden tarımsal içgörüye"
+    },
+    {
+      "route": "platform/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/platform/",
+      "title": "Platform — Parselin bütün hikâyesi | AgroMax"
+    },
+    {
+      "route": "teknoloji/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/teknoloji/",
+      "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax"
+    },
+    {
+      "route": "filiz/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/filiz/",
+      "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax"
+    },
+    {
+      "route": "cozumler/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/cozumler/",
+      "title": "Çözümler — Sahadaki farklı sorular için | AgroMax"
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/hakkimizda/",
+      "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax"
+    },
+    {
+      "route": "iletisim/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/iletisim/",
+      "title": "İletişim — AgroMax hakkında konuşalım"
+    },
+    {
+      "route": "gizlilik/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/gizlilik/",
+      "title": "Gizlilik — AgroMax"
+    },
+    {
+      "route": "kullanim/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/kullanim/",
+      "title": "Kullanım bilgileri — AgroMax"
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/gorsel-kredileri/",
+      "title": "Görsel kredileri — AgroMax"
+    }
+  ],
+  "media": [
+    {
+      "file": "public/media/stage1/about-material-mobile.webp",
+      "status": 200,
+      "bytes": 117186,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/about-material.webp",
+      "status": 200,
+      "bytes": 272610,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/botanical-reference-mobile.webp",
+      "status": 200,
+      "bytes": 32006,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/botanical-reference.webp",
+      "status": 200,
+      "bytes": 66984,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/contact-earth-mobile.webp",
+      "status": 200,
+      "bytes": 104466,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/contact-earth.webp",
+      "status": 200,
+      "bytes": 300850,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/filiz-context-mobile.webp",
+      "status": 200,
+      "bytes": 181522,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/filiz-context.webp",
+      "status": 200,
+      "bytes": 449242,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/home-dawn-mobile.mp4",
+      "status": 200,
+      "bytes": 339048,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/stage1/home-dawn-mobile.webm",
+      "status": 200,
+      "bytes": 311063,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/stage1/home-dawn-mobile.webp",
+      "status": 200,
+      "bytes": 205504,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/home-dawn-poster-mobile.webp",
+      "status": 200,
+      "bytes": 194258,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/home-dawn-poster.webp",
+      "status": 200,
+      "bytes": 209940,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/home-dawn.mp4",
+      "status": 200,
+      "bytes": 289319,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/stage1/home-dawn.webm",
+      "status": 200,
+      "bytes": 230138,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/stage1/home-dawn.webp",
+      "status": 200,
+      "bytes": 302850,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-descent-mobile.webp",
+      "status": 200,
+      "bytes": 28898,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-descent.webp",
+      "status": 200,
+      "bytes": 38272,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-final-render-mobile.webp",
+      "status": 200,
+      "bytes": 155094,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-final-render.webp",
+      "status": 200,
+      "bytes": 173762,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-geography-mobile.webp",
+      "status": 200,
+      "bytes": 245396,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-geography.webp",
+      "status": 200,
+      "bytes": 701254,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-land-mobile.webp",
+      "status": 200,
+      "bytes": 118730,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-land.webp",
+      "status": 200,
+      "bytes": 145896,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-leaf-mobile.webp",
+      "status": 200,
+      "bytes": 28176,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-leaf.webp",
+      "status": 200,
+      "bytes": 32752,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-mobile.mp4",
+      "status": 200,
+      "bytes": 5112442,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/stage1/journey-mobile.webm",
+      "status": 200,
+      "bytes": 4420974,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/stage1/journey-observation-mobile.webp",
+      "status": 200,
+      "bytes": 72036,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-observation.webp",
+      "status": 200,
+      "bytes": 90726,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-origin-mobile.webp",
+      "status": 200,
+      "bytes": 51056,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-origin.webp",
+      "status": 200,
+      "bytes": 59688,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-reveal-mobile.webp",
+      "status": 200,
+      "bytes": 140024,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey-reveal.webp",
+      "status": 200,
+      "bytes": 294740,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/journey.mp4",
+      "status": 200,
+      "bytes": 6830239,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/stage1/journey.webm",
+      "status": 200,
+      "bytes": 6090282,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/stage1/parcel-context-mobile.mp4",
+      "status": 200,
+      "bytes": 893497,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/stage1/parcel-context-mobile.webm",
+      "status": 200,
+      "bytes": 363837,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/stage1/parcel-context-mobile.webp",
+      "status": 200,
+      "bytes": 195066,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/parcel-context-poster-mobile.webp",
+      "status": 200,
+      "bytes": 229526,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/parcel-context-poster.webp",
+      "status": 200,
+      "bytes": 360078,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/parcel-context.mp4",
+      "status": 200,
+      "bytes": 1528840,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/stage1/parcel-context.webm",
+      "status": 200,
+      "bytes": 811551,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/stage1/parcel-context.webp",
+      "status": 200,
+      "bytes": 559908,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/perspective-detail-mobile.webp",
+      "status": 200,
+      "bytes": 158204,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/perspective-detail.webp",
+      "status": 200,
+      "bytes": 397654,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/solution-advisor-mobile.webp",
+      "status": 200,
+      "bytes": 144578,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/solution-advisor.webp",
+      "status": 200,
+      "bytes": 378204,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/solution-cooperative-mobile.webp",
+      "status": 200,
+      "bytes": 210396,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/solution-cooperative.webp",
+      "status": 200,
+      "bytes": 616056,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/solution-enterprise-mobile.webp",
+      "status": 200,
+      "bytes": 179952,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/solution-enterprise.webp",
+      "status": 200,
+      "bytes": 511826,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/solution-research-mobile.webp",
+      "status": 200,
+      "bytes": 85568,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/solution-research.webp",
+      "status": 200,
+      "bytes": 317760,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/spectrum-optics-mobile.mp4",
+      "status": 200,
+      "bytes": 360416,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/stage1/spectrum-optics-mobile.webm",
+      "status": 200,
+      "bytes": 180975,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/stage1/spectrum-optics-mobile.webp",
+      "status": 200,
+      "bytes": 89134,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/spectrum-optics-poster-mobile.webp",
+      "status": 200,
+      "bytes": 126942,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/spectrum-optics-poster.webp",
+      "status": 200,
+      "bytes": 104974,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/spectrum-optics.mp4",
+      "status": 200,
+      "bytes": 382294,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/stage1/spectrum-optics.webm",
+      "status": 200,
+      "bytes": 169292,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/stage1/spectrum-optics.webp",
+      "status": 200,
+      "bytes": 141856,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/temporal-earth-mobile.webp",
+      "status": 200,
+      "bytes": 164722,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/temporal-earth.webp",
+      "status": 200,
+      "bytes": 495322,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/stage1/wheat.glb",
+      "status": 200,
+      "bytes": 1483056,
+      "type": "model/gltf-binary"
+    }
+  ],
+  "errors": [],
+  "byteRange": true
+}
