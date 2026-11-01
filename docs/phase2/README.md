@@ -2,6 +2,8 @@
 
 **Üretim yayını engelli; tüm hedefler tamamlandı olarak işaretlenmedi.**
 
+[Taslak PR #1](https://github.com/RumeliFatihi51/tarim2/pull/1) · [GitHub CI sonucu](ci-tests.json)
+
 [Detaylı teslim raporu](DELIVERY.md) · [Denetim](AUDIT.md) · [Yayın ve callback durumu](HOSTING.md)
 
 Gerçek Supabase Auth ve kullanıcıya özel talep kaydı bağlandı; geçici doğrulanmış test hesabıyla giriş, profil, oturum kalıcılığı, kayıt ve çıkış geçti. Gerçek e-posta doğrulama ve kurtarma döngüsü henüz doğrulanamadı. GitHub Pages API'si 403 veriyor; Cloudflare bağlantısı yok. Çalışan Vercel sürümüne dokunulmadı.

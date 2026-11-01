@@ -85,3 +85,7 @@ Before images are in `before/`. Root page images and six Portal modes have actua
 ### Additional artifact validation
 
 Both review ZIPs have valid CRCs, 12 HTML pages and matching local references. The `/tarim2/` build passed a further 48 local page/viewport and seven interaction-group checks. The branch disables its own Vercel auto-deployment without changing the main production branch. Prepared artifacts are not described as a live new hosting service.
+
+### GitHub CI outcome
+
+[Run 41344893084](https://github.com/RumeliFatihi51/tarim2/actions/runs/41344893084) on `bf1b28a`: build job succeeded, including lint/typecheck/build/static checks and the 72,841,244-byte Pages artifact upload. Deployment failed at `actions/configure-pages@v5`: Pages site Not Found (not enabled). This confirms the build is deployable but does not bypass missing hosting permissions. Draft source PR: https://github.com/RumeliFatihi51/tarim2/pull/1. Raw outcome: `ci-tests.json`.

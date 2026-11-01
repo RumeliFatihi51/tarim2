@@ -1,0 +1,20 @@
+{
+  "run": "https://github.com/RumeliFatihi51/tarim2/actions/runs/41344893084",
+  "testedHead": "bf1b28ae8326ca3aa0e66e6c731ee98328712d62",
+  "build": "success",
+  "checks": [
+    "npm ci",
+    "lint",
+    "typecheck",
+    "build",
+    "static checks",
+    "upload Pages artifact"
+  ],
+  "artifact": {
+    "name": "github-pages",
+    "bytes": 72841244
+  },
+  "deployment": "failed",
+  "failedStep": "actions/configure-pages@v5",
+  "error": "Get Pages site failed: Not Found. Pages not enabled. API enablement separately returned HTTP 403."
+}
