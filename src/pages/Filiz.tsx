@@ -1,4 +1,4 @@
-import { filizContexts } from "../content/site";
+import { ContextReading } from "../phase2/ContextReading";
 import { uiLists } from "../content/section-copy";
 import { Eyebrow, Link, Icon } from "../components/ui";
 import { FieldContext } from "../components/FieldContext";
@@ -51,16 +51,7 @@ export function Filiz({ base }: { base: string }) {
             ilişkilendirmek.
           </p>
         </div>
-        <div className="context-grid">
-          {filizContexts.map((x, i) => (
-            <article key={x.title}>
-              <Icon name={["target", "satellite", "time", "evidence"][i]} />
-              <span>0{i + 1}</span>
-              <h3>{x.title}</h3>
-              <p>{x.text}</p>
-            </article>
-          ))}
-        </div>
+        <ContextReading />
       </section>
       <section className="filiz-principles">
         <div className="wrap evidence-grid">

@@ -15,7 +15,7 @@ walk("dist");
 const htmlFiles = files.filter((f) => f.endsWith(".html"));
 assert.equal(
   htmlFiles.length,
-  11,
+  12,
   "All seven main pages, three auxiliary pages, and 404 are generated",
 );
 const titles = new Set<string>();
@@ -52,13 +52,13 @@ for (const f of htmlFiles) {
     !/href="[^\"]*\/(dashboard|app|login|demo|register)(\/|")/.test(s),
     "No application routes",
   );
-  assert(!/<(input|textarea|form)\b/.test(s), "No fake form/chat interface");
+  if (!/dist\/(iletisim|hesap)\//.test(f)) assert(!/<(input|textarea|form)\b/.test(s), "Forms are restricted to contact/account");
   assert(
     !/example\.com|agromax\.app/.test(s),
     "No fabricated external address",
   );
 }
-const media = files.filter((f) => /\.(webp|glb|jpg)$/.test(f));
+const media = files.filter((f) => /\.(webp|avif|glb|jpg)$/.test(f));
 for (const f of media) {
   const bytes = statSync(f).size;
   assert(bytes < 1_500_000, `Asset budget exceeded: ${f}`);
@@ -67,7 +67,7 @@ for (const f of files.filter((f) => /\.(mp4|webm)$/.test(f))) {
   assert(statSync(f).size > 1000, "Empty video " + f);
   assert(statSync(f).size < 8_000_000, "Video budget exceeded " + f);
 }
-assert(Object.keys(metadata).length === 11);
+assert(Object.keys(metadata).length === 12);
 console.log(
   `PASS: ${htmlFiles.length} statically rendered pages, ${checked} local references, unique metadata, valid media budget and locked product-site scope.`,
 );

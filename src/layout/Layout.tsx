@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { navigation, type PageId } from "../content/site";
+import { SceneRefinement } from "../phase2/SceneRefinement";
 import { siteConfig } from "../config/site";
 import { Arrow, Mark } from "../components/ui";
 export function Layout({
@@ -35,6 +36,7 @@ export function Layout({
   };
   return (
     <>
+      <SceneRefinement />
       <a className="skip-link" href="#main">
         İçeriğe geç
       </a>
@@ -67,6 +69,7 @@ export function Layout({
             İletişim
             <Arrow diagonal />
           </a>
+          <a className="header-account" aria-current={page==="hesap"?"page":undefined} href={base+"hesap/"}>Hesap</a>
           <button
             type="button"
             ref={trigger}
@@ -129,6 +132,7 @@ export function Layout({
             </p>
           </div>
           <nav aria-label="Tüm sayfalar">
+            <a className="menu-account" aria-current={page==="hesap"?"page":undefined} href={base+"hesap/"} onClick={close}>Gözlem kapısı / Hesap ↗</a>
             {navigation.map((n, i) => (
               <a
                 key={n.id}

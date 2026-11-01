@@ -1,0 +1,7 @@
+import { useState } from "react";
+const questions=[
+ {index:'NDVI',label:'Bitki örtüsü',formula:'(NIR − RED) / (NIR + RED)',text:'Kırmızı ve yakın kızılötesi yansıma ilişkisi bitki örtüsünü incelemek için bir ipucudur. Toprak, dönem ve gözlem kalitesi yorumu etkiler; hastalık teşhisi değildir.'},
+ {index:'NDMI',label:'Kanopi nemi',formula:'(NIR − SWIR) / (NIR + SWIR)',text:'Bitki örtüsündeki nem koşullarına duyarlı spektral bir ilişkidir. Kök bölgesinin su içeriğini doğrudan ölçmez; saha bilgisiyle değerlendirilmelidir.'},
+ {index:'NDWI',label:'Açık su',formula:'(GREEN − NIR) / (GREEN + NIR)',text:'Burada McFeeters yaklaşımı anlatılır. Açık su ayrımı için yeşil ve yakın kızılötesi bantların ilişkisini kullanır. Kanopi nemini anlatan NDMI ile aynı kavram değildir.'},
+];
+export function ObservationQuestions(){const [active,setActive]=useState(0);const q=questions[active];return <div className="observation-questions"><nav aria-label="Göstergenin anlattığı soruyu seç">{questions.map((x,i)=><button type="button" key={x.index} aria-pressed={active===i} onClick={()=>setActive(i)}>{x.label}<span>{x.index}</span></button>)}</nav><div className="question-reading" aria-live="polite"><span className="question-index" aria-hidden="true">{q.index}</span><div><h3>{q.label} / {q.index}</h3><p>{q.text}</p><code>{q.formula}</code></div></div><small>Yöntem açıklaması · Veri seçmez, indeks hesaplamaz veya gerçek ölçüm göstermez.</small></div>}

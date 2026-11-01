@@ -1,6 +1,7 @@
+import { ProcessStudy } from "../phase2/ProcessStudy";
 import { stage1 } from "../content/stage1";
-import { workflow, future } from "../content/site";
-import { Eyebrow, Link, Icon } from "../components/ui";
+import { future } from "../content/site";
+import { Eyebrow, Link } from "../components/ui";
 import { Landscape } from "../components/Cinematic";
 import { Film } from "../components/Film";
 import { Next } from "./Home";
@@ -36,7 +37,7 @@ export function Platform({ base }: { base: string }) {
         </div>
       </div>
       <section
-        className="workflow-section wrap section-space"
+        className="workflow-section phase2-workflow wrap section-space"
         id="urun-yaklasimi"
       >
         <div className="sticky-heading">
@@ -51,29 +52,7 @@ export function Platform({ base }: { base: string }) {
             inceleme yaklaşımı.
           </p>
         </div>
-        <div className="workflow-list">
-          {workflow.map((w, i) => (
-            <article key={w.n}>
-              <span>{w.n}</span>
-              <div>
-                <Icon
-                  name={
-                    [
-                      "target",
-                      "satellite",
-                      "layers",
-                      "time",
-                      "leaf",
-                      "evidence",
-                    ][i]
-                  }
-                />
-                <h3>{w.title}</h3>
-                <p>{w.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <ProcessStudy base={base} />
       </section>
       <section className="platform-evidence">
         <div className="wrap evidence-grid">

@@ -29,3 +29,7 @@ qa/stage1/**/*.jpg
 # Reproducible premium-revision render intermediates
 src/assets/production/revision1/*-frames/
 src/assets/production/revision1/*-clean/
+
+.env.*
+!.env.example
+supabase/.temp/

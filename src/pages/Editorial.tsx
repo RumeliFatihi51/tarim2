@@ -1,3 +1,4 @@
+import { ContactRequest } from "../auth/ContactRequest";
 import { stage1 } from "../content/stage1";
 import { useState } from "react";
 import { audiences, principles, legal } from "../content/site";
@@ -34,6 +35,7 @@ export function Solutions({ base }: { base: string }) {
           </div>
         </div>
       </section>
+      <nav className="audience-wayfinder wrap" aria-label="Kullanım alanına git">{audiences.map(a=><a href={"#alan-"+a.n} key={a.n}><span>{a.n}</span>{a.title}</a>)}</nav>
       <section className="audiences wrap section-space">
         <Eyebrow>FARKLI İHTİYAÇLAR, ORTAK BİR ÇERÇEVE</Eyebrow>
         {audiences.map((a, i) => (
@@ -225,19 +227,20 @@ export function Contact({ base }: { base: string }) {
           ) : (
             <>
               <h2>
-                Yakında
+                Doğrudan iletişim
                 <br />
-                buradan ulaşabilirsin.
+                ve görüşme talebi.
               </h2>
               <p>
-                Doğrulanmış iletişim adresi henüz paylaşılmadı. Kanal hazır
-                olduğunda bu sayfada yayımlanacak.
+                Doğrulanmış e-posta adresi henüz paylaşılmadı. Görüşme talebini
+                aşağıdaki formdan iletebilirsin.
               </p>
               <Link href={base + "platform/"}>Bu sırada platformu keşfet</Link>
             </>
           )}
         </div>
       </section>
+      <section id="gorusme-talebi" className="contact-request-section wrap section-space"><ContactRequest base={base}/></section>
       <section className="contact-preparation wrap section-space">
         <Eyebrow>GÖRÜŞMEYE HAZIRLIK</Eyebrow>
         <h2>

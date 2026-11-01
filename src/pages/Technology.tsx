@@ -1,3 +1,4 @@
+import { BandStudy } from "../phase2/BandStudy";
 import { stage1 } from "../content/stage1";
 import { sources, indexGroups, indexNotes } from "../content/site";
 import { uiLists } from "../content/section-copy";
@@ -76,23 +77,7 @@ export function Technology({ base }: { base: string }) {
             <br />
             daha fazlası.
           </h2>
-          <div
-            className="spectral-diagram"
-            role="img"
-            aria-label="Kavramsal elektromanyetik spektrum: görünür ışık, yakın kızılötesi ve kısa dalga kızılötesi. Ölçekli bir ölçüm değildir."
-          >
-            <div className="spectral-bands">
-              <span>GÖRÜNÜR IŞIK</span>
-              <span>YAKIN KIZILÖTESİ</span>
-              <span>KISA DALGA KIZILÖTESİ</span>
-            </div>
-            <div className="spectral-bar" />
-            <div className="spectral-tags">
-              <span>Bitki örtüsü</span>
-              <span>Kırmızı kenar</span>
-              <span>Nem ve yüzey</span>
-            </div>
-          </div>
+          <BandStudy />
           <p>
             Optik sensörler farklı spektral bantlardaki yansımayı kaydeder.
             İndeksler bu bantlar arasında ilişki kurar; doğrudan hastalık

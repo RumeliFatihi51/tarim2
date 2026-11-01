@@ -4,6 +4,7 @@ import { audiences } from "../content/site";
 import { Eyebrow, Link, Icon, Arrow, Media } from "../components/ui";
 import { WorldOpening, Journey } from "../components/Journey";
 import { stage1 } from "../content/stage1";
+import { ObservationQuestions } from "../phase2/ObservationQuestions";
 import { FieldContext } from "../components/FieldContext";
 import { Landscape } from "../components/Cinematic";
 export function Next({
@@ -98,11 +99,7 @@ export function Home({ base }: { base: string }) {
           <br />
           Daha dikkatli sorular.
         </h2>
-        <div className="understand-bands">
-          <span>Bitki örtüsü / NDVI</span>
-          <span>Kanopi nemi / NDMI</span>
-          <span>Açık su / NDWI</span>
-        </div>
+        <ObservationQuestions />
         <p>
           Farklı spektral ilişkiler, farklı inceleme soruları doğurur. Tek bir
           gösterge teşhis veya uygulama reçetesi değildir.

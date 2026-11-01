@@ -1,4 +1,7 @@
 import React from "react";
+import { loadEnv } from "vite";
+const publicEnv=loadEnv("production",process.cwd(),"VITE_SUPABASE_");
+for(const key of ["VITE_SUPABASE_URL","VITE_SUPABASE_PUBLISHABLE_KEY"]) if(publicEnv[key]&&!process.env[key])process.env[key]=publicEnv[key];
 import { renderToString } from "react-dom/server";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { App } from "../src/App";
@@ -32,6 +35,9 @@ for (const page of pages) {
               ? "stage1/about-material"
               : "agriculture";
   const mobileMedia = media + "-mobile";
+  const preloadMedia=page==="home"?"phase2/home-dawn-poster":media;
+  const preloadMobile=page==="home"?"phase2/home-dawn-poster-mobile":mobileMedia;
+  const preloadFormat=page==="home"?"avif":"webp";
   const film = media.endsWith("-poster");
   const preloadImage = [
     "home",
@@ -41,13 +47,13 @@ for (const page of pages) {
     "cozumler",
     "hakkimizda",
   ].includes(page)
-    ? `<link rel="preload" as="image" href="${base}media/${media}.webp" media="(min-width:${film ? 768 : 601}px)"/><link rel="preload" as="image" href="${base}media/${mobileMedia}.webp" media="(max-width:${film ? 767 : 600}px)"/>`
+    ? `<link rel="preload" as="image" fetchpriority="high" type="image/${preloadFormat}" href="${base}media/${preloadMedia}.${preloadFormat}" media="(min-width:${film ? 768 : 601}px)"/><link rel="preload" as="image" fetchpriority="high" type="image/${preloadFormat}" href="${base}media/${preloadMobile}.${preloadFormat}" media="(max-width:${film ? 767 : 600}px)"/>`
     : "";
   const html = template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(meta.title)}</title>`)
     .replace(
       "<!--metadata-->",
-      `<meta name="description" content="${escape(meta.description)}"/><meta property="og:title" content="${escape(meta.title)}"/><meta property="og:description" content="${escape(meta.description)}"/><meta property="og:type" content="website"/><meta property="og:locale" content="tr_TR"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image" content="${origin}${base}media/og.jpg"/>${origin ? `<link rel="canonical" href="${origin}${base}${path}"/><meta property="og:url" content="${origin}${base}${path}"/>` : ""}<link rel="icon" href="${base}favicon.svg" type="image/svg+xml"/><link rel="preload" as="font" href="${base}fonts/instrument-sans.woff2" type="font/woff2" crossorigin/>${preloadImage}${page === "404" ? '<meta name="robots" content="noindex"/>' : ""}`,
+      `<meta name="description" content="${escape(meta.description)}"/><meta property="og:title" content="${escape(meta.title)}"/><meta property="og:description" content="${escape(meta.description)}"/><meta property="og:type" content="website"/><meta property="og:locale" content="tr_TR"/><meta name="twitter:card" content="summary_large_image"/><meta property="og:image" content="${origin}${base}media/og.jpg"/>${origin ? `<link rel="canonical" href="${origin}${base}${path}"/><meta property="og:url" content="${origin}${base}${path}"/>` : ""}<link rel="icon" href="${base}favicon.svg" type="image/svg+xml"/><link rel="preload" as="font" href="${base}fonts/instrument-sans.woff2" type="font/woff2" crossorigin/>${preloadImage}${(page === "404" || page === "hesap") ? '<meta name="robots" content="noindex"/>' : ""}`,
     )
     .replace(
       '<div id="root">',

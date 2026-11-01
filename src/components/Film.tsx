@@ -16,12 +16,15 @@ export function Film({
 }) {
   const host = useRef<HTMLDivElement>(null),
     video = useRef<HTMLVideoElement>(null);
+  const [avifFailed,setAvifFailed]=useState(false);
   const [ready, setReady] = useState(false),
     [paused, setPaused] = useState(false);
   useEffect(() => {
     const v = video.current,
       h = host.current;
     if (!v || !h) return;
+    const poster=h.querySelector("img");
+    if(name==="stage1/home-dawn"&&poster?.complete&&!poster.naturalWidth)setAvifFailed(true);
     const media = matchMedia("(prefers-reduced-motion:reduce)");
     let visible = false,
       menuBlocked = false;
@@ -88,6 +91,10 @@ export function Film({
       className={`film ${ready ? "film-ready" : ""} ${className}`}
     >
       <picture>
+        {name === "stage1/home-dawn" && !avifFailed && <>
+          <source type="image/avif" media="(max-width:767px)" srcSet={`${base}media/phase2/home-dawn-poster-mobile.avif`} />
+          <source type="image/avif" media="(min-width:768px)" srcSet={`${base}media/phase2/home-dawn-poster.avif`} />
+        </>}
         <source
           media="(max-width:767px)"
           srcSet={`${base}media/${name}-poster-mobile.webp`}
@@ -105,6 +112,7 @@ export function Film({
           loading={eager ? "eager" : "lazy"}
           fetchPriority={eager ? "high" : "auto"}
           decoding="async"
+          onError={() => {if(name==="stage1/home-dawn")setAvifFailed(true)}}
         />
       </picture>
       <video

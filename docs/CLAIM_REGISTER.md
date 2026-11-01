@@ -47,3 +47,6 @@ Kamera, bitki geometrisi ve atmosferik sahneler kavramsal görsel anlatımdır. 
 
 ## Aşama 1 premium görsel revizyonu / 1 Kasım 2026
 Filiz botanik arşivi ve arazi yüzey dokusu özgün kavramsal görsel üretimleridir. Platform rölyefinin yükseltisi yazılmış sentetik bir yüzeydir; DEM, ölçülmüş coğrafya veya analiz değildir. Teknoloji yaprağı paralel damarlı buğday laminasını anlatan kavramsal geometri/tekstürdür; NIR/SWIR ölçümü veya gerçek bilimsel mikrograf değildir. Optik cam panel metaforu kullanımından vazgeçilmiştir. Önceki ürün kısıtları korunur. Yeryüzüne Yolculuk bu revizyonun dışındadır.
+
+## Phase 2
+Site artık gerçek Supabase Auth ile hesap yönetimi ve kullanıcıya özel görüşme talebi kaydı içerecek biçimde geliştirilir. Bu hesap alanı tarımsal analiz uygulaması değildir. Etkileşimli bantlar ölçüm, grafikler gerçek yansıma eğrisi, süreç sahnesi çalışan analiz motoru değildir. Filiz planlanan özellik statüsünde kalır. Yayın ve e-posta akışları test edilmeden tamamlandı sayılmaz.

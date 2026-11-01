@@ -1,0 +1,3 @@
+import { useState } from "react";
+import { filizContexts } from "../content/site";
+export function ContextReading(){const [active,setActive]=useState(0);return <div className="context-reading"><nav aria-label="Filiz’in bilgi bağlamları">{filizContexts.map((x,i)=><button type="button" key={x.title} aria-pressed={i===active} onClick={()=>setActive(i)}><span>0{i+1}</span>{x.title}<span aria-hidden="true">↗</span></button>)}</nav><div className="context-explanation" aria-live="polite"><span className="eyebrow">BAĞLAM / 0{active+1}</span><h3>{filizContexts[active].title}</h3><p>{filizContexts[active].text}</p><small>Planlanan açıklama yaklaşımıdır. Canlı AI yanıtı değildir.</small></div></div>}
