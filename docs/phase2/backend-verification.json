@@ -1,0 +1,11 @@
+{
+  "project": "tyigiyetfxufiixbmnrk",
+  "rlsOwnerIsolation": true,
+  "crossOwnerInsertRejected": true,
+  "fivePerHourLimit": true,
+  "anonymousInboxDenied": true,
+  "securityAdvisories": [],
+  "fixtureUsersRemaining": 0,
+  "contactRowsRemainingAfterQA": 0,
+  "qaBootstrapRetiredHTTPStatus": 410
+}

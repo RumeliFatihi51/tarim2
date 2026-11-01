@@ -1,0 +1,16 @@
+[
+  {
+    "artifact": "AgroMax-Phase2-Cloudflare-Review.zip",
+    "base": "/",
+    "htmlPages": 12,
+    "zipCRC": "valid",
+    "allLocalReferences": "valid"
+  },
+  {
+    "artifact": "AgroMax-Phase2-GitHubPages-Review.zip",
+    "base": "/tarim2/",
+    "htmlPages": 12,
+    "zipCRC": "valid",
+    "allLocalReferences": "valid"
+  }
+]

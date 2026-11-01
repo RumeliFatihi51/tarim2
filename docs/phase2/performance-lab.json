@@ -1,0 +1,29 @@
+{
+  "environment": "Local Linux Chromium Lighthouse mobile simulation; not production field CWV",
+  "categories": {
+    "performance": 0.96,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+  },
+  "metrics": {
+    "largest-contentful-paint": {
+      "value": 2751.8662999999997,
+      "display": "2.8\u00a0s"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "display": "0"
+    },
+    "total-blocking-time": {
+      "value": 16.5,
+      "display": "20\u00a0ms"
+    }
+  },
+  "INP": "not measured",
+  "heroMobilePosterBytes": {
+    "originalWebP": 194528,
+    "alternativeAVIF": 67949
+  },
+  "note": "Original WebP and video retained; AVIF network failure falls back to WebP."
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "width": 1440,
+    "mode": "giris",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "mode": "kayit",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "mode": "dogrula",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "mode": "unuttum",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "mode": "sifirla",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "mode": "profil",
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "invalidCallback": true
+  },
+  {
+    "width": 390,
+    "mode": "giris",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "mode": "kayit",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "mode": "dogrula",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "mode": "unuttum",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "mode": "sifirla",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "mode": "profil",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "invalidCallback": true
+  }
+]

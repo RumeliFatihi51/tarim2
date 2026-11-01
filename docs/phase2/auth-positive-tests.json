@@ -1,0 +1,11 @@
+{
+  "provider": "real Supabase Auth",
+  "fixture": "temporary preconfirmed admin-created test account; not an email verification test",
+  "login": true,
+  "profileUpdate": true,
+  "sessionPersistenceAcrossReload": true,
+  "authenticatedContactInsert": true,
+  "logout": true,
+  "unauthorizedAfterLogout": true,
+  "jsErrors": []
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "file": "AgroMax-Phase2-Cloudflare-Review.zip",
+    "bytes": 72922204,
+    "sha256": "d95ba6d01589a4c603a82a364d3467bf9857c9c435d6fc20dadd654b5a8324a4",
+    "sourceCommit": "f73b698b7936ba4a26a756b2f26cf44c147e7269",
+    "status": "prepared static artifact, not deployed production"
+  },
+  {
+    "file": "AgroMax-Phase2-GitHubPages-Review.zip",
+    "bytes": 72923526,
+    "sha256": "5c51558de38833679f7c925c84480b2ba15ee6baec1e017378cf5e6e946fc4be",
+    "sourceCommit": "f73b698b7936ba4a26a756b2f26cf44c147e7269",
+    "status": "prepared static artifact, not deployed production"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "avifBlocked": false,
+    "format": "avif",
+    "decoded": true
+  },
+  {
+    "avifBlocked": true,
+    "format": "webp",
+    "decoded": true
+  }
+]

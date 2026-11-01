@@ -1,0 +1,18 @@
+[
+  {
+    "test": "unauthenticated account API rejected",
+    "status": 401
+  },
+  {
+    "test": "anonymous contact inbox read denied",
+    "status": 401
+  },
+  {
+    "test": "invalid login produces no session",
+    "status": 400
+  },
+  {
+    "test": "invalid signup rejected before email delivery",
+    "status": 422
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "route": "",
+    "content": true,
+    "overflow": false
+  },
+  {
+    "route": "platform/",
+    "content": true,
+    "overflow": false
+  },
+  {
+    "route": "teknoloji/",
+    "content": true,
+    "overflow": false
+  },
+  {
+    "route": "filiz/",
+    "content": true,
+    "overflow": false
+  },
+  {
+    "route": "cozumler/",
+    "content": true,
+    "overflow": false
+  },
+  {
+    "route": "hakkimizda/",
+    "content": true,
+    "overflow": false
+  },
+  {
+    "route": "iletisim/",
+    "content": true,
+    "overflow": false
+  },
+  {
+    "route": "hesap/",
+    "content": true,
+    "overflow": false
+  }
+]
