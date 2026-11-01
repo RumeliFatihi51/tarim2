@@ -15,7 +15,7 @@
 - Yeni 14 web varlığı toplam 6.99 MB (ondalık); en büyük dosya 2.10 MB. Görseller 1.5 MB, videolar 8 MB bütçesinin altında. Yeni istemci bağımlılığı eklenmedi. Kahraman görsellerinin preload adresleri kullanılan yeni kaynaklara güncellendi.
 - Son posterlerle 14 önce/sonra karşılaştırması güncellendi. Gerçek kodlanmış film kareleri `review/decoded-films.jpg` içinde.
 
-Canlı yayın doğrulaması ayrı teslim kaydına eklenecektir.
+Canlı yayın: ana adreste 20 sayfa/ekran kontrolü, yeni 14 medya dosyası HTTP 200 ve doğru dosya boyutu, yeni mobil MP4 üzerinde byte-range HTTP 206 geçti. Canlı JavaScript hatası yok. Ayrıntılar `live.json` ve `DELIVERY.md` içindedir.
 
 ## Sınırlar
 

@@ -1,0 +1,233 @@
+{
+  "base": "https://agromax-alpha.vercel.app/",
+  "pages": [
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/",
+      "title": "AgroMax — Uydu gözleminden tarımsal içgörüye"
+    },
+    {
+      "route": "platform/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/platform/",
+      "title": "Platform — Parselin bütün hikâyesi | AgroMax"
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/teknoloji/",
+      "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax"
+    },
+    {
+      "route": "filiz/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/filiz/",
+      "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax"
+    },
+    {
+      "route": "cozumler/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/cozumler/",
+      "title": "Çözümler — Sahadaki farklı sorular için | AgroMax"
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/hakkimizda/",
+      "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax"
+    },
+    {
+      "route": "iletisim/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/iletisim/",
+      "title": "İletişim — AgroMax hakkında konuşalım"
+    },
+    {
+      "route": "gizlilik/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/gizlilik/",
+      "title": "Gizlilik — AgroMax"
+    },
+    {
+      "route": "kullanim/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/kullanim/",
+      "title": "Kullanım bilgileri — AgroMax"
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/gorsel-kredileri/",
+      "title": "Görsel kredileri — AgroMax"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/",
+      "title": "AgroMax — Uydu gözleminden tarımsal içgörüye"
+    },
+    {
+      "route": "platform/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/platform/",
+      "title": "Platform — Parselin bütün hikâyesi | AgroMax"
+    },
+    {
+      "route": "teknoloji/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/teknoloji/",
+      "title": "Teknoloji — Gözlemin arkasındaki bilim | AgroMax"
+    },
+    {
+      "route": "filiz/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/filiz/",
+      "title": "Filiz AI — Bağlamdan anlam üretmek | AgroMax"
+    },
+    {
+      "route": "cozumler/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/cozumler/",
+      "title": "Çözümler — Sahadaki farklı sorular için | AgroMax"
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/hakkimizda/",
+      "title": "Hakkımızda — Toprağa yakın, veriye bağlı | AgroMax"
+    },
+    {
+      "route": "iletisim/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/iletisim/",
+      "title": "İletişim — AgroMax hakkında konuşalım"
+    },
+    {
+      "route": "gizlilik/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/gizlilik/",
+      "title": "Gizlilik — AgroMax"
+    },
+    {
+      "route": "kullanim/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/kullanim/",
+      "title": "Kullanım bilgileri — AgroMax"
+    },
+    {
+      "route": "gorsel-kredileri/",
+      "width": 390,
+      "status": 200,
+      "canonical": "https://agromax-alpha.vercel.app/gorsel-kredileri/",
+      "title": "Görsel kredileri — AgroMax"
+    }
+  ],
+  "media": [
+    {
+      "file": "public/media/revision1/filiz-archive-mobile.webp",
+      "status": 200,
+      "bytes": 151952,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/revision1/filiz-archive.webp",
+      "status": 200,
+      "bytes": 442464,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/revision1/leaf-mobile.mp4",
+      "status": 200,
+      "bytes": 260720,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/revision1/leaf-mobile.webm",
+      "status": 200,
+      "bytes": 125673,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/revision1/leaf-poster-mobile.webp",
+      "status": 200,
+      "bytes": 33390,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/revision1/leaf-poster.webp",
+      "status": 200,
+      "bytes": 67382,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/revision1/leaf.mp4",
+      "status": 200,
+      "bytes": 650515,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/revision1/leaf.webm",
+      "status": 200,
+      "bytes": 351943,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/revision1/parcel-mobile.mp4",
+      "status": 200,
+      "bytes": 919505,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/revision1/parcel-mobile.webm",
+      "status": 200,
+      "bytes": 419638,
+      "type": "video/webm"
+    },
+    {
+      "file": "public/media/revision1/parcel-poster-mobile.webp",
+      "status": 200,
+      "bytes": 96264,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/revision1/parcel-poster.webp",
+      "status": 200,
+      "bytes": 221024,
+      "type": "image/webp"
+    },
+    {
+      "file": "public/media/revision1/parcel.mp4",
+      "status": 200,
+      "bytes": 2104948,
+      "type": "video/mp4"
+    },
+    {
+      "file": "public/media/revision1/parcel.webm",
+      "status": 200,
+      "bytes": 1140485,
+      "type": "video/webm"
+    }
+  ],
+  "errors": [],
+  "byteRange": true
+}

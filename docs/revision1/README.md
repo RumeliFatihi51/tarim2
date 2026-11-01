@@ -2,6 +2,7 @@
 
 Bu revizyon mevcut kimliği korur. Yeryüzüne Yolculuk kapsam dışındadır. Tasarım fontları, renkleri, navigasyonu ve ürün iddiaları değiştirilmemiştir.
 
+- [Teslim ve canlı doğrulama](DELIVERY.md)
 - [Yedi sayfalık denetim ve kararlar](AUDIT.md)
 - [Üretim yöntemi ve kaynaklar](PRODUCTION.md)
 - [Korunan dosyalar / SHA-256](protected.json)
