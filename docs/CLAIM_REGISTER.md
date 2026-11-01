@@ -38,3 +38,6 @@ The redesign adds only conceptual brand artwork and real CGI animation. It intro
 
 ## Orbital / üçüncü tasarım güncellemesi
 Yeni uzaktan algılama görsel dili özgün bir kavramsal gözlem uydusu ve tarımsal peyzaj kullanır. AgroMax'ın uydu sahibi/işleticisi olduğu, modelin Sentinel-2'nin gerçek bir kopyası olduğu veya sinematik sahnenin gerçek analiz yaptığı iddia edilmez. NASA Blue Marble dokusu yeryüzü betimlemesi içindir; güncel gözlem, AgroMax çıktısı, NASA ortaklığı veya onayı değildir. Kaynak ve kullanım ilkeleri Görsel Kredileri ve ASSET_CREDITS.md'de belirtilir. Arazi görseli yapay zekâ ile üretilmiş kavramsal anlatımdır. Filiz planlanan özellik olmaya devam eder. Yeni başarı yüzdesi, müşteri/ekip bilgisi veya gerçek olmayan iletişim kanalı eklenmedi.
+
+## Yeryüzüne Yolculuk güncellemesi
+Kamera, bitki geometrisi ve atmosferik sahneler kavramsal görsel anlatımdır. Gözlem aşamasının renkleri ve sınırları gerçek parsel, gerçek tarihte ölçülmüş spektral veri veya üretimde çalışan AgroMax analizi değildir. Zamansal bölüm tarihsiz yaklaşımı anlatır, farklı tarihlerden ölçüm gibi sunulmaz. Hava koşulları yorum bağlamına dahildir; canlı hava entegrasyonu doğrulanmış sayılmaz. Filiz hâlâ planlanan özellik; iddia kaydındaki önceki bilinmeyenler korunur.

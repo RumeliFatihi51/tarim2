@@ -1,39 +1,16 @@
-# Orbital / Güncel QA raporu
+# Yeryüzüne Yolculuk / QA — 1 Kasım 2026
 
-31 Ekim 2026. Önceki tasarım veya ölçümler bu sürümün sonucu olarak kullanılmadı.
+## Güncel ölçümler
+`qa/journey/routes.json`: 1440, 768, 390, 320 px; 11 sayfa × 4 = **44** responsive kontrol. Tek H1, metadata, görünür kritik görseller, taşma yok, sahte form/uygulama rotası yok. **21 axe taramasında 0 ihlal**; yedi ana sayfa JavaScript olmadan gerçek HTML içeriğiyle erişilebilir. Menü focus döngüsü, Escape, alt sayfa navigasyonu, yenileme ve geri dönüş geçti.
 
-## Doğrulanan ziyaretçi akışı
-Ziyaretçi ürün tanıtımına girer; uydu/arazi prodüksiyonlarını görüntüler, menü veya normal bağlantılarla yedi ana sayfayı gezer. Metinler ve yerel varlıklar statik HTML'den gelir. Analiz API'si, hesap veya sohbet bulunmaz.
+`qa/journey/experience.json`: altı masaüstü gerçek kamera aşaması; başlangıç/ileri/geri canvas karşılaştırması; reduced-motion GPU temizliği; mobil filmin hızlı scroll'dan sonra ileri/geri doğru zamana seek etmesi; eksik crop GLB durumunda gerçek video/poster yedeği. **Sayfa JavaScript hatası 0**. İleri piksel farkı 71.2376; başlangıca geri fark **0**. Bunlar gerçek canvas karelerinden ölçüldü; CSS transformu veya sadece durum değişkeni testi değildir.
 
-## Sonuçlar
+`qa/journey/lighthouse.json`: yerel production derlemesi, mobil Chromium simülasyonu: **97 performans / 100 erişilebilirlik / 100 best practices / 100 SEO**. Bu değerler canlı saha verisi veya fiziksel cihaz puanı değildir. Önceki `qa/v3` puanları bu sürümün sonucu olarak kullanılmaz.
 
-| Kontrol | Gerçek sonuç |
-|---|---|
-| TypeScript, Vite, prerender | Geçti. 11 bağımsız HTML, tek H1, benzersiz metadata. |
-| Alt yol | `/tarim2/` derlemesi ve 371 yerel referans kontrolü geçti; ardından kök production derlemesi yeniden üretildi. |
-| Yerel referanslar ve kapsam | 371 bağlantı/dosya referansı; bozuk yerel dosya, sahte form veya uygulama rotası yok. |
-| Responsive sayfalar | 1440, 768, 390 ve 320 px; 44 sayfa/genişlik kontrolü. Yatay taşma yok. |
-| Otomatik erişilebilirlik | 21 axe taraması; WCAG 2 A/AA ve 2.1 AA etiketlerinde 0 ihlal. |
-| Menü | Tab ve Shift+Tab döngüsü, Escape, odağın tetikleyiciye dönmesi, alt sayfa geçişi, yenileme ve geri gezinme geçti. |
-| JavaScript kapalı | Yedi ana sayfanın gerçek HTML içeriği ve normal alt menü bağlantıları erişilebilir. |
-| Medya | 12 davranış kontrolü; gerçek mobil WebM, MP4 yedeği, bağımsız arazi filmi, durdurma, menü/görünürlük/tercih duraklatmaları, kırık medya poster yedeği, GLB hatasında gerçek film, gerçek 3D kamera ve responsive GPU temizliği geçti. |
-| Video dosyaları | İki özgün film; sekiz kodlama. H.264 / VP9, 24 fps, 160 kare, yaklaşık 6.667 s. Mobil 576×720. |
-| Gerçek kaynaklar | İki paketli, animasyon timeline'lı Blender dosyası; özgün GLB, kaynak PNG/JPEG ve üretim scriptleri. |
+`npm run build`, `npm run check`: TypeScript, 11 statik HTML, 374 yerel dosya/link referansı ve medya bütçesi geçti. Yeni 4 film gerçek dosya; H.264/VP9, 24 fps, 12 saniye; masaüstü 960×600, mobil 540×720. 72 özgün Cycles kaynak karesi, OIDN, optik akışla 288 kodlanmış kare. Son yüksek çözünürlüklü peyzaj ve açılış filmi hibrit kompozisyondur.
 
-Ham kayıtlar: `qa/v3/browser-results.json`, `media-results.json`, `assets.json`.
-
-## Mobil Lighthouse / Yerel production derlemesi
-
-`qa/v3/lighthouse-mobile.json`: Performans **96**, erişilebilirlik **100**, best practices **100**, SEO **100**. LCP **2.8 s**, CLS **0**, TBT **0 ms**. Ölçüm Chromium/Lighthouse'un mobil ağ ve CPU simülasyonuyla, kodlama/render işleri bittikten sonra yapıldı. Bunlar gerçek kullanıcı saha verisi veya canlı Vercel gecikmesi değildir.
-
-WebGL yalnız büyük ekranlarda yüklenir. Model yaklaşık 130 KB; Three.js sahne modülü gzip yaklaşık 168 KB. Sekiz film varyantının toplamı 10,324,899 bayttır; bir ziyaretçi bu sekiz dosyanın tamamını indirmez. Cihaz ve codec'e uygun tek sürüm, sahne görünürken yüklenir.
-
-## Kamera kanıtı
-Gerçek WebGL canvas görüntüsü durdurulduğunda piksel farkı 0. İleri scroll kamera kadrajını belirgin değiştirir; geri scroll kadrajı başlangıca yaklaştırır. Bağımsız sakin idle yayı yürüdüğü için geri dönüş ekran görüntüsünün her pikselinin aynı olduğu iddia edilmez. Sayısal görüntü farkları `media-results.json` içindedir.
+## Görsel inceleme ve düzeltmeler
+İlk prototipte gezegen üstündeki dikdörtgen arazi parçası, uzaktan kare bitki yaması, kaba makro yüzeyler, baskın gözlem rengi ve metin giriş animasyonu reddedildi. İkinci render; ölçeğe göre görünürlük, yumuşak normaller, makro toprak, gerçek DOF ve shader ayarı kullanır. Metnin görünmesi animasyon bitişine bağlanmaz. Kapanışın yetersiz ham CGI detayı fotoğrafik hibrit çözümle değiştirildi. Başlangıç, altı aşama ve mobil geçiş kareleri `qa/journey/*.png` yerel görsel arşivinde incelendi.
 
 ## Sınırlar
-Fiziksel iOS/Android cihazlar veya Safari laboratuvarı kullanılmadı. Mobil/tablet testleri gerçek Chromium'da viewport emülasyonudur. MP4 yedeği Chromium'da WebM isteği engellenerek test edildi; bu Safari sertifikasyonu değildir. WebGL testleri Chromium/SwiftShader ile gerçek geometri ve shader yürütür; fiziksel cihaz FPS garantisi verilmez. Axe ve Lighthouse puanları kapsamlı erişilebilirlik sertifikası değildir. Saha verisi veya gerçek ürünün bilimsel doğruluğu bu tanıtım sitesi görevinin konusu değildir.
-
-## Canlı Vercel kontrolü
-
-`674893d` kod sürümü, Vercel production `dpl_7Ni4Yf3Nu9HTERxZkt8zWRZbBph2`, https://agromax-alpha.vercel.app/ adresinde doğrulandı. On gerçek sayfa 200; bilinmeyen yol özel 404 döndürüyor. Canonical adresleri doğru. Sekiz video doğru video MIME türüyle 200 veriyor. Canlı Chromium'da masaüstü WebGL açıldı; mobil cihaz boyutunda ayrı mobil film oynadı; menü, teknoloji sayfası, yenileme ve geri dönüş geçti. Sayfa JavaScript hatası yok. Ham kayıt: `qa/v3/live-results.json`. Son belgeleme commit'i bu arayüzü değiştirmez.
+Fiziksel Android/iPhone veya Safari testi yapılmadı. GPU testleri Chromium SwiftShader ile gerçek shader/geometri çalıştırır; donanım FPS garantisi değildir. Axe/Lighthouse sertifikasyon değildir. Ürünün bilimsel analiz doğruluğu veya Filiz'in üretimde çalıştığı test edilmedi. Lusion'un astronom/astronot final hareketleri bu ortamda doğrulanamadı; `docs/lusion-reference-audit.md` gerçek kanıtı ve sınırı ayırır. “Lusion ile eşdeğer sanat kalitesi” ölçülmüş veya sertifikalanmış bir sonuç gibi ileri sürülmez.

@@ -1,0 +1,13 @@
+{
+  "base": "http://localhost:4173/",
+  "checks": [
+    "Desktop six real camera stages, readable headings and final reveal",
+    "Camera forward/reverse verified with actual pixel comparison",
+    "Runtime reduced motion releases WebGL",
+    "Mobile real video seeks forward and back after rapid scrolling",
+    "Missing crop asset preserves visible scene/poster"
+  ],
+  "errors": [],
+  "forwardDifference": 71.23763991769547,
+  "reverseDifference": 0
+}

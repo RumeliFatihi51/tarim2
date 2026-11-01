@@ -20,13 +20,15 @@ for (const page of pages) {
   const meta = metadata[page];
   const path = page === "home" ? "" : page === "404" ? "404.html" : `${page}/`;
   const media =
-    page === "home" || page === "teknoloji"
-      ? "orbit-poster"
-      : page === "platform" || page === "filiz"
+    page === "home"
+      ? "field-poster"
+      : page === "teknoloji"
         ? "field-poster"
-        : page === "hakkimizda"
-          ? "canopy"
-          : "agriculture";
+        : page === "platform" || page === "filiz"
+          ? "field-poster"
+          : page === "hakkimizda"
+            ? "canopy"
+            : "agriculture";
   const mobileMedia = media + "-mobile";
   const film = media.endsWith("-poster");
   const preloadImage = [

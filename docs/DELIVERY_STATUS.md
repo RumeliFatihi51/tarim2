@@ -1,11 +1,9 @@
-# AgroMax Orbital / Teslim
+# Güncel teslim / Yeryüzüne Yolculuk
 
-Güncel adres: https://agromax-alpha.vercel.app/
+https://agromax-alpha.vercel.app/
 
-Yedi ana sayfa, menü, tipografi, görsel dil ve sinematik prodüksiyon yeniden kuruldu. Eski soyut malzeme heykelleri güncel siteden çıkarıldı. Ana ekran doğrudan uydu tabanlı tarımsal analiz ürününü anlatır.
+Tam ekran tarımsal film açılışı, yedi ana sayfanın yeniden sanat yönetimi, gözlem/zaman/bağlam anlatısı ve altı aşamalı scroll finali. Masaüstü gerçek 3D, mobil ve WebGL hatasında gerçek render filmi, reduced-motion/no-JS statik açıklama. Düzenlenebilir yeni Blender kaynakları, crop GLB, MP4/WebM, posterler, üretim ve lisans kayıtları teslim kapsamındadır.
 
-Gerçek teslimler: özgün gözlem uydusu GLB; iki gerçek Blender kamera sekansı ve paketli .blend kaynakları; masaüstü/mobil MP4–WebM dosyaları; posterler; iki kavramsal tarım görseli; kaynak/lisans belgeleri; sekiz prodüksiyon konsepti ve storyboard; çalışan React/TypeScript kaynakları.
+Önceki sürüm `backup/before-lusion-journey` ile korunur. Ürün uygulaması ve sahte ölçüm yok; Filiz planlanan özellik olmaya devam eder. Canlı site iletişim bilgisi kullanıcı sağlayana kadar uydurulmaz.
 
-Test sonuçları `docs/QA_REPORT.md`, ham JSON'lar `qa/v3`. Önceki sürüm Git geçmişi ve `backup/site-v2-before-orbital-v3` dalında korunur. Yeni frontend mevcut Vercel projesine ve aynı GitHub deposuna yayımlanır.
-
-Ürün uygulaması, canlı analiz veya çalışan Filiz sohbeti eklenmedi. Filiz planlanan özellik; iletişim ve ayrı uygulama URL'si kullanıcı sağlayana kadar boş kalır. Gerçek olmayan müşteri, verim yüzdesi, ortaklık veya ekip bilgisi yoktur.
+Testlerin sayısal kayıtları `qa/journey`; sanat yönetimi/gerçek inceleme sınırları `docs/agromax-creative-direction.md`, `docs/lusion-reference-audit.md`. Teknik olarak tamamlanmış testler ile öznel Lusion kalite kıyaslaması birbirine karıştırılmaz.

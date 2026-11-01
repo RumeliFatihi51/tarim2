@@ -1,7 +1,7 @@
 import { sources, indexGroups, indexNotes } from "../content/site";
 import { uiLists } from "../content/section-copy";
 import { Eyebrow, Arrow, Link } from "../components/ui";
-import { Orbit } from "../components/Cinematic";
+import { Landscape } from "../components/Cinematic";
 import { Next } from "./Home";
 export function Technology({ base }: { base: string }) {
   return (
@@ -23,7 +23,7 @@ export function Technology({ base }: { base: string }) {
             UYDU · SPEKTRAL BİLGİ · ZAMAN · KALİTE
           </span>
         </div>
-        <Orbit base={base} close eager />
+        <Landscape base={base} eager />
       </section>
       <section
         id="gozlem-kaynaklari"

@@ -13,3 +13,8 @@ src/assets/production/*-clean/
 qa/v3/*.png
 qa/v3/*.jpg
 __pycache__/
+
+qa/lusion/*.png
+qa/lusion/*.html
+
+qa/journey/*.png

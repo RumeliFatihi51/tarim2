@@ -24,3 +24,6 @@ Doğrulama tarihi: 31 Ekim 2026. Önceki görsel tasarımlar Git geçmişi ve ba
 NASA dokusu bir LLM çıktısı olarak NASA'ya atfedilmez. Doğrudan alınan tarihsel görüntü yalnız Blender/WebGL malzeme dokusuna uygulanmıştır. CGI render ve site metni AgroMax projesinin üretimidir; NASA tarafından denetlenmiş veya desteklenmiş değildir.
 
 Kullanılmayan Poly Haven, ambientCG, Sketchfab, BlenderKit veya Mixamo varlıkları kullanılmış gibi listelenmez. Önceki sürümlerin Unsplash görseli ve Manrope/Cormorant fontları güncel sayfalarda kullanılmaz.
+
+## Yeryüzüne Yolculuk / 1 Kasım 2026
+`crop.glb`, `journey.blend`, `journey-refined.blend`, `render_journey.py`, `refine_journey.py`: proje için özgün gövde, yaprak, başak, arazi, toprak, kamera ve ışık üretimi. `journey*.mp4/webm` gerçek Cycles karelerinden kodlanır. Gezegen önceki NASA Blue Marble tarihsel dokusunu; arazi önceki özgün kavramsal peyzajı kullanır. Gerçek uydu ölçümü değildir. Lusion'a ait geometri, karakter, fotoğraf, video veya kod bu siteye aktarılmadı. Araştırma ekran görüntüleri yalnız yerel QA arşivindedir, siteye dağıtılmaz.

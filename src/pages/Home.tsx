@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 import { orbitalCopy as c } from "../content/orbital";
 import { audiences } from "../content/site";
 import { Eyebrow, Link, Icon, Arrow, Media } from "../components/ui";
-import { Orbit, Landscape } from "../components/Cinematic";
+import { WorldOpening, Journey } from "../components/Journey";
+import { Landscape } from "../components/Cinematic";
 export function Next({
   base,
   label,
@@ -36,33 +37,7 @@ export function Next({
 export function Home({ base }: { base: string }) {
   return (
     <>
-      <section className="home-hero">
-        <div className="hero-copy">
-          <Eyebrow>
-            <span className="label-dot" />
-            {c.hero.label}
-          </Eyebrow>
-          <h1>
-            {c.hero.title[0]}
-            <br />
-            <span>{c.hero.title[1]}</span>
-          </h1>
-          <p>{c.hero.description}</p>
-          <div className="hero-actions">
-            <Link href={base + "platform/"} solid>
-              {c.hero.primary}
-            </Link>
-            <Link href={base + "teknoloji/"}>{c.hero.secondary}</Link>
-          </div>
-          <a className="scroll-cue" href="#perspektif">
-            <span className="scroll-icon" aria-hidden="true">
-              ↓
-            </span>
-            {c.labels.scroll}
-          </a>
-        </div>
-        <Orbit base={base} eager />
-      </section>
+      <WorldOpening base={base} />
       <div className="pillar-strip">
         <div className="wrap">
           {c.pillars.map((s, i) => (
@@ -114,6 +89,49 @@ export function Home({ base }: { base: string }) {
           </div>
         </div>
       </section>
+      <section className="understand wrap section-space">
+        <span className="eyebrow">03 / ANLAMAK</span>
+        <h2>
+          Görünmeyen izler.
+          <br />
+          Daha dikkatli sorular.
+        </h2>
+        <div className="understand-bands">
+          <span>Bitki örtüsü / NDVI</span>
+          <span>Kanopi nemi / NDMI</span>
+          <span>Açık su / NDWI</span>
+        </div>
+        <p>
+          Farklı spektral ilişkiler, farklı inceleme soruları doğurur. Tek bir
+          gösterge teşhis veya uygulama reçetesi değildir.
+        </p>
+        <Link href={base + "teknoloji/"}>Göstergelerin sınırlarını öğren</Link>
+      </section>
+      <section className="time-story">
+        <div className="wrap">
+          <span className="eyebrow">04 / ZAMANIN İÇİNDEN</span>
+          <h2>
+            Bir anı görmek.
+            <br />
+            Değişimi anlamak.
+          </h2>
+          <p>
+            Mevsim, ürün gelişimi ve gözlem koşulları değişir. Zamansal
+            karşılaştırma, bu farkları koruyarak yapılmalı.
+          </p>
+          <div className="time-land">
+            <Media
+              base={base}
+              name="agriculture"
+              alt="Zamansal bağlamı anlatan tarihsiz, kavramsal arazi görseli."
+            />
+            <span>GÖZLEM → GEÇMİŞ → BAĞLAM</span>
+          </div>
+          <small>
+            Kavramsal anlatım; farklı tarihlere ait gerçek ölçüm gösterilmez.
+          </small>
+        </div>
+      </section>
       <section className="filiz-preview">
         <div className="wrap filiz-preview-grid">
           <div className="filiz-preview-copy">
@@ -156,20 +174,18 @@ export function Home({ base }: { base: string }) {
           ))}
         </div>
       </section>
-      <Next
-        base={base}
-        label={c.closing.label}
-        title={
-          <>
-            Daha geniş bir bakışla
-            <br />
-            başlayalım.
-          </>
-        }
-        body={c.closing.body}
-        href="platform/"
-        cta="Platformu keşfet"
-      />
+      <Journey base={base} />
+      <div id="yolculuk-sonu" className="journey-resolution wrap">
+        <span>AGROMAX</span>
+        <p>
+          Gözlem bir başlangıç.
+          <br />
+          Anlam, bağlamda.
+        </p>
+        <Link href={base + "platform/"} solid>
+          Platformu keşfet
+        </Link>
+      </div>
     </>
   );
 }

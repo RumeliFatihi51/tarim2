@@ -1,0 +1,68 @@
+[
+  {
+    "file": "public/media/journey-descent.webp",
+    "bytes": 35500,
+    "sha256": "b233c3de2a1e48586ce17fae3d138486edb04d342b90db8cf2fbb429617920e1"
+  },
+  {
+    "file": "public/media/journey-land.webp",
+    "bytes": 63682,
+    "sha256": "1d6e17483220cf0bc7060fcf96295a612ba700e2e80f0fb59fd3eb749a91c20a"
+  },
+  {
+    "file": "public/media/journey-leaf.webp",
+    "bytes": 62886,
+    "sha256": "aca3f0e28553a542180222bd7f6578944ad6ed4c0e517fc21f93a49e75928132"
+  },
+  {
+    "file": "public/media/journey-mobile.mp4",
+    "bytes": 2685580,
+    "sha256": "12f34ee2cd81df2f286ec6ff0becbe45ec260e716caca16e3920f6546549017c",
+    "duration": "12.000000",
+    "width": 540,
+    "height": 720,
+    "fps": "24/1"
+  },
+  {
+    "file": "public/media/journey-mobile.webm",
+    "bytes": 2134287,
+    "sha256": "a556cc5eaca6cfc0631139f826ed98f5141ca01e905cfbb293526458f35e9279",
+    "duration": "12.000000",
+    "width": 540,
+    "height": 720,
+    "fps": "24/1"
+  },
+  {
+    "file": "public/media/journey-observation.webp",
+    "bytes": 16200,
+    "sha256": "a9f1fb85b391327045992da0a7dded3f5add933d32c7b54c6bb034da425b72ac"
+  },
+  {
+    "file": "public/media/journey-origin.webp",
+    "bytes": 40666,
+    "sha256": "1ae361e0731ec1cf921e48c5def5cbab8f4b8111363426d01c7afd65586b3207"
+  },
+  {
+    "file": "public/media/journey-reveal.webp",
+    "bytes": 21612,
+    "sha256": "bd0c6c32027784cd3a8761b7a978086e82219fcab5e537aa3c8800ca7ce1eea1"
+  },
+  {
+    "file": "public/media/journey.mp4",
+    "bytes": 4187524,
+    "sha256": "84843dd08492adc8a31280391cb1cf5526ca463a382a0571d8dee774805bc3dc",
+    "duration": "12.000000",
+    "width": 960,
+    "height": 600,
+    "fps": "24/1"
+  },
+  {
+    "file": "public/media/journey.webm",
+    "bytes": 3402518,
+    "sha256": "7185f34daa5761956cecafc401094e016c0cc179069fd03f9b7e7315b06332af",
+    "duration": "12.000000",
+    "width": 960,
+    "height": 600,
+    "fps": "24/1"
+  }
+]
