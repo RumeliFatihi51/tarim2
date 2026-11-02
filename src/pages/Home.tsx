@@ -1,3 +1,4 @@
+import { SignatureFilm } from "../studio/SignatureFilm";
 import type { ReactNode } from "react";
 import { orbitalCopy as c } from "../content/orbital";
 import { audiences } from "../content/site";
@@ -55,6 +56,7 @@ export function Home({ base }: { base: string }) {
           ))}
         </div>
       </div>
+      <SignatureFilm base={base} />
       <TerrainStory base={base} />
       <section
         id="parselin-hikayesi"

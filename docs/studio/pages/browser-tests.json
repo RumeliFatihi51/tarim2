@@ -1,0 +1,347 @@
+{
+  "base": "http://localhost:4173/",
+  "pages": [
+    {
+      "route": "",
+      "width": 1920,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "platform/",
+      "width": 1920,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1920,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 1920,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 1920,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1920,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 1920,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hesap/",
+      "width": 1920,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "",
+      "width": 1440,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "platform/",
+      "width": 1440,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1440,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 1440,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 1440,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1440,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 1440,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hesap/",
+      "width": 1440,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "",
+      "width": 1024,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "platform/",
+      "width": 1024,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 1024,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 1024,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 1024,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 1024,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 1024,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hesap/",
+      "width": 1024,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "",
+      "width": 768,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "platform/",
+      "width": 768,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 768,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 768,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 768,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 768,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 768,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hesap/",
+      "width": 768,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "",
+      "width": 390,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "platform/",
+      "width": 390,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 390,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 390,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 390,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 390,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 390,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hesap/",
+      "width": 390,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "",
+      "width": 320,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "platform/",
+      "width": 320,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "teknoloji/",
+      "width": 320,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "filiz/",
+      "width": 320,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "cozumler/",
+      "width": 320,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hakkimizda/",
+      "width": 320,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "iletisim/",
+      "width": 320,
+      "status": 200,
+      "axeViolations": 0
+    },
+    {
+      "route": "hesap/",
+      "width": 320,
+      "status": 200,
+      "axeViolations": 0
+    }
+  ],
+  "interactions": [
+    {
+      "width": 1920,
+      "bands": true,
+      "process": true,
+      "context": true,
+      "authModes": true,
+      "unauthorizedProfileGuard": true
+    },
+    {
+      "width": 1440,
+      "bands": true,
+      "process": true,
+      "context": true,
+      "authModes": true,
+      "unauthorizedProfileGuard": true
+    },
+    {
+      "width": 1024,
+      "bands": true,
+      "process": true,
+      "context": true,
+      "authModes": true,
+      "unauthorizedProfileGuard": true
+    },
+    {
+      "width": 768,
+      "bands": true,
+      "process": true,
+      "context": true,
+      "authModes": true,
+      "unauthorizedProfileGuard": true
+    },
+    {
+      "width": 390,
+      "bands": true,
+      "process": true,
+      "context": true,
+      "authModes": true,
+      "unauthorizedProfileGuard": true
+    },
+    {
+      "width": 320,
+      "bands": true,
+      "process": true,
+      "context": true,
+      "authModes": true,
+      "unauthorizedProfileGuard": true
+    },
+    {
+      "portalFilmPreserved": true
+    }
+  ],
+  "errors": []
+}

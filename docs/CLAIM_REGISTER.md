@@ -53,3 +53,6 @@ Site artık gerçek Supabase Auth ile hesap yönetimi ve kullanıcıya özel gö
 
 ## Gözlem / bağlam görsel revizyonu — 2 Kasım 2026
 Platform’daki zayıf maket sahnesi yerine lisanslı gerçek hasat çekiminin üç bölümlü kurgusu kullanılır. Teknoloji’deki buğday/rüzgâr çekimi de gerçek görüntüdür. İkisi de AgroMax saha çekimi, uydu verisi, müşteri parseli veya analiz çıktısı değildir. Hasat örneği yalnız görünümün yerel işlem ve dönemle ilişkisini anlatır; hastalık veya verim sonucu çıkarmaya çalışmaz. Etkileşimli kalite katmanları kavramsal açıklamalardır, canlı ölçüm veya bilimsel simülasyon değildir. Yeni ürün yeteneği veya başarı iddiası eklenmedi. Yeryüzüne Yolculuk, özgün dört etiketli tarla sahnesi ve mevcut ürün kısıtları korunur.
+
+## Eklenen stüdyo anlatıları — 2 Kasım 2026
+Işığın Yolculuğu şematik bir anlatımdır; fiziksel ışın izleme, sensör simülasyonu veya spektral ölçüm değildir. Filiz Bağlam Masası gerçek ürün ekranı, gerçek kaynak arşivi veya AI cevabı değildir; planlanan yaklaşımı açıklar. Rol bazlı dört anlatı hedeflenen kullanım biçimleridir, müşteri projesi veya tamamlanmış ürün yeteneği değildir. Marka filmi gerçek lisanslı çekimlerle özgün kavramsal CGI’ı birleştirir. Kullanıcı uygulamanın henüz yayında olmadığını belirttiği için gerçek ürün turu bu işin kapsamından çıkarılmıştır. Eski iddia sınırları ve içerikler korunur.

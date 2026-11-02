@@ -1,3 +1,4 @@
+import { SpatialStory } from "../studio/SpatialStory";
 import { ContextReading } from "../phase2/ContextReading";
 import { uiLists } from "../content/section-copy";
 import { Eyebrow, Link, Icon } from "../components/ui";
@@ -32,6 +33,7 @@ export function Filiz({ base }: { base: string }) {
         </div>
         <FieldContext base={base} eager />
       </section>
+      <SpatialStory base={base} kind="archive" />
       <section
         id="filiz-yaklasimi"
         className="filiz-context-section wrap section-space"

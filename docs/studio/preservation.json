@@ -1,0 +1,12 @@
+{
+  "baseline": "a5f90f2",
+  "mediaByteIdentical": 124,
+  "trackedSourceUnchanged": 115,
+  "sourceChangedOnlyByInsertion": [
+    "src/main.tsx",
+    "src/pages/Editorial.tsx",
+    "src/pages/Filiz.tsx",
+    "src/pages/Home.tsx",
+    "src/pages/Technology.tsx"
+  ]
+}

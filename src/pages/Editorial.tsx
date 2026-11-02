@@ -1,3 +1,4 @@
+import { SolutionPaths } from "../studio/SolutionPaths";
 import { ContactRequest } from "../auth/ContactRequest";
 import { stage1 } from "../content/stage1";
 import { useState } from "react";
@@ -35,6 +36,7 @@ export function Solutions({ base }: { base: string }) {
           </div>
         </div>
       </section>
+      <SolutionPaths base={base} />
       <nav className="audience-wayfinder wrap" aria-label="Kullanım alanına git">{audiences.map(a=><a href={"#alan-"+a.n} key={a.n}><span>{a.n}</span>{a.title}</a>)}</nav>
       <section className="audiences wrap section-space">
         <Eyebrow>FARKLI İHTİYAÇLAR, ORTAK BİR ÇERÇEVE</Eyebrow>

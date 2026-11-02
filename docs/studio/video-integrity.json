@@ -1,0 +1,70 @@
+[
+  {
+    "file": "public/media/studio/signature-mobile.webm",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 576,
+        "height": 800,
+        "nb_read_frames": "480"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "984754"
+    }
+  },
+  {
+    "file": "public/media/studio/signature-mobile.mp4",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 576,
+        "height": 800,
+        "nb_read_frames": "480"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "1414965"
+    }
+  },
+  {
+    "file": "public/media/studio/signature.mp4",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "nb_read_frames": "480"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "3143493"
+    }
+  },
+  {
+    "file": "public/media/studio/signature.webm",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "nb_read_frames": "480"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "1905789"
+    }
+  }
+]

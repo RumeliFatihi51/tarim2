@@ -1,3 +1,4 @@
+import { SpatialStory } from "../studio/SpatialStory";
 import { QualityStudy } from "../cinema/QualityStudy";
 import { BandStudy } from "../phase2/BandStudy";
 import { stage1 } from "../content/stage1";
@@ -28,6 +29,7 @@ export function Technology({ base }: { base: string }) {
         </div>
         <Landscape base={base} eager scene={stage1.technology} />
       </section>
+      <SpatialStory base={base} kind="light" />
       <section
         id="gozlem-kaynaklari"
         className="source-section wrap section-space"
