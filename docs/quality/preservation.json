@@ -1,0 +1,10 @@
+{
+  "baseline": "263a23d",
+  "originalMediaByteIdentical": 130,
+  "trackedSourceUnchanged": 123,
+  "authorizedChanges": [
+    "src/main.tsx",
+    "src/studio/SignatureFilm.tsx",
+    "src/studio/SpatialStory.tsx"
+  ]
+}

@@ -11,6 +11,7 @@ import './styles/phase2.css';
 import './styles/cinema.css';
 import './styles/observation.css';
 import './styles/studio.css';
+import './styles/quality.css';
 const root=document.getElementById('root')!;
 const base=import.meta.env.BASE_URL;const segment=location.pathname.slice(base.length).replace(/^\/+|\/+$/g,'');
 const known=['hesap','home','platform','teknoloji','filiz','cozumler','hakkimizda','iletisim','gizlilik','kullanim','gorsel-kredileri','404'];

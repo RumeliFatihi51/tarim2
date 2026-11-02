@@ -56,3 +56,6 @@ Platform’daki zayıf maket sahnesi yerine lisanslı gerçek hasat çekiminin �
 
 ## Eklenen stüdyo anlatıları — 2 Kasım 2026
 Işığın Yolculuğu şematik bir anlatımdır; fiziksel ışın izleme, sensör simülasyonu veya spektral ölçüm değildir. Filiz Bağlam Masası gerçek ürün ekranı, gerçek kaynak arşivi veya AI cevabı değildir; planlanan yaklaşımı açıklar. Rol bazlı dört anlatı hedeflenen kullanım biçimleridir, müşteri projesi veya tamamlanmış ürün yeteneği değildir. Marka filmi gerçek lisanslı çekimlerle özgün kavramsal CGI’ı birleştirir. Kullanıcı uygulamanın henüz yayında olmadığını belirttiği için gerçek ürün turu bu işin kapsamından çıkarılmıştır. Eski iddia sınırları ve içerikler korunur.
+
+## Fotoğrafik kalite revizyonu — 2 Kasım 2026
+Yeni ışık ve bağlam bölümleri gerçek lisanslı çekimler kullanır. Bunlar AgroMax saha kaydı, müşteri parseli, uydu gözlemi veya çalışan analiz çıktısı değildir. Marka filmindeki ayrı çekimler aynı parselin geçmişi veya zaman serisi olarak sunulmaz. Filiz'in yeni parsel bağlamı tasarımı, planlanan yaklaşımı anlatır; arşiv masası veya yapay AI yanıtı içermez. Işık bölümü spektral ölçüm/sensör simülasyonu değildir. Reddedilen CGI sahneleri aktif seçkiden çıkarılmış; özgün medya dosyaları, Yeryüzüne Yolculuk ve diğer başarılı sahneler korunmuştur.

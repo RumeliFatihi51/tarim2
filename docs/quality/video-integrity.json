@@ -1,0 +1,206 @@
+[
+  {
+    "file": "public/media/quality/context-mobile.mp4",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 720,
+        "height": 1000,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000",
+      "size": "2767941"
+    }
+  },
+  {
+    "file": "public/media/quality/context-mobile.webm",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 720,
+        "height": 1000,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000",
+      "size": "2475543"
+    }
+  },
+  {
+    "file": "public/media/quality/context.mp4",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000",
+      "size": "7538001"
+    }
+  },
+  {
+    "file": "public/media/quality/context.webm",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000",
+      "size": "6364320"
+    }
+  },
+  {
+    "file": "public/media/quality/light-mobile.mp4",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 720,
+        "height": 1000,
+        "nb_read_frames": "192"
+      }
+    ],
+    "format": {
+      "duration": "8.000000",
+      "size": "866274"
+    }
+  },
+  {
+    "file": "public/media/quality/light-mobile.webm",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 720,
+        "height": 1000,
+        "nb_read_frames": "192"
+      }
+    ],
+    "format": {
+      "duration": "8.000000",
+      "size": "496088"
+    }
+  },
+  {
+    "file": "public/media/quality/light.mp4",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "192"
+      }
+    ],
+    "format": {
+      "duration": "8.000000",
+      "size": "2214917"
+    }
+  },
+  {
+    "file": "public/media/quality/light.webm",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "192"
+      }
+    ],
+    "format": {
+      "duration": "8.000000",
+      "size": "1068204"
+    }
+  },
+  {
+    "file": "public/media/quality/signature-mobile.mp4",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 720,
+        "height": 1000,
+        "nb_read_frames": "480"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "5455522"
+    }
+  },
+  {
+    "file": "public/media/quality/signature-mobile.webm",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 720,
+        "height": 1000,
+        "nb_read_frames": "480"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "4302871"
+    }
+  },
+  {
+    "file": "public/media/quality/signature.mp4",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "480"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "6397083"
+    }
+  },
+  {
+    "file": "public/media/quality/signature.webm",
+    "decode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "480"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "6747617"
+    }
+  }
+]
