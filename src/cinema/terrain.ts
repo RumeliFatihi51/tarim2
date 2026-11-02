@@ -1,0 +1,33 @@
+import * as T from 'three';
+/** Authored synthetic relief. Height is not a DEM; textures are original conceptual artwork. */
+export async function mountTerrain(canvas:HTMLCanvasElement,host:HTMLElement,base:string,update:(p:number)=>void){
+ const renderer=new T.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setClearColor('#e9eadf');renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
+ const scene=new T.Scene();scene.fog=new T.Fog('#e9eadf',22,62);const camera=new T.PerspectiveCamera(40,1,.1,120);
+ let texture:T.Texture;try{texture=await new T.TextureLoader().loadAsync(base+'media/cinema/terrain-surface.webp')}catch(e){renderer.dispose();renderer.forceContextLoss();throw e}texture.colorSpace=T.SRGBColorSpace;texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
+ const height=(x:number,z:number)=>.65*Math.sin(x*.3)+.30*Math.cos(z*.45)+.12*Math.sin(z+x*.5);
+ const geom=new T.PlaneGeometry(12,12,144,144);geom.rotateX(-Math.PI/2);const pos=geom.attributes.position;for(let i=0;i<pos.count;i++)pos.setY(i,height(pos.getX(i),pos.getZ(i)));geom.computeVertexNormals();
+ const material=new T.MeshStandardMaterial({map:texture,roughness:.93});const land=new T.Mesh(geom,material);scene.add(land);
+ const points:Array<[number,number]>=[];for(let i=0;i<=100;i++)points.push([-6+i*.12,-6]);for(let i=1;i<=100;i++)points.push([6,-6+i*.12]);for(let i=1;i<=100;i++)points.push([6-i*.12,6]);for(let i=1;i<100;i++)points.push([-6,6-i*.12]);
+ const vertices:number[]=[],indices:number[]=[];points.forEach(([x,z])=>vertices.push(x,height(x,z),z,x,-1.1,z));points.forEach((_,i)=>{const n=(i+1)%points.length;indices.push(i*2,i*2+1,n*2+1,i*2,n*2+1,n*2)});const edge=new T.BufferGeometry();edge.setAttribute('position',new T.Float32BufferAttribute(vertices,3));edge.setIndex(indices);edge.computeVertexNormals();const earth=new T.MeshStandardMaterial({color:'#726044',roughness:1,side:T.DoubleSide});scene.add(new T.Mesh(edge,earth));
+ const groundGeo=new T.PlaneGeometry(200,200);groundGeo.rotateX(-Math.PI/2);const groundMat=new T.MeshStandardMaterial({color:'#e8e8db',roughness:1});const ground=new T.Mesh(groundGeo,groundMat);ground.position.y=-1.13;scene.add(ground);
+ scene.add(new T.HemisphereLight('#f4f6e4','#655039',2.3));const sun=new T.DirectionalLight('#ffe5bf',3.5);sun.position.set(-8,12,5);scene.add(sun);const fill=new T.DirectionalLight('#bed4d8',1.2);fill.position.set(9,5,-7);scene.add(fill);
+ // A soft contact shadow is an analytic studio shadow, not another heavy render pass.
+ const shadowCanvas=document.createElement('canvas');shadowCanvas.width=shadowCanvas.height=128;const ctx=shadowCanvas.getContext('2d')!;const grad=ctx.createRadialGradient(64,64,8,64,64,63);grad.addColorStop(0,'rgba(35,39,25,.28)');grad.addColorStop(1,'rgba(35,39,25,0)');ctx.fillStyle=grad;ctx.fillRect(0,0,128,128);const shadowTex=new T.CanvasTexture(shadowCanvas);const shadowGeo=new T.PlaneGeometry(20,20);shadowGeo.rotateX(-Math.PI/2);const shadowMat=new T.MeshBasicMaterial({map:shadowTex,transparent:true,depthWrite:false});const shadow=new T.Mesh(shadowGeo,shadowMat);shadow.position.y=-1.12;scene.add(shadow);
+ const contourVertices:number[]=[];
+ for(let level=-.9;level<=.9;level+=.15)for(let i=0;i<64;i++)for(let j=0;j<64;j++){
+  const cell=[[i/64*12-6,j/64*12-6],[(i+1)/64*12-6,j/64*12-6],[(i+1)/64*12-6,(j+1)/64*12-6],[i/64*12-6,(j+1)/64*12-6]];const hits:Array<[number,number]>=[];
+  for(let k=0;k<4;k++){const a=cell[k],b=cell[(k+1)%4],ha=height(a[0],a[1]),hb=height(b[0],b[1]);if((ha<level)!==(hb<level)){const t=(level-ha)/(hb-ha);hits.push([a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t])}}
+  if(hits.length===2)hits.forEach(([x,z])=>contourVertices.push(x,level+.025,z));
+ }
+ const contourGeo=new T.BufferGeometry();contourGeo.setAttribute('position',new T.Float32BufferAttribute(contourVertices,3));const contourMat=new T.LineBasicMaterial({color:'#f2f0d5',transparent:true,opacity:0,depthWrite:false});const contours=new T.LineSegments(contourGeo,contourMat);scene.add(contours);
+ const stage=canvas.parentElement!;let frame=0,dead=false,visible=false,last=-1;const target=new T.Vector3();
+ const progress=()=>Math.max(0,Math.min(1,-host.getBoundingClientRect().top/(host.offsetHeight-innerHeight)));
+ const render=()=>{frame=0;if(dead||!visible||document.hidden)return;const p=progress();const w=stage.clientWidth,h=stage.clientHeight;const mobile=w<768;if(canvas.width!==Math.round(w*Math.min(devicePixelRatio,1.5))||Math.abs(camera.aspect-w/h)>.001){renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+ const q=T.MathUtils.smoothstep(p,0,.78);const angle=-.15+q*1.35;const radius=mobile?20:17;camera.position.set(Math.sin(angle)*radius,25-q*22,Math.cos(angle)*radius*(.22+q*.5));target.set(mobile?0:-1.5,0,0);camera.lookAt(target);camera.fov=mobile?46:39;camera.updateProjectionMatrix();land.scale.y=.08+.92*T.MathUtils.smoothstep(p,.08,.5);contours.scale.y=land.scale.y;contourMat.opacity=.7*T.MathUtils.smoothstep(p,.12,.38)*(1-T.MathUtils.smoothstep(p,.52,.7));
+ // The cut edge shares the same geometric elevation scale, keeping surface and slab aligned.
+ const ep=edge.attributes.position;points.forEach(([x,z],i)=>ep.setY(i*2,height(x,z)*land.scale.y));ep.needsUpdate=true;edge.computeVertexNormals();
+ host.style.setProperty('--terrain-progress',String(p));host.style.setProperty('--terrain-photo',String(T.MathUtils.smoothstep(p,.52,.72)));renderer.render(scene,camera);if(Math.abs(last-p)>.0005){update(p);last=p}};
+ const schedule=()=>{if(!frame&&!dead)frame=requestAnimationFrame(render)};const obs=new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(visible)schedule()},{rootMargin:'100px'});obs.observe(host);const changed=()=>schedule();addEventListener('scroll',changed,{passive:true});addEventListener('resize',changed);document.addEventListener('visibilitychange',changed);schedule();
+ const lost=(e:Event)=>{e.preventDefault();host.classList.remove('terrain-ready')};canvas.addEventListener('webglcontextlost',lost);
+ return()=>{dead=true;cancelAnimationFrame(frame);obs.disconnect();removeEventListener('scroll',changed);removeEventListener('resize',changed);document.removeEventListener('visibilitychange',changed);canvas.removeEventListener('webglcontextlost',lost);[geom,edge,groundGeo,shadowGeo,contourGeo].forEach(x=>x.dispose());[material,earth,groundMat,shadowMat,contourMat].forEach(x=>x.dispose());texture.dispose();shadowTex.dispose();renderer.dispose();renderer.forceContextLoss();host.style.removeProperty('--terrain-photo');host.style.removeProperty('--terrain-progress')};
+}

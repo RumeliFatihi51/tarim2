@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { navigation, type PageId } from "../content/site";
+import { RouteTransition } from "../cinema/RouteTransition";
 import { SceneRefinement } from "../phase2/SceneRefinement";
 import { siteConfig } from "../config/site";
 import { Arrow, Mark } from "../components/ui";
@@ -37,6 +38,7 @@ export function Layout({
   return (
     <>
       <SceneRefinement />
+      <RouteTransition />
       <a className="skip-link" href="#main">
         İçeriğe geç
       </a>

@@ -50,6 +50,7 @@ for (const page of pages) {
     ? `<link rel="preload" as="image" fetchpriority="high" type="image/${preloadFormat}" href="${base}media/${preloadMedia}.${preloadFormat}" media="(min-width:${film ? 768 : 601}px)"/><link rel="preload" as="image" fetchpriority="high" type="image/${preloadFormat}" href="${base}media/${preloadMobile}.${preloadFormat}" media="(max-width:${film ? 767 : 600}px)"/>`
     : "";
   const html = template
+    .replace("<head>",`<head><script src="${base}cinema-entry.js"></script>`)
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(meta.title)}</title>`)
     .replace(
       "<!--metadata-->",

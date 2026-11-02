@@ -9,7 +9,7 @@
     "preview": "vite preview --host 0.0.0.0",
     "check": "tsx scripts/check.ts",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src/auth src/phase2 src/pages src/layout src/App.tsx scripts/prerender.tsx src/components/Film.tsx"
+    "lint": "eslint src/auth src/phase2 src/pages src/layout src/App.tsx scripts/prerender.tsx src/components/Film.tsx src/cinema"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.118.0",

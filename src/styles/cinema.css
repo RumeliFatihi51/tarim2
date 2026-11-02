@@ -1,0 +1,80 @@
+/* Art-directed scenes; original Journey and four-label field compositions excluded. */
+.terrain-story{height:330svh;position:relative;background:#e9eadf;--terrain-photo:0;--terrain-progress:0}
+.terrain-stage{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden;isolation:isolate}
+.terrain-stage>canvas,.terrain-poster,.terrain-photo,.terrain-photo picture,.terrain-photo img,.terrain-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.terrain-stage>canvas{opacity:0;z-index:1;transition:opacity .7s}
+.terrain-ready canvas{opacity:1}
+.terrain-photo{z-index:2;opacity:var(--terrain-photo);transform:scale(calc(1.12 - var(--terrain-photo)*.12));pointer-events:none}
+.terrain-vignette{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,#e9eadff5,transparent 70%);opacity:calc(1 - var(--terrain-photo))}
+.terrain-readings{position:absolute;inset:0;z-index:4;pointer-events:none}
+.terrain-chapter{position:absolute;left:var(--gutter);top:30%;width:min(620px,55%);color:#183126;opacity:0;transform:translateY(40px);transition:opacity .45s,transform .65s}
+.terrain-chapter.is-current{opacity:1;transform:none}
+.terrain-chapter>span{font-size:11px;letter-spacing:.15em}
+.terrain-chapter h2{font-size:clamp(42px,5.7vw,88px);line-height:1.02;font-weight:500;letter-spacing:-.055em;margin:26px 0}
+.terrain-chapter em{font-style:normal;color:inherit}
+.terrain-chapter p{font-size:16px;line-height:1.8;max-width:390px}
+.terrain-chapter:last-child{color:white;text-shadow:0 2px 28px #10211599}
+.terrain-chapter:last-child p{color:white}
+.terrain-footer{position:absolute;bottom:28px;left:var(--gutter);right:var(--gutter);z-index:5;display:flex;align-items:center;gap:30px;justify-content:space-between;font-size:10px;color:#183126;background:#f0f1e5ed;padding:14px 18px}
+.terrain-track{height:1px;background:#9caa91;flex:1;max-width:280px;overflow:hidden}
+.terrain-track i{display:block;height:100%;background:#183126;transform-origin:left;transform:scaleX(var(--terrain-progress))}
+.terrain-story:not(.terrain-ready) .terrain-vignette{background:linear-gradient(90deg,#e9eadfeb,#e9eadf22)}
+/* Panoramas develop out of the editorial grid, then hand off to the next section. */
+.cinema-wipe{clip-path:inset(8% 6% 8% 6%)}
+
+.audiences article{position:relative}
+@media(min-width:1000px){
+ .audiences article{min-height:110svh;align-content:center;padding-block:100px}
+ .audiences article .stage1-audience-media{height:68svh!important;grid-column:1/-1;margin-top:32px}
+ .audience-number{font-size:clamp(26px,4vw,64px);color:#58734c}
+ .about-hero{position:relative;isolation:isolate;min-height:95svh;padding-block:110px!important;display:flex!important;align-items:center}
+ .about-hero .about-photo{position:absolute;inset:0;width:100%;height:100%;z-index:-1;margin:0;overflow:hidden}
+ .about-hero .about-photo img{object-position:50% 50%}
+ .about-hero .about-photo:after{background:linear-gradient(90deg,#f0f1e5f5,#f0f1e5d9 38%,transparent 80%)}
+ .about-hero-copy{max-width:760px;padding:40px}
+ .about-photo figcaption{left:auto;right:24px;bottom:24px}
+ .platform-landscape{overflow:hidden}
+ .filiz-preview{overflow:hidden}
+}
+@view-transition{navigation:none}
+::view-transition-old(root){animation:cinema-leave .42s cubic-bezier(.4,0,.2,1) both}
+::view-transition-new(root){animation:cinema-enter .6s cubic-bezier(.16,1,.3,1) both}
+@keyframes cinema-leave{to{transform:translateY(-6vh);filter:brightness(.65)}}
+@keyframes cinema-enter{from{clip-path:inset(100% 0 0);transform:translateY(8vh)}to{clip-path:inset(0);transform:none}}
+@media(max-width:767px){
+ .terrain-story{height:290svh}
+ .terrain-stage{min-height:620px}
+ .terrain-chapter{width:calc(100% - 48px);left:24px;top:16%}
+ .terrain-chapter h2{font-size:clamp(38px,10vw,58px);max-width:400px}
+ .terrain-chapter p{font-size:14px;max-width:290px}
+ .terrain-vignette{background:linear-gradient(180deg,#e9eadff5,#e9eadf00 85%)}
+ .terrain-footer{left:16px;right:16px;gap:10px;font-size:8px;bottom:20px;padding:12px}
+ .terrain-footer a{font-size:9px;white-space:nowrap}
+ .terrain-track{max-width:70px}
+ .audiences article .stage1-audience-media{height:65svh!important;min-height:400px}
+}
+@media(prefers-reduced-motion:reduce),(scripting:none){
+ .terrain-story{height:auto}
+ .terrain-stage{position:relative;height:auto;min-height:700px}
+ .terrain-stage canvas,.terrain-photo{display:none}
+ .terrain-readings{position:relative;padding:45px 0 100px}
+ .terrain-chapter{position:relative;inset:auto;margin:40px var(--gutter);width:auto;opacity:1;transform:none;color:#fff}
+ .terrain-chapter p{color:#fff}
+ .terrain-stage .terrain-vignette{background:#142d22d9!important;opacity:1}
+ .cinema-wipe{clip-path:none!important}
+ ::view-transition-old(root),::view-transition-new(root){animation:none}
+}
+.terrain-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#122b22d9,transparent 85%)}
+.terrain-story:not(.terrain-ready) .terrain-vignette{background:linear-gradient(90deg,#142d22df,#142d2255)}
+.terrain-story:not(.terrain-ready) .terrain-chapter,.terrain-story:not(.terrain-ready) .terrain-chapter p{color:white}
+.cinema-photo{overflow:hidden}
+.terrain-footer a{text-decoration:underline;text-underline-offset:4px;pointer-events:auto}
+html:before{content:"";position:fixed;inset:0;background:#183126;z-index:10000;pointer-events:none;transform:translateY(101%)}
+html.cinema-leaving:before{transform:translateY(0);transition:transform .19s cubic-bezier(.7,0,.2,1)}
+html.cinema-arriving:before{animation:cinema-curtain-up .65s cubic-bezier(.16,1,.3,1) both}
+html.cinema-arriving main{animation:cinema-content-enter .7s cubic-bezier(.16,1,.3,1) both}
+@keyframes cinema-curtain-up{from{transform:translateY(0)}to{transform:translateY(-101%)}}
+@keyframes cinema-content-enter{from{transform:translateY(36px)}to{transform:none}}
+@media(prefers-reduced-motion:reduce),(scripting:none){html:before{display:none}html.cinema-arriving main{animation:none}}
+.terrain-chapter p{color:#334a35}
+@media(max-height:600px){.terrain-stage{min-height:100svh}.terrain-chapter{top:22%}.terrain-chapter h2{font-size:36px;margin:14px 0}.terrain-chapter p{font-size:13px;line-height:1.6}.terrain-footer{bottom:12px;padding:9px 12px}}

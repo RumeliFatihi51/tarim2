@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "route": "platform",
+      "animation": "cinema-curtain-up"
+    },
+    {
+      "route": "teknoloji",
+      "animation": "cinema-curtain-up"
+    }
+  ],
+  "historyBack": true,
+  "reducedMotion": true
+}

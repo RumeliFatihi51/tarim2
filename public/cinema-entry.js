@@ -1,0 +1,1 @@
+try{if(sessionStorage.getItem('agromax-cinema-entry')==='1'){sessionStorage.removeItem('agromax-cinema-entry');if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('cinema-arriving')}}catch(e){}

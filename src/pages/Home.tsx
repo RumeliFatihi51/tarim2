@@ -4,6 +4,7 @@ import { audiences } from "../content/site";
 import { Eyebrow, Link, Icon, Arrow, Media } from "../components/ui";
 import { WorldOpening, Journey } from "../components/Journey";
 import { stage1 } from "../content/stage1";
+import { TerrainStory } from "../cinema/TerrainStory";
 import { ObservationQuestions } from "../phase2/ObservationQuestions";
 import { FieldContext } from "../components/FieldContext";
 import { Landscape } from "../components/Cinematic";
@@ -54,8 +55,9 @@ export function Home({ base }: { base: string }) {
           ))}
         </div>
       </div>
+      <TerrainStory base={base} />
       <section
-        id="perspektif"
+        id="parselin-hikayesi"
         className="perspective-section wrap section-space"
       >
         <div className="perspective-heading">
@@ -105,31 +107,6 @@ export function Home({ base }: { base: string }) {
           gösterge teşhis veya uygulama reçetesi değildir.
         </p>
         <Link href={base + "teknoloji/"}>Göstergelerin sınırlarını öğren</Link>
-      </section>
-      <section className="time-story">
-        <div className="wrap">
-          <span className="eyebrow">04 / ZAMANIN İÇİNDEN</span>
-          <h2>
-            Bir anı görmek.
-            <br />
-            Değişimi anlamak.
-          </h2>
-          <p>
-            Mevsim, ürün gelişimi ve gözlem koşulları değişir. Zamansal
-            karşılaştırma, bu farkları koruyarak yapılmalı.
-          </p>
-          <div className="time-land">
-            <Media
-              base={base}
-              name="stage1/temporal-earth"
-              alt="Zamansal bağlamı anlatan tarihsiz, kavramsal arazi görseli."
-            />
-            <span>GÖZLEM → GEÇMİŞ → BAĞLAM</span>
-          </div>
-          <small>
-            Kavramsal anlatım; farklı tarihlere ait gerçek ölçüm gösterilmez.
-          </small>
-        </div>
       </section>
       <section className="field-context-section wrap section-space" aria-labelledby="field-context-heading">
         <div className="split-heading">
