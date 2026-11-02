@@ -75,3 +75,5 @@
 .observation-timeline button:focus-visible{outline:2px solid white;outline-offset:4px}
 .quality-controls button{min-height:44px}
 @media(max-width:767px){.observation-timeline button{display:grid;gap:5px;align-content:center}}
+
+#gozlemden-baglama,#gozlem-kosullari{scroll-margin-top:125px}

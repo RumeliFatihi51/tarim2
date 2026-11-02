@@ -17,7 +17,7 @@ export function ObservationFilm({base}:{base:string}) {
     setCanSeek(true);
     setBeat(Math.min(2,Math.floor(time/duration*3)));
   },[]);
-  return <figure ref={host} className="observation-film">
+  return <figure ref={host} id="gozlemden-baglama" className="observation-film">
     <div className="observation-film-stage">
       <Film base={base} name="observation/harvest" loop={false} onProgress={progress}
         alt="Iowa’da gerçek hasat: hareket eden biçerdöver, işlenen yüzey ve çevredeki tarım arazileri. Uydu analizi değildir."/>
