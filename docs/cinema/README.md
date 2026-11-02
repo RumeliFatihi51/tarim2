@@ -13,3 +13,9 @@ Previous motion was largely subtle photo drift. This revision adds a genuinely r
 Actual Chromium: 48 page/viewport views, seven interaction groups, zero JavaScript errors and zero axe violations. New 3D story tested at 1440 and 390 px at progress 0/.44/.9 and in reverse; chapter/progress checks pass. Runtime reduced motion releases the scene. Missing texture preserves the poster. See `scene-tests.json`, `pages/browser-tests.json`, and scene screenshots.
 
 No new Blender video or AI footage is claimed. The new scene is real-time Three.js geometry with original existing conceptual imagery. No scientific result is implied. Physical Safari/iOS/Android tests remain unperformed.
+
+## Production verification
+
+Published to https://agromax-alpha.vercel.app/ with application commit `d6a6284fd7015d2e64772fe01fac324eb80371e8`, Vercel deployment `dpl_58LsxqbveAT22XChvb1dHauxHope` READY. Production GPU scene checks passed forward/reverse progress and three chapters at 1440 and 390 px, runtime reduced motion and missing-texture fallback. See `live-scene-tests.json`. GitHub CI also passed.
+
+Landscape phone 844×390 is checked in `landscape-tests.json`. The first attempt scrolled before font/network layout settled and timed out; the explicit network-idle retry rendered successfully and verified title bounds and horizontal overflow. No successful physical Safari/iOS/Android test is claimed.
