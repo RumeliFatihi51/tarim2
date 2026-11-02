@@ -1,0 +1,34 @@
+{
+  "base": "http://localhost:4173/",
+  "views": [
+    {
+      "width": 1440,
+      "reducedMotionPoster": true,
+      "axe": 0,
+      "interactions": true,
+      "threeMovieActs": true,
+      "chapterNavigation": true,
+      "replay": true,
+      "pause": true,
+      "offscreenPause": true,
+      "scrollReversible": true,
+      "windPlayback": true
+    },
+    {
+      "width": 390,
+      "reducedMotionPoster": true,
+      "axe": 0,
+      "interactions": true,
+      "threeMovieActs": true,
+      "chapterNavigation": true,
+      "replay": true,
+      "pause": true,
+      "offscreenPause": true,
+      "scrollReversible": false,
+      "windPlayback": true
+    }
+  ],
+  "errors": [],
+  "mp4Fallback": true,
+  "mediaFailurePoster": true
+}

@@ -50,3 +50,6 @@ Filiz botanik arşivi ve arazi yüzey dokusu özgün kavramsal görsel üretimle
 
 ## Phase 2
 Site artık gerçek Supabase Auth ile hesap yönetimi ve kullanıcıya özel görüşme talebi kaydı içerecek biçimde geliştirilir. Bu hesap alanı tarımsal analiz uygulaması değildir. Etkileşimli bantlar ölçüm, grafikler gerçek yansıma eğrisi, süreç sahnesi çalışan analiz motoru değildir. Filiz planlanan özellik statüsünde kalır. Yayın ve e-posta akışları test edilmeden tamamlandı sayılmaz.
+
+## Gözlem / bağlam görsel revizyonu — 2 Kasım 2026
+Platform’daki zayıf maket sahnesi yerine lisanslı gerçek hasat çekiminin üç bölümlü kurgusu kullanılır. Teknoloji’deki buğday/rüzgâr çekimi de gerçek görüntüdür. İkisi de AgroMax saha çekimi, uydu verisi, müşteri parseli veya analiz çıktısı değildir. Hasat örneği yalnız görünümün yerel işlem ve dönemle ilişkisini anlatır; hastalık veya verim sonucu çıkarmaya çalışmaz. Etkileşimli kalite katmanları kavramsal açıklamalardır, canlı ölçüm veya bilimsel simülasyon değildir. Yeni ürün yeteneği veya başarı iddiası eklenmedi. Yeryüzüne Yolculuk, özgün dört etiketli tarla sahnesi ve mevcut ürün kısıtları korunur.

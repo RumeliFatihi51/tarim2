@@ -1,18 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { orbitalCopy } from "../content/orbital";
-/** Encoded Blender production (3D or authored 2.5D), poster-first and paused offscreen. */
+/** CGI or licensed film; poster-first, lazy sources and paused offscreen. */
 export function Film({
   base,
   name,
   className = "",
   eager = false,
   alt,
+  loop = true,
+  onProgress,
 }: {
   base: string;
   name: string;
   className?: string;
   eager?: boolean;
   alt?: string;
+  loop?: boolean;
+  onProgress?: (time: number, duration: number) => void;
 }) {
   const host = useRef<HTMLDivElement>(null),
     video = useRef<HTMLVideoElement>(null);
@@ -118,10 +122,12 @@ export function Film({
       <video
         ref={video}
         muted
-        loop
+        loop={loop}
         playsInline
         preload="none"
         aria-hidden="true"
+        onTimeUpdate={e => onProgress?.(e.currentTarget.currentTime,e.currentTarget.duration)}
+        onEnded={() => {if(!loop)setPaused(true)}}
         onPlaying={() => setReady(true)}
         onError={() => setReady(false)}
       >

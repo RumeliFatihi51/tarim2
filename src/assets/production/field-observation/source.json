@@ -1,0 +1,21 @@
+{
+  "source": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Drone_Footage_Of_Iowa_Combine_Harvesting_Beans.webm",
+  "sha256": "d51c70c5655df4c6cf183c958640f7f16897b86aaa7b44e76a4fff68ace57a49",
+  "author": "MrAyrit",
+  "license": "CC BY 3.0",
+  "edit": [
+    {
+      "sourceStart": 110,
+      "duration": 6
+    },
+    {
+      "sourceStart": 70,
+      "duration": 6
+    },
+    {
+      "sourceStart": 5,
+      "duration": 6
+    }
+  ],
+  "note": "Three editorial cuts from one real Iowa 2016 harvest. Not AgroMax or satellite output."
+}

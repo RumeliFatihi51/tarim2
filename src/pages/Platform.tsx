@@ -3,7 +3,8 @@ import { stage1 } from "../content/stage1";
 import { future } from "../content/site";
 import { Eyebrow, Link } from "../components/ui";
 import { Landscape } from "../components/Cinematic";
-import { Film } from "../components/Film";
+import { ObservationFilm } from "../cinema/ObservationFilm";
+import { EvidenceReader } from "../cinema/EvidenceReader";
 import { Next } from "./Home";
 export function Platform({ base }: { base: string }) {
   return (
@@ -77,17 +78,7 @@ export function Platform({ base }: { base: string }) {
             <Link href={base + "teknoloji/"}>Bilimsel temeli keşfet</Link>
           </div>
         </div>
-        <figure className="parcel-study wrap">
-          <Film
-            base={base}
-            name="revision1/parcel"
-            alt="Üç boyutlu kavramsal arazi maketi: ekim sıraları, zeytinlik, doğal drenaj ve toprak kesiti. Gerçek parsel veya ölçüm değildir."
-          />
-          <figcaption>
-            <span>ARAZİ / ÖLÇEK / BAĞLAM</span>
-            <span>Kavramsal 3D arazi çalışması · Gerçek ölçüm değildir.</span>
-          </figcaption>
-        </figure>
+        <div className="wrap"><ObservationFilm base={base} /><EvidenceReader /></div>
       </section>
       <section className="vision-section wrap section-space">
         <div className="split-heading">

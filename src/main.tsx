@@ -9,6 +9,7 @@ import './styles/revision1.css';
 import './styles/field-context.css';
 import './styles/phase2.css';
 import './styles/cinema.css';
+import './styles/observation.css';
 const root=document.getElementById('root')!;
 const base=import.meta.env.BASE_URL;const segment=location.pathname.slice(base.length).replace(/^\/+|\/+$/g,'');
 const known=['hesap','home','platform','teknoloji','filiz','cozumler','hakkimizda','iletisim','gizlilik','kullanim','gorsel-kredileri','404'];

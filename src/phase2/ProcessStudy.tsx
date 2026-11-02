@@ -24,7 +24,7 @@ export function ProcessStudy({ base }: { base: string }) {
   }, []);
   return <section className="process-study" ref={host} aria-label="Altı aşamalı ürün yaklaşımı">
     <div className="process-visual">
-      <Film base={base} name="revision1/parcel" alt="Kavramsal arazi rölyefi. Çalışan analiz veya gerçek parsel verisi değildir." />
+      <Film base={base} name="stage1/parcel-context" alt="Kavramsal tarımsal peyzaj. Çalışan analiz veya gerçek parsel verisi değildir." />
       <div className="process-reading" data-depth aria-live="polite"><span>{workflow[active].n} / 06</span><h3>{workflow[active].title}</h3><p>{workflow[active].text}</p></div>
       <p className="process-caveat">Ürün yaklaşımı · Kavramsal anlatım · Gerçek analiz değildir.</p>
     </div>

@@ -1,3 +1,4 @@
+import { QualityStudy } from "../cinema/QualityStudy";
 import { BandStudy } from "../phase2/BandStudy";
 import { stage1 } from "../content/stage1";
 import { sources, indexGroups, indexNotes } from "../content/site";
@@ -125,6 +126,7 @@ export function Technology({ base }: { base: string }) {
           ))}
         </div>
       </section>
+      <div className="wrap"><QualityStudy base={base} /></div>
       <section className="quality-section wrap section-space">
         <div className="sticky-heading">
           <Eyebrow>VERİ KALİTESİ</Eyebrow>

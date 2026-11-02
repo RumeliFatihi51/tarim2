@@ -1,0 +1,146 @@
+[
+  {
+    "file": "public/media/observation/harvest-mobile.mp4",
+    "fullDecode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 576,
+        "height": 800,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "432"
+      }
+    ],
+    "format": {
+      "duration": "18.000000",
+      "size": "2761258"
+    }
+  },
+  {
+    "file": "public/media/observation/harvest-mobile.webm",
+    "fullDecode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 576,
+        "height": 800,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "432"
+      }
+    ],
+    "format": {
+      "duration": "18.000000",
+      "size": "2083613"
+    }
+  },
+  {
+    "file": "public/media/observation/harvest.mp4",
+    "fullDecode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "432"
+      }
+    ],
+    "format": {
+      "duration": "18.000000",
+      "size": "4841252"
+    }
+  },
+  {
+    "file": "public/media/observation/harvest.webm",
+    "fullDecode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "432"
+      }
+    ],
+    "format": {
+      "duration": "18.000000",
+      "size": "3535901"
+    }
+  },
+  {
+    "file": "public/media/observation/wind-mobile.mp4",
+    "fullDecode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 576,
+        "height": 800,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "288"
+      }
+    ],
+    "format": {
+      "duration": "12.000000",
+      "size": "1870158"
+    }
+  },
+  {
+    "file": "public/media/observation/wind-mobile.webm",
+    "fullDecode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 576,
+        "height": 800,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "288"
+      }
+    ],
+    "format": {
+      "duration": "12.000000",
+      "size": "1931245"
+    }
+  },
+  {
+    "file": "public/media/observation/wind.mp4",
+    "fullDecode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "288"
+      }
+    ],
+    "format": {
+      "duration": "12.000000",
+      "size": "4014741"
+    }
+  },
+  {
+    "file": "public/media/observation/wind.webm",
+    "fullDecode": "pass",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "288"
+      }
+    ],
+    "format": {
+      "duration": "12.000000",
+      "size": "4082053"
+    }
+  }
+]

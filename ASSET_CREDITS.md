@@ -41,3 +41,10 @@ Kullanılmayan Poly Haven, ambientCG, Sketchfab, BlenderKit veya Mixamo varlıkl
 Yeni ticari stok, Poly Haven, Sketchfab, ambientCG, BlenderKit veya Mixamo varlığı kullanılmadı. Lusion araştırma görüntüleri web'e veya kaynak prodüksiyon varlığı olarak aktarılmadı. Üretim ayrıntıları `docs/stage1/PRODUCTION.md`.
 
 `wheat-lamina-original.png`: bu aşamada ayrıca OpenAI image generation ile üretilmiş buğday yaprak yüzeyi, gerçek taranmış numune değildir. `leaf-color.jpg` bu orijinal doku kaynağını kullanır. Normal/roughness haritaları kodla türetilmiş temsili materyal parametreleridir, ölçülmüş fiziksel özellikler veya bitki analizi değildir.
+
+## Observation edit / 2 November 2026
+
+- **Harvest:** [Drone Footage Of Iowa Combine Harvesting Beans](https://commons.wikimedia.org/wiki/File:Drone_Footage_Of_Iowa_Combine_Harvesting_Beans.webm), **MrAyrit**, Iowa harvest 2016, **[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)**. Real 4K drone footage. AgroMax edit selects three six-second passages (110s, 70s, 5s), removes audio, crops/resizes and applies restrained colour correction. Delivered as `public/media/observation/harvest*`. Attribution is visible beside the film.
+- **Wheat and wind:** [ASMR field of wheat – nature](https://commons.wikimedia.org/wiki/File:ASMR_field_of_wheat_-_nature.webm), **Coup 53**, **[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)**. Real 1080p footage, selected 2–14s, silent crop/resize/colour correction. Delivered as `public/media/observation/wind*`. Attribution is visible beside the section.
+- Neither footage is an AgroMax field capture, satellite observation, customer site or analysis output. Overlay shadow and sampling grid in the quality explanation are illustrative annotations, not measured products or a scientific simulation.
+- Licensing metadata snapshots, source hashes and edit decisions: `src/assets/production/field-observation/`. Reproduction: `scripts/produce_observation.py` and `scripts/produce_wind.py`. Original large source files can be downloaded from the exact URLs in those records; the 320 MB harvest source is not shipped to visitors or committed to Git.
